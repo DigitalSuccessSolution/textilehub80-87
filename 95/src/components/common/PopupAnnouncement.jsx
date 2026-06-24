@@ -1,0 +1,77 @@
+import React, { useState, useEffect } from 'react';
+import { X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const PopupAnnouncement = () => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const hasSeen = sessionStorage.getItem('hasSeenRetailPopup3');
+        if (!hasSeen) {
+            const timer = setTimeout(() => {
+                setIsVisible(true);
+            }, 3000); // Popup appears after 3 seconds
+            return () => clearTimeout(timer);
+        }
+    }, []);
+
+    const handleClose = () => {
+        setIsVisible(false);
+        sessionStorage.setItem('hasSeenRetailPopup3', 'true');
+    };
+
+    return (
+        <AnimatePresence>
+            {isVisible && (
+                <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.3 }}
+                        className="bg-brand-light border border-brand-lavender/35 max-w-lg w-full relative p-8 text-center rounded-[2.5rem] shadow-2xl"
+                    >
+                        {/* Close Button */}
+                        <button
+                            onClick={handleClose}
+                            className="absolute top-4 right-4 text-stone-400 hover:text-white transition-colors cursor-pointer"
+                        >
+                            <X size={20} />
+                        </button>
+
+                        {/* Top Line decoration */}
+                        <div className="w-12 h-[1px] bg-brand-lavender mx-auto mb-6"></div>
+
+                        {/* Subtitle */}
+                        <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-brand-lavender mb-3 block">
+                            Luxury Campaign
+                        </span>
+
+                        {/* Heading */}
+                        <h3 className="text-2xl font-serif text-brand-plum tracking-tight uppercase mb-4">
+                            Grand Festive Weave
+                        </h3>
+
+                        {/* Main Message (Fixed Contrast) */}
+                        <p className="text-stone-600 text-xs leading-relaxed mb-6 font-sans font-light">
+                            Discover flat <span className="text-brand-gold font-bold">15% Off</span> on custom bulk orders for designer sarees, suiting fabrics, and upholstery at Retail Textile Mall. Register your trade enquiry today to claim the premium pricing.
+                        </p>
+
+                        {/* Button Action */}
+                        <button
+                            onClick={handleClose}
+                            className="px-8 py-3 bg-brand-lavender hover:bg-brand-plum text-white hover:text-brand-light font-bold uppercase text-[9px] tracking-[0.2em] transition-all duration-300 rounded-full shadow-lg cursor-pointer"
+                        >
+                            View Collection
+                        </button>
+
+                        {/* Bottom Line decoration */}
+                        <div className="w-12 h-[1px] bg-brand-lavender mx-auto mt-8"></div>
+                    </motion.div>
+                </div>
+            )}
+        </AnimatePresence>
+    );
+};
+
+export default PopupAnnouncement;
