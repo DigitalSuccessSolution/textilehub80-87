@@ -17,9 +17,6 @@ const TradeCircular = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b-2 border-primary pb-8 mb-12">
           <div>
-            <span className="text-accent font-bold uppercase tracking-[0.2em] text-[10px] mb-3 block flex items-center gap-2">
-              <Bell className="w-3.5 h-3.5" /> Official Communications
-            </span>
             <h1 className="font-heading text-5xl md:text-6xl font-bold text-primary">Trade Circulars</h1>
           </div>
           <p className="text-slate-500 font-light text-sm max-w-xs md:text-right">
@@ -30,11 +27,11 @@ const TradeCircular = () => {
         {/* Elegant List */}
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
           {/* List Header */}
-          <div className="bg-slate-50 grid grid-cols-12 gap-4 p-6 border-b border-slate-200 text-xs font-bold uppercase tracking-widest text-slate-400 hidden md:grid">
+          <div className="bg-slate-50 grid grid-cols-12 gap-4 p-6 border-b border-slate-200 text-xs font-bold tracking-wider text-slate-400 hidden md:grid">
             <div className="col-span-2">Date</div>
             <div className="col-span-2">Circular ID</div>
-            <div className="col-span-6">Subject</div>
-            <div className="col-span-2 text-right">Action</div>
+            <div className="col-span-5">Subject</div>
+            <div className="col-span-3 text-right">Actions</div>
           </div>
 
           {/* List Items */}
@@ -53,22 +50,19 @@ const TradeCircular = () => {
                   </span>
                 </div>
                 
-                <div className="md:col-span-6">
-                  <p className="font-bold text-slate-800 text-lg group-hover:text-accent transition-colors">
+                <div className="md:col-span-5">
+                  <p className="font-bold text-slate-800 text-sm md:text-base group-hover:text-accent transition-colors">
                     {circ.title}
                   </p>
-                  <p className="text-xs text-slate-400 mt-1 uppercase tracking-wider">{circ.type}</p>
+                  <p className="text-xs text-slate-400 mt-1 tracking-wider">{circ.type}</p>
                 </div>
                 
-                <div className="md:col-span-2 flex justify-start md:justify-end mt-4 md:mt-0 gap-2">
-                  <button className="flex items-center justify-center p-2 text-slate-500 border border-slate-200 rounded hover:bg-slate-100 transition-all" title="View PDF">
-                    <Eye className="w-4 h-4" />
+                <div className="md:col-span-3 flex justify-start md:justify-end mt-4 md:mt-0 gap-2 shrink-0">
+                  <button className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-slate-600 border border-slate-200 hover:bg-slate-100 transition-all rounded" title="View PDF">
+                    <Eye className="w-3.5 h-3.5 text-accent" /> View PDF
                   </button>
-                  <button className="flex items-center justify-center p-2 text-slate-500 border border-slate-200 rounded hover:bg-slate-100 transition-all" title="Print Circular">
-                    <Printer className="w-4 h-4" />
-                  </button>
-                  <button className="flex items-center justify-center p-2 text-primary border border-primary/20 rounded hover:bg-primary hover:text-white transition-all" title="Download">
-                    <Download className="w-4 h-4" />
+                  <button className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-slate-600 border border-slate-200 hover:bg-slate-100 transition-all rounded" title="Print Circular">
+                    <Printer className="w-3.5 h-3.5 text-accent" /> Print PDF
                   </button>
                 </div>
               </div>
@@ -76,7 +70,7 @@ const TradeCircular = () => {
           </div>
           
           {/* Footer Pagination mock */}
-          <div className="bg-slate-50 p-6 border-t border-slate-200 flex justify-between items-center text-xs font-bold uppercase tracking-widest text-slate-500">
+          <div className="bg-slate-50 p-6 border-t border-slate-200 flex justify-between items-center text-xs font-bold tracking-wider text-slate-500">
             <button className="hover:text-primary transition-colors">← Previous</button>
             <span>Page 1 of 12</span>
             <button className="hover:text-primary transition-colors flex items-center gap-1">Next <ArrowRight className="w-3.5 h-3.5" /></button>

@@ -32,15 +32,15 @@ const PopupModal = () => {
               className="w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-100 pointer-events-auto"
             >
               <div className="relative aspect-video bg-slate-100">
-                <img 
-                  src="https://images.unsplash.com/photo-1584346808092-23315c138a06?q=80&w=800&auto=format&fit=crop" 
-                  alt="Special Offer" 
+                <img
+                  src="https://images.pexels.com/photos/35009418/pexels-photo-35009418.jpeg"
+                  alt="Special Offer"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/95 to-transparent flex items-end p-6">
                   <h3 className="font-heading font-bold text-3xl text-white">B2B Trade Launch</h3>
                 </div>
-                <button 
+                <button
                   onClick={() => setIsOpen(false)}
                   className="absolute top-4 right-4 w-8 h-8 bg-white hover:bg-accent text-primary rounded-full flex items-center justify-center transition-colors"
                 >
@@ -49,16 +49,16 @@ const PopupModal = () => {
               </div>
               <div className="p-8 text-center space-y-5">
                 <p className="text-xs text-slate-400 leading-relaxed font-light">
-                  Join our exclusive B2B trade circle today. Access automated **e-Quotations**, bid in active **e-Auctions**, and view official **Trade Circulars** online.
+                  Join our exclusive B2B trade circle today. Access automated <strong className="font-bold text-slate-800">e-Quotations</strong>, bid in active <strong className="font-bold text-slate-800">e-Auctions</strong>, and view official <strong className="font-bold text-slate-800">Trade Circulars</strong> online.
                 </p>
                 <div className="flex gap-4 justify-center pt-2">
-                  <button 
+                  <button
                     onClick={() => setIsOpen(false)}
                     className="border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-md transition-colors"
                   >
                     Dismiss
                   </button>
-                  <a 
+                  <a
                     href="/trade-enquiry"
                     className="bg-primary hover:bg-accent text-white hover:text-primary text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-md transition-colors"
                   >

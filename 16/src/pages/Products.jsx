@@ -6,7 +6,7 @@ const Products = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeCategory = searchParams.get('cat') || 'All';
   const [selectedProduct, setSelectedProduct] = React.useState(null);
-  
+
   // Custom setter for active category to update query param
   const setActiveCategory = (cat) => {
     const newParams = new URLSearchParams(searchParams);
@@ -19,18 +19,18 @@ const Products = () => {
   };
 
   const categories = [
-    'All', 
-    'Sarees', 
-    'Leggings', 
-    'Kurtis', 
-    'Dress Suits', 
-    'Bedsheets & Linen', 
-    'Hosiery Items', 
-    'Suiting', 
-    'Shirting', 
-    'Formal & Ethnic Wear for Women', 
-    'Formal & Ethnic Wear for Men', 
-    'Formal & Ethnic Wear for Children', 
+    'All',
+    'Sarees',
+    'Leggings',
+    'Kurtis',
+    'Dress Suits',
+    'Bedsheets & Linen',
+    'Hosiery Items',
+    'Suiting',
+    'Shirting',
+    'Formal & Ethnic Wear for Women',
+    'Formal & Ethnic Wear for Men',
+    'Formal & Ethnic Wear for Children',
     'Home Upholstery & Furnishing'
   ];
 
@@ -38,7 +38,7 @@ const Products = () => {
     {
       name: 'Varanasi Gold Zari Katan',
       category: 'Sarees',
-      img: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop',
+      img: 'https://images.pexels.com/photos/35399673/pexels-photo-35399673.jpeg',
       desc: 'Authentic Banarasi Katan silk with intricate pure gold zari motifs. Ideal for bridal and premium festive wear.',
       threadCount: '240 TC', gsm: '110 GSM', weave: 'Handloom Katan', minOrder: '50 Pieces', composition: 'Pure Mulberry Silk (100%)',
     },
@@ -133,7 +133,7 @@ const Products = () => {
     };
   });
 
-  const filteredProducts = products.filter(p => 
+  const filteredProducts = products.filter(p =>
     (activeCategory === 'All' || p.category === activeCategory)
   );
 
@@ -152,14 +152,14 @@ const Products = () => {
       </div>
 
       <div className="container-custom">
-        
+
         {/* Controls */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
-          
+
           {/* Categories Tab */}
           <div className="flex overflow-x-auto w-full pb-4 gap-3 snap-x visible-scrollbar">
             {categories.map(cat => (
-              <button 
+              <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`whitespace-nowrap px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all snap-start shrink-0 ${activeCategory === cat ? 'bg-primary text-white shadow-md' : 'bg-card text-muted-foreground hover:bg-muted border border-border'}`}
@@ -173,16 +173,16 @@ const Products = () => {
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((prod, idx) => (
-            <div 
-              key={idx} 
-              className="bg-card rounded-2xl overflow-hidden group border border-border shadow-sm hover:shadow-xl hover:border-accent/30 transition-all duration-300 flex flex-col cursor-pointer" 
+            <div
+              key={idx}
+              className="bg-card rounded-2xl overflow-hidden group border border-border shadow-sm hover:shadow-xl hover:border-accent/30 transition-all duration-300 flex flex-col cursor-pointer"
               onClick={() => setSelectedProduct(prod)}
             >
               <div className="aspect-[4/5] relative overflow-hidden p-3 bg-muted/30">
-                <img 
-                  src={prod.img} 
-                  alt={prod.name} 
-                  className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-700" 
+                <img
+                  src={prod.img}
+                  alt={prod.name}
+                  className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm text-primary text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider border border-border/30">
                   Vol {prod.volume}
@@ -192,14 +192,14 @@ const Products = () => {
                   <Plus className="w-5 h-5" />
                 </div>
               </div>
-              
+
               <div className="p-6 flex flex-col justify-between flex-grow">
                 <div className="space-y-1">
                   <span className="text-[10px] font-bold text-accent uppercase tracking-widest block">{prod.category}</span>
                   <h3 className="font-heading text-base font-bold text-primary group-hover:text-accent transition-colors line-clamp-1">{prod.name}</h3>
                   <p className="text-[11px] text-muted-foreground font-light line-clamp-2 mt-1 leading-relaxed">{prod.desc}</p>
                 </div>
-                
+
                 <div className="mt-4 flex justify-between items-center pt-3 border-t border-border/40">
                   <span className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">Min. Order: <span className="text-primary font-extrabold">{prod.minOrder}</span></span>
                   <span className="text-[10px] text-accent uppercase tracking-widest font-extrabold">Price on Request</span>
@@ -216,8 +216,8 @@ const Products = () => {
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-primary/40 backdrop-blur-sm" onClick={() => setSelectedProduct(null)}></div>
           <div className="bg-card w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative z-10 flex flex-col md:flex-row border border-border">
-            
-            <button 
+
+            <button
               className="absolute top-4 right-4 z-20 w-8 h-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors border border-border"
               onClick={() => setSelectedProduct(null)}
             >
@@ -227,12 +227,12 @@ const Products = () => {
             <div className="w-full md:w-1/2 aspect-square md:aspect-auto">
               <img src={selectedProduct.img} alt={selectedProduct.name} className="w-full h-full object-cover" />
             </div>
-            
+
             <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col">
               <span className="text-[10px] font-bold uppercase tracking-widest text-accent mb-2">{selectedProduct.category}</span>
               <h2 className="font-heading text-3xl font-bold text-primary mb-4">{selectedProduct.name}</h2>
               <p className="text-sm font-light text-muted-foreground mb-8 leading-relaxed">{selectedProduct.desc}</p>
-              
+
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div>
                   <span className="block text-[9px] font-bold uppercase tracking-widest text-primary/50 mb-1">Composition</span>

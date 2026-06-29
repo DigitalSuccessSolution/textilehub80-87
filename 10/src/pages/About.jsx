@@ -13,8 +13,7 @@ const About = () => {
     <div className="bg-background min-h-screen pb-24">
       {/* Editorial Header */}
       <section className="pt-24 pb-12 px-4 text-center max-w-4xl mx-auto">
-        <span className="text-accent font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Our Heritage</span>
-        <h1 className="font-heading text-5xl md:text-7xl font-bold text-primary mb-6 leading-tight">
+        <h1 className="font-heading text-3xl md:text-5xl font-bold text-primary mb-6 leading-tight">
           A Legacy Woven in Time.
         </h1>
         <p className="text-slate-500 font-light text-lg md:text-xl leading-relaxed">
@@ -24,9 +23,9 @@ const About = () => {
 
       {/* Full Width Image Break */}
       <section className="w-full h-[60vh] relative mt-8 mb-24">
-        <img 
-          src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?q=80&w=2000&auto=format&fit=crop" 
-          alt="Loom Heritage" 
+        <img
+          src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?q=80&w=2000&auto=format&fit=crop"
+          alt="Loom Heritage"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
@@ -54,55 +53,34 @@ const About = () => {
             <div className="grid grid-cols-2 gap-8 pt-8 border-t border-slate-200">
               <div>
                 <p className="text-5xl font-heading font-bold text-accent mb-2">1985</p>
-                <p className="text-xs uppercase tracking-widest font-bold text-slate-400">Year Established</p>
+                <p className="text-xs tracking-wider font-semibold text-slate-400">Year Established</p>
               </div>
               <div>
                 <p className="text-5xl font-heading font-bold text-accent mb-2">12</p>
-                <p className="text-xs uppercase tracking-widest font-bold text-slate-400">Signature Collections</p>
+                <p className="text-xs tracking-wider font-semibold text-slate-400">Signature Collections</p>
               </div>
               <div>
                 <p className="text-5xl font-heading font-bold text-accent mb-2">1.2K</p>
-                <p className="text-xs uppercase tracking-widest font-bold text-slate-400">Retail Partners</p>
+                <p className="text-xs tracking-wider font-semibold text-slate-400">Retail Partners</p>
               </div>
               <div>
                 <p className="text-5xl font-heading font-bold text-accent mb-2">100%</p>
-                <p className="text-xs uppercase tracking-widest font-bold text-slate-400">Quality Assured</p>
+                <p className="text-xs tracking-wider font-semibold text-slate-400">Quality Assured</p>
               </div>
             </div>
           </div>
-          
+
           <div className="relative">
             <div className="absolute inset-0 bg-accent translate-x-4 translate-y-4" />
-            <img 
-              src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=800&auto=format&fit=crop" 
-              alt="Fabrics" 
+            <img
+              src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=800&auto=format&fit=crop"
+              alt="Fabrics"
               className="relative z-10 w-full h-auto shadow-xl"
             />
           </div>
         </div>
       </section>
 
-      {/* Core Values */}
-      <section className="bg-primary text-primary-foreground py-24 mt-16">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-heading font-bold mb-4">Pillars of Excellence</h3>
-            <p className="text-slate-400 max-w-2xl mx-auto font-light">The guiding principles that shape our 12 collections and our relationships with B2B partners worldwide.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
-            {values.map((item, idx) => (
-              <div key={idx} className="group cursor-pointer">
-                <div className="mb-6 transform group-hover:-translate-y-2 transition-transform duration-300">
-                  {item.icon}
-                </div>
-                <h4 className="font-heading text-xl font-bold mb-3">{item.title}</h4>
-                <p className="text-sm text-slate-400 font-light leading-relaxed">{item.desc}</p>
-                <div className="w-8 h-0.5 bg-accent mt-6 group-hover:w-16 transition-all duration-300" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
     </div>
   );

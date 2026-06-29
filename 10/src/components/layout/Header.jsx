@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
-  Menu, X, ChevronDown, Search, ShoppingCart, Phone, Globe, Lock
+  Menu, X, ChevronDown, Phone, Globe
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -38,6 +38,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -50,14 +51,17 @@ const Header = () => {
 
   useEffect(() => {
     setMobileMenuOpen(false);
+    setActiveDropdown(null);
+    setMoreDropdownOpen(false);
   }, [location.pathname]);
 
+  // Exact required pages list in sequence
   const navLinks = [
-    { label: 'HOME', path: '/' },
-    { label: 'ABOUT US', path: '/about' },
-    { label: 'CONTACT US', path: '/contact' },
+    { label: 'Home', path: '/' },
+    { label: 'About Us', path: '/about' },
+    { label: 'Contact Us', path: '/contact' },
     { 
-      label: 'PRODUCT PAGE', 
+      label: 'Product', 
       path: '/products',
       dropdown: [
         { label: 'Sarees', path: '/products?cat=Sarees' },
@@ -74,98 +78,78 @@ const Header = () => {
         { label: 'Home Upholstery & Furnishing', path: '/products?cat=Home%20Upholstery%20%26%20Furnishing' }
       ]
     },
-    { label: 'OUR RETAIL MANAGEMENT', path: '/retail-management' },
-    { label: 'TRADE ENQUIRY', path: '/trade-enquiry' },
+    { label: 'Our Retail Management', path: '/retail-management' },
+    { label: 'Trade Enquiry', path: '/trade-enquiry' },
     { label: 'e-Quotation', path: '/e-quotation' },
     { label: 'e-Auction', path: '/e-auction' },
-    { label: 'TRADE CIRCULAR', path: '/trade-circular' },
-    { label: 'BLOG PAGE', path: '/blog' },
-    { label: 'NOTICE BOARD', path: '/notice-board' },
-    { label: 'CAREER PAGE', path: '/career' },
-    { label: 'CUSTOMER REVIEW', path: '/reviews' },
-    { label: 'BUSINESS MEDIA GALLERY', path: '/media-gallery' }
+    { label: 'Trade Circular', path: '/trade-circular' },
+    { label: 'Blog', path: '/blog' },
+    { label: 'Notice Board', path: '/notice-board' },
+    { label: 'Career', path: '/career' },
+    { label: 'Customer Review', path: '/reviews' },
+    { label: 'Business Media Gallery', path: '/media-gallery' },
+    { label: 'FAQ', path: '/faq' }
   ];
+
+  // First 8 items go to main header, items 9-15 go to 'More' dropdown
+  const mainLinks = navLinks.slice(0, 8);
+  const moreLinks = navLinks.slice(8);
 
   return (
     <>
-      {/* 1. Utility Top Bar */}
-      <div className="bg-slate-50 border-b border-slate-200/60 text-[11px] py-2 hidden lg:block text-slate-500 font-light">
+      {/* 1. Slim Utility Top Bar */}
+      <div className="bg-[#0b0f19] text-[11px] py-2.5 hidden lg:block text-slate-400 border-b border-slate-900 font-light">
         <div className="container-custom flex justify-between items-center">
-          <p className="opacity-95 flex items-center gap-1.5 font-medium"><Globe className="w-3.5 h-3.5 text-accent" /> Welcome to WeavesMart - Textile & Garment B2B Wholesale Retail Mall</p>
+          <p className="flex items-center gap-1.5 font-medium">
+            <Globe className="w-3.5 h-3.5 text-accent animate-pulse" /> Welcome to WeavesMart - Textile & Garment B2B Wholesale Retail Mall
+          </p>
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-4">
-              <Link to="/trade-enquiry" className="hover:text-accent transition-colors font-semibold">Trade Enquiry</Link>
-              <Link to="/e-quotation" className="hover:text-accent transition-colors font-semibold">e-Quotation</Link>
-              <Link to="/e-auction" className="hover:text-accent transition-colors font-semibold">e-Auction</Link>
-            </div>
+            <a href="tel:+911234567890" className="hover:text-white transition-colors flex items-center gap-1">
+              <Phone className="w-3.5 h-3.5 text-accent" /> Customer Care: +91 12345 67890
+            </a>
             {/* Social Icons */}
-            <div className="flex items-center gap-3">
-              <a href="#" className="hover:text-accent transition-colors"><Facebook className="w-3.5 h-3.5 text-slate-400 hover:text-accent" /></a>
-              <a href="#" className="hover:text-accent transition-colors"><Instagram className="w-3.5 h-3.5 text-slate-400 hover:text-accent" /></a>
-              <a href="#" className="hover:text-accent transition-colors"><Linkedin className="w-3.5 h-3.5 text-slate-400 hover:text-accent" /></a>
-              <a href="#" className="hover:text-accent transition-colors"><Youtube className="w-3.5 h-3.5 text-slate-400 hover:text-accent" /></a>
+            <div className="flex items-center gap-3 border-l border-slate-800 pl-6">
+              <a href="#" className="hover:text-white transition-colors"><Facebook className="w-3.5 h-3.5 text-slate-500 hover:text-white" /></a>
+              <a href="#" className="hover:text-white transition-colors"><Instagram className="w-3.5 h-3.5 text-slate-500 hover:text-white" /></a>
+              <a href="#" className="hover:text-white transition-colors"><Linkedin className="w-3.5 h-3.5 text-slate-500 hover:text-white" /></a>
+              <a href="#" className="hover:text-white transition-colors"><Youtube className="w-3.5 h-3.5 text-slate-500 hover:text-white" /></a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 2. Middle Brand Bar */}
-      <div className="bg-white border-b border-slate-100 py-4 hidden lg:block">
-        <div className="container-custom flex justify-between items-center gap-6">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="w-10 h-10 bg-primary flex flex-wrap p-1.5 rounded-lg shrink-0 gap-0.5 justify-center items-center shadow-md">
-              <div className="w-3.5 h-3.5 bg-accent rounded-xs rotate-45"></div>
-              <div className="w-3.5 h-3.5 bg-white rounded-xs"></div>
-              <div className="w-3.5 h-3.5 bg-white rounded-xs"></div>
-              <div className="w-3.5 h-3.5 bg-accent rounded-xs rotate-45"></div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-heading text-2xl font-bold tracking-tight text-primary leading-none">WeavesMart</span>
-              <span className="text-[9px] tracking-wider text-accent font-bold uppercase mt-1">Textile & Garment B2B Retail Mall</span>
-            </div>
-          </Link>
-
-          {/* Support Desk details */}
-          <div className="flex items-center gap-2.5 shrink-0">
-            <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-accent">
-              <Phone className="w-4 h-4" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[9px] text-slate-400 uppercase font-bold tracking-wider">Customer Care</span>
-              <a href="tel:+911234567890" className="text-xs font-bold text-slate-700 hover:text-accent transition-colors">+91 12345 67890</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* 3. Main Navigation Bar (Sticky) */}
-      <header className={`sticky top-0 z-50 w-full transition-all duration-500 bg-primary ${
-        isScrolled ? 'shadow-md py-1' : 'py-3'
+      {/* 2. Cohesive Navigation Bar (Sticky) */}
+      <header className={`sticky top-0 z-50 w-full transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-slate-100 ${
+        isScrolled ? 'shadow-md py-3' : 'py-5'
       }`}>
-        <div className="container-custom flex justify-between items-center">
+        <div className="container-custom flex justify-between items-center gap-4">
           
-          {/* Mobile Logo Only */}
-          <Link to="/" className="flex lg:hidden items-center gap-2">
-            <div className="w-8 h-8 bg-accent flex items-center justify-center rounded-sm">
-              <div className="font-heading text-sm font-bold text-primary-foreground">W</div>
+          <Link to="/" className="flex items-center gap-2.5 shrink-0">
+            <div className="w-9 h-9 bg-primary grid grid-cols-2 p-1 rounded shrink-0 gap-1 justify-items-center items-center shadow-md overflow-hidden">
+              <div className="w-3 h-3 bg-accent rounded-xs rotate-45"></div>
+              <div className="w-3 h-3 bg-white rounded-xs"></div>
+              <div className="w-3 h-3 bg-white rounded-xs"></div>
+              <div className="w-3 h-3 bg-accent rounded-xs rotate-45"></div>
             </div>
-            <span className="font-heading text-lg font-bold tracking-tight text-primary-foreground">WeavesMart</span>
+            <div className="flex flex-col">
+              <span className="font-heading text-xl font-bold tracking-tight text-primary leading-none">WeavesMart</span>
+              <span className="text-[8px] tracking-wider text-accent font-bold mt-1 uppercase">B2B Wholesale</span>
+            </div>
           </Link>
 
-          {/* Desktop Central Navigation Links */}
-          <nav className="hidden lg:flex items-center justify-center w-full gap-2 xl:gap-3.5">
-            {navLinks.map((link, idx) => {
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-3.5">
+            {mainLinks.map((link, idx) => {
               if (link.dropdown) {
                 return (
                   <div 
                     key={idx} 
-                    className="relative py-2"
+                    className="relative py-1"
                     onMouseEnter={() => setActiveDropdown(idx)}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    <button className="flex items-center gap-1 text-[10px] xl:text-[11px] font-bold tracking-wider text-white hover:text-accent/90 transition-colors whitespace-nowrap cursor-pointer">
-                      {link.label} <ChevronDown className="w-3.5 h-3.5 text-accent" />
+                    <button className="flex items-center gap-0.5 text-xs font-bold text-slate-700 hover:text-accent transition-colors whitespace-nowrap cursor-pointer">
+                      {link.label} <ChevronDown className="w-3 h-3 text-slate-400" />
                     </button>
                     <AnimatePresence>
                       {activeDropdown === idx && (
@@ -173,13 +157,13 @@ const Header = () => {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
-                          className="absolute top-full left-0 w-52 bg-white border border-border shadow-xl rounded-md py-2 z-50"
+                          className="absolute top-full left-0 w-60 bg-white border border-slate-100 shadow-xl rounded-md py-2 z-50"
                         >
                           {link.dropdown.map((item, itemIdx) => (
                             <Link 
                               key={itemIdx}
                               to={item.path}
-                              className="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-muted hover:text-accent transition-colors"
+                              className="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-accent transition-colors border-b border-slate-50/50 last:border-0"
                             >
                               {item.label}
                             </Link>
@@ -194,64 +178,140 @@ const Header = () => {
                 <Link 
                   key={idx} 
                   to={link.path}
-                  className="text-[10px] xl:text-[11px] font-bold tracking-wider text-white hover:text-accent/90 transition-colors py-2 block whitespace-nowrap"
+                  className="text-xs font-bold text-slate-700 hover:text-accent transition-colors py-1 block whitespace-nowrap"
                 >
                   {link.label}
                 </Link>
               );
             })}
+
+            {/* 'More' dropdown menu */}
+            <div 
+              className="relative py-1"
+              onMouseEnter={() => setMoreDropdownOpen(true)}
+              onMouseLeave={() => setMoreDropdownOpen(false)}
+            >
+              <button className="flex items-center gap-0.5 text-xs font-bold text-slate-700 hover:text-accent transition-colors whitespace-nowrap cursor-pointer">
+                More <ChevronDown className="w-3 h-3 text-slate-400" />
+              </button>
+              <AnimatePresence>
+                {moreDropdownOpen && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full right-0 w-56 bg-white border border-slate-100 shadow-xl rounded-md py-2 z-50"
+                  >
+                    {moreLinks.map((link, idx) => (
+                      <Link 
+                        key={idx}
+                        to={link.path}
+                        className="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-accent transition-colors border-b border-slate-50/50 last:border-0"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </nav>
 
-          {/* Mobile Right Indicators & Drawer Toggle */}
-          <div className="flex lg:hidden items-center gap-4">
+          {/* Desktop Right Action button */}
+          <div className="hidden lg:block shrink-0">
+            <Link to="/trade-enquiry" className="bg-[#0C6C3E] hover:bg-[#053B1F] text-white text-[11px] font-bold tracking-wider px-5 py-2.5 rounded transition-all shadow-sm">
+              Trade Enquiry
+            </Link>
+          </div>
+
+          {/* Mobile hamburger menu button */}
+          <div className="flex lg:hidden items-center">
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1 text-white focus:outline-none"
+              className="p-1 text-slate-700 focus:outline-none"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
         </div>
+      </header>
 
-        {/* Mobile Navigation Drawer */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div 
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: '100vh' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-white fixed inset-x-0 top-[57px] bottom-0 z-40 overflow-y-auto px-6 py-8 border-t border-border flex flex-col gap-6"
+      {/* Mobile Navigation Drawer — Full Screen Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <>
+            {/* Dark Backdrop */}
+            <motion.div
+              key="backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            {/* Drawer Panel */}
+            <motion.div
+              key="drawer"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'tween', duration: 0.28 }}
+              className="fixed inset-y-0 right-0 w-full bg-white z-[60] shadow-2xl flex flex-col lg:hidden"
             >
-              {/* B2B Services Shortcut Mobile */}
-              <div className="grid grid-cols-2 gap-3">
-                <Link to="/e-quotation" className="border border-accent text-accent py-2 text-center text-xs font-bold rounded-md tracking-wider">
-                  e-Quotation
-                </Link>
-                <Link to="/e-auction" className="bg-primary text-white py-2 text-center text-xs font-bold rounded-md tracking-wider">
-                  e-Auction
-                </Link>
+              {/* Drawer Header */}
+              <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 bg-primary grid grid-cols-2 p-1 rounded gap-1 justify-items-center items-center shadow-md overflow-hidden">
+                    <div className="w-2.5 h-2.5 bg-accent rounded-xs rotate-45" />
+                    <div className="w-2.5 h-2.5 bg-white rounded-xs" />
+                    <div className="w-2.5 h-2.5 bg-white rounded-xs" />
+                    <div className="w-2.5 h-2.5 bg-accent rounded-xs rotate-45" />
+                  </div>
+                  <span className="font-heading text-lg font-bold text-primary">WeavesMart</span>
+                </div>
+                <button onClick={() => setMobileMenuOpen(false)} className="p-1.5 rounded-full hover:bg-slate-100 transition-colors">
+                  <X className="w-5 h-5 text-slate-700" />
+                </button>
               </div>
 
-              {/* Navigation links Mobile */}
-              <div className="flex flex-col gap-1 border-t border-slate-100 pt-4">
-                {navLinks.map((link, idx) => (
-                  <Link 
-                    key={idx} 
-                    to={link.dropdown ? '/products' : link.path}
-                    className="text-sm font-semibold py-3 text-slate-700 hover:text-accent border-b border-slate-50 flex justify-between items-center"
-                  >
-                    <span>{link.label}</span>
-                    <span className="text-slate-300 text-xs">→</span>
+              {/* Drawer Body (scrollable) */}
+              <div className="flex-1 overflow-y-auto px-6 py-4 mobile-scrollable-menu">
+                {/* Quick Actions */}
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <Link to="/e-quotation" onClick={() => setMobileMenuOpen(false)} className="border border-[#0C6C3E] text-[#0C6C3E] py-2.5 text-center text-xs font-bold rounded tracking-wider">
+                    e-Quotation
                   </Link>
-                ))}
+                  <Link to="/e-auction" onClick={() => setMobileMenuOpen(false)} className="bg-[#0C6C3E] text-white py-2.5 text-center text-xs font-bold rounded tracking-wider">
+                    e-Auction
+                  </Link>
+                </div>
+
+                {/* All nav links */}
+                <div className="flex flex-col gap-0.5 border-t border-slate-100 pt-4">
+                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-2 px-1">Navigation</p>
+                  {navLinks.map((link, idx) => (
+                    <Link
+                      key={idx}
+                      to={link.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-xs font-bold py-3 px-2 text-slate-700 hover:bg-slate-50 hover:text-accent rounded transition-colors flex justify-between items-center"
+                    >
+                      <span>{link.label}</span>
+                      <span className="text-slate-300 text-xs">→</span>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
+          </>
+        )}
+      </AnimatePresence>
+
+
     </>
   );
 };
 
 export default Header;
+

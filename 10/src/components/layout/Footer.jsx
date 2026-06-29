@@ -37,10 +37,10 @@ const Footer = () => {
   return (
     <footer className="bg-[#0b0f19] text-slate-400 border-t border-slate-900 pt-16 pb-8 text-xs font-light">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-slate-900">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-slate-900">
           
           {/* Column 1 - Brand - 4 cols */}
-          <div className="lg:col-span-4 space-y-5">
+          <div className="col-span-2 lg:col-span-4 space-y-5">
             <Link to="/" className="flex items-center gap-2.5">
               <div className="w-8 h-8 bg-[#0C6C3E] flex items-center justify-center rounded-sm">
                 <span className="font-heading font-bold text-white text-sm">W</span>
@@ -60,8 +60,8 @@ const Footer = () => {
           </div>
 
           {/* Column 2 - Company Links - 2 cols */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-white font-heading font-bold uppercase tracking-wider text-[11px]">Company</h4>
+          <div className="col-span-1 lg:col-span-2 space-y-4">
+            <h4 className="text-white font-heading font-bold text-[11px]">Company</h4>
             <ul className="space-y-2.5">
               <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
               <li><Link to="/about" className="hover:text-accent transition-colors">Our Legacy</Link></li>
@@ -71,8 +71,8 @@ const Footer = () => {
           </div>
 
           {/* Column 3 - Services - 2 cols */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-white font-heading font-bold uppercase tracking-wider text-[11px]">Our Services</h4>
+          <div className="col-span-1 lg:col-span-2 space-y-4">
+            <h4 className="text-white font-heading font-bold text-[11px]">Our Services</h4>
             <ul className="space-y-2.5">
               <li><Link to="/retail-management" className="hover:text-accent transition-colors">Our Retail Management</Link></li>
               <li><Link to="/trade-enquiry" className="hover:text-accent transition-colors">Trade Enquiry</Link></li>
@@ -82,19 +82,19 @@ const Footer = () => {
           </div>
 
           {/* Column 4 - Links - 2 cols */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-white font-heading font-bold uppercase tracking-wider text-[11px]">Important Links</h4>
+          <div className="col-span-1 lg:col-span-2 space-y-4">
+            <h4 className="text-white font-heading font-bold text-[11px]">Important Links</h4>
             <ul className="space-y-2.5">
               <li><Link to="/trade-circular" className="hover:text-accent transition-colors">Trade Circular</Link></li>
               <li><Link to="/notice-board" className="hover:text-accent transition-colors">Notice Board</Link></li>
-              <li><Link to="/career" className="hover:text-accent transition-colors">Career Page</Link></li>
+              <li><Link to="/career" className="hover:text-accent transition-colors">Career</Link></li>
               <li><Link to="/faq" className="hover:text-accent transition-colors">FAQ</Link></li>
             </ul>
           </div>
 
           {/* Column 5 - Contact - 2 cols */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-white font-heading font-bold uppercase tracking-wider text-[11px]">Contact Us</h4>
+          <div className="col-span-1 lg:col-span-2 space-y-4">
+            <h4 className="text-white font-heading font-bold text-[11px]">Contact Us</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <Phone className="w-3.5 h-3.5 shrink-0 mt-0.5 text-accent" />

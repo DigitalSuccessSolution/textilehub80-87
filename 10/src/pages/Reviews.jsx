@@ -59,8 +59,7 @@ const Reviews = () => {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-accent font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">Partner Testimonials</span>
-          <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary mb-6">Built on Trust.</h1>
+          <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary mb-6">Built on Trust</h1>
           <p className="text-slate-500 font-light text-lg">
             Hear from our global network of 1,200+ retailers, distributors, and boutique owners who rely on WeavesMart for premium textile sourcing.
           </p>
@@ -71,12 +70,12 @@ const Reviews = () => {
               <div className="flex text-accent my-1">
                 {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-current" />)}
               </div>
-              <span className="text-[10px] uppercase tracking-widest font-bold">Average Rating</span>
+              <span className="text-[10px] tracking-wider font-bold">Average Rating</span>
             </div>
             <div className="w-px h-12 bg-slate-200"></div>
             <div className="flex flex-col items-center">
               <ShieldCheck className="w-8 h-8 text-green-500 mb-1" />
-              <span className="text-[10px] uppercase tracking-widest font-bold">Verified B2B Buyers</span>
+              <span className="text-[10px] tracking-wider font-bold">Verified B2B Buyers</span>
             </div>
           </div>
         </div>
@@ -100,9 +99,9 @@ const Reviews = () => {
               <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
                 <div>
                   <h4 className="font-bold text-primary text-sm">{review.name}</h4>
-                  <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mt-1">{review.company}</p>
+                  <p className="text-[10px] tracking-wider text-slate-400 font-bold mt-1">{review.company}</p>
                 </div>
-                <span className="bg-primary/5 text-primary text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded">
+                <span className="bg-primary/5 text-primary text-[9px] font-bold tracking-wider px-2 py-1 rounded">
                   {review.type}
                 </span>
               </div>

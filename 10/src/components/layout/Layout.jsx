@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import { MessageSquare } from 'lucide-react';
 import Chatbot from '../ui/Chatbot';
 import PopupModal from '../ui/PopupModal';
+import Preloader from '../ui/Preloader';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -15,8 +16,11 @@ const ScrollToTop = () => {
 };
 
 const Layout = () => {
+  const [preloaderDone, setPreloaderDone] = useState(false);
+
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
+      {!preloaderDone && <Preloader onFinish={() => setPreloaderDone(true)} />}
       <ScrollToTop />
       <Header />
       <main className="flex-grow">
@@ -31,7 +35,7 @@ const Layout = () => {
         href="https://wa.me/911234567890" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20BA5A] text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center"
+        className="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20BA5A] text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center"
         aria-label="Contact on WhatsApp"
         id="whatsapp-bubble"
       >

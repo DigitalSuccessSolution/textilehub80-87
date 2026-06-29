@@ -18,7 +18,6 @@ const NoticeBoard = () => {
           <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
             <Megaphone className="w-8 h-8 text-accent" />
           </div>
-          <span className="text-accent font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Announcements</span>
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary">Notice Board</h1>
         </div>
 
@@ -36,11 +35,11 @@ const NoticeBoard = () => {
               {/* Content Card */}
               <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 group hover:border-accent/30 transition-colors">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
-                  <span className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-slate-400">
+                  <span className="flex items-center gap-1.5 text-xs font-bold tracking-wider text-slate-400">
                     <Calendar className="w-3.5 h-3.5" /> {notice.date}
                   </span>
                   {notice.type === 'urgent' && (
-                    <span className="bg-red-50 text-red-600 text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded flex items-center gap-1 w-max">
+                    <span className="bg-red-50 text-red-600 text-[9px] font-bold tracking-wider px-2 py-1 rounded flex items-center gap-1 w-max">
                       <AlertCircle className="w-3 h-3" /> Urgent Action Required
                     </span>
                   )}
@@ -53,7 +52,7 @@ const NoticeBoard = () => {
                   {notice.desc}
                 </p>
                 
-                <button className="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 hover:gap-3 transition-all">
+                <button className="text-xs font-bold tracking-wider text-primary flex items-center gap-2 hover:gap-3 transition-all">
                   Read Full Notice <ArrowRight className="w-3.5 h-3.5 text-accent" />
                 </button>
               </div>
@@ -64,7 +63,7 @@ const NoticeBoard = () => {
 
         {/* Load More */}
         <div className="text-center mt-12">
-          <button className="border border-slate-200 text-slate-500 hover:border-primary hover:text-primary px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-colors">
+          <button className="border border-slate-200 text-slate-500 hover:border-primary hover:text-primary px-8 py-3 rounded-full text-xs font-bold tracking-wider transition-colors">
             Load Older Notices
           </button>
         </div>

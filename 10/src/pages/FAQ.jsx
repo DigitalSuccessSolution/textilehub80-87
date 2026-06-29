@@ -36,7 +36,6 @@ const FAQ = () => {
           <div className="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6">
             <HelpCircle className="w-8 h-8 text-primary" />
           </div>
-          <span className="text-accent font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">Knowledge Base</span>
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary">Frequently Asked Questions</h1>
         </div>
 
@@ -73,7 +72,7 @@ const FAQ = () => {
           <p className="text-slate-500 font-light text-sm mb-8 max-w-md mx-auto">
             If you couldn't find the answer to your question regarding wholesale orders, logistics, or our 12 Collections, please contact our support desk.
           </p>
-          <a href="/contact" className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-accent transition-colors rounded-sm">
+          <a href="/contact" className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 text-xs font-bold hover:bg-accent transition-colors rounded-sm">
             <MessageCircle className="w-4 h-4" /> Contact Support
           </a>
         </div>

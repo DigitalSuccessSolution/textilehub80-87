@@ -95,3 +95,50 @@
 .animate-scroll:hover {
   animation-play-state: paused;
 }
+
+/* Mobile Scrollable Menu Custom Styles */
+.mobile-scrollable-menu {
+  max-height: calc(100vh - 120px) !important;
+  overflow-y: scroll !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: #0C6C3E #F1F5F9 !important;
+}
+
+.mobile-scrollable-menu::-webkit-scrollbar {
+  width: 6px !important;
+  display: block !important;
+}
+
+.mobile-scrollable-menu::-webkit-scrollbar-track {
+  background: #F1F5F9 !important;
+}
+
+.mobile-scrollable-menu::-webkit-scrollbar-thumb {
+  background: #0C6C3E !important;
+  border-radius: 3px !important;
+}
+
+/* Product Modal — Always-visible vertical scrollbar */
+.modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #0C6C3E #F1F5F9;
+}
+
+.modal-scroll::-webkit-scrollbar {
+  width: 5px;
+  display: block;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: #F1F5F9;
+  border-radius: 4px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: #0C6C3E;
+  border-radius: 4px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: #053B1F;
+}

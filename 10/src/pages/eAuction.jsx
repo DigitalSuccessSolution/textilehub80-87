@@ -1,136 +1,207 @@
 import React, { useState } from 'react';
-import { Activity, Clock, Gavel, TrendingUp, AlertCircle, RefreshCw } from 'lucide-react';
+import { Activity, Clock, Gavel, TrendingUp, AlertCircle, RefreshCw, Calendar } from 'lucide-react';
+
+const liveAuctions = [
+  {
+    id: 'LOT-A492',
+    title: 'Premium Egyptian Cotton Shirting',
+    desc: '10,000 meters of high-grade, long-staple Egyptian cotton shirting fabric in assorted colors.',
+    highestBidder: 'ID-88X',
+    timeLeft: '00:45:12',
+    bids: 24,
+    status: 'ending',
+    image: 'https://images.pexels.com/photos/9594940/pexels-photo-9594940.jpeg',
+    date: 'Oct 29, 2023',
+  },
+  {
+    id: 'LOT-B811',
+    title: 'Silk Blend Festival Kurtas',
+    desc: '500 sets of premium silk blend men\'s festival wear with jacquard borders and fine embroidery.',
+    highestBidder: 'ID-42A',
+    timeLeft: '02:15:00',
+    bids: 8,
+    status: 'normal',
+    image: 'https://images.pexels.com/photos/28113668/pexels-photo-28113668.jpeg',
+    date: 'Oct 28, 2023',
+  },
+  {
+    id: 'LOT-C102',
+    title: 'Velvet Upholstery Fabric',
+    desc: '2,500 meters of luxury heavy-weight velvet upholstery fabric for sofas and curtains.',
+    highestBidder: 'ID-99K',
+    timeLeft: '00:05:40',
+    bids: 42,
+    status: 'hot',
+    image: 'https://images.pexels.com/photos/35009417/pexels-photo-35009417.jpeg',
+    date: 'Oct 27, 2023',
+  },
+  {
+    id: 'LOT-D330',
+    title: 'Banarasi Brocade Sarees',
+    desc: 'Exclusive lot of 200 handloom Banarasi brocade sarees with gold zari thread work.',
+    highestBidder: 'ID-17C',
+    timeLeft: '04:00:00',
+    bids: 15,
+    status: 'normal',
+    image: 'https://images.pexels.com/photos/37045290/pexels-photo-37045290.jpeg',
+    date: 'Oct 26, 2023',
+  },
+  {
+    id: 'LOT-E504',
+    title: 'Royal Chanderi Silk Set',
+    desc: '300 pieces of pure Chanderi silk dress material with block print borders, festive grade.',
+    highestBidder: 'ID-55F',
+    timeLeft: '01:30:20',
+    bids: 19,
+    status: 'normal',
+    image: 'https://images.pexels.com/photos/11840170/pexels-photo-11840170.jpeg',
+    date: 'Oct 25, 2023',
+  },
+  {
+    id: 'LOT-F210',
+    title: 'Luxury Cotton Bedsheet Set',
+    desc: '1,200 sets of 400TC Egyptian cotton bedsheets in king and queen sizes, earth tones.',
+    highestBidder: 'ID-30J',
+    timeLeft: '03:10:00',
+    bids: 11,
+    status: 'normal',
+    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=600&auto=format&fit=crop',
+    date: 'Oct 24, 2023',
+  },
+];
+
+const statusBadge = (status) => {
+  if (status === 'ending') return 'bg-red-500/10 text-red-400 border border-red-500/30';
+  if (status === 'hot') return 'bg-orange-500/10 text-orange-400 border border-orange-500/30';
+  return 'bg-slate-700/40 text-slate-400 border border-slate-700';
+};
+
+const statusLabel = (status) => {
+  if (status === 'ending') return 'Ending Soon';
+  if (status === 'hot') return 'Hot Bidding';
+  return 'Live';
+};
 
 const EAuction = () => {
   const [activeTab, setActiveTab] = useState('live');
 
-  const liveAuctions = [
-    { id: 'LOT-A492', desc: 'Egyptian Cotton Shirting 10,000 Mtrs', highestBidder: 'ID-88X', timeLeft: '00:45:12', bids: 24, status: 'hot', image: 'https://images.unsplash.com/photo-1594938298596-39fd3c907106?q=80&w=200&auto=format&fit=crop' },
-    { id: 'LOT-B811', desc: 'Silk Blend Festival Kurtas 500 Sets', highestBidder: 'ID-42A', timeLeft: '02:15:00', bids: 8, status: 'normal', image: 'https://images.unsplash.com/photo-1584346808092-23315c138a06?q=80&w=200&auto=format&fit=crop' },
-    { id: 'LOT-C102', desc: 'Velvet Upholstery Surplus 2,500 Mtrs', highestBidder: 'ID-99K', timeLeft: '00:05:40', bids: 42, status: 'ending', image: 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?q=80&w=200&auto=format&fit=crop' }
-  ];
-
   return (
     <div className="bg-[#0B1121] min-h-screen text-slate-300 font-light pb-24">
-      {/* Header / Ticker Area */}
-      <div className="bg-accent text-primary font-bold text-xs uppercase tracking-[0.2em] py-2 px-4 flex items-center justify-between border-b border-primary/20">
+
+      {/* Live Ticker */}
+      <div className="bg-accent text-primary font-bold text-xs tracking-wider py-2 px-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
           <span>Live e-Auction Server: Connected</span>
         </div>
-        <div className="flex items-center gap-4 hidden sm:flex">
+        <div className="hidden sm:flex items-center gap-4">
           <span>Total Volume Traded Today: 1.4M Units</span>
           <span>Active Bidders: 342</span>
         </div>
       </div>
 
-      <div className="container-custom max-w-6xl pt-16">
-        <div className="text-center mb-16">
-          <h1 className="font-heading text-5xl md:text-6xl font-bold text-white mb-6">Wholesale e-Auction</h1>
+      <div className="container-custom max-w-7xl pt-16">
+
+        {/* Page Header */}
+        <div className="text-center mb-14">
+          <h1 className="font-heading text-3xl md:text-5xl font-bold text-white mb-6">Wholesale e-Auction</h1>
           <p className="max-w-2xl mx-auto text-slate-400 text-lg">
             Bid on premium surplus lots and exclusive factory releases from our 12 Collections in real-time. Unbeatable prices for bulk buyers.
           </p>
         </div>
 
-        {/* Dashboard Panels */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-          
+
+        {/* Tab Navigation + Cards — shown first */}
+        <div className="bg-[#121A2F] border border-slate-800 rounded-xl overflow-hidden mb-12">
+          <div className="flex border-b border-slate-800">
+            {['live', 'upcoming', 'closed'].map((tab) => (
+              <button
+                key={tab}
+                className={`px-8 py-4 text-xs font-bold tracking-wider capitalize transition-colors ${activeTab === tab ? 'border-b-2 border-accent text-white' : 'text-slate-500 hover:text-slate-300'}`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab === 'live' ? 'Live Lots' : tab === 'upcoming' ? 'Upcoming' : 'Recently Closed'}
+              </button>
+            ))}
+          </div>
+
+          {/* Auction Cards Grid */}
+          <div className="p-6 md:p-8">
+            <div className="flex justify-between items-center mb-8">
+              <h3 className="text-xl font-heading font-bold text-white">
+                {activeTab === 'live' ? 'Active Bidding Floor' : activeTab === 'upcoming' ? 'Upcoming Lots' : 'Closed Auctions'}
+              </h3>
+              <button className="flex items-center gap-2 text-xs tracking-wider text-slate-400 hover:text-white transition-colors">
+                <RefreshCw className="w-3.5 h-3.5" /> Refresh
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {liveAuctions.map((lot, idx) => (
+                <div
+                  key={idx}
+                  className={`rounded-xl overflow-hidden border flex flex-col transition-all hover:scale-[1.02] duration-200 ${lot.status === 'ending' ? 'border-red-500/30' : 'border-slate-800'
+                    } bg-[#0E1629]`}
+                >
+                  {/* Image */}
+                  <div className="relative h-44 overflow-hidden">
+                    <img src={lot.image} alt={lot.title} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0E1629] via-transparent to-transparent" />
+                    <span className={`absolute top-3 left-3 text-[10px] font-bold tracking-wider px-2.5 py-1 rounded-full ${statusBadge(lot.status)}`}>
+                      {lot.status === 'ending' && <AlertCircle className="w-3 h-3 inline mr-1" />}
+                      {statusLabel(lot.status)}
+                    </span>
+                    <span className="absolute top-3 right-3 bg-black/60 text-accent text-[10px] font-bold px-2 py-0.5 rounded">
+                      {lot.id}
+                    </span>
+                  </div>
+
+                  {/* Card Body */}
+                  <div className="p-5 flex flex-col gap-3 flex-1">
+                    <h4 className="font-heading text-base font-bold text-white leading-snug">{lot.title}</h4>
+                    <p className="text-xs text-slate-400 leading-relaxed line-clamp-2">{lot.desc}</p>
+                    <div className="flex items-center gap-1.5 text-[10px] text-slate-500 font-semibold">
+                      <Calendar className="w-3 h-3" /> {lot.date}
+                    </div>
+                    <div className="border-t border-slate-800 mt-1" />
+
+
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Dashboard Stats — below cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
           <div className="bg-[#121A2F] border border-slate-800 p-6 rounded-xl flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-slate-800/50 flex items-center justify-center border border-slate-700">
               <Activity className="w-5 h-5 text-accent" />
             </div>
             <div>
-              <p className="text-xs uppercase tracking-widest text-slate-500 font-bold mb-1">Active Lots</p>
-              <p className="text-3xl font-heading font-bold text-white">12</p>
+              <p className="text-xs tracking-wider text-slate-500 font-bold mb-1">Active Bid Volume</p>
+              <p className="text-3xl font-heading font-bold text-white">45,280 <span className="text-xs text-slate-500 font-normal">Mtrs</span></p>
             </div>
           </div>
-          
+
           <div className="bg-[#121A2F] border border-slate-800 p-6 rounded-xl flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-slate-800/50 flex items-center justify-center border border-slate-700">
               <TrendingUp className="w-5 h-5 text-accent" />
             </div>
             <div>
-              <p className="text-xs uppercase tracking-widest text-slate-500 font-bold mb-1">Average Discount</p>
+              <p className="text-xs tracking-wider text-slate-500 font-bold mb-1">Average Discount</p>
               <p className="text-3xl font-heading font-bold text-white">24%</p>
             </div>
           </div>
 
           <div className="bg-[#121A2F] border border-slate-800 p-6 rounded-xl flex items-center justify-between">
             <div>
-              <p className="text-xs uppercase tracking-widest text-slate-500 font-bold mb-2">Next Major Drop</p>
+              <p className="text-xs tracking-wider text-slate-500 font-bold mb-2">Next Major Drop</p>
               <p className="text-lg font-bold text-white">Silk Collection Release</p>
               <p className="text-sm text-accent mt-1">Tomorrow, 10:00 AM IST</p>
             </div>
             <Clock className="w-8 h-8 text-slate-700" />
-          </div>
-
-        </div>
-
-        {/* Live Auction Table/Grid */}
-        <div className="bg-[#121A2F] border border-slate-800 rounded-xl overflow-hidden">
-          <div className="flex border-b border-slate-800">
-            <button 
-              className={`px-8 py-4 text-xs font-bold uppercase tracking-widest transition-colors ${activeTab === 'live' ? 'border-b-2 border-accent text-white' : 'text-slate-500 hover:text-slate-300'}`}
-              onClick={() => setActiveTab('live')}
-            >
-              Live Lots
-            </button>
-            <button 
-              className={`px-8 py-4 text-xs font-bold uppercase tracking-widest transition-colors ${activeTab === 'upcoming' ? 'border-b-2 border-accent text-white' : 'text-slate-500 hover:text-slate-300'}`}
-              onClick={() => setActiveTab('upcoming')}
-            >
-              Upcoming
-            </button>
-            <button 
-              className={`px-8 py-4 text-xs font-bold uppercase tracking-widest transition-colors ${activeTab === 'closed' ? 'border-b-2 border-accent text-white' : 'text-slate-500 hover:text-slate-300'}`}
-              onClick={() => setActiveTab('closed')}
-            >
-              Recently Closed
-            </button>
-          </div>
-
-          <div className="p-6 md:p-8">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-xl font-heading font-bold text-white">Active Bidding Floor</h3>
-              <button className="flex items-center gap-2 text-xs uppercase tracking-widest text-slate-400 hover:text-white transition-colors">
-                <RefreshCw className="w-3.5 h-3.5" /> Refresh List
-              </button>
-            </div>
-
-            <div className="space-y-4">
-              {liveAuctions.map((lot, idx) => (
-                <div key={idx} className={`border rounded-lg p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 transition-all hover:bg-slate-800/30 ${
-                  lot.status === 'ending' ? 'border-red-500/30 bg-red-500/5' : 'border-slate-800'
-                }`}>
-                  <div className="flex-1 flex flex-col md:flex-row gap-4 md:items-center">
-                    <img src={lot.image} alt={lot.desc} className="w-20 h-20 object-cover rounded shadow-md border border-slate-700 shrink-0" />
-                    <div>
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="text-accent text-[10px] font-bold uppercase tracking-widest bg-accent/10 px-2 py-0.5 rounded">{lot.id}</span>
-                        {lot.status === 'ending' && <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-red-400"><AlertCircle className="w-3 h-3" /> Ending Soon</span>}
-                      </div>
-                      <h4 className="text-lg font-bold text-white">{lot.desc}</h4>
-                      <p className="text-xs text-slate-500 mt-1">{lot.bids} Bids Placed</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-8 w-full md:w-auto">
-                    <div className="text-right">
-                      <p className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1">Time Left</p>
-                      <p className={`text-xl font-heading font-bold ${lot.status === 'ending' ? 'text-red-400' : 'text-white'}`}>{lot.timeLeft}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1">Highest Bidder</p>
-                      <p className="text-2xl font-heading font-bold text-accent">{lot.highestBidder}</p>
-                    </div>
-                    <button className="bg-accent text-primary px-6 py-3 rounded text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-2">
-                      <Gavel className="w-4 h-4" /> Bid Now
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-
           </div>
         </div>
 

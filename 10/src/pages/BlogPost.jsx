@@ -13,7 +13,7 @@ const BlogPost = () => {
     readTime: '8 min read',
     author: 'Aarav Patel',
     authorRole: 'Head of Textile Sourcing',
-    heroImage: 'https://images.unsplash.com/photo-1584346808092-23315c138a06?q=80&w=2000&auto=format&fit=crop',
+    heroImage: 'https://images.pexels.com/photos/34692229/pexels-photo-34692229.jpeg',
     content: `
       <p class="lead">In an era dominated by synthetic blends and fast fashion, a quiet revolution is taking place at the highest echelons of textile retail. Pure silk, once relegated strictly to bridal wear and occasional ethnic attire, is experiencing a massive resurgence in everyday luxury collections.</p>
       
@@ -42,11 +42,11 @@ const BlogPost = () => {
 
   return (
     <div className="bg-background min-h-screen">
-      
+
       {/* Editorial Navigation */}
       <div className="sticky top-[60px] md:top-[70px] z-30 bg-white/80 backdrop-blur-md border-b border-slate-200 py-4">
         <div className="container-custom flex justify-between items-center">
-          <RouterLink to="/blog" className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-primary transition-colors">
+          <RouterLink to="/blog" className="flex items-center gap-2 text-xs font-bold tracking-wider text-slate-500 hover:text-primary transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to Journal
           </RouterLink>
           <div className="flex gap-4">
@@ -59,13 +59,13 @@ const BlogPost = () => {
       {/* Article Header */}
       <article className="pb-24">
         <header className="container-custom max-w-4xl pt-16 pb-12 text-center">
-          <span className="text-accent text-[10px] font-bold uppercase tracking-[0.2em] mb-6 block">
+          <span className="text-accent text-[10px] font-bold tracking-[0.2em] mb-6 block">
             {post.category}
           </span>
           <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary mb-8 leading-tight">
             {post.title}
           </h1>
-          <div className="flex items-center justify-center gap-4 text-xs font-bold uppercase tracking-widest text-slate-400">
+          <div className="flex items-center justify-center gap-4 text-xs font-bold tracking-wider text-slate-400">
             <span>{post.date}</span>
             <span className="w-1 h-1 bg-slate-300 rounded-full"></span>
             <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {post.readTime}</span>
@@ -74,19 +74,19 @@ const BlogPost = () => {
 
         {/* Hero Image */}
         <div className="w-full h-[60vh] max-h-[600px] mb-16">
-          <img 
-            src={post.heroImage} 
-            alt={post.title} 
-            className="w-full h-full object-cover" 
+          <img
+            src={post.heroImage}
+            alt={post.title}
+            className="w-full h-full object-cover"
           />
         </div>
 
         {/* Article Body */}
         <div className="container-custom max-w-3xl flex flex-col md:flex-row gap-12">
-          
+
           {/* Social Share Sidebar */}
           <div className="hidden md:flex flex-col gap-6 pt-2 text-slate-400 sticky top-[150px] h-fit">
-            <span className="text-[9px] font-bold uppercase tracking-widest text-slate-300 transform -rotate-90 origin-left mb-8 block translate-x-3">Share</span>
+            <span className="text-[9px] font-bold tracking-wider text-slate-300 transform -rotate-90 origin-left mb-8 block translate-x-3">Share</span>
             <a href="#" className="hover:text-primary transition-colors"><LinkIcon className="w-4 h-4" /></a>
             <a href="#" className="hover:text-primary transition-colors"><Mail className="w-4 h-4" /></a>
             <a href="#" className="hover:text-primary transition-colors"><MessageCircle className="w-4 h-4" /></a>
@@ -94,7 +94,7 @@ const BlogPost = () => {
 
           {/* Main Content */}
           <div className="flex-1">
-            <div 
+            <div
               className="prose prose-slate prose-lg max-w-none 
                 prose-headings:font-heading prose-headings:font-bold prose-headings:text-primary
                 prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
@@ -115,7 +115,7 @@ const BlogPost = () => {
                 <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" alt="Author" className="w-full h-full object-cover" />
               </div>
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Written By</p>
+                <p className="text-[10px] font-bold tracking-wider text-slate-400 mb-1">Written By</p>
                 <h4 className="font-heading text-xl font-bold text-primary">{post.author}</h4>
                 <p className="text-sm font-light text-slate-500">{post.authorRole}</p>
               </div>

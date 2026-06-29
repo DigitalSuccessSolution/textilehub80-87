@@ -18,8 +18,7 @@ const TradeEnquiry = () => {
           </div>
           
           <div className="relative z-10 max-w-lg">
-            <span className="text-accent font-bold uppercase tracking-[0.25em] text-[10px] mb-6 block">B2B Portal</span>
-            <h1 className="font-heading text-5xl md:text-6xl font-bold mb-8 leading-tight">Trade Enquiry</h1>
+            <h1 className="font-heading text-3xl md:text-5xl font-bold mb-8 leading-tight">Trade Enquiry</h1>
             <p className="text-slate-300 font-light text-lg mb-12 leading-relaxed">
               Join a network of over 1,200 premium retailers worldwide. Submit your business credentials below to initiate a wholesale partnership and access our exclusive 12 Collections catalog.
             </p>
@@ -58,17 +57,17 @@ const TradeEnquiry = () => {
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">First Name</label>
+                  <label className="block text-[10px] tracking-wider font-bold text-slate-400 mb-2">First Name</label>
                   <input type="text" className="w-full border-b-2 border-slate-200 text-primary py-2 focus:border-accent focus:outline-none transition-colors bg-transparent" placeholder="John" />
                 </div>
                 <div>
-                  <label className="block text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">Last Name</label>
+                  <label className="block text-[10px] tracking-wider font-bold text-slate-400 mb-2">Last Name</label>
                   <input type="text" className="w-full border-b-2 border-slate-200 text-primary py-2 focus:border-accent focus:outline-none transition-colors bg-transparent" placeholder="Doe" />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">Company / Retail Store Name</label>
+                <label className="block text-[10px] tracking-wider font-bold text-slate-400 mb-2">Company / Retail Store Name</label>
                 <div className="relative">
                   <Globe className="absolute left-0 top-2.5 w-4 h-4 text-slate-300" />
                   <input type="text" className="w-full border-b-2 border-slate-200 text-primary py-2 pl-7 focus:border-accent focus:outline-none transition-colors bg-transparent" placeholder="Acme Textiles Ltd." />
@@ -76,12 +75,12 @@ const TradeEnquiry = () => {
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">GSTIN / Registration Number</label>
+                <label className="block text-[10px] tracking-wider font-bold text-slate-400 mb-2">GSTIN / Registration Number</label>
                 <input type="text" className="w-full border-b-2 border-slate-200 text-primary py-2 focus:border-accent focus:outline-none transition-colors bg-transparent uppercase" placeholder="22AAAAA0000A1Z5" />
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">Nature of Enquiry</label>
+                <label className="block text-[10px] tracking-wider font-bold text-slate-400 mb-2">Nature of Enquiry</label>
                 <select className="w-full border-b-2 border-slate-200 text-primary py-2 focus:border-accent focus:outline-none transition-colors bg-transparent appearance-none">
                   <option>Wholesale Order (Ready Stock)</option>
                   <option>Custom Manufacturing</option>
@@ -91,7 +90,7 @@ const TradeEnquiry = () => {
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">Message & Requirements</label>
+                <label className="block text-[10px] tracking-wider font-bold text-slate-400 mb-2">Message & Requirements</label>
                 <div className="relative">
                   <MessageSquare className="absolute left-0 top-2.5 w-4 h-4 text-slate-300" />
                   <textarea rows="3" className="w-full border-b-2 border-slate-200 text-primary py-2 pl-7 focus:border-accent focus:outline-none transition-colors bg-transparent resize-none" placeholder="Briefly describe your estimated volume and specific interests..."></textarea>
@@ -99,7 +98,7 @@ const TradeEnquiry = () => {
               </div>
 
               <div className="pt-6">
-                <button type="button" className="w-full bg-primary text-white py-4 text-xs font-bold uppercase tracking-widest hover:bg-accent transition-colors flex items-center justify-center gap-2">
+                <button type="button" className="w-full bg-primary text-white py-4 text-xs font-bold tracking-wider hover:bg-accent transition-colors flex items-center justify-center gap-2">
                   Submit Enquiry <Send className="w-4 h-4" />
                 </button>
               </div>
