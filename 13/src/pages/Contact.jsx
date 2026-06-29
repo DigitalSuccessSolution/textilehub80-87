@@ -72,14 +72,18 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Map Placeholder */}
-        <div className="w-full h-96 bg-muted rounded-2xl border border-border flex items-center justify-center relative overflow-hidden group">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-luminosity group-hover:opacity-60 group-hover:scale-105 transition-all duration-1000"></div>
-          <div className="relative z-10 bg-white/90 backdrop-blur p-6 rounded-xl shadow-lg border border-white flex flex-col items-center">
-            <MapPin className="w-8 h-8 text-accent mb-2" />
-            <h4 className="font-bold text-primary text-lg mb-1">Surat Textile Hub</h4>
-            <p className="text-xs text-muted-foreground font-medium uppercase tracking-widest">Interactive Map Disabled</p>
-          </div>
+        {/* Live Interactive Google Map */}
+        <div className="w-full h-[450px] bg-muted rounded-2xl border border-border overflow-hidden shadow-md">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14878.694605929606!2d72.86336335!3d21.20512165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f24c30c3a2f%3A0xe7a5c8df59fcd7e0!2sTextile%20Market%2C%20Surat%2C%20Gujarat%2C%20India!5e0!3m2!1sen!2sin!4v1698585800000!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Texmart Location Map"
+          ></iframe>
         </div>
 
       </div>

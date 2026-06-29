@@ -5,7 +5,7 @@ import { Link as RouterLink } from 'react-router-dom';
 const BlogPost = () => {
   return (
     <div className="bg-background min-h-screen pt-24 pb-20">
-      
+
       {/* Top Navigation */}
       <div className="container-custom mb-8">
         <RouterLink to="/blog" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors">
@@ -14,7 +14,7 @@ const BlogPost = () => {
       </div>
 
       <article className="container-custom max-w-4xl">
-        
+
         {/* Article Header */}
         <header className="text-center mb-12">
           <div className="flex items-center justify-center gap-4 text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-6">
@@ -37,16 +37,16 @@ const BlogPost = () => {
 
         {/* Hero Image */}
         <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-lg mb-16 border-4 border-white">
-          <img 
-            src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop" 
-            alt="Handloom Weaving" 
+          <img
+            src="https://images.pexels.com/photos/8100946/pexels-photo-8100946.jpeg"
+            alt="Handloom Weaving"
             className="w-full h-full object-cover"
           />
         </div>
 
         {/* Content */}
         <div className="prose prose-lg max-w-3xl mx-auto prose-headings:font-heading prose-headings:text-primary prose-p:text-muted-foreground prose-p:font-light prose-p:leading-relaxed prose-a:text-accent hover:prose-a:text-primary prose-blockquote:border-l-accent prose-blockquote:bg-muted/50 prose-blockquote:px-6 prose-blockquote:py-4 prose-blockquote:rounded-r-xl prose-blockquote:italic prose-blockquote:text-primary/80">
-          
+
           <p className="lead text-xl text-primary font-medium mb-8">
             Explore how modern designers are incorporating ancient weaving techniques into contemporary fashion, and why retailers should stock up on authentic handlooms.
           </p>
@@ -75,9 +75,9 @@ const BlogPost = () => {
           </ul>
 
           <div className="my-12">
-            <img 
-              src="https://images.unsplash.com/photo-1596455607563-ad6193f76b17?q=80&w=800&auto=format&fit=crop" 
-              alt="Artisan at work" 
+            <img
+              src="https://images.unsplash.com/photo-1596455607563-ad6193f76b17?q=80&w=800&auto=format&fit=crop"
+              alt="Artisan at work"
               className="w-full rounded-xl shadow-md border-2 border-white"
             />
             <span className="block text-center text-xs text-muted-foreground mt-3 italic">Traditional Banarasi weaving process</span>
@@ -103,7 +103,7 @@ const BlogPost = () => {
               <span className="bg-muted px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary">Trends</span>
             </div>
           </div>
-          
+
           <div className="flex items-center gap-4">
             <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Share:</span>
             <div className="flex gap-2">

@@ -11,7 +11,7 @@ const Blog = () => {
       category: "Industry Trends",
       date: "Oct 12, 2023",
       author: "Priya Sharma",
-      img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop",
+      img: "https://images.pexels.com/photos/8100946/pexels-photo-8100946.jpeg",
       featured: true
     },
     {
@@ -21,7 +21,7 @@ const Blog = () => {
       category: "Textile Education",
       date: "Sep 28, 2023",
       author: "Vikram Mehta",
-      img: "https://images.unsplash.com/photo-1583391733958-6115f1108609?q=80&w=600&auto=format&fit=crop",
+      img: "https://images.pexels.com/photos/6766232/pexels-photo-6766232.jpeg",
       featured: false
     },
     {
@@ -31,7 +31,7 @@ const Blog = () => {
       category: "Sustainability",
       date: "Sep 15, 2023",
       author: "Anita Desai",
-      img: "https://images.unsplash.com/photo-1596455607563-ad6193f76b17?q=80&w=600&auto=format&fit=crop",
+      img: "https://images.pexels.com/photos/6850882/pexels-photo-6850882.jpeg",
       featured: false
     },
     {
@@ -62,7 +62,7 @@ const Blog = () => {
           </p>
         </div>
       </div>
-      
+
       <div className="container-custom pb-20">
 
         {/* Featured Post */}

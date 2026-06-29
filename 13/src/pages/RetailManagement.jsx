@@ -18,60 +18,7 @@ const RetailManagement = () => {
       </div>
 
       <div className="container-custom">
-        {/* Dashboard Mockup / Hero Image */}
-        <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-20 border border-border">
-          <div className="bg-white px-4 py-3 border-b border-border flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-red-400"></div>
-            <div className="w-3 h-3 rounded-full bg-amber-400"></div>
-            <div className="w-3 h-3 rounded-full bg-green-400"></div>
-            <div className="mx-auto bg-muted px-32 py-1 rounded-md text-[10px] text-muted-foreground font-medium flex items-center gap-2">
-              <Lock className="w-3 h-3" /> https://rms.texmart.com
-            </div>
-          </div>
-          <div className="bg-muted p-8 md:p-12">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              
-              {/* Sidebar */}
-              <div className="bg-white rounded-xl shadow-sm border border-border p-6 hidden md:block">
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">T</div>
-                  <span className="font-heading font-bold text-primary">RMS Portal</span>
-                </div>
-                <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                  <li className="text-primary flex items-center gap-3"><BarChart3 className="w-4 h-4" /> Overview</li>
-                  <li className="flex items-center gap-3"><Box className="w-4 h-4" /> Inventory</li>
-                  <li className="flex items-center gap-3"><Users className="w-4 h-4" /> Staff</li>
-                  <li className="flex items-center gap-3"><Map className="w-4 h-4" /> Logistics</li>
-                  <li className="flex items-center gap-3 pt-8 mt-8 border-t border-border"><Settings className="w-4 h-4" /> Settings</li>
-                </ul>
-              </div>
-              
-              {/* Main Dash Area */}
-              <div className="md:col-span-3 space-y-6">
-                <div className="grid grid-cols-3 gap-6">
-                  <div className="bg-white p-6 rounded-xl shadow-sm border border-border">
-                    <span className="text-[9px] uppercase tracking-widest text-muted-foreground font-bold mb-2 block">Monthly Revenue</span>
-                    <span className="text-2xl font-bold text-primary">₹2.4M</span>
-                  </div>
-                  <div className="bg-white p-6 rounded-xl shadow-sm border border-border">
-                    <span className="text-[9px] uppercase tracking-widest text-muted-foreground font-bold mb-2 block">Active Orders</span>
-                    <span className="text-2xl font-bold text-primary">142</span>
-                  </div>
-                  <div className="bg-white p-6 rounded-xl shadow-sm border border-border">
-                    <span className="text-[9px] uppercase tracking-widest text-muted-foreground font-bold mb-2 block">Stock Level</span>
-                    <span className="text-2xl font-bold text-accent">Low</span>
-                  </div>
-                </div>
-                <div className="bg-white h-48 rounded-xl shadow-sm border border-border flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-muted via-white to-white"></div>
-                  <BarChart3 className="w-16 h-16 text-muted-foreground/20 relative z-10" />
-                  <span className="absolute bottom-4 left-6 text-xs font-bold uppercase tracking-widest text-primary">Sales Trajectory</span>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
+
 
         {/* Features Grid */}
         <div className="text-center mb-12">

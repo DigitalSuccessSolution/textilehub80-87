@@ -12,18 +12,18 @@ const Footer = () => {
 
 
       <div className="container-custom pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           
           {/* Brand Col */}
-          <div className="lg:col-span-4 pr-0 lg:pr-8">
+          <div className="col-span-2 lg:col-span-4 pr-0 lg:pr-8">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-transparent text-primary border border-primary rounded-full flex items-center justify-center font-heading font-bold text-2xl">
+              <div className="w-10 h-10 bg-transparent text-primary border border-primary rounded-full flex items-center justify-center font-heading font-bold text-xl">
                 <div className="w-6 h-6 flex items-center justify-center">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full"><path d="M12 2L2 12l10 10 10-10L12 2z"/><path d="M12 8v8M8 12h8"/></svg>
                 </div>
               </div>
               <div>
-                <h2 className="font-heading font-bold text-xl md:text-2xl text-primary leading-none tracking-tight">TEXMART</h2>
+                <h2 className="font-heading font-bold text-xl md:text-2xl text-primary leading-none tracking-tight">Texmart</h2>
                 <span className="text-[8px] md:text-[10px] text-accent uppercase tracking-widest font-bold">Textile Retail Mall</span>
               </div>
             </Link>
@@ -31,15 +31,23 @@ const Footer = () => {
               Empowering businesses and preserving textiles through trust, quality, and tradition. We bring generations of craftsmanship to the modern retail landscape.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-primary hover:bg-primary hover:border-primary hover:text-white transition-all"><Share2 className="w-3.5 h-3.5" /></a>
-              <a href="#" className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-primary hover:bg-primary hover:border-primary hover:text-white transition-all"><MessageCircle className="w-3.5 h-3.5" /></a>
-              <a href="#" className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-primary hover:bg-primary hover:border-primary hover:text-white transition-all"><Mail className="w-3.5 h-3.5" /></a>
-              <a href="#" className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-primary hover:bg-primary hover:border-primary hover:text-white transition-all"><Video className="w-3.5 h-3.5" /></a>
+              <a href="#" className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-primary hover:bg-primary hover:border-primary hover:text-white transition-all" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+              </a>
+              <a href="#" className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-primary hover:bg-primary hover:border-primary hover:text-white transition-all" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+              </a>
+              <a href="#" className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-primary hover:bg-primary hover:border-primary hover:text-white transition-all" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
+              </a>
+              <a href="#" className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-primary hover:bg-primary hover:border-primary hover:text-white transition-all" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" /><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" /></svg>
+              </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2">
+          <div className="col-span-1 lg:col-span-2">
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-primary mb-6">Quick Links</h4>
             <ul className="space-y-3 text-sm text-muted-foreground font-light">
               <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
@@ -51,28 +59,27 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Resources & Support */}
-          <div className="lg:col-span-3 grid grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-[10px] font-bold uppercase tracking-widest text-primary mb-6">Resources</h4>
-              <ul className="space-y-3 text-sm text-muted-foreground font-light">
-                <li><Link to="/trade-circular" className="hover:text-accent transition-colors">Trade Circulars</Link></li>
-                <li><Link to="/notice-board" className="hover:text-accent transition-colors">Notice Board</Link></li>
-                <li><Link to="/faq" className="hover:text-accent transition-colors">FAQ</Link></li>
-                <li><Link to="/reviews" className="hover:text-accent transition-colors">Customer Review</Link></li>
-                <li><Link to="/support" className="hover:text-accent transition-colors">Support</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-[10px] font-bold uppercase tracking-widest text-primary mb-6">Help & Support</h4>
-              <ul className="space-y-3 text-sm text-muted-foreground font-light">
-                <li><Link to="/contact" className="hover:text-accent transition-colors">Live Chat</Link></li>
-              </ul>
-            </div>
+          {/* Resources */}
+          <div className="col-span-1 lg:col-span-2">
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-primary mb-6">Resources</h4>
+            <ul className="space-y-3 text-sm text-muted-foreground font-light">
+              <li><Link to="/trade-circular" className="hover:text-accent transition-colors">Trade Circulars</Link></li>
+              <li><Link to="/notice-board" className="hover:text-accent transition-colors">Notice Board</Link></li>
+              <li><Link to="/faq" className="hover:text-accent transition-colors">FAQ</Link></li>
+              <li><Link to="/reviews" className="hover:text-accent transition-colors">Customer Review</Link></li>
+            </ul>
+          </div>
+
+          {/* Help */}
+          <div className="col-span-1 lg:col-span-2">
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-primary mb-6">Help</h4>
+            <ul className="space-y-3 text-sm text-muted-foreground font-light">
+              <li><Link to="/contact" className="hover:text-accent transition-colors">Contact Us</Link></li>
+            </ul>
           </div>
 
           {/* Contact Info */}
-          <div className="lg:col-span-3">
+          <div className="col-span-2 lg:col-span-3">
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-primary mb-6">Contact Us</h4>
             <ul className="space-y-4 text-xs text-muted-foreground font-light">
               <li className="flex items-start gap-3">
@@ -87,27 +94,9 @@ const Footer = () => {
                 <Mail className="w-4 h-4 text-accent shrink-0" />
                 <span>info@texmart.com</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Video className="w-4 h-4 text-accent shrink-0" />
-                <span>www.texmart.com</span>
-              </li>
             </ul>
           </div>
         </div>
-      </div>
-
-      {/* Floating Live Chat Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <button className="bg-primary text-white px-5 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-xl flex items-center gap-2 hover:scale-105 transition-transform border border-white/20">
-          <MessageCircle className="w-4 h-4" /> Live Chat
-        </button>
-      </div>
-      
-      {/* WhatsApp Button (Bottom Left) */}
-      <div className="fixed bottom-6 left-6 z-50">
-        <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center shadow-xl hover:scale-105 transition-transform border-2 border-white">
-          <MessageCircle className="w-6 h-6 fill-current" />
-        </a>
       </div>
     </footer>
   );
