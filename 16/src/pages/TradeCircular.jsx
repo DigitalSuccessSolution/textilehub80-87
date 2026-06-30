@@ -7,7 +7,7 @@ const TradeCircular = () => {
     { id: 'TC-2023-088', date: 'Oct 02, 2023', title: 'Upcoming Festive Logistics Schedule & Deadlines', type: 'Logistics' },
     { id: 'TC-2023-087', date: 'Sep 28, 2023', title: 'New GST Slab Implementation for Textile Blends', type: 'Tax & Compliance' },
     { id: 'TC-2023-086', date: 'Sep 15, 2023', title: 'Discontinuation of Vintage Weave Series', type: 'Inventory Notice' },
-    { id: 'TC-2023-085', date: 'Aug 30, 2023', title: 'e-Auction Portal Maintenance Schedule', type: 'System Alert' },
+    { id: 'TC-2023-085', date: 'Aug 30, 2023', title: 'e-auction Portal Maintenance Schedule', type: 'System Alert' },
   ];
 
   return (
@@ -28,7 +28,7 @@ const TradeCircular = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-border pb-8 mb-12">
           <div>
-            <span className="text-accent font-bold uppercase tracking-[0.2em] text-[10px] mb-3 flex items-center gap-2">
+            <span className="text-accent font-bold  tracking-[0.2em] text-[10px] mb-3 flex items-center gap-2">
               <Bell className="w-3.5 h-3.5" /> Official Communications
             </span>
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary">Trade Circulars</h1>
@@ -37,7 +37,7 @@ const TradeCircular = () => {
             <p className="text-muted-foreground font-light text-sm max-w-xs md:text-right hidden md:block">
               Stay updated with official B2B notifications, policy changes, and pricing updates.
             </p>
-            <button className="bg-card border border-border text-primary px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 shadow-sm hover:shadow-md hover:border-accent/20 transition-all">
+            <button className="bg-card border border-border text-primary px-4 py-2 rounded-full text-[10px] font-bold  tracking-widest flex items-center gap-2 shadow-sm hover:shadow-md hover:border-accent/20 transition-all">
               <Filter className="w-3 h-3" /> Filter Circulars
             </button>
           </div>
@@ -46,7 +46,7 @@ const TradeCircular = () => {
         {/* Elegant List */}
         <div className="bg-card rounded-2xl shadow-sm border border-border overflow-hidden">
           {/* List Header */}
-          <div className="bg-muted grid grid-cols-12 gap-4 p-6 border-b border-border text-[10px] font-bold uppercase tracking-widest text-muted-foreground hidden md:grid">
+          <div className="bg-muted grid grid-cols-12 gap-4 p-6 border-b border-border text-[10px] font-bold  tracking-widest text-muted-foreground hidden md:grid">
             <div className="col-span-2">Date</div>
             <div className="col-span-2">Circular ID</div>
             <div className="col-span-5">Subject</div>
@@ -64,7 +64,7 @@ const TradeCircular = () => {
                 </div>
                 
                 <div className="md:col-span-2">
-                  <span className="inline-block border border-border bg-muted text-primary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
+                  <span className="inline-block border border-border bg-muted text-primary text-[10px] font-bold  tracking-widest px-3 py-1 rounded-full shadow-sm">
                     {circ.id}
                   </span>
                 </div>
@@ -73,7 +73,7 @@ const TradeCircular = () => {
                   <p className="font-bold text-primary text-base group-hover:text-accent transition-colors">
                     {circ.title}
                   </p>
-                  <p className="text-[10px] text-muted-foreground mt-1 uppercase tracking-wider font-bold">{circ.type}</p>
+                  <p className="text-[10px] text-muted-foreground mt-1  tracking-wider font-bold">{circ.type}</p>
                 </div>
                 
                 <div className="md:col-span-3 flex justify-start md:justify-end mt-4 md:mt-0 gap-2">
@@ -83,7 +83,7 @@ const TradeCircular = () => {
                   <button className="w-10 h-10 flex items-center justify-center text-primary bg-card border border-border rounded-full hover:border-accent hover:text-accent shadow-sm transition-all" title="Print Circular">
                     <Printer className="w-4 h-4" />
                   </button>
-                  <button className="bg-primary text-white border border-primary px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary/90 shadow-sm transition-all flex items-center gap-2" title="Download">
+                  <button className="bg-primary text-white border border-primary px-6 py-2 rounded-full text-[10px] font-bold  tracking-widest hover:bg-primary/90 shadow-sm transition-all flex items-center gap-2" title="Download">
                     <Download className="w-3 h-3" /> PDF
                   </button>
                 </div>
@@ -92,7 +92,7 @@ const TradeCircular = () => {
           </div>
           
           {/* Footer Pagination mock */}
-          <div className="bg-card p-6 border-t border-border flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+          <div className="bg-card p-6 border-t border-border flex justify-between items-center text-[10px] font-bold  tracking-widest text-muted-foreground">
             <button className="hover:text-primary transition-colors flex items-center gap-1"><ArrowRight className="w-3.5 h-3.5 rotate-180" /> Previous</button>
             <span className="bg-muted px-4 py-1.5 rounded-full">Page 1 of 12</span>
             <button className="hover:text-primary transition-colors flex items-center gap-1">Next <ArrowRight className="w-3.5 h-3.5" /></button>

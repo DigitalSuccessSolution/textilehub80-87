@@ -33,7 +33,7 @@ const PopupModal = () => {
             >
               <div className="relative aspect-video bg-slate-100">
                 <img 
-                  src="https://images.unsplash.com/photo-1584346808092-23315c138a06?q=80&w=800&auto=format&fit=crop" 
+                  src="https://images.pexels.com/photos/15195270/pexels-photo-15195270.jpeg" 
                   alt="Special Offer" 
                   className="w-full h-full object-cover"
                 />
@@ -49,18 +49,18 @@ const PopupModal = () => {
               </div>
               <div className="p-8 text-center space-y-5">
                 <p className="text-xs text-slate-400 leading-relaxed font-light">
-                  Join our exclusive B2B trade circle today. Access automated **e-Quotations**, bid in active **e-Auctions**, and view official **Trade Circulars** online.
+                  Join our exclusive B2B trade circle today. Access automated <strong>e-quotations</strong>, bid in active <strong>e-auctions</strong>, and view official <strong>Trade Circulars</strong> online.
                 </p>
                 <div className="flex gap-4 justify-center pt-2">
                   <button 
                     onClick={() => setIsOpen(false)}
-                    className="border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-md transition-colors"
+                    className="border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold  tracking-wider px-6 py-2.5 rounded-md transition-colors"
                   >
                     Dismiss
                   </button>
                   <a 
                     href="/trade-enquiry"
-                    className="bg-primary hover:bg-accent text-white hover:text-primary text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-md transition-colors"
+                    className="bg-primary hover:bg-accent text-white hover:text-primary text-xs font-bold  tracking-wider px-6 py-2.5 rounded-md transition-colors"
                   >
                     Register Now
                   </a>

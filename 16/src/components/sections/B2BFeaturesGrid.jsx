@@ -8,8 +8,8 @@ import {
 const features = [
   { name: 'Retail Management', icon: Building, path: '/retail-management', desc: 'Manage your retail operations' },
   { name: 'Trade Enquiry', icon: FileText, path: '/trade-enquiry', desc: 'Submit your trade queries' },
-  { name: 'e-Quotation', icon: ClipboardList, path: '/e-quotation', desc: 'Instant lot quotations' },
-  { name: 'e-Auction', icon: Hammer, path: '/e-auction', desc: 'Exclusive wholesale auctions' },
+  { name: 'e-quotation', icon: ClipboardList, path: '/e-quotation', desc: 'Instant lot quotations' },
+  { name: 'e-auction', icon: Hammer, path: '/e-auction', desc: 'Exclusive wholesale auctions' },
   { name: 'Trade Circular', icon: FileDown, path: '/trade-circular', desc: 'Official trade releases' },
   { name: 'Blog Page', icon: BookOpen, path: '/blog', desc: 'Textile industry insights' },
   { name: 'Notice Board', icon: Bell, path: '/notice-board', desc: 'Important announcements' },
@@ -30,7 +30,7 @@ const B2BFeaturesGrid = () => {
         <div className="text-center space-y-3">
           <div className="inline-flex items-center gap-3">
             <span className="w-10 h-0.5 bg-accent"></span>
-            <span className="text-[10px] font-bold text-accent uppercase tracking-widest">B2B Portals</span>
+            <span className="text-[10px] font-bold text-accent  tracking-widest">B2B Portals</span>
             <span className="w-10 h-0.5 bg-accent"></span>
           </div>
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
@@ -53,7 +53,7 @@ const B2BFeaturesGrid = () => {
                 <item.icon className="w-6 h-6 text-accent group-hover:text-white transition-colors" />
               </div>
               <div>
-                <span className="block text-[10px] font-bold text-white uppercase tracking-wide group-hover:text-white transition-colors leading-tight">
+                <span className="block text-[10px] font-bold text-white  tracking-wide group-hover:text-white transition-colors leading-tight">
                   {item.name}
                 </span>
                 <span className="block text-[9px] text-white/50 group-hover:text-white/80 mt-1 font-light leading-tight">

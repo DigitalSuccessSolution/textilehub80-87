@@ -20,7 +20,7 @@ const TrustBadges = () => {
                 {item.icon}
               </div>
               <div className="space-y-0.5">
-                <h4 className="text-xs font-heading font-bold text-white tracking-wider leading-none uppercase">{item.title}</h4>
+                <h4 className="text-xs font-heading font-bold text-white tracking-wider leading-none ">{item.title}</h4>
                 <p className="text-[10px] text-slate-300 font-medium leading-none mt-1">{item.desc}</p>
               </div>
             </div>

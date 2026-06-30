@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const About = () => {
   return (
     <div className="bg-background min-h-screen">
-      
+
       {/* Unified Violet/Peach Page Header */}
       <div className="relative py-20 lg:py-32 overflow-hidden border-b border-border">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80 z-0 opacity-100"></div>
@@ -23,21 +23,21 @@ const About = () => {
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="lg:w-1/2 relative">
             <div className="absolute -inset-4 bg-muted rounded-[40px] transform -rotate-3 z-0"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop" 
-              alt="Weaving" 
+            <img
+              src="https://images.pexels.com/photos/1487834/pexels-photo-1487834.jpeg"
+              alt="Weaving"
               className="w-full h-[500px] object-cover rounded-[30px] shadow-2xl relative z-10 border-8 border-white"
             />
             <div className="absolute -bottom-8 -right-8 bg-card p-6 rounded-2xl shadow-xl z-20 border border-border">
               <h4 className="font-heading text-4xl font-bold text-primary mb-1">20+</h4>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Years Experience</p>
+              <p className="text-[10px] font-bold  tracking-widest text-muted-foreground">Years Experience</p>
             </div>
           </div>
-          
+
           <div className="lg:w-1/2">
-            <span className="text-accent font-bold uppercase tracking-widest text-[10px] mb-4 block">Our Story</span>
+            <span className="text-accent font-bold  tracking-widest text-[10px] mb-4 block">Our Story</span>
             <h2 className="font-heading text-4xl md:text-5xl font-medium text-foreground mb-6 leading-tight">
-              Weaving Excellence<br/>in Every Fabric
+              Weaving Excellence<br />in Every Fabric
             </h2>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 font-light">
               Aurora started as a small trading house and has grown into a definitive partner for retail networks across India. Our commitment to quality and transparency has remained unchanged.
@@ -51,7 +51,7 @@ const About = () => {
                 <div className="w-12 h-12 rounded-full border-2 border-white bg-primary/20"></div>
                 <div className="w-12 h-12 rounded-full border-2 border-white bg-accent/20"></div>
               </div>
-              <span className="text-xs font-bold text-primary uppercase tracking-widest">500+ Partners</span>
+              <span className="text-xs font-bold text-primary  tracking-widest">500+ Partners</span>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@ const About = () => {
       <section className="bg-muted/40 py-24 border-y border-border">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <span className="text-primary font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">Our Philosophy</span>
+            <span className="text-primary font-bold  tracking-[0.2em] text-[10px] mb-4 block">Our Philosophy</span>
             <h2 className="font-heading text-3xl md:text-5xl font-medium text-foreground mb-6">Pillars of Our Success</h2>
           </div>
 
@@ -75,7 +75,7 @@ const About = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed font-light">Transparent dealings, fair pricing, and honest communication form the bedrock of our business relationships.</p>
               </div>
             </div>
-            
+
             <div className="bg-card border border-border/50 p-8 flex items-start gap-6 rounded-[30px] hover:shadow-lg transition-shadow group">
               <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
                 <Award className="w-8 h-8 text-accent" strokeWidth={1.5} />
@@ -102,7 +102,7 @@ const About = () => {
               </div>
               <div>
                 <h3 className="font-heading text-2xl font-medium text-foreground mb-3">Innovation</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed font-light">Pioneering digital B2B trade with our advanced e-Quotation and live e-Auction platforms.</p>
+                <p className="text-muted-foreground text-sm leading-relaxed font-light">Pioneering digital B2B trade with our advanced e-quotation and live e-auction platforms.</p>
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@ const About = () => {
         <p className="text-muted-foreground max-w-xl mx-auto font-light mb-10 text-sm">
           Whether you're a boutique looking for exclusive collections or a large retailer seeking bulk supply, Aurora Textile Mall is your definitive textile partner.
         </p>
-        <Link to="/trade-enquiry" className="bg-primary text-white px-8 py-4 rounded-full text-[11px] font-bold uppercase tracking-widest inline-flex items-center gap-2 hover:bg-primary/90 transition-all shadow-xl hover:-translate-y-1">
+        <Link to="/trade-enquiry" className="bg-primary text-white px-8 py-4 rounded-full text-[11px] font-bold  tracking-widest inline-flex items-center gap-2 hover:bg-primary/90 transition-all shadow-xl hover:-translate-y-1">
           Submit Trade Enquiry <ArrowRight className="w-4 h-4" />
         </Link>
       </section>

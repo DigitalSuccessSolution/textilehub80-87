@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Award, ChevronRight } from 'lucide-react';
+import { ArrowRight, Award, ChevronRight, ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
@@ -19,9 +19,9 @@ const Hero = () => {
   ];
 
   const banners = [
-    "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1594938298596-39fd3c907106?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1616627547584-bf28cee262db?q=80&w=800&auto=format&fit=crop"
+    "https://images.pexels.com/photos/36325970/pexels-photo-36325970.jpeg",
+    "https://images.pexels.com/photos/20420587/pexels-photo-20420587.jpeg",
+    "https://images.pexels.com/photos/20702679/pexels-photo-20702679.jpeg"
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -41,12 +41,12 @@ const Hero = () => {
 
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-          
+
           {/* Left Categories Sidebar */}
           <div className="hidden lg:flex lg:col-span-3 flex-col bg-primary text-white rounded-3xl p-6 justify-between shadow-xl relative overflow-hidden">
             {/* Subtle pattern overlay */}
-            <div className="absolute inset-0 opacity-5 pointer-events-none" style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '20px 20px'}}></div>
-            
+            <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '20px 20px' }}></div>
+
             <div className="space-y-5 relative z-10">
               <div className="flex items-center gap-2 pb-4 border-b border-white/20">
                 <div className="w-6 h-6 rounded bg-accent/20 flex items-center justify-center text-accent">
@@ -60,8 +60,8 @@ const Hero = () => {
 
               <nav className="flex flex-col gap-2">
                 {sidebarCategories.map((cat, idx) => (
-                  <Link 
-                    key={idx} 
+                  <Link
+                    key={idx}
                     to={cat.path}
                     className="flex items-center justify-between text-xs font-semibold text-white/75 hover:text-accent tracking-wide transition-colors group py-1"
                   >
@@ -74,10 +74,10 @@ const Hero = () => {
 
             {/* Offer box */}
             <div className="mt-6 bg-accent/15 border border-accent/30 p-5 rounded-2xl relative overflow-hidden z-10">
-              <span className="text-[9px] font-bold text-accent uppercase tracking-widest block mb-1">Exclusive Offer</span>
+              <span className="text-[9px] font-bold text-accent  tracking-widest block mb-1">Exclusive Offer</span>
               <h4 className="font-heading font-bold text-white text-sm leading-snug">GET 10% OFF</h4>
               <p className="text-[10px] text-white/60 mt-1">On your first bulk order today.</p>
-              <Link to="/products" className="text-[9px] font-bold uppercase tracking-widest text-accent hover:text-white transition-colors flex items-center gap-1 mt-3">
+              <Link to="/products" className="text-[9px] font-bold  tracking-widest text-accent hover:text-white transition-colors flex items-center gap-1 mt-3">
                 Shop Now <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
@@ -86,10 +86,10 @@ const Hero = () => {
           {/* Right content area */}
           <div className="lg:col-span-9 flex flex-col gap-6">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-              
+
               {/* Text content */}
               <div className="md:col-span-7 space-y-6 text-center md:text-left">
-                <div className="inline-flex items-center gap-2 bg-accent/10 text-accent font-bold px-4 py-1.5 rounded-full text-[10px] uppercase tracking-widest border border-accent/20">
+                <div className="inline-flex items-center gap-2 bg-accent/10 text-accent font-bold px-4 py-1.5 rounded-full text-[10px]  tracking-widest border border-accent/20">
                   <Award className="w-3.5 h-3.5" /> Premium Quality Fabrics
                 </div>
 
@@ -103,15 +103,15 @@ const Hero = () => {
                 </p>
 
                 <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
-                  <Link 
+                  <Link
                     to="/products"
-                    className="bg-accent hover:bg-accent/90 text-white font-bold py-3.5 px-8 rounded-full text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-xl hover:-translate-y-0.5 inline-flex items-center gap-2"
+                    className="bg-accent hover:bg-accent/90 text-white font-bold py-3.5 px-8 rounded-full text-sm tracking-wider transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-xl hover:-translate-y-0.5 inline-flex items-center gap-2"
                   >
                     Explore Collection <ArrowRight className="w-4 h-4" />
                   </Link>
-                  <Link 
+                  <Link
                     to="/trade-enquiry"
-                    className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3.5 px-8 rounded-full text-xs uppercase tracking-wider transition-all duration-300 inline-flex items-center gap-2"
+                    className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3.5 px-8 rounded-full text-sm tracking-wider transition-all duration-300 inline-flex items-center gap-2"
                   >
                     Trade Enquiry
                   </Link>
@@ -123,19 +123,33 @@ const Hero = () => {
                 <div className="absolute inset-0 border-2 border-dashed border-accent/20 rounded-full scale-110 pointer-events-none animate-spin-slow"></div>
                 <div className="relative w-[260px] h-[340px] md:w-[300px] md:h-[380px] rounded-full overflow-hidden border-8 border-white shadow-2xl shadow-primary/20">
                   {banners.map((src, index) => (
-                    <img 
+                    <img
                       key={index}
-                      src={src} 
-                      alt={`Textile Collection ${index + 1}`} 
-                      className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-                        index === currentSlide ? 'opacity-100' : 'opacity-0'
-                      }`} 
+                      src={src}
+                      alt={`Textile Collection ${index + 1}`}
+                      className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                        }`}
                     />
                   ))}
-                  <div className="absolute top-6 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm text-primary text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider border border-border/50 whitespace-nowrap">
+                  <div className="absolute top-6 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm text-primary text-[9px] font-bold px-3 py-1.5 rounded-full tracking-wider border border-border/50 whitespace-nowrap">
                     ✦ Premium Quality ✦
                   </div>
                 </div>
+
+                {/* Navigation Buttons */}
+                <button
+                  onClick={() => setCurrentSlide((prev) => (prev - 1 + banners.length) % banners.length)}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg text-primary hover:bg-accent hover:text-white transition-colors border border-border"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => setCurrentSlide((prev) => (prev + 1) % banners.length)}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg text-primary hover:bg-accent hover:text-white transition-colors border border-border"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+
                 {/* Slide dots */}
                 <div className="absolute -bottom-4 flex gap-2 left-1/2 -translate-x-1/2">
                   {banners.map((_, i) => (
@@ -155,7 +169,7 @@ const Hero = () => {
               ].map((s, i) => (
                 <div key={i} className={`space-y-1 ${i > 0 ? 'border-l border-white/15' : ''}`}>
                   <span className="block text-2xl font-heading font-extrabold text-accent">{s.val}</span>
-                  <span className="block text-[10px] text-white/70 font-bold uppercase tracking-wider">{s.label}</span>
+                  <span className="block text-[10px] text-white/70 font-bold  tracking-wider">{s.label}</span>
                 </div>
               ))}
             </div>

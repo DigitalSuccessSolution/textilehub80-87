@@ -15,7 +15,7 @@ const PreFooterCTA = () => {
           {/* Left Block */}
           <div className="lg:col-span-7 bg-card p-10 md:p-14 rounded-3xl shadow-xl shadow-primary/5 flex flex-col justify-between items-start space-y-10 border border-border/50">
             <div className="space-y-5">
-              <div className="inline-flex items-center gap-2 bg-accent/10 text-accent font-bold px-4 py-1.5 rounded-full text-[10px] uppercase tracking-widest border border-accent/20">
+              <div className="inline-flex items-center gap-2 bg-accent/10 text-accent font-bold px-4 py-1.5 rounded-full text-[10px]  tracking-widest border border-accent/20">
                 ✦ Let's Grow Together ✦
               </div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary leading-tight">
@@ -30,13 +30,13 @@ const PreFooterCTA = () => {
             <div className="flex flex-wrap gap-4">
               <Link 
                 to="/trade-enquiry"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-8 rounded-full text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-8 rounded-full text-xs  tracking-wider transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5"
               >
                 Get In Touch <ArrowRight className="w-4 h-4" />
               </Link>
               <Link 
                 to="/products"
-                className="inline-flex items-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3.5 px-8 rounded-full text-xs uppercase tracking-wider transition-all duration-300"
+                className="inline-flex items-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3.5 px-8 rounded-full text-xs  tracking-wider transition-all duration-300"
               >
                 Browse Products
               </Link>
@@ -53,7 +53,7 @@ const PreFooterCTA = () => {
                 <Store className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <span className="text-[10px] font-bold text-accent tracking-[0.25em] uppercase block mb-1">Our Presence</span>
+                <span className="text-[10px] font-bold text-accent tracking-[0.25em]  block mb-1">Our Presence</span>
                 <h3 className="text-2xl font-heading font-bold text-white">1200+ Stores</h3>
                 <p className="text-sm text-white/60 leading-relaxed font-light mt-2">
                   Across 28 states and all major cargo depot locations in India.
@@ -76,7 +76,7 @@ const PreFooterCTA = () => {
             <div className="border-t border-white/10 pt-5 mt-5 relative z-10">
               <Link 
                 to="/contact"
-                className="text-xs font-bold uppercase tracking-wider text-accent hover:text-white flex items-center gap-1 transition-colors"
+                className="text-xs font-bold  tracking-wider text-accent hover:text-white flex items-center gap-1 transition-colors"
               >
                 Contact Us Now <ArrowRight className="w-4 h-4" />
               </Link>

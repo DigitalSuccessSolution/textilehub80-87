@@ -16,25 +16,26 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: 'HOME', path: '/' },
-    { name: 'ABOUT US', path: '/about' },
-    { name: 'PRODUCT GALLERY', path: '/products' },
-    { name: 'RETAIL MANAGEMENT', path: '/retail-management' },
-    { name: 'CONTACT US', path: '/contact' },
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Contact Us', path: '/contact' },
+    { name: 'Product', path: '/products' },
+    { name: 'Our Retail Management', path: '/our-retail-management' },
+    { name: 'Trade Enquiry', path: '/trade-enquiry' },
     { 
-      name: 'MORE', 
+      name: 'More', 
       path: '#',
       hasDropdown: true,
       dropdownItems: [
-        { name: 'TRADE ENQUIRY', path: '/trade-enquiry' },
-        { name: 'e-QUOTATION', path: '/e-quotation' },
-        { name: 'e-AUCTION', path: '/e-auction' },
-        { name: 'TRADE CIRCULAR', path: '/trade-circular' },
-        { name: 'BLOG PAGE', path: '/blog' },
-        { name: 'NOTICE BOARD', path: '/notice-board' },
-        { name: 'CAREERS', path: '/career' },
-        { name: 'CUSTOMER REVIEW', path: '/reviews' },
-        { name: 'BUSINESS MEDIA GALLERY', path: '/media-gallery' }
+        { name: 'e-quotation', path: '/e-quotation' },
+        { name: 'e-auction', path: '/e-auction' },
+        { name: 'Trade Circular', path: '/trade-circular' },
+        { name: 'Blog', path: '/blog' },
+        { name: 'Notice Board', path: '/notice-board' },
+        { name: 'Career', path: '/career' },
+        { name: 'Customer Review', path: '/customer-review' },
+        { name: 'Business Media Gallery', path: '/business-media-gallery' },
+        { name: 'FAQ', path: '/faq' }
       ]
     }
   ];
@@ -48,7 +49,6 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 bg-transparent text-accent border border-accent/30 rounded-full flex items-center justify-center font-heading font-bold text-xl group-hover:bg-accent group-hover:text-white transition-all shadow-sm">
               <div className="w-6 h-6 flex items-center justify-center">
-                {/* Mandala / Floral SVG */}
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
                   <circle cx="12" cy="12" r="10" />
                   <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -58,17 +58,17 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-heading font-bold text-xl md:text-2xl text-primary leading-none tracking-wider group-hover:text-accent transition-colors">AURORA</span>
-              <span className="text-[8px] text-accent uppercase tracking-[0.25em] font-bold">Textile Mall</span>
+              <span className="text-[10px] text-accent tracking-[0.25em] font-bold">Textile Mall</span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-4">
+          <nav className="hidden lg:flex items-center gap-2 xl:gap-4">
             {navLinks.map((link, index) => (
-              <div key={index} className="relative group px-2 py-2">
+              <div key={index} className="relative group px-1 py-2">
                 <Link 
                   to={link.path} 
-                  className={`whitespace-nowrap text-[10px] font-bold tracking-widest flex items-center gap-1 transition-colors ${location.pathname === link.path ? 'text-primary' : 'text-foreground hover:text-primary'}`}
+                  className={`whitespace-nowrap text-xs font-bold tracking-widest flex items-center gap-1 transition-colors ${location.pathname === link.path ? 'text-primary' : 'text-foreground hover:text-primary'}`}
                 >
                   {link.name}
                   {link.hasDropdown && <ChevronDown className="w-3.5 h-3.5 text-muted-foreground group-hover:rotate-180 transition-transform" />}
@@ -82,7 +82,7 @@ const Header = () => {
                         <Link 
                           key={idx} 
                           to={item.path} 
-                          className="block px-6 py-3 text-[11px] font-bold tracking-wider text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
+                          className="block px-6 py-3 text-xs font-bold tracking-wider text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
                         >
                           {item.name}
                         </Link>
@@ -93,13 +93,6 @@ const Header = () => {
               </div>
             ))}
           </nav>
-
-          {/* Actions */}
-          <div className="hidden lg:flex items-center gap-4">
-            <Link to="/trade-enquiry" className="bg-accent text-white hover:bg-accent/90 px-6 py-2.5 rounded-sm text-[10px] font-bold uppercase tracking-widest transition-colors shadow-md">
-              Trade Enquiry
-            </Link>
-          </div>
 
           {/* Mobile Menu Toggle */}
           <button 
@@ -112,14 +105,14 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden absolute top-full left-0 w-full bg-white border-b border-border shadow-xl overflow-hidden transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'max-h-screen border-t' : 'max-h-0'}`}>
-        <div className="container-custom py-4 max-h-[70vh] overflow-y-auto">
+      <div className={`lg:hidden absolute top-full left-0 w-full bg-white border-b border-border shadow-xl overflow-hidden transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'h-[calc(100vh-70px)] border-t' : 'h-0'}`}>
+        <div className="container-custom py-4 h-full overflow-y-auto visible-scrollbar pb-12">
           <nav className="flex flex-col gap-2">
             {navLinks.map((link, index) => (
               <div key={index} className="flex flex-col border-b border-border/50 last:border-0 pb-2">
                 <Link 
                   to={link.path} 
-                  className={`py-3 text-[11px] font-bold tracking-widest flex justify-between items-center ${location.pathname === link.path ? 'text-primary' : 'text-foreground'}`}
+                  className={`py-3 text-xs font-bold tracking-widest flex justify-between items-center ${location.pathname === link.path ? 'text-primary' : 'text-foreground'}`}
                   onClick={() => !link.hasDropdown && setMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -130,7 +123,7 @@ const Header = () => {
                       <Link 
                         key={idx} 
                         to={item.path} 
-                        className="py-2 text-[10px] font-bold tracking-wider text-muted-foreground hover:text-primary"
+                        className="py-2 text-xs font-bold tracking-wider text-muted-foreground hover:text-primary"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.name}
@@ -140,13 +133,6 @@ const Header = () => {
                 )}
               </div>
             ))}
-            <Link 
-              to="/trade-enquiry" 
-              className="mt-4 bg-primary text-white text-center py-3 rounded-full text-[11px] font-bold uppercase tracking-widest shadow-md"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Trade Enquiry
-            </Link>
           </nav>
         </div>
       </div>

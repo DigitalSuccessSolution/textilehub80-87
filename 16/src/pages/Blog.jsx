@@ -11,7 +11,7 @@ const Blog = () => {
       category: "Industry Trends",
       date: "Oct 12, 2023",
       author: "Priya Sharma",
-      img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop",
+      img: "https://images.pexels.com/photos/36890819/pexels-photo-36890819.jpeg",
       featured: true
     },
     {
@@ -21,7 +21,7 @@ const Blog = () => {
       category: "Textile Education",
       date: "Sep 28, 2023",
       author: "Vikram Mehta",
-      img: "https://images.unsplash.com/photo-1583391733958-6115f1108609?q=80&w=600&auto=format&fit=crop",
+      img: "https://images.pexels.com/photos/12081254/pexels-photo-12081254.jpeg",
       featured: false
     },
     {
@@ -31,7 +31,7 @@ const Blog = () => {
       category: "Sustainability",
       date: "Sep 15, 2023",
       author: "Anita Desai",
-      img: "https://images.unsplash.com/photo-1596455607563-ad6193f76b17?q=80&w=600&auto=format&fit=crop",
+      img: "https://images.pexels.com/photos/6850574/pexels-photo-6850574.jpeg",
       featured: false
     },
     {
@@ -41,7 +41,7 @@ const Blog = () => {
       category: "Retail Strategy",
       date: "Aug 30, 2023",
       author: "Rahul Verma",
-      img: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=600&auto=format&fit=crop",
+      img: "https://images.pexels.com/photos/8819312/pexels-photo-8819312.jpeg",
       featured: false
     }
   ];
@@ -62,7 +62,7 @@ const Blog = () => {
           </p>
         </div>
       </div>
-      
+
       <div className="container-custom pb-20">
 
         {/* Featured Post */}
@@ -72,13 +72,13 @@ const Blog = () => {
               <div className="relative aspect-video lg:aspect-auto overflow-hidden">
                 <img src={featuredPost.img} alt={featuredPost.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute top-6 left-6">
-                  <span className="bg-white/90 backdrop-blur text-primary text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full">
+                  <span className="bg-white/90 backdrop-blur text-primary text-[10px] font-bold  tracking-widest px-4 py-2 rounded-full">
                     Featured
                   </span>
                 </div>
               </div>
               <div className="p-8 md:p-12 flex flex-col justify-center">
-                <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-4">
+                <div className="flex items-center gap-4 text-[10px] font-bold  tracking-widest text-muted-foreground mb-4">
                   <span className="text-accent">{featuredPost.category}</span>
                   <span className="w-1 h-1 rounded-full bg-border"></span>
                   <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {featuredPost.date}</span>
@@ -96,7 +96,7 @@ const Blog = () => {
                     </div>
                     <span className="text-xs font-bold text-primary">{featuredPost.author}</span>
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary flex items-center gap-1 group-hover:translate-x-2 transition-transform">
+                  <span className="text-[10px] font-bold  tracking-widest text-primary flex items-center gap-1 group-hover:translate-x-2 transition-transform">
                     Read Article <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>
@@ -116,7 +116,7 @@ const Blog = () => {
                 </button>
               </div>
               <div className="p-6 md:p-8 flex-1 flex flex-col">
-                <div className="flex items-center gap-3 text-[9px] font-bold uppercase tracking-widest text-muted-foreground mb-3">
+                <div className="flex items-center gap-3 text-[9px] font-bold  tracking-widest text-muted-foreground mb-3">
                   <span className="text-accent">{post.category}</span>
                   <span className="w-1 h-1 rounded-full bg-border"></span>
                   <span>{post.date}</span>
@@ -129,7 +129,7 @@ const Blog = () => {
                 </p>
                 <div className="mt-auto pt-6 border-t border-border flex justify-between items-center">
                   <span className="text-[10px] font-bold text-primary">{post.author}</span>
-                  <span className="text-[9px] font-bold uppercase tracking-widest text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                  <span className="text-[9px] font-bold  tracking-widest text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Read <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>
@@ -139,7 +139,7 @@ const Blog = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="bg-transparent border border-primary text-primary px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-sm">
+          <button className="bg-transparent border border-primary text-primary px-8 py-3 rounded-full text-[10px] font-bold  tracking-widest hover:bg-primary hover:text-white transition-all shadow-sm">
             Load More Articles
           </button>
         </div>

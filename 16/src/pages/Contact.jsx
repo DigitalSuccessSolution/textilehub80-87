@@ -23,7 +23,7 @@ const Contact = () => {
               <MapPin className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h4 className="font-bold text-primary text-sm uppercase tracking-widest mb-2">Headquarters</h4>
+              <h4 className="font-bold text-primary text-sm  tracking-widest mb-2">Headquarters</h4>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
                 Aurora Textile Mall<br/>
                 8th M.L. Textile Park,<br/>
@@ -37,7 +37,7 @@ const Contact = () => {
               <Phone className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h4 className="font-bold text-primary text-sm uppercase tracking-widest mb-2">Helpline</h4>
+              <h4 className="font-bold text-primary text-sm  tracking-widest mb-2">Helpline</h4>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
                 1800 123 4567 (Toll Free)<br/>
                 +91 98765 43210 (WhatsApp)
@@ -50,7 +50,7 @@ const Contact = () => {
               <Mail className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h4 className="font-bold text-primary text-sm uppercase tracking-widest mb-2">Email Desk</h4>
+              <h4 className="font-bold text-primary text-sm  tracking-widest mb-2">Email Desk</h4>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
                 info@auroramall.com (General)<br/>
                 b2b@auroramall.com (Trade)
@@ -63,7 +63,7 @@ const Contact = () => {
               <Clock className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h4 className="font-bold text-primary text-sm uppercase tracking-widest mb-2">Business Hours</h4>
+              <h4 className="font-bold text-primary text-sm  tracking-widest mb-2">Business Hours</h4>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
                 Monday - Saturday<br/>
                 10:00 AM - 7:00 PM (IST)
@@ -78,7 +78,7 @@ const Contact = () => {
           <div className="relative z-10 bg-white/90 backdrop-blur p-6 rounded-xl shadow-lg border border-white flex flex-col items-center">
             <MapPin className="w-8 h-8 text-accent mb-2" />
             <h4 className="font-bold text-primary text-lg mb-1">Surat Textile Hub</h4>
-            <p className="text-xs text-muted-foreground font-medium uppercase tracking-widest">Interactive Map Disabled</p>
+            <p className="text-xs text-muted-foreground font-medium  tracking-widest">Interactive Map Disabled</p>
           </div>
         </div>
 

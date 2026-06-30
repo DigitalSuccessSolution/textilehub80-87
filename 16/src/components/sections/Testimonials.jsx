@@ -37,7 +37,7 @@ const Testimonials = () => {
         <div className="text-center space-y-3">
           <div className="inline-flex items-center gap-3">
             <span className="w-10 h-0.5 bg-accent"></span>
-            <span className="text-[10px] font-bold text-accent uppercase tracking-widest">Testimonials</span>
+            <span className="text-[10px] font-bold text-accent  tracking-widest">Testimonials</span>
             <span className="w-10 h-0.5 bg-accent"></span>
           </div>
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary">What Our Clients Say</h2>

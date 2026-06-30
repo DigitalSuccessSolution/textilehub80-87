@@ -6,12 +6,12 @@ const MediaGallery = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
 
   const mediaItems = [
-    { id: 1, type: 'video', title: 'The Making of Katan Silk', img: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop', desc: 'A behind-the-scenes look at our partner looms in Varanasi.' },
-    { id: 2, type: 'image', title: 'Annual Retailers Meet 2023', img: 'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=800&auto=format&fit=crop', desc: 'Aurora Annual Summit in Surat.' },
-    { id: 3, type: 'image', title: 'New Arrival: Festive Collection', img: 'https://images.unsplash.com/photo-1583391733958-6115f1108609?q=80&w=800&auto=format&fit=crop', desc: 'Preview of our upcoming festive stock.' },
-    { id: 4, type: 'video', title: 'Quality Control Process', img: 'https://images.unsplash.com/photo-1596455607563-ad6193f76b17?q=80&w=800&auto=format&fit=crop', desc: 'Understanding our rigorous 5-point QA check.' },
-    { id: 5, type: 'image', title: 'Surat Warehouse Expansion', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop', desc: 'Adding 50,000 sq ft to our primary fulfillment center.' },
-    { id: 6, type: 'video', title: 'How to use e-Quotation', img: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=800&auto=format&fit=crop', desc: 'A quick tutorial for new B2B partners.' }
+    { id: 1, type: 'image', title: 'The Making of Katan Silk', img: 'https://images.pexels.com/photos/6350916/pexels-photo-6350916.jpeg', desc: 'A behind-the-scenes look at our partner looms in Varanasi.' },
+    { id: 2, type: 'image', title: 'Annual Retailers Meet 2023', img: 'https://images.pexels.com/photos/6050435/pexels-photo-6050435.jpeg', desc: 'Aurora Annual Summit in Surat.' },
+    { id: 3, type: 'image', title: 'New Arrival: Festive Collection', img: 'https://images.pexels.com/photos/35228874/pexels-photo-35228874.jpeg', desc: 'Preview of our upcoming festive stock.' },
+    { id: 4, type: 'image', title: 'Quality Control Process', img: 'https://images.pexels.com/photos/31030919/pexels-photo-31030919.jpeg', desc: 'Understanding our rigorous 5-point QA check.' },
+    { id: 5, type: 'image', title: 'Surat Warehouse Expansion', img: 'https://images.pexels.com/photos/236705/pexels-photo-236705.jpeg', desc: 'Adding 50,000 sq ft to our primary fulfillment center.' },
+    { id: 6, type: 'image', title: 'How to use e-quotation', img: 'https://images.pexels.com/photos/4862901/pexels-photo-4862901.jpeg', desc: 'A quick tutorial for new B2B partners.' }
   ];
 
   const filteredItems = filter === 'all' ? mediaItems : mediaItems.filter(item => item.type === filter);
@@ -29,41 +29,36 @@ const MediaGallery = () => {
           </p>
         </div>
       </div>
-      
+
       <div className="container-custom pb-20">
         <div className="flex items-center justify-center gap-4 mb-12">
-          <button 
+          <button
             onClick={() => setFilter('all')}
-            className={`px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${filter === 'all' ? 'bg-primary text-white shadow-md' : 'bg-card text-muted-foreground hover:bg-muted border border-border'}`}
+            className={`px-6 py-2 rounded-full text-[10px] font-bold  tracking-widest transition-all ${filter === 'all' ? 'bg-primary text-white shadow-md' : 'bg-card text-muted-foreground hover:bg-muted border border-border'}`}
           >
             All Media
           </button>
-          <button 
-            onClick={() => setFilter('video')}
-            className={`px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all flex items-center gap-2 ${filter === 'video' ? 'bg-primary text-white shadow-md' : 'bg-card text-muted-foreground hover:bg-muted border border-border'}`}
-          >
-            <Video className="w-3.5 h-3.5" /> Videos
-          </button>
-          <button 
+
+          {/* <button
             onClick={() => setFilter('image')}
-            className={`px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all flex items-center gap-2 ${filter === 'image' ? 'bg-primary text-white shadow-md' : 'bg-card text-muted-foreground hover:bg-muted border border-border'}`}
+            className={`px-6 py-2 rounded-full text-[10px] font-bold  tracking-widest transition-all flex items-center gap-2 ${filter === 'image' ? 'bg-primary text-white shadow-md' : 'bg-card text-muted-foreground hover:bg-muted border border-border'}`}
           >
             <ImageIcon className="w-3.5 h-3.5" /> Images
-          </button>
+          </button> */}
         </div>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
-            <div 
-              key={item.id} 
+            <div
+              key={item.id}
               className="group relative rounded-[30px] overflow-hidden aspect-[4/3] cursor-pointer shadow-sm hover:shadow-xl transition-all border border-border/50"
               onClick={() => setSelectedMedia(item)}
             >
               <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              
+
               <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
-              
+
               {/* Center Play Button for Videos */}
               {item.type === 'video' && (
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -75,7 +70,7 @@ const MediaGallery = () => {
 
               {/* Bottom Info */}
               <div className="absolute bottom-0 left-0 w-full p-6">
-                <span className="inline-block bg-white/20 backdrop-blur text-white border border-white/20 text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded mb-2">
+                <span className="inline-block bg-white/20 backdrop-blur text-white border border-white/20 text-[9px] font-bold  tracking-widest px-2 py-1 rounded mb-2">
                   {item.type === 'video' ? 'Video' : 'Gallery'}
                 </span>
                 <h3 className="text-white font-bold text-lg leading-tight group-hover:text-accent transition-colors">{item.title}</h3>
@@ -90,8 +85,8 @@ const MediaGallery = () => {
       {selectedMedia && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-primary/95 backdrop-blur-sm" onClick={() => setSelectedMedia(null)}></div>
-          
-          <button 
+
+          <button
             className="absolute top-6 right-6 z-20 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-primary transition-colors"
             onClick={() => setSelectedMedia(null)}
           >

@@ -4,7 +4,7 @@ import { MapPin, Phone } from 'lucide-react';
 const TopBar = () => {
   return (
     <div className="bg-primary text-white/80 py-2.5 hidden lg:block border-b border-white/10">
-      <div className="container-custom flex justify-between items-center text-[10px] font-bold tracking-widest uppercase">
+      <div className="container-custom flex justify-between items-center text-[10px] font-bold tracking-widest ">
         <div className="flex items-center gap-2">
           <MapPin className="w-3.5 h-3.5 text-accent" />
           <span className="text-white/90">India's Most Trusted Textile Retail Mall</span>

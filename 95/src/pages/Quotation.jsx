@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Quotation = () => {
   useSEO("e-Quotation Portal", "Request an official digital quotation for bulk textile and garment procurement at Retail Textile Mall.");
-  
+
   const { register, handleSubmit, control, reset, formState: { errors, isSubmitting } } = useForm({
     defaultValues: {
       companyName: "Your Sourcing Firm Ltd",
@@ -65,7 +65,7 @@ const Quotation = () => {
 
       {/* ── Main Content Grid (Dual Column) ── */}
       <section className="py-16 px-6 sm:px-10 max-w-7xl mx-auto">
-        
+
         {/* Success Banner */}
         {submitted && (
           <div className="mb-8 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-3xl p-6 text-center text-xs font-semibold flex items-center justify-center gap-2 shadow-sm">
@@ -75,7 +75,7 @@ const Quotation = () => {
         )}
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left: Input Form Form */}
           <div className="lg:col-span-7 bg-brand-light border border-brand-gold/15 rounded-[2.5rem] p-8 sm:p-10 shadow-lg text-left">
             <h3 className="font-serif text-base font-bold uppercase tracking-wider text-brand-plum mb-6 pb-2 border-b border-brand-gold/10 flex items-center gap-2">
@@ -134,11 +134,11 @@ const Quotation = () => {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
                   {["Sarees", "Kurtis", "Leggings", "Dress Suits", "Suiting", "Shirting", "Bedsheets", "Upholstery"].map((cat) => (
                     <label key={cat} className="flex items-center gap-2 cursor-pointer select-none">
-                      <input 
-                        type="checkbox" 
-                        value={cat} 
-                        {...register("categories")} 
-                        className="rounded border-stone-300 text-brand-lavender focus:ring-brand-lavender w-4 h-4 cursor-pointer" 
+                      <input
+                        type="checkbox"
+                        value={cat}
+                        {...register("categories")}
+                        className="rounded border-stone-300 text-brand-lavender focus:ring-brand-lavender w-4 h-4 cursor-pointer"
                       />
                       <span className="font-sans font-light text-[11px] text-stone-600">{cat}</span>
                     </label>
@@ -173,10 +173,10 @@ const Quotation = () => {
             <h4 className="font-serif text-xs font-bold uppercase tracking-widest text-brand-lavender mb-3 text-left">
               Live PDF Document Preview
             </h4>
-            
+
             {/* Document Frame Mockup (Flexible min-height for better text spacing and visibility) */}
             <div className="bg-brand-light border border-brand-gold/15 rounded-[2rem] shadow-2xl p-8 relative min-h-[550px] overflow-hidden text-left flex flex-col justify-between font-sans">
-              
+
               {/* Draft Stamp Overlay */}
               <div className="absolute top-36 left-1/2 -translate-x-1/2 -rotate-12 border-4 border-dashed border-brand-lavender/10 text-brand-lavender/10 font-sans font-black text-3xl tracking-widest uppercase py-3 px-6 pointer-events-none select-none">
                 Live Draft Preview
@@ -228,7 +228,7 @@ const Quotation = () => {
                           <tr key={cat} className="border-b border-stone-100 last:border-0">
                             <td className="p-3 font-mono">0{idx + 1}</td>
                             <td className="p-3 font-bold text-brand-plum">{cat}</td>
-                            <td className="p-3 text-right text-brand-lavender font-bold">Bulk Inquiry</td>
+                            <td className="p-3 text-right text-brand-lavender font-bold">Bulk Enquiry</td>
                           </tr>
                         ))
                       ) : (
@@ -244,7 +244,7 @@ const Quotation = () => {
 
                 {/* Requirements info text */}
                 <div className="bg-brand-cream/50 border border-brand-gold/10 p-4 rounded-2xl">
-                  <p className="font-bold text-xs uppercase tracking-wider text-brand-lavender mb-1">Inquiry Specifications Details</p>
+                  <p className="font-bold text-xs uppercase tracking-wider text-brand-lavender mb-1">Enquiry Specifications Details</p>
                   <p className="text-sm leading-relaxed text-stone-600 italic whitespace-pre-wrap truncate max-h-16 overflow-hidden">
                     "{details || "No additional requirements specified yet..."}"
                   </p>

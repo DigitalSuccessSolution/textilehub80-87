@@ -11,7 +11,7 @@ const EQuotation = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80 z-0 opacity-100"></div>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558098329-a11cff621064?q=80&w=2000&auto=format&fit=crop')] mix-blend-overlay opacity-10 bg-cover bg-center"></div>
         <div className="container-custom relative z-10 text-center">
-          <h1 className="font-heading text-4xl lg:text-6xl font-bold text-white mb-4">e-Quotation</h1>
+          <h1 className="font-heading text-4xl lg:text-6xl font-bold text-white mb-4">e-quotation</h1>
           <p className="text-white/80 max-w-2xl mx-auto text-sm lg:text-base font-light">
             Get instant, reliable, and transparent digital quotations for bulk orders.
           </p>
@@ -35,7 +35,7 @@ const EQuotation = () => {
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${step >= s.num ? 'bg-primary text-white shadow-md' : 'bg-muted text-muted-foreground'}`}>
                     {step > s.num ? <CheckCircle className="w-4 h-4" /> : s.num}
                   </div>
-                  <span className={`text-[10px] uppercase tracking-widest font-bold ${step >= s.num ? 'text-primary' : 'text-muted-foreground'}`}>
+                  <span className={`text-[10px]  tracking-widest font-bold ${step >= s.num ? 'text-primary' : 'text-muted-foreground'}`}>
                     {s.label}
                   </span>
                   {i < 2 && <div className="w-8 sm:w-16 h-px bg-border mx-2" />}
@@ -51,7 +51,7 @@ const EQuotation = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div>
-                  <label className="block text-[10px] uppercase tracking-widest font-bold text-primary/60 mb-2">Target Collection</label>
+                  <label className="block text-[10px]  tracking-widest font-bold text-primary/60 mb-2">Target Collection</label>
                   <select className="w-full bg-muted border border-border text-foreground text-sm p-4 rounded-md focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors appearance-none">
                     <option>Select from 12 Collections</option>
                     <option>Varanasi Gold Zari Katan</option>
@@ -61,18 +61,18 @@ const EQuotation = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[10px] uppercase tracking-widest font-bold text-primary/60 mb-2">Order Volume (Pieces/Meters)</label>
+                  <label className="block text-[10px]  tracking-widest font-bold text-primary/60 mb-2">Order Volume (Pieces/Meters)</label>
                   <input type="number" placeholder="Min. 50" className="w-full bg-muted border border-border text-foreground text-sm p-4 rounded-md focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase tracking-widest font-bold text-primary/60 mb-2">Delivery & Specific Requirements</label>
+                <label className="block text-[10px]  tracking-widest font-bold text-primary/60 mb-2">Delivery & Specific Requirements</label>
                 <textarea rows="4" placeholder="Mention GST details or specific logistics requests..." className="w-full bg-muted border border-border text-foreground text-sm p-4 rounded-md focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"></textarea>
               </div>
 
               <div className="mt-10 pt-6 border-t border-border flex justify-end">
-                <button onClick={() => setStep(2)} className="bg-primary text-white px-8 py-3.5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary/90 transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+                <button onClick={() => setStep(2)} className="bg-primary text-white px-8 py-3.5 rounded-full text-[10px] font-bold  tracking-widest hover:bg-primary/90 transition-all shadow-md hover:shadow-lg flex items-center gap-2">
                   Calculate Quotation <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -89,7 +89,7 @@ const EQuotation = () => {
                 <ShieldCheck className="w-40 h-40" />
               </div>
               <div className="relative z-10">
-                <span className="text-accent text-[10px] uppercase font-bold tracking-widest mb-2 block">System Status</span>
+                <span className="text-accent text-[10px]  font-bold tracking-widest mb-2 block">System Status</span>
                 <h4 className="font-heading text-xl font-bold mb-6">Engine Active</h4>
                 <ul className="space-y-4 text-xs font-light text-primary/80">
                   <li className="flex gap-3 items-center">
@@ -109,9 +109,9 @@ const EQuotation = () => {
             <div className="bg-card p-8 rounded-2xl shadow-sm border border-border">
               <div className="flex items-start gap-3 text-muted-foreground text-xs leading-relaxed mb-6">
                 <Info className="w-5 h-5 text-accent shrink-0" />
-                <p>For custom manufacturing orders exceeding 10,000 units, please contact the Trade Enquiry desk directly instead of using the e-Quotation system.</p>
+                <p>For custom manufacturing orders exceeding 10,000 units, please contact the Trade Enquiry desk directly instead of using the e-quotation system.</p>
               </div>
-              <a href="/trade-enquiry" className="block text-center border border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-full text-[10px] font-bold uppercase tracking-widest transition-colors">
+              <a href="/trade-enquiry" className="block text-center border border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-full text-[10px] font-bold  tracking-widest transition-colors">
                 Go to Trade Enquiry
               </a>
             </div>
@@ -123,12 +123,12 @@ const EQuotation = () => {
                 <div className="border-b border-border pb-4 last:border-0 last:pb-0">
                   <div className="flex justify-between items-start mb-2">
                     <h5 className="font-bold text-sm text-foreground">QUT-2023-8942</h5>
-                    <span className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider">Oct 24, 2023</span>
+                    <span className="text-[9px] text-muted-foreground font-bold  tracking-wider">Oct 24, 2023</span>
                   </div>
                   <p className="text-xs text-muted-foreground leading-relaxed mb-3">
                     500 Pcs of Royal Chanderi Silk Set.
                   </p>
-                  <button className="text-[10px] text-accent font-bold uppercase tracking-widest hover:text-primary transition-colors flex items-center gap-1">
+                  <button className="text-[10px] text-accent font-bold  tracking-widest hover:text-primary transition-colors flex items-center gap-1">
                     <Download className="w-3 h-3" /> Download PDF
                   </button>
                 </div>
@@ -136,12 +136,12 @@ const EQuotation = () => {
                 <div className="border-b border-border pb-4 last:border-0 last:pb-0">
                   <div className="flex justify-between items-start mb-2">
                     <h5 className="font-bold text-sm text-foreground">QUT-2023-8811</h5>
-                    <span className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider">Oct 18, 2023</span>
+                    <span className="text-[9px] text-muted-foreground font-bold  tracking-wider">Oct 18, 2023</span>
                   </div>
                   <p className="text-xs text-muted-foreground leading-relaxed mb-3">
                     1000 Mtrs of Luxury Velvet Upholstery.
                   </p>
-                  <button className="text-[10px] text-accent font-bold uppercase tracking-widest hover:text-primary transition-colors flex items-center gap-1">
+                  <button className="text-[10px] text-accent font-bold  tracking-widest hover:text-primary transition-colors flex items-center gap-1">
                     <Download className="w-3 h-3" /> Download PDF
                   </button>
                 </div>

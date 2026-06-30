@@ -7,7 +7,7 @@ const Promos = () => {
     <section className="bg-slate-50 py-12 border-b border-slate-100 font-light text-slate-600">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 items-stretch">
-          
+
           {/* Card 1: Summer Edit - lg:col-span-3 */}
           <div className="lg:col-span-3 bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between items-start space-y-6 relative overflow-hidden group">
             <div className="space-y-2">
@@ -17,13 +17,13 @@ const Promos = () => {
             </div>
             {/* Arch Model Image */}
             <div className="w-full h-40 bg-slate-100 rounded-t-full overflow-hidden border border-slate-50 relative shrink-0">
-              <img 
-                src="https://images.unsplash.com/photo-1610030469668-93535c17b6b3?q=80&w=400&auto=format&fit=crop" 
-                alt="Model pink saree" 
-                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" 
+              <img
+                src="https://images.unsplash.com/photo-1610030469668-93535c17b6b3?q=80&w=400&auto=format&fit=crop"
+                alt="Model pink saree"
+                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
               />
             </div>
-            <Link 
+            <Link
               to="/products"
               className="text-xs font-bold capitalize tracking-wider text-slate-700 hover:text-accent transition-colors flex items-center gap-1 w-full border-t border-slate-50 pt-4"
             >
@@ -47,13 +47,13 @@ const Promos = () => {
             </div>
             {/* Stacked fabric roll image */}
             <div className="w-full h-24 bg-slate-100 rounded-lg overflow-hidden border border-slate-50 relative shrink-0">
-              <img 
-                src="https://images.unsplash.com/photo-1616627547584-bf28cee262db?q=80&w=400&auto=format&fit=crop" 
-                alt="Fabrics Stack" 
-                className="w-full h-full object-cover" 
+              <img
+                src="https://images.unsplash.com/photo-1616627547584-bf28cee262db?q=80&w=400&auto=format&fit=crop"
+                alt="Fabrics Stack"
+                className="w-full h-full object-cover"
               />
             </div>
-            <Link 
+            <Link
               to="/about"
               className="text-xs font-bold capitalize tracking-wider text-slate-700 hover:text-accent transition-colors flex items-center gap-1 w-full border-t border-slate-50 pt-4"
             >
@@ -70,13 +70,13 @@ const Promos = () => {
             </div>
             {/* Showroom interior image */}
             <div className="w-full h-28 bg-slate-100 rounded-lg overflow-hidden border border-slate-50 relative shrink-0">
-              <img 
-                src="https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=400&auto=format&fit=crop" 
-                alt="Showroom display" 
-                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" 
+              <img
+                src="https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=400&auto=format&fit=crop"
+                alt="Showroom display"
+                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
               />
             </div>
-            <Link 
+            <Link
               to="/trade-enquiry"
               className="text-xs font-bold capitalize tracking-wider text-slate-700 hover:text-accent transition-colors flex items-center gap-1 w-full border-t border-slate-50 pt-4"
             >
@@ -86,7 +86,7 @@ const Promos = () => {
 
           {/* Card 4: Right B2B Column - lg:col-span-3 */}
           <div className="lg:col-span-3 flex flex-col gap-4">
-            
+
             {/* e-quotation card */}
             <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-center justify-between gap-4 hover:border-accent/20 transition-all duration-300">
               <div className="space-y-1">
