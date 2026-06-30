@@ -24,7 +24,7 @@ const TradeEnquiry = () => {
             <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay"></div>
             
             <div className="relative z-10">
-              <span className="text-accent font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">B2B Partnership</span>
+              <span className="text-accent font-bold capitalize tracking-[0.2em] text-xs mb-4 block">B2B Partnership</span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">Partner with India's Most Trusted Retail Mall</h2>
               <p className="text-white/80 text-sm font-light leading-relaxed max-w-md mb-12">
                 For bulk orders exceeding 10,000 units, custom manufacturing, and long-term supply contracts, please fill out the trade enquiry form. Our B2B specialists will contact you within 24 hours.
@@ -73,33 +73,33 @@ const TradeEnquiry = () => {
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Contact Person *</label>
+                    <label className="text-xs font-bold capitalize tracking-widest text-muted-foreground">Contact Person *</label>
                     <input type="text" className="w-full bg-muted border border-border text-foreground text-sm p-4 rounded-md focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="John Doe" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Company Name *</label>
+                    <label className="text-xs font-bold capitalize tracking-widest text-muted-foreground">Company Name *</label>
                     <input type="text" className="w-full bg-muted border border-border text-foreground text-sm p-4 rounded-md focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="XYZ Retailers Pvt Ltd" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Email Address *</label>
+                    <label className="text-xs font-bold capitalize tracking-widest text-muted-foreground">Email Address *</label>
                     <input type="email" className="w-full bg-muted border border-border text-foreground text-sm p-4 rounded-md focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="john@company.com" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Phone / WhatsApp *</label>
+                    <label className="text-xs font-bold capitalize tracking-widest text-muted-foreground">Phone / WhatsApp *</label>
                     <input type="tel" className="w-full bg-muted border border-border text-foreground text-sm p-4 rounded-md focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="+91 98765 43210" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">GST/VAT Number (Optional)</label>
+                    <label className="text-xs font-bold capitalize tracking-widest text-muted-foreground">GST/VAT Number (Optional)</label>
                     <input type="text" className="w-full bg-muted border border-border text-foreground text-sm p-4 rounded-md focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="24AAAAA0000A1Z5" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Enquiry Type *</label>
+                    <label className="text-xs font-bold capitalize tracking-widest text-muted-foreground">Enquiry Type *</label>
                     <select className="w-full bg-muted border border-border text-foreground text-sm p-4 rounded-md focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors appearance-none">
                       <option>Bulk Order (&gt;10,000 units)</option>
                       <option>Custom Manufacturing</option>
@@ -110,11 +110,11 @@ const TradeEnquiry = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Specific Requirements *</label>
+                  <label className="text-xs font-bold capitalize tracking-widest text-muted-foreground">Specific Requirements *</label>
                   <textarea rows="4" className="w-full bg-muted border border-border text-foreground text-sm p-4 rounded-md focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="Tell us about the collections you are interested in, estimated volumes, etc."></textarea>
                 </div>
 
-                <button className="bg-primary text-white w-full py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary/90 transition-all shadow-md flex justify-center items-center gap-2">
+                <button className="bg-primary text-white w-full py-4 rounded-full text-xs font-bold capitalize tracking-widest hover:bg-primary/90 transition-all shadow-md flex justify-center items-center gap-2">
                   Submit Enquiry <Send className="w-4 h-4" />
                 </button>
               </form>

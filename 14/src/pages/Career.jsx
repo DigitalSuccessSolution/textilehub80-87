@@ -25,14 +25,14 @@ const Career = () => {
       </div>
       <section className="container-custom py-12 lg:py-20 flex flex-col md:flex-row items-center gap-12">
         <div className="w-full md:w-1/2">
-          <span className="text-accent font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">Join Our Team</span>
+          <span className="text-accent font-bold capitalize tracking-[0.2em] text-xs mb-4 block">Join Our Team</span>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
             Build the Future of <span className="italic font-light">Textile Retail</span>
           </h1>
           <p className="text-muted-foreground text-sm leading-relaxed mb-8 max-w-md font-light">
             We're looking for passionate individuals who understand heritage and embrace innovation. Join us in transforming how textiles are traded globally.
           </p>
-          <a href="#open-positions" className="bg-primary text-white px-8 py-3.5 rounded-full text-[10px] font-bold uppercase tracking-widest inline-flex items-center gap-2 hover:bg-primary/90 transition-all shadow-lg">
+          <a href="#open-positions" className="bg-primary text-white px-8 py-3.5 rounded-full text-xs font-bold capitalize tracking-widest inline-flex items-center gap-2 hover:bg-primary/90 transition-all shadow-lg">
             View Openings <ArrowRight className="w-4 h-4" />
           </a>
         </div>
@@ -49,7 +49,7 @@ const Career = () => {
       {/* Why Join Us */}
       <section className="bg-primary text-primary-foreground py-20 mt-12">
         <div className="container-custom text-center">
-          <span className="text-accent font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">Life at Texmart</span>
+          <span className="text-accent font-bold capitalize tracking-[0.2em] text-xs mb-4 block">Life at Texmart</span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-16">Why Build Your Career With Us?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -98,7 +98,7 @@ const Career = () => {
           {jobs.map((job) => (
             <div key={job.id} className="bg-white border border-border p-6 md:p-8 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6 hover:shadow-md transition-all group">
               <div>
-                <span className="inline-block bg-muted text-primary text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
+                <span className="inline-block bg-muted text-primary text-sm font-bold capitalize tracking-widest px-3 py-1 rounded-full mb-3">
                   {job.department}
                 </span>
                 <h3 className="font-bold text-xl text-primary group-hover:text-accent transition-colors mb-2">{job.title}</h3>
@@ -107,7 +107,7 @@ const Career = () => {
                   <span className="flex items-center gap-1"><Briefcase className="w-3.5 h-3.5 text-primary/50" /> {job.type}</span>
                 </div>
               </div>
-              <button className="text-[10px] font-bold uppercase tracking-widest text-primary border border-primary px-6 py-2.5 rounded-full hover:bg-primary hover:text-white transition-colors shrink-0">
+              <button className="text-xs font-bold capitalize tracking-widest text-primary border border-primary px-6 py-2.5 rounded-full hover:bg-primary hover:text-white transition-colors shrink-0">
                 Apply Now
               </button>
             </div>

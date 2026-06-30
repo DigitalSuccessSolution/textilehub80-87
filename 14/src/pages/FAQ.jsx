@@ -14,8 +14,8 @@ const FAQ = () => {
       { q: "Do you sell directly to consumers (B2C)?", a: "No, Texmart operates exclusively on a B2B model, catering to wholesalers, boutique owners, and retail chains." }
     ],
     'B2B Portal': [
-      { q: "How does the e-Quotation system work?", a: "Once registered, you can browse collections, select volumes, and instantly generate a PDF quotation valid for 72 hours via our automated engine." },
-      { q: "What is the Live e-Auction?", a: "Our e-Auction platform allows verified buyers to bid on premium surplus lots and factory direct releases in real-time, securing the best market rates." },
+      { q: "How does the e-quotation system work?", a: "Once registered, you can browse collections, select volumes, and instantly generate a PDF quotation valid for 72 hours via our automated engine." },
+      { q: "What is the Live e-auction?", a: "Our e-auction platform allows verified buyers to bid on premium surplus lots and factory direct releases in real-time, securing the best market rates." },
       { q: "How do I get an RMS (Retail Management System) account?", a: "RMS access is granted to long-term partners with a minimum quarterly order volume. Contact your account manager for provisioning." }
     ],
     'Shipping': [
@@ -53,7 +53,7 @@ const FAQ = () => {
               <button 
                 key={cat}
                 onClick={() => { setActiveCategory(cat); setOpenIndex(0); }}
-                className={`whitespace-nowrap px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all snap-start shrink-0 ${activeCategory === cat ? 'bg-primary text-white shadow-md' : 'bg-white text-muted-foreground hover:bg-muted border border-border'}`}
+                className={`whitespace-nowrap px-8 py-3 rounded-full text-xs font-bold capitalize tracking-widest transition-all snap-start shrink-0 ${activeCategory === cat ? 'bg-primary text-white shadow-md' : 'bg-white text-muted-foreground hover:bg-muted border border-border'}`}
               >
                 {cat}
               </button>
@@ -91,7 +91,7 @@ const FAQ = () => {
         {/* Still Need Help */}
         <div className="mt-16 text-center">
           <p className="text-sm font-medium text-primary mb-4">Can't find what you're looking for?</p>
-          <a href="/contact" className="inline-block border border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest transition-colors">
+          <a href="/contact" className="inline-block border border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full text-xs font-bold capitalize tracking-widest transition-colors">
             Contact Support
           </a>
         </div>

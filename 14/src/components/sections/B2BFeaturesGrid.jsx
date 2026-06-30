@@ -9,8 +9,8 @@ const B2BFeaturesGrid = () => {
   const features = [
     { name: 'Our Retail Management', icon: <Building className="w-6 h-6 text-[#0C6C3E]" />, path: '/retail-management' },
     { name: 'Trade Enquiry', icon: <FileText className="w-6 h-6 text-[#0C6C3E]" />, path: '/trade-enquiry' },
-    { name: 'e-Quotation', icon: <ClipboardList className="w-6 h-6 text-[#0C6C3E]" />, path: '/e-quotation' },
-    { name: 'e-Auction', icon: <Hammer className="w-6 h-6 text-[#0C6C3E]" />, path: '/e-auction' },
+    { name: 'e-quotation', icon: <ClipboardList className="w-6 h-6 text-[#0C6C3E]" />, path: '/e-quotation' },
+    { name: 'e-auction', icon: <Hammer className="w-6 h-6 text-[#0C6C3E]" />, path: '/e-auction' },
     { name: 'Trade Circular', icon: <FileDown className="w-6 h-6 text-[#0C6C3E]" />, path: '/trade-circular' },
     { name: 'Blog Page', icon: <BookOpen className="w-6 h-6 text-[#0C6C3E]" />, path: '/blog' },
     { name: 'Notice Board', icon: <Bell className="w-6 h-6 text-[#0C6C3E]" />, path: '/notice-board' },
@@ -25,7 +25,7 @@ const B2BFeaturesGrid = () => {
         
         {/* Title */}
         <div className="text-center space-y-2">
-          <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary uppercase tracking-wider">
+          <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary capitalize tracking-wider">
             B2B Shortcuts Panel
           </h3>
           <p className="text-xs text-slate-400 max-w-md mx-auto">
@@ -44,7 +44,7 @@ const B2BFeaturesGrid = () => {
               <div className="w-12 h-12 bg-slate-50 rounded-full flex items-center justify-center mb-3 group-hover:bg-accent/10 transition-colors">
                 {item.icon}
               </div>
-              <span className="block text-[10px] font-bold text-slate-700 uppercase tracking-wide group-hover:text-accent transition-colors leading-tight">
+              <span className="block text-xs font-bold text-slate-700 capitalize tracking-wide group-hover:text-accent transition-colors leading-tight">
                 {item.name}
               </span>
             </Link>

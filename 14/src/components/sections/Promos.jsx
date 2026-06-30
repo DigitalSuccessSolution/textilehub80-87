@@ -11,7 +11,7 @@ const Promos = () => {
           {/* Card 1: Summer Edit - lg:col-span-3 */}
           <div className="lg:col-span-3 bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between items-start space-y-6 relative overflow-hidden group">
             <div className="space-y-2">
-              <span className="text-[10px] font-bold text-accent uppercase tracking-widest block">New Collection</span>
+              <span className="text-xs font-bold text-accent capitalize tracking-widest block">New Collection</span>
               <h4 className="font-heading text-2xl font-bold text-primary leading-tight">Summer <br />Edit 2025</h4>
               <p className="text-slate-400 text-xs">Light. Elegant. Effortless.</p>
             </div>
@@ -25,7 +25,7 @@ const Promos = () => {
             </div>
             <Link 
               to="/products"
-              className="text-xs font-bold uppercase tracking-wider text-slate-700 hover:text-accent transition-colors flex items-center gap-1 w-full border-t border-slate-50 pt-4"
+              className="text-xs font-bold capitalize tracking-wider text-slate-700 hover:text-accent transition-colors flex items-center gap-1 w-full border-t border-slate-50 pt-4"
             >
               Shop Now <ArrowRight className="w-3.5 h-3.5" />
             </Link>
@@ -35,7 +35,7 @@ const Promos = () => {
           <div className="lg:col-span-3 bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between items-start space-y-6">
             <div className="space-y-4">
               <div className="space-y-1">
-                <span className="text-[10px] font-bold text-accent uppercase tracking-widest block">Quality Looms</span>
+                <span className="text-xs font-bold text-accent capitalize tracking-widest block">Quality Looms</span>
                 <h4 className="font-heading text-lg font-bold text-primary leading-snug">PREMIUM FABRICS FOR EVERY CREATION</h4>
               </div>
               <ul className="space-y-2 text-xs text-slate-500 font-medium">
@@ -55,7 +55,7 @@ const Promos = () => {
             </div>
             <Link 
               to="/about"
-              className="text-xs font-bold uppercase tracking-wider text-slate-700 hover:text-accent transition-colors flex items-center gap-1 w-full border-t border-slate-50 pt-4"
+              className="text-xs font-bold capitalize tracking-wider text-slate-700 hover:text-accent transition-colors flex items-center gap-1 w-full border-t border-slate-50 pt-4"
             >
               Discover More <ArrowRight className="w-3.5 h-3.5" />
             </Link>
@@ -64,7 +64,7 @@ const Promos = () => {
           {/* Card 3: For Retailers - lg:col-span-3 */}
           <div className="lg:col-span-3 bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between items-start space-y-6 relative overflow-hidden group">
             <div className="space-y-2">
-              <span className="text-[10px] font-bold text-accent uppercase tracking-widest block">For Retailers</span>
+              <span className="text-xs font-bold text-accent capitalize tracking-widest block">For Retailers</span>
               <h4 className="font-heading text-lg font-bold text-primary leading-snug">Grow Your Business With Us</h4>
               <p className="text-slate-400 text-xs">Reliable supply logs, exclusive collections.</p>
             </div>
@@ -78,7 +78,7 @@ const Promos = () => {
             </div>
             <Link 
               to="/trade-enquiry"
-              className="text-xs font-bold uppercase tracking-wider text-slate-700 hover:text-accent transition-colors flex items-center gap-1 w-full border-t border-slate-50 pt-4"
+              className="text-xs font-bold capitalize tracking-wider text-slate-700 hover:text-accent transition-colors flex items-center gap-1 w-full border-t border-slate-50 pt-4"
             >
               Partner With Us <ArrowRight className="w-3.5 h-3.5" />
             </Link>
@@ -87,28 +87,28 @@ const Promos = () => {
           {/* Card 4: Right B2B Column - lg:col-span-3 */}
           <div className="lg:col-span-3 flex flex-col gap-4">
             
-            {/* e-Quotation card */}
+            {/* e-quotation card */}
             <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-center justify-between gap-4 hover:border-accent/20 transition-all duration-300">
               <div className="space-y-1">
-                <h5 className="font-heading font-bold text-slate-800 text-xs uppercase tracking-wider">
+                <h5 className="font-heading font-bold text-slate-800 text-xs capitalize tracking-wider">
                   <span className="normal-case">e</span>-Quotation
                 </h5>
-                <p className="text-[10px] text-slate-400 leading-normal max-w-[150px]">Get instant quotes for your lot requirements.</p>
-                <Link to="/e-quotation" className="text-[9px] font-bold text-accent hover:underline uppercase tracking-wider block pt-1">Request Now &rarr;</Link>
+                <p className="text-xs text-slate-400 leading-normal max-w-[150px]">Get instant quotes for your lot requirements.</p>
+                <Link to="/e-quotation" className="text-sm font-bold text-accent hover:underline capitalize tracking-wider block pt-1">Request Now &rarr;</Link>
               </div>
               <div className="w-10 h-10 bg-primary/5 rounded-lg flex items-center justify-center shrink-0">
                 <Receipt className="w-5 h-5 text-accent" />
               </div>
             </div>
 
-            {/* e-Auction card */}
+            {/* e-auction card */}
             <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-center justify-between gap-4 hover:border-accent/20 transition-all duration-300">
               <div className="space-y-1">
-                <h5 className="font-heading font-bold text-slate-800 text-xs uppercase tracking-wider">
+                <h5 className="font-heading font-bold text-slate-800 text-xs capitalize tracking-wider">
                   <span className="normal-case">e</span>-Auction
                 </h5>
-                <p className="text-[10px] text-slate-400 leading-normal max-w-[150px]">Participate in exclusive wholesale auctions.</p>
-                <Link to="/e-auction" className="text-[9px] font-bold text-accent hover:underline uppercase tracking-wider block pt-1">View Auctions &rarr;</Link>
+                <p className="text-xs text-slate-400 leading-normal max-w-[150px]">Participate in exclusive wholesale auctions.</p>
+                <Link to="/e-auction" className="text-sm font-bold text-accent hover:underline capitalize tracking-wider block pt-1">View Auctions &rarr;</Link>
               </div>
               <div className="w-10 h-10 bg-primary/5 rounded-lg flex items-center justify-center shrink-0">
                 <Gavel className="w-5 h-5 text-accent" />
@@ -118,9 +118,9 @@ const Promos = () => {
             {/* Trade Circular card */}
             <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-center justify-between gap-4 hover:border-accent/20 transition-all duration-300">
               <div className="space-y-1">
-                <h5 className="font-heading font-bold text-slate-800 text-xs uppercase tracking-wider">TRADE CIRCULAR</h5>
-                <p className="text-[10px] text-slate-400 leading-normal max-w-[150px]">Stay updated with latest official releases.</p>
-                <Link to="/trade-circular" className="text-[9px] font-bold text-accent hover:underline uppercase tracking-wider block pt-1">View Circulars &rarr;</Link>
+                <h5 className="font-heading font-bold text-slate-800 text-xs capitalize tracking-wider">TRADE CIRCULAR</h5>
+                <p className="text-xs text-slate-400 leading-normal max-w-[150px]">Stay updated with latest official releases.</p>
+                <Link to="/trade-circular" className="text-sm font-bold text-accent hover:underline capitalize tracking-wider block pt-1">View Circulars &rarr;</Link>
               </div>
               <div className="w-10 h-10 bg-primary/5 rounded-lg flex items-center justify-center shrink-0">
                 <FileText className="w-5 h-5 text-accent" />

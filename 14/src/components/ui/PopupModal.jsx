@@ -49,18 +49,18 @@ const PopupModal = () => {
               </div>
               <div className="p-8 text-center space-y-5">
                 <p className="text-xs text-slate-400 leading-relaxed font-light">
-                  Join our exclusive B2B trade circle today. Access automated **e-Quotations**, bid in active **e-Auctions**, and view official **Trade Circulars** online.
+                  Join our exclusive B2B trade circle today. Access automated **e-quotations**, bid in active **e-auctions**, and view official **Trade Circulars** online.
                 </p>
                 <div className="flex gap-4 justify-center pt-2">
                   <button 
                     onClick={() => setIsOpen(false)}
-                    className="border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-md transition-colors"
+                    className="border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold capitalize tracking-wider px-6 py-2.5 rounded-md transition-colors"
                   >
                     Dismiss
                   </button>
                   <a 
                     href="/trade-enquiry"
-                    className="bg-primary hover:bg-accent text-white hover:text-primary text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-md transition-colors"
+                    className="bg-primary hover:bg-accent text-white hover:text-primary text-xs font-bold capitalize tracking-wider px-6 py-2.5 rounded-md transition-colors"
                   >
                     Register Now
                   </a>

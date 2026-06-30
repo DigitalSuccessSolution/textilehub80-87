@@ -31,7 +31,7 @@ const Testimonials = () => {
         <div className="text-center">
           <div className="inline-flex items-center gap-3 justify-center w-full">
             <span className="w-10 h-0.5 bg-[#0C6C3E]"></span>
-            <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary uppercase tracking-wider">What Our Customers Say</h3>
+            <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary capitalize tracking-wider">What Our Customers Say</h3>
             <span className="w-10 h-0.5 bg-[#0C6C3E]"></span>
           </div>
         </div>
@@ -64,7 +64,7 @@ const Testimonials = () => {
                 />
                 <div>
                   <h4 className="text-xs font-bold text-slate-800 leading-none">{item.name}</h4>
-                  <span className="text-[10px] text-slate-400 font-semibold mt-1 block">{item.company}</span>
+                  <span className="text-xs text-slate-400 font-semibold mt-1 block">{item.company}</span>
                 </div>
               </div>
             </div>

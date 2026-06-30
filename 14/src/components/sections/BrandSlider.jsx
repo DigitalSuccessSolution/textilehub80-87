@@ -20,7 +20,7 @@ const BrandSlider = () => {
         <div className="text-center">
           <div className="inline-flex items-center gap-3 justify-center w-full">
             <span className="w-10 h-0.5 bg-[#0C6C3E]"></span>
-            <h3 className="text-sm font-heading font-bold text-primary uppercase tracking-wider">Our Brands & Partners</h3>
+            <h3 className="text-sm font-heading font-bold text-primary capitalize tracking-wider">Our Brands & Partners</h3>
             <span className="w-10 h-0.5 bg-[#0C6C3E]"></span>
           </div>
         </div>
@@ -34,10 +34,10 @@ const BrandSlider = () => {
                 key={idx} 
                 className="flex flex-col items-center justify-center shrink-0 w-40 px-4 py-3 bg-slate-50 border border-slate-100 rounded-xl hover:border-accent transition-all duration-300 shadow-xs"
               >
-                <span className="text-xs font-heading font-extrabold tracking-wider text-slate-800 uppercase block">
+                <span className="text-xs font-heading font-extrabold tracking-wider text-slate-800 capitalize block">
                   {brand.name}
                 </span>
-                <span className="text-[8px] text-slate-400 uppercase font-semibold mt-1 tracking-wider">
+                <span className="text-xs text-slate-400 capitalize font-semibold mt-1 tracking-wider">
                   {brand.type}
                 </span>
               </div>

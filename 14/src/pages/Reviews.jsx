@@ -9,7 +9,7 @@ const Reviews = () => {
       company: "Shree Balaji Textiles",
       location: "Ahmedabad",
       rating: 5,
-      content: "Texmart has been our trusted partner for quality textiles and excellent service. Their e-Quotation system saves us hours of negotiation. The fabric quality, especially the Chanderi Silk, is unmatched in the market."
+      content: "Texmart has been our trusted partner for quality textiles and excellent service. Their e-quotation system saves us hours of negotiation. The fabric quality, especially the Chanderi Silk, is unmatched in the market."
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ const Reviews = () => {
       company: "Singhania Garments",
       location: "Delhi",
       rating: 4,
-      content: "Participating in their live e-Auctions has been a game changer for our wholesale procurement. We managed to secure premium shirting surplus at highly competitive rates. Logistics are generally smooth."
+      content: "Participating in their live e-auctions has been a game changer for our wholesale procurement. We managed to secure premium shirting surplus at highly competitive rates. Logistics are generally smooth."
     },
     {
       id: 4,
@@ -91,8 +91,8 @@ const Reviews = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-primary">{review.name}</h4>
-                  <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest">{review.company}</p>
-                  <p className="text-[9px] text-primary/50 mt-0.5">{review.location}</p>
+                  <p className="text-xs text-muted-foreground font-bold capitalize tracking-widest">{review.company}</p>
+                  <p className="text-sm text-primary/50 mt-0.5">{review.location}</p>
                 </div>
               </div>
 

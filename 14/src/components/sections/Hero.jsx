@@ -28,7 +28,7 @@ const Hero = () => {
         {/* Left Content Column - 6 Cols */}
         <div className="lg:col-span-6 space-y-6">
           <div className="space-y-3">
-            <span className="bg-[#053B1F] text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest rounded-md inline-block">
+            <span className="bg-[#053B1F] text-white text-xs font-bold px-3 py-1 capitalize tracking-widest rounded-md inline-block">
               Premium Quality
             </span>
             <div className="flex items-center gap-4 text-xs font-semibold text-slate-400">
@@ -71,13 +71,13 @@ const Hero = () => {
           <div className="flex flex-wrap gap-4 pt-4">
             <Link 
               to="/products"
-              className="bg-[#0C6C3E] hover:bg-[#053B1F] text-white font-bold py-3 px-8 rounded-md text-xs uppercase tracking-wider transition-colors duration-300 shadow-md inline-flex items-center gap-2"
+              className="bg-[#0C6C3E] hover:bg-[#053B1F] text-white font-bold py-3 px-8 rounded-md text-xs capitalize tracking-wider transition-colors duration-300 shadow-md inline-flex items-center gap-2"
             >
               Shop Now <ArrowRight className="w-4 h-4" />
             </Link>
             <Link 
               to="/trade-enquiry"
-              className="border border-[#0C6C3E] text-[#0C6C3E] hover:bg-[#0C6C3E] hover:text-white font-bold py-3 px-8 rounded-md text-xs uppercase tracking-wider transition-colors duration-300 inline-flex items-center"
+              className="border border-[#0C6C3E] text-[#0C6C3E] hover:bg-[#0C6C3E] hover:text-white font-bold py-3 px-8 rounded-md text-xs capitalize tracking-wider transition-colors duration-300 inline-flex items-center"
             >
               Trade Enquiry
             </Link>

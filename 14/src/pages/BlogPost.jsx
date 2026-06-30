@@ -8,7 +8,7 @@ const BlogPost = () => {
       
       {/* Top Navigation */}
       <div className="container-custom mb-8">
-        <RouterLink to="/blog" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors">
+        <RouterLink to="/blog" className="inline-flex items-center gap-2 text-xs font-bold capitalize tracking-widest text-muted-foreground hover:text-primary transition-colors">
           <ArrowLeft className="w-3.5 h-3.5" /> Back to Journal
         </RouterLink>
       </div>
@@ -17,7 +17,7 @@ const BlogPost = () => {
         
         {/* Article Header */}
         <header className="text-center mb-12">
-          <div className="flex items-center justify-center gap-4 text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-6">
+          <div className="flex items-center justify-center gap-4 text-xs font-bold capitalize tracking-widest text-muted-foreground mb-6">
             <span className="text-accent bg-accent/10 px-4 py-1.5 rounded-full border border-accent/20">Industry Trends</span>
             <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> Oct 12, 2023</span>
           </div>
@@ -30,7 +30,7 @@ const BlogPost = () => {
             </div>
             <div className="text-left">
               <span className="block text-sm font-bold text-primary">Priya Sharma</span>
-              <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-bold">Textile Historian & Analyst</span>
+              <span className="block text-xs capitalize tracking-widest text-muted-foreground font-bold">Textile Historian & Analyst</span>
             </div>
           </div>
         </header>
@@ -85,7 +85,7 @@ const BlogPost = () => {
 
           <h2 className="text-3xl mt-12 mb-6">The Path Forward</h2>
           <p>
-            As a B2B partner, Texmart recognizes this shift. We have expanded our direct connections with weaving clusters in Varanasi, Kanchipuram, and Chanderi. By utilizing our e-Quotation system, retailers can now source authentic handloom batches directly, ensuring provenance and quality while supporting artisan communities.
+            As a B2B partner, Texmart recognizes this shift. We have expanded our direct connections with weaving clusters in Varanasi, Kanchipuram, and Chanderi. By utilizing our e-quotation system, retailers can now source authentic handloom batches directly, ensuring provenance and quality while supporting artisan communities.
           </p>
           <p>
             The future of premium retail is intimately tied to the past. Embracing handloom is not a step backward, but a sustainable step forward into a market that values craftsmanship over mass production.
@@ -98,14 +98,14 @@ const BlogPost = () => {
           <div className="flex items-center gap-2">
             <Tag className="w-4 h-4 text-muted-foreground" />
             <div className="flex gap-2">
-              <span className="bg-muted px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary">Handloom</span>
-              <span className="bg-muted px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary">Retail</span>
-              <span className="bg-muted px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary">Trends</span>
+              <span className="bg-muted px-3 py-1 rounded-full text-xs font-bold capitalize tracking-widest text-primary">Handloom</span>
+              <span className="bg-muted px-3 py-1 rounded-full text-xs font-bold capitalize tracking-widest text-primary">Retail</span>
+              <span className="bg-muted px-3 py-1 rounded-full text-xs font-bold capitalize tracking-widest text-primary">Trends</span>
             </div>
           </div>
           
           <div className="flex items-center gap-4">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Share:</span>
+            <span className="text-xs font-bold capitalize tracking-widest text-muted-foreground">Share:</span>
             <div className="flex gap-2">
               <button className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-primary hover:text-accent hover:border-accent transition-colors"><LinkIcon className="w-3.5 h-3.5" /></button>
               <button className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-primary hover:text-accent hover:border-accent transition-colors"><MessageCircle className="w-3.5 h-3.5" /></button>

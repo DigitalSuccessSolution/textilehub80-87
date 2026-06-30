@@ -3,6 +3,9 @@ import { Outlet, useLocation } from 'react-router-dom';
 import TopBar from './TopBar';
 import Header from './Header';
 import Footer from './Footer';
+import Popup from '../ui/Popup';
+import FloatingWhatsApp from '../ui/FloatingWhatsApp';
+import LiveChat from '../ui/LiveChat';
 
 const Layout = () => {
   const { pathname } = useLocation();
@@ -19,6 +22,9 @@ const Layout = () => {
         <Outlet />
       </main>
       <Footer />
+      <Popup />
+      <FloatingWhatsApp />
+      <LiveChat />
     </div>
   );
 };

@@ -30,9 +30,9 @@ const NoticeBoard = () => {
     {
       id: 4,
       type: 'info',
-      title: 'e-Auction Portal Update',
+      title: 'e-auction Portal Update',
       date: 'Sep 15, 2023',
-      content: 'The e-Auction bidding increment has been standardized to ₹5/meter for all premium silk lots to ensure fairer bidding.',
+      content: 'The e-auction bidding increment has been standardized to ₹5/meter for all premium silk lots to ensure fairer bidding.',
       icon: <Info className="w-5 h-5" />
     }
   ];
@@ -72,7 +72,7 @@ const NoticeBoard = () => {
                   </div>
                   <div className="md:pt-3">
                     <span className="text-xs font-bold text-primary block">{notice.date}</span>
-                    <span className="text-[9px] uppercase tracking-widest text-muted-foreground font-bold">{notice.type}</span>
+                    <span className="text-sm capitalize tracking-widest text-muted-foreground font-bold">{notice.type}</span>
                   </div>
                 </div>
 
@@ -86,7 +86,7 @@ const NoticeBoard = () => {
                   </p>
                   
                   <div className="mt-6 pt-4 border-t border-border flex justify-end">
-                    <button className="text-[10px] font-bold uppercase tracking-widest text-accent flex items-center gap-1 hover:text-primary transition-colors">
+                    <button className="text-xs font-bold capitalize tracking-widest text-accent flex items-center gap-1 hover:text-primary transition-colors">
                       Read Full Notice <ArrowRight className="w-3 h-3" />
                     </button>
                   </div>
@@ -99,7 +99,7 @@ const NoticeBoard = () => {
 
         {/* Load More */}
         <div className="mt-16 text-center">
-          <button className="bg-transparent border border-primary text-primary px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-sm">
+          <button className="bg-transparent border border-primary text-primary px-8 py-3 rounded-full text-xs font-bold capitalize tracking-widest hover:bg-primary hover:text-white transition-all shadow-sm">
             Load Previous Notices
           </button>
         </div>

@@ -16,34 +16,28 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: 'HOME', path: '/' },
-    { name: 'ABOUT US', path: '/about' },
-    { name: 'PRODUCT GALLERY', path: '/products' },
-    { name: 'B2B SOLUTIONS', path: '/retail-management' },
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
+    { name: 'Product', path: '/product' },
+    { name: 'Our Retail Management', path: '/our-retail-management' },
+    { name: 'Trade Enquiry', path: '/trade-enquiry' },
     { 
-      name: 'SERVICES', 
+      name: 'More', 
       path: '#',
       hasDropdown: true,
       dropdownItems: [
-        { name: 'TRADE ENQUIRY', path: '/trade-enquiry' },
-        { name: 'e-QUOTATION', path: '/e-quotation' },
-        { name: 'e-AUCTION', path: '/e-auction' },
-        { name: 'TRADE CIRCULAR', path: '/trade-circular' }
+        { name: 'e-quotation', path: '/e-quotation' },
+        { name: 'e-auction', path: '/e-auction' },
+        { name: 'Trade Circular', path: '/trade-circular' },
+        { name: 'Blog', path: '/blog' },
+        { name: 'Notice Board', path: '/notice-board' },
+        { name: 'Career', path: '/career' },
+        { name: 'Customer Review', path: '/customer-review' },
+        { name: 'Business Media Gallery', path: '/business-media-gallery' },
+        { name: 'FAQ', path: '/faq' }
       ]
-    },
-    { 
-      name: 'RESOURCES', 
-      path: '#',
-      hasDropdown: true,
-      dropdownItems: [
-        { name: 'BLOG', path: '/blog' },
-        { name: 'NOTICE BOARD', path: '/notice-board' },
-        { name: 'CUSTOMER REVIEWS', path: '/reviews' },
-        { name: 'MEDIA GALLERY', path: '/media-gallery' }
-      ]
-    },
-    { name: 'CAREERS', path: '/career' },
-    { name: 'CONTACT US', path: '/contact' }
+    }
   ];
 
   return (
@@ -60,7 +54,7 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-heading font-bold text-xl md:text-2xl text-primary leading-none tracking-tight">TEXMART</span>
-              <span className="text-[8px] text-accent uppercase tracking-[0.2em] font-bold">Textile Retail Mall</span>
+              <span className="text-xs text-accent capitalize tracking-[0.2em] font-bold">Textile Retail Mall</span>
             </div>
           </Link>
 
@@ -70,7 +64,7 @@ const Header = () => {
               <div key={index} className="relative group px-2 py-2">
                 <Link 
                   to={link.path} 
-                  className={`whitespace-nowrap text-[10px] font-bold tracking-widest flex items-center gap-1 transition-colors ${location.pathname === link.path ? 'text-primary' : 'text-foreground hover:text-primary'}`}
+                  className={`whitespace-nowrap text-xs font-bold tracking-widest flex items-center gap-1 transition-colors ${location.pathname === link.path ? 'text-primary' : 'text-foreground hover:text-primary'}`}
                 >
                   {link.name}
                   {link.hasDropdown && <ChevronDown className="w-3.5 h-3.5 text-muted-foreground group-hover:rotate-180 transition-transform" />}
@@ -84,7 +78,7 @@ const Header = () => {
                         <Link 
                           key={idx} 
                           to={item.path} 
-                          className="block px-6 py-3 text-[11px] font-bold tracking-wider text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
+                          className="block px-6 py-3 text-sm font-bold tracking-wider text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
                         >
                           {item.name}
                         </Link>
@@ -98,7 +92,7 @@ const Header = () => {
 
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link to="/trade-enquiry" className="bg-[#B8860B] text-white hover:bg-[#B8860B]/90 px-6 py-2.5 rounded-sm text-[10px] font-bold uppercase tracking-widest transition-colors shadow-md">
+            <Link to="/trade-enquiry" className="bg-[#B8860B] text-white hover:bg-[#B8860B]/90 px-6 py-2.5 rounded-sm text-xs font-bold capitalize tracking-widest transition-colors shadow-md">
               Trade Enquiry
             </Link>
           </div>
@@ -115,13 +109,13 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div className={`lg:hidden absolute top-full left-0 w-full bg-white border-b border-border shadow-xl overflow-hidden transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'max-h-screen border-t' : 'max-h-0'}`}>
-        <div className="container-custom py-4 max-h-[70vh] overflow-y-auto">
+        <div className="container-custom py-4 max-h-[calc(100vh-80px)] overflow-y-auto pb-20 visible-scrollbar">
           <nav className="flex flex-col gap-2">
             {navLinks.map((link, index) => (
               <div key={index} className="flex flex-col border-b border-border/50 last:border-0 pb-2">
                 <Link 
                   to={link.path} 
-                  className={`py-3 text-[11px] font-bold tracking-widest flex justify-between items-center ${location.pathname === link.path ? 'text-primary' : 'text-foreground'}`}
+                  className={`py-3 text-sm font-bold tracking-widest flex justify-between items-center ${location.pathname === link.path ? 'text-primary' : 'text-foreground'}`}
                   onClick={() => !link.hasDropdown && setMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -132,7 +126,7 @@ const Header = () => {
                       <Link 
                         key={idx} 
                         to={item.path} 
-                        className="py-2 text-[10px] font-bold tracking-wider text-muted-foreground hover:text-primary"
+                        className="py-2 text-xs font-bold tracking-wider text-muted-foreground hover:text-primary"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.name}
@@ -144,7 +138,7 @@ const Header = () => {
             ))}
             <Link 
               to="/trade-enquiry" 
-              className="mt-4 bg-primary text-white text-center py-3 rounded-full text-[11px] font-bold uppercase tracking-widest shadow-md"
+              className="mt-4 bg-primary text-white text-center py-3 rounded-full text-sm font-bold capitalize tracking-widest shadow-md"
               onClick={() => setMobileMenuOpen(false)}
             >
               Trade Enquiry

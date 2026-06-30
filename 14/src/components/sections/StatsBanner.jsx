@@ -20,7 +20,7 @@ const StatsBanner = () => {
                 {item.icon}
               </div>
               <span className="block text-2xl font-heading font-extrabold text-white leading-none">{item.num}</span>
-              <span className="block text-[9px] text-slate-300 uppercase font-bold tracking-wider pt-1">{item.label}</span>
+              <span className="block text-sm text-slate-300 capitalize font-bold tracking-wider pt-1">{item.label}</span>
             </div>
           ))}
         </div>

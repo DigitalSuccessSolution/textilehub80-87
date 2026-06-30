@@ -10,7 +10,7 @@ const Chatbot = () => {
   const [input, setInput] = useState('');
 
   const faqs = [
-    { q: 'How to place a B2B order?', a: 'Please navigate to our e-Quotation page to select categories and submit quantities for review.' },
+    { q: 'How to place a B2B order?', a: 'Please navigate to our e-quotation page to select categories and submit quantities for review.' },
     { q: 'What are the delivery terms?', a: 'We work with leading logistics associates to ship bulk textile materials nationwide within 10-15 business days.' },
     { q: 'Where are you located?', a: 'Our headquarters and showroom are located in Surat, Gujarat. You can view our coordinates on our Contact Us page.' }
   ];
@@ -43,7 +43,7 @@ const Chatbot = () => {
         aria-label="Open Live Chat"
       >
         <MessageSquare className="w-5 h-5 text-accent" />
-        <span className="absolute left-full ml-3 bg-white text-primary text-xs font-semibold uppercase tracking-wider px-3 py-2 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-border">
+        <span className="absolute left-full ml-3 bg-white text-primary text-xs font-semibold capitalize tracking-wider px-3 py-2 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-border">
           B2B Support Chat
         </span>
       </button>
@@ -60,7 +60,7 @@ const Chatbot = () => {
             <div className="bg-primary text-primary-foreground p-4 flex items-center justify-between border-b border-white/10">
               <div className="flex items-center gap-2">
                 <MessageSquare className="w-4 h-4 text-accent" />
-                <span className="text-xs font-heading font-bold uppercase tracking-wider text-white">Live Support Desk</span>
+                <span className="text-xs font-heading font-bold capitalize tracking-wider text-white">Live Support Desk</span>
               </div>
               <button onClick={() => setIsOpen(false)} className="text-white/70 hover:text-white transition-colors">
                 <X className="w-4 h-4" />
@@ -84,12 +84,12 @@ const Chatbot = () => {
 
             {/* Suggested Questions */}
             <div className="p-3 bg-white border-t border-border space-y-1.5 max-h-28 overflow-y-auto">
-              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Common Inquiries:</p>
+              <p className="text-xs font-bold text-slate-400 capitalize tracking-wide">Common Inquiries:</p>
               {faqs.map((faq, idx) => (
                 <button 
                   key={idx} 
                   onClick={() => setInput(faq.q)}
-                  className="block w-full text-left text-[11px] bg-slate-50 hover:bg-accent/10 hover:text-accent transition-colors px-2.5 py-1.5 rounded-md border border-slate-100 text-slate-600 font-medium"
+                  className="block w-full text-left text-sm bg-slate-50 hover:bg-accent/10 hover:text-accent transition-colors px-2.5 py-1.5 rounded-md border border-slate-100 text-slate-600 font-medium"
                 >
                   {faq.q}
                 </button>

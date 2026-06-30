@@ -27,7 +27,7 @@ const BusinessIntro = () => {
               {/* Experience Badge */}
               <div className="absolute bottom-6 left-6 w-28 h-28 rounded-full bg-[#0C6C3E] text-white flex flex-col justify-center items-center text-center p-3 shadow-2xl border-4 border-white transform hover:scale-105 transition-transform duration-300">
                 <span className="font-heading font-extrabold text-lg leading-none">25+</span>
-                <span className="text-[8px] font-bold uppercase tracking-wider leading-tight mt-1">Years of Experience</span>
+                <span className="text-xs font-bold capitalize tracking-wider leading-tight mt-1">Years of Experience</span>
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@ const BusinessIntro = () => {
           {/* Right Content */}
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-2">
-              <span className="text-[10px] font-bold text-[#0C6C3E] uppercase tracking-widest block">Welcome to WeavesMart</span>
+              <span className="text-xs font-bold text-[#0C6C3E] capitalize tracking-widest block">Welcome to WeavesMart</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary leading-tight">
                 Your Trusted Textile & Garment <br />
                 Retail Partner
@@ -51,7 +51,7 @@ const BusinessIntro = () => {
               {stats.map((item, idx) => (
                 <div key={idx} className="bg-slate-50 p-4 rounded-xl border border-slate-100/80 text-center shadow-xs">
                   <span className="block text-xl font-heading font-extrabold text-[#0C6C3E]">{item.num}</span>
-                  <span className="block text-[9px] text-slate-400 uppercase font-bold tracking-wider mt-1">{item.label}</span>
+                  <span className="block text-sm text-slate-400 capitalize font-bold tracking-wider mt-1">{item.label}</span>
                 </div>
               ))}
             </div>
@@ -59,7 +59,7 @@ const BusinessIntro = () => {
             <div className="pt-4">
               <Link 
                 to="/about"
-                className="bg-[#0C6C3E] hover:bg-[#053B1F] text-white font-bold py-3 px-8 rounded-md text-xs uppercase tracking-wider transition-colors duration-300 shadow-md inline-flex items-center gap-2"
+                className="bg-[#0C6C3E] hover:bg-[#053B1F] text-white font-bold py-3 px-8 rounded-md text-xs capitalize tracking-wider transition-colors duration-300 shadow-md inline-flex items-center gap-2"
               >
                 Know More About Us <ArrowRight className="w-4 h-4" />
               </Link>

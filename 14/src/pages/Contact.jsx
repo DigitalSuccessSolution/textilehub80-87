@@ -23,7 +23,7 @@ const Contact = () => {
               <MapPin className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h4 className="font-bold text-primary text-sm uppercase tracking-widest mb-2">Headquarters</h4>
+              <h4 className="font-bold text-primary text-sm capitalize tracking-widest mb-2">Headquarters</h4>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
                 Texmart Textile Retail Mall<br/>
                 8th M.L. Textile Park,<br/>
@@ -37,7 +37,7 @@ const Contact = () => {
               <Phone className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h4 className="font-bold text-primary text-sm uppercase tracking-widest mb-2">Helpline</h4>
+              <h4 className="font-bold text-primary text-sm capitalize tracking-widest mb-2">Helpline</h4>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
                 1800 123 4567 (Toll Free)<br/>
                 +91 98765 43210 (WhatsApp)
@@ -50,7 +50,7 @@ const Contact = () => {
               <Mail className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h4 className="font-bold text-primary text-sm uppercase tracking-widest mb-2">Email Desk</h4>
+              <h4 className="font-bold text-primary text-sm capitalize tracking-widest mb-2">Email Desk</h4>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
                 info@texmart.com (General)<br/>
                 b2b@texmart.com (Trade)
@@ -63,7 +63,7 @@ const Contact = () => {
               <Clock className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h4 className="font-bold text-primary text-sm uppercase tracking-widest mb-2">Business Hours</h4>
+              <h4 className="font-bold text-primary text-sm capitalize tracking-widest mb-2">Business Hours</h4>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
                 Monday - Saturday<br/>
                 10:00 AM - 7:00 PM (IST)
@@ -72,14 +72,18 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Map Placeholder */}
-        <div className="w-full h-96 bg-muted rounded-2xl border border-border flex items-center justify-center relative overflow-hidden group">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-luminosity group-hover:opacity-60 group-hover:scale-105 transition-all duration-1000"></div>
-          <div className="relative z-10 bg-white/90 backdrop-blur p-6 rounded-xl shadow-lg border border-white flex flex-col items-center">
-            <MapPin className="w-8 h-8 text-accent mb-2" />
-            <h4 className="font-bold text-primary text-lg mb-1">Surat Textile Hub</h4>
-            <p className="text-xs text-muted-foreground font-medium uppercase tracking-widest">Interactive Map Disabled</p>
-          </div>
+        {/* Google Map */}
+        <div className="w-full h-96 rounded-2xl border border-border overflow-hidden relative shadow-sm">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119066.4170946115!2d72.73989524021703!3d21.159340298379204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e59411d1563%3A0xfe4558290938b042!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1699000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen="" 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Surat Headquarters Map"
+          ></iframe>
         </div>
 
       </div>

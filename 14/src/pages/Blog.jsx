@@ -1,53 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Calendar, User, ArrowRight, Bookmark } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const Blog = () => {
-  const posts = [
-    {
-      id: 1,
-      title: "The Resurgence of Handloom: Why Traditional Weaves are Making a Comeback",
-      excerpt: "Explore how modern designers are incorporating ancient weaving techniques into contemporary fashion, and why retailers should stock up on authentic handlooms.",
-      category: "Industry Trends",
-      date: "Oct 12, 2023",
-      author: "Priya Sharma",
-      img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop",
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Understanding Fabric GSM: A Retailer's Guide to Sourcing Quality",
-      excerpt: "A comprehensive breakdown of Grams per Square Meter, how it affects drape and durability, and what numbers to look for.",
-      category: "Textile Education",
-      date: "Sep 28, 2023",
-      author: "Vikram Mehta",
-      img: "https://images.unsplash.com/photo-1583391733958-6115f1108609?q=80&w=600&auto=format&fit=crop",
-      featured: false
-    },
-    {
-      id: 3,
-      title: "Sustainable Dyeing: The Future of Eco-Friendly Manufacturing",
-      excerpt: "How natural dyes and zero-water discharge facilities are changing the environmental footprint of the textile industry.",
-      category: "Sustainability",
-      date: "Sep 15, 2023",
-      author: "Anita Desai",
-      img: "https://images.unsplash.com/photo-1596455607563-ad6193f76b17?q=80&w=600&auto=format&fit=crop",
-      featured: false
-    },
-    {
-      id: 4,
-      title: "Festive Season Prep: Top 5 Collections to Stock Right Now",
-      excerpt: "Data-backed insights into consumer preferences for the upcoming festive season. Don't miss out on these high-margin categories.",
-      category: "Retail Strategy",
-      date: "Aug 30, 2023",
-      author: "Rahul Verma",
-      img: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=600&auto=format&fit=crop",
-      featured: false
-    }
-  ];
+export const blogCategories = ['All', 'Industry Trends', 'Textile Education', 'Sustainability', 'Retail Strategy'];
 
-  const featuredPost = posts.find(p => p.featured);
-  const regularPosts = posts.filter(p => !p.featured);
+export const blogPosts = [
+  {
+    id: 1,
+    title: "The Resurgence of Handloom: Why Traditional Weaves are Making a Comeback",
+    excerpt: "Explore how modern designers are incorporating ancient weaving techniques into contemporary fashion, and why retailers should stock up on authentic handlooms.",
+    category: "Industry Trends",
+    date: "Oct 12, 2023",
+    author: "Priya Sharma",
+    img: "https://images.pexels.com/photos/7645959/pexels-photo-7645959.jpeg",
+    featured: true
+  },
+  {
+    id: 2,
+    title: "Understanding Fabric GSM: A Retailer's Guide to Sourcing Quality",
+    excerpt: "A comprehensive breakdown of Grams per Square Meter, how it affects drape and durability, and what numbers to look for.",
+    category: "Textile Education",
+    date: "Sep 28, 2023",
+    author: "Vikram Mehta",
+    img: "https://images.pexels.com/photos/36198549/pexels-photo-36198549.jpeg",
+    featured: false
+  },
+  {
+    id: 3,
+    title: "Sustainable Dyeing: The Future of Eco-Friendly Manufacturing",
+    excerpt: "How natural dyes and zero-water discharge facilities are changing the environmental footprint of the textile industry.",
+    category: "Sustainability",
+    date: "Sep 15, 2023",
+    author: "Anita Desai",
+    img: "https://images.pexels.com/photos/6850877/pexels-photo-6850877.jpeg",
+    featured: false
+  },
+  {
+    id: 4,
+    title: "Festive Season Prep: Top 5 Collections to Stock Right Now",
+    excerpt: "Data-backed insights into consumer preferences for the upcoming festive season. Don't miss out on these high-margin categories.",
+    category: "Retail Strategy",
+    date: "Aug 30, 2023",
+    author: "Rahul Verma",
+    img: "https://images.pexels.com/photos/7679659/pexels-photo-7679659.jpeg",
+    featured: false
+  }
+];
+
+const Blog = () => {
+  const [activeCategory, setActiveCategory] = useState('All');
+
+  const filteredPosts = blogPosts.filter(p => activeCategory === 'All' || p.category === activeCategory);
+  const featuredPost = filteredPosts.find(p => p.featured);
+  const regularPosts = filteredPosts.filter(p => !p.featured);
 
   return (
     <div className="bg-background min-h-screen">
@@ -56,14 +61,27 @@ const Blog = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-[#2C1E16] via-[#3E2723] to-[#2C1E16] z-0 opacity-100"></div>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558098329-a11cff621064?q=80&w=2000&auto=format&fit=crop')] mix-blend-overlay opacity-10 bg-cover bg-center"></div>
         <div className="container-custom relative z-10 text-center">
-          <h1 className="font-heading text-4xl lg:text-6xl font-bold text-white mb-4">Texmart Blog</h1>
+          <h1 className="font-heading text-4xl lg:text-6xl font-bold text-white mb-4 capitalize">Texmart Blog</h1>
           <p className="text-white/80 max-w-2xl mx-auto text-sm lg:text-base font-light">
             Insights, trends, and stories from the textile industry.
           </p>
         </div>
       </div>
-      
+
       <div className="container-custom pb-20">
+
+        {/* Categories Tab */}
+        <div className="flex overflow-x-auto w-full pb-8 gap-3 snap-x visible-scrollbar mb-8">
+          {blogCategories.map(cat => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`whitespace-nowrap px-8 py-3 rounded-full text-xs font-bold capitalize tracking-widest transition-all snap-start shrink-0 ${activeCategory === cat ? 'bg-primary text-white shadow-md' : 'bg-white text-muted-foreground hover:bg-muted border border-border'}`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
         {/* Featured Post */}
         {featuredPost && (
@@ -72,13 +90,13 @@ const Blog = () => {
               <div className="relative aspect-video lg:aspect-auto overflow-hidden">
                 <img src={featuredPost.img} alt={featuredPost.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute top-6 left-6">
-                  <span className="bg-white/90 backdrop-blur text-primary text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full">
+                  <span className="bg-white/90 backdrop-blur text-primary text-xs font-bold capitalize tracking-widest px-4 py-2 rounded-full">
                     Featured
                   </span>
                 </div>
               </div>
               <div className="p-8 md:p-12 flex flex-col justify-center">
-                <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-4">
+                <div className="flex items-center gap-4 text-xs font-bold capitalize tracking-widest text-muted-foreground mb-4">
                   <span className="text-accent">{featuredPost.category}</span>
                   <span className="w-1 h-1 rounded-full bg-border"></span>
                   <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {featuredPost.date}</span>
@@ -96,7 +114,7 @@ const Blog = () => {
                     </div>
                     <span className="text-xs font-bold text-primary">{featuredPost.author}</span>
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary flex items-center gap-1 group-hover:translate-x-2 transition-transform">
+                  <span className="text-xs font-bold capitalize tracking-widest text-primary flex items-center gap-1 group-hover:translate-x-2 transition-transform">
                     Read Article <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>
@@ -116,7 +134,7 @@ const Blog = () => {
                 </button>
               </div>
               <div className="p-6 md:p-8 flex-1 flex flex-col">
-                <div className="flex items-center gap-3 text-[9px] font-bold uppercase tracking-widest text-muted-foreground mb-3">
+                <div className="flex items-center gap-3 text-sm font-bold capitalize tracking-widest text-muted-foreground mb-3">
                   <span className="text-accent">{post.category}</span>
                   <span className="w-1 h-1 rounded-full bg-border"></span>
                   <span>{post.date}</span>
@@ -128,8 +146,8 @@ const Blog = () => {
                   {post.excerpt}
                 </p>
                 <div className="mt-auto pt-6 border-t border-border flex justify-between items-center">
-                  <span className="text-[10px] font-bold text-primary">{post.author}</span>
-                  <span className="text-[9px] font-bold uppercase tracking-widest text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                  <span className="text-xs font-bold text-primary">{post.author}</span>
+                  <span className="text-sm font-bold capitalize tracking-widest text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Read <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>
@@ -139,7 +157,7 @@ const Blog = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="bg-transparent border border-primary text-primary px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-sm">
+          <button className="bg-transparent border border-primary text-primary px-8 py-3 rounded-full text-xs font-bold capitalize tracking-widest hover:bg-primary hover:text-white transition-all shadow-sm">
             Load More Articles
           </button>
         </div>

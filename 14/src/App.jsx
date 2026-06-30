@@ -26,8 +26,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="products" element={<Products />} />
-          <Route path="retail-management" element={<RetailManagement />} />
+          <Route path="product" element={<Products />} />
+          <Route path="our-retail-management" element={<RetailManagement />} />
           <Route path="trade-enquiry" element={<TradeEnquiry />} />
           <Route path="e-quotation" element={<EQuotation />} />
           <Route path="e-auction" element={<EAuction />} />
@@ -37,8 +37,8 @@ function App() {
           <Route path="blog-post" element={<BlogPost />} />
           <Route path="notice-board" element={<NoticeBoard />} />
           <Route path="career" element={<Career />} />
-          <Route path="reviews" element={<Reviews />} />
-          <Route path="media-gallery" element={<MediaGallery />} />
+          <Route path="customer-review" element={<Reviews />} />
+          <Route path="business-media-gallery" element={<MediaGallery />} />
           <Route path="faq" element={<FAQ />} />
         </Route>
       </Routes>
