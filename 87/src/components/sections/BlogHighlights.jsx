@@ -38,12 +38,12 @@ const BlogHighlights = () => {
                 <div className="mb-16 space-y-3">
                     <div className="flex items-center justify-center gap-2 text-[#C29E6B]">
                         <Sparkles size={12} />
-                        <span className="text-[10px] font-sans font-bold uppercase tracking-[0.35em]">
+                        <span className="text-[10px] font-sans font-bold  tracking-[0.35em]">
                             INSIGHTS & COUTURE TRENDS
                         </span>
                         <Sparkles size={12} />
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-serif text-white tracking-tight uppercase leading-none">
+                    <h2 className="text-3xl md:text-5xl font-serif text-white tracking-tight  leading-none">
                         Latest Articles
                     </h2>
                     <div className="w-12 h-[1px] bg-[#C29E6B] mx-auto"></div>
@@ -70,10 +70,10 @@ const BlogHighlights = () => {
 
                                 {/* Content */}
                                 <div className="p-8 space-y-4">
-                                    <span className="inline-block text-[8px] text-[#C29E6B] uppercase tracking-widest font-black font-sans bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+                                    <span className="inline-block text-[8px] text-[#C29E6B]  tracking-widest font-black font-sans bg-white/5 border border-white/10 px-3 py-1 rounded-full">
                                         {b.cat}
                                     </span>
-                                    <h3 className="text-base font-serif font-bold text-white uppercase tracking-wider group-hover:text-[#C29E6B] transition-colors leading-snug">
+                                    <h3 className="text-base font-serif font-bold text-white  tracking-wider group-hover:text-[#C29E6B] transition-colors leading-snug">
                                         {b.title}
                                     </h3>
                                 </div>
@@ -89,7 +89,7 @@ const BlogHighlights = () => {
 
                 <button 
                     onClick={() => navigate('/blog')}
-                    className="px-8 py-4 bg-[#2C443E] hover:bg-[#1B2E2A] text-white text-[9px] uppercase tracking-widest font-black transition-all duration-300 rounded-full shadow-lg hover:shadow-xl cursor-pointer"
+                    className="px-8 py-4 bg-[#2C443E] hover:bg-[#1B2E2A] text-white text-[9px]  tracking-widest font-black transition-all duration-300 rounded-full shadow-lg hover:shadow-xl cursor-pointer"
                 >
                     View All Articles
                 </button>

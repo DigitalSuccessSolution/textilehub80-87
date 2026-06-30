@@ -73,11 +73,11 @@ const Contact = () => {
             <section className="pt-40 pb-20 bg-[#FAF4EE] border-b border-[#C29E6B]/20 px-6 sm:px-12 relative overflow-hidden text-center">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#FAF0E6]/60 blur-3xl pointer-events-none" />
                 <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-                    <span className="text-[9px] font-sans font-bold uppercase tracking-[0.4em] text-[#2C443E] block">
+                    <span className="text-[9px] font-sans font-bold  tracking-[0.4em] text-[#2C443E] block">
                         Get In Touch
                     </span>
-                    <h1 className="text-4xl sm:text-6xl font-serif text-[#10211F] uppercase tracking-tight leading-none">
-                        Contact Our <span className="text-[#C29E6B] italic font-light lowercase font-serif normal-case">showroom</span>
+                    <h1 className="text-4xl sm:text-6xl font-serif text-[#10211F]  tracking-tight leading-none">
+                        Contact Our <span className="text-[#C29E6B] italic font-light  font-serif normal-case">showroom</span>
                     </h1>
                     <div className="w-12 h-[2px] bg-[#C29E6B] mx-auto mt-4" />
                     <p className="text-stone-500 text-xs sm:text-sm font-sans font-light max-w-lg mx-auto leading-relaxed pt-2">
@@ -90,8 +90,8 @@ const Contact = () => {
             <section className="py-16 md:py-24 px-4 sm:px-8">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-12">
-                        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C29E6B] mb-2">Reach Us</p>
-                        <h2 className="text-2xl md:text-3xl font-serif text-[#10211F] uppercase tracking-wide">
+                        <p className="text-[10px] font-bold  tracking-[0.3em] text-[#C29E6B] mb-2">Reach Us</p>
+                        <h2 className="text-2xl md:text-3xl font-serif text-[#10211F]  tracking-wide">
                             Choose Your <span className="text-[#C29E6B] italic font-light">Channel</span>
                         </h2>
                     </div>
@@ -116,10 +116,10 @@ const Contact = () => {
                                                 strokeWidth={1.5}
                                             />
                                         </div>
-                                        <p className="text-[9px] uppercase tracking-[0.3em] font-black mb-1 text-[#C29E6B]">
+                                        <p className="text-[9px]  tracking-[0.3em] font-black mb-1 text-[#C29E6B]">
                                             {ch.label}
                                         </p>
-                                        <h3 className={`text-base font-serif uppercase tracking-wide mb-3 ${ch.dark ? 'text-white' : 'text-[#10211F]'}`}>
+                                        <h3 className={`text-base font-serif  tracking-wide mb-3 ${ch.dark ? 'text-white' : 'text-[#10211F]'}`}>
                                             {ch.title}
                                         </h3>
                                         <p className={`text-xs font-sans font-semibold mb-2 break-all ${ch.dark ? 'text-white/80' : 'text-[#182220]'}`}>
@@ -133,7 +133,7 @@ const Contact = () => {
                                         href={ch.link}
                                         target={ch.link.startsWith('http') ? '_blank' : '_self'}
                                         rel="noreferrer"
-                                        className={`mt-7 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] transition-colors ${
+                                        className={`mt-7 flex items-center gap-2 text-[10px] font-black  tracking-[0.25em] transition-colors ${
                                             ch.dark
                                                 ? 'text-[#C29E6B] hover:text-white'
                                                 : 'text-[#2C443E] hover:text-[#C29E6B]'
@@ -162,7 +162,7 @@ const Contact = () => {
                                     <Icon size={18} className="text-[#C29E6B]" strokeWidth={1.5} />
                                 </div>
                                 <div>
-                                    <p className="text-[9px] uppercase tracking-[0.3em] font-black text-[#C29E6B] mb-2">
+                                    <p className="text-[9px]  tracking-[0.3em] font-black text-[#C29E6B] mb-2">
                                         {label}
                                     </p>
                                     {lines.map((line, i) => (
@@ -181,7 +181,7 @@ const Contact = () => {
             <section className="pb-16 px-4 sm:px-8">
                 <div className="max-w-6xl mx-auto">
                     <div className="bg-white p-6 rounded-3xl border border-stone-200 hover:border-[#C29E6B] transition-all shadow-sm">
-                        <p className="text-[9px] uppercase tracking-[0.3em] font-black text-[#C29E6B] mb-4">
+                        <p className="text-[9px]  tracking-[0.3em] font-black text-[#C29E6B] mb-4">
                             Interactive Showroom Map
                         </p>
                         <div className="w-full h-80 rounded-2xl overflow-hidden border border-stone-100">
@@ -207,10 +207,10 @@ const Contact = () => {
                             style={{ backgroundImage: `url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80')` }}
                         />
                         <div className="relative z-10">
-                            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.35em] text-[#C29E6B] mb-4 block">
+                            <span className="text-[10px] font-sans font-bold  tracking-[0.35em] text-[#C29E6B] mb-4 block">
                                 B2B Partners
                             </span>
-                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-white uppercase tracking-wide mb-4">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-white  tracking-wide mb-4">
                                 Looking for <span className="text-[#C29E6B] italic font-light">Wholesale Pricing?</span>
                             </h2>
                             <p className="text-stone-300 text-xs sm:text-sm font-sans max-w-xl mx-auto mb-8 leading-relaxed">
@@ -219,13 +219,13 @@ const Contact = () => {
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link
                                     to="/trade-enquiry"
-                                    className="px-8 py-4 bg-[#2C443E] hover:bg-[#1B2E2A] text-white text-[10px] font-bold uppercase tracking-[0.3em] transition-all duration-300 rounded-full shadow-md cursor-pointer"
+                                    className="px-8 py-4 bg-[#2C443E] hover:bg-[#1B2E2A] text-white text-[10px] font-bold  tracking-[0.3em] transition-all duration-300 rounded-full shadow-md cursor-pointer"
                                 >
                                     Submit Trade Enquiry
                                 </Link>
                                 <a
                                     href="mailto:trade@auroratextile.com"
-                                    className="px-8 py-4 border border-white/20 text-white text-[10px] font-bold uppercase tracking-[0.3em] hover:border-[#C29E6B] hover:text-[#C29E6B] transition-colors rounded-full flex items-center justify-center gap-2"
+                                    className="px-8 py-4 border border-white/20 text-white text-[10px] font-bold  tracking-[0.3em] hover:border-[#C29E6B] hover:text-[#C29E6B] transition-colors rounded-full flex items-center justify-center gap-2"
                                 >
                                     <Mail size={13} /> trade@auroratextile.com
                                 </a>

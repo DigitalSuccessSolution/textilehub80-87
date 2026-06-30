@@ -39,12 +39,12 @@ const AboutUs = () => {
                 <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#C29E6B_1px,transparent_1px)] [background-size:24px_24px]"></div>
                 <div className="max-w-[1600px] mx-auto relative flex flex-col md:flex-row md:items-end justify-between gap-8 z-10">
                     <div className="space-y-4">
-                        <span className="text-[10px] font-sans font-bold uppercase tracking-[0.35em] text-[#C29E6B] block">
+                        <span className="text-[10px] font-sans font-bold  tracking-[0.35em] text-[#C29E6B] block">
                             OUR LEGACY
                         </span>
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight uppercase text-white leading-[1.1]">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight  text-white leading-[1.1]">
                             Crafting Comfort, <br />
-                            <span className="font-light text-[#C29E6B] italic lowercase font-serif normal-case">weaving</span> stories
+                            <span className="font-light text-[#C29E6B] italic  font-serif normal-case">weaving</span> stories
                         </h1>
                     </div>
                     <div className="max-w-md border-l border-[#C29E6B]/40 pl-6 py-2">
@@ -61,10 +61,10 @@ const AboutUs = () => {
                     
                     {/* Left Sticky Column */}
                     <div className="lg:col-span-5 lg:sticky lg:top-36 space-y-8 text-left">
-                        <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-[#C29E6B] block">
+                        <span className="text-[10px] font-sans font-bold  tracking-[0.3em] text-[#C29E6B] block">
                             PHILOSOPHY
                         </span>
-                        <h2 className="text-3xl sm:text-4xl font-serif text-[#10211F] uppercase leading-tight">
+                        <h2 className="text-3xl sm:text-4xl font-serif text-[#10211F]  leading-tight">
                             Preserving tradition, <br />
                             ensuring precision.
                         </h2>
@@ -94,7 +94,7 @@ const AboutUs = () => {
                                     <span className="text-xl font-serif font-black text-[#C29E6B] block leading-none">
                                         {item.year}
                                     </span>
-                                    <h3 className="text-base font-serif font-bold text-[#10211F] uppercase tracking-wider">
+                                    <h3 className="text-base font-serif font-bold text-[#10211F]  tracking-wider">
                                         {item.title}
                                     </h3>
                                     <p className="text-xs text-stone-500 font-sans font-light leading-relaxed">

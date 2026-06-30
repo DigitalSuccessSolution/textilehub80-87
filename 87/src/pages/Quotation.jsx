@@ -23,11 +23,11 @@ const Quotation = () => {
         <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#C29E6B_1px,transparent_1px)] [background-size:24px_24px]"></div>
         <div className="max-w-[1600px] mx-auto relative flex flex-col md:flex-row md:items-end justify-between gap-8 z-10">
           <div className="space-y-4">
-            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.35em] text-[#C29E6B] block">
+            <span className="text-[10px] font-sans font-bold  tracking-[0.35em] text-[#C29E6B] block">
               DIGITAL PROCUREMENT
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight uppercase text-white leading-none">
-              <span className="lowercase" style={{ textTransform: 'lowercase' }}>e-Quotation</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight  text-white leading-none">
+              <span className="" style={{ textTransform: '' }}>e-Quotation</span>
             </h1>
           </div>
           
@@ -53,7 +53,7 @@ const Quotation = () => {
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="text-left space-y-2">
-                <label className="block text-[10px] font-sans font-bold uppercase tracking-wider text-[#10211F]">Company Name</label>
+                <label className="block text-[10px] font-sans font-bold  tracking-wider text-[#10211F]">Company Name</label>
                 <input
                   type="text"
                   placeholder="Business Name"
@@ -64,7 +64,7 @@ const Quotation = () => {
               </div>
 
               <div className="text-left space-y-2">
-                <label className="block text-[10px] font-sans font-bold uppercase tracking-wider text-[#10211F]">GSTIN / Tax ID (Optional)</label>
+                <label className="block text-[10px] font-sans font-bold  tracking-wider text-[#10211F]">GSTIN / Tax ID (Optional)</label>
                 <input
                   type="text"
                   placeholder="GST Number"
@@ -74,7 +74,7 @@ const Quotation = () => {
               </div>
 
               <div className="text-left space-y-2">
-                <label className="block text-[10px] font-sans font-bold uppercase tracking-wider text-[#10211F]">Official Email</label>
+                <label className="block text-[10px] font-sans font-bold  tracking-wider text-[#10211F]">Official Email</label>
                 <input
                   type="email"
                   placeholder="procurement@company.com"
@@ -85,7 +85,7 @@ const Quotation = () => {
               </div>
 
               <div className="text-left space-y-2">
-                <label className="block text-[10px] font-sans font-bold uppercase tracking-wider text-[#10211F]">Phone / WhatsApp</label>
+                <label className="block text-[10px] font-sans font-bold  tracking-wider text-[#10211F]">Phone / WhatsApp</label>
                 <input
                   type="tel"
                   placeholder="Phone Number"
@@ -98,7 +98,7 @@ const Quotation = () => {
 
             {/* Product categories checkbox */}
             <div className="text-left">
-              <label className="block text-[10px] font-sans font-bold uppercase tracking-wider text-[#10211F] mb-4">Categories Needed</label>
+              <label className="block text-[10px] font-sans font-bold  tracking-wider text-[#10211F] mb-4">Categories Needed</label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
                 {["Sarees", "Kurtis", "Leggings", "Dress Suits", "Suiting & Shirting", "Bedsheets & Linen", "Home Upholstery", "Hosiery Items"].map((cat) => (
                   <label key={cat} className="flex items-center gap-2 cursor-pointer group">
@@ -111,7 +111,7 @@ const Quotation = () => {
 
             {/* Quantity requirements */}
             <div className="text-left space-y-2">
-              <label className="block text-[10px] font-sans font-bold uppercase tracking-wider text-[#10211F]">Volume Requirements & Details</label>
+              <label className="block text-[10px] font-sans font-bold  tracking-wider text-[#10211F]">Volume Requirements & Details</label>
               <textarea
                 rows={4}
                 placeholder="Mention specific styles, counts, quantities, or delivery expectations..."
@@ -124,11 +124,30 @@ const Quotation = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full flex items-center justify-center gap-3 bg-[#10211F] hover:bg-[#C29E6B] text-white py-4 rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 disabled:opacity-60 cursor-pointer shadow-md font-sans"
+              className="w-full flex items-center justify-center gap-3 bg-[#10211F] hover:bg-[#C29E6B] text-white py-4 rounded-full font-bold text-xs  tracking-widest transition-all duration-300 disabled:opacity-60 cursor-pointer shadow-md font-sans"
             >
               {isSubmitting ? "Generating..." : (<><FileText size={14} /> Request e-Quotation</>)}
             </button>
           </form>
+        </div>
+
+        {/* Recent Quotations List */}
+        <div className="mt-20">
+          <h2 className="text-2xl font-serif text-[#10211F] mb-8 text-center">Recent Quotations</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { id: 1, title: "Bulk Silk Sarees Order", desc: "Quotation for 500 Banarasi Silk Sarees.", date: "July 01, 2026" },
+              { id: 2, title: "Summer Kurtis Supply", desc: "Quotation for summer linen and cotton kurtis.", date: "June 25, 2026" },
+              { id: 3, title: "Hotel Linen Replenishment", desc: "Quotation for 1000 premium bedsheets.", date: "June 18, 2026" },
+              { id: 4, title: "Wedding Suiting Fabrics", desc: "Quotation for premium suiting materials.", date: "June 10, 2026" }
+            ].map(quote => (
+              <div key={quote.id} className="bg-white p-6 rounded-[2rem] border border-stone-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+                <h3 className="font-serif text-lg font-bold text-[#10211F] mb-2">{quote.title}</h3>
+                <p className="text-xs text-stone-500 font-sans leading-relaxed mb-4">{quote.desc}</p>
+                <div className="text-[10px] text-stone-400 font-sans">{quote.date}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

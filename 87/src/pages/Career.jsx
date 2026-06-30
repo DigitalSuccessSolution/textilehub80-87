@@ -97,10 +97,10 @@ const Career = () => {
         <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#C29E6B_1px,transparent_1px)] [background-size:24px_24px]"></div>
         <div className="max-w-[1600px] mx-auto relative flex flex-col md:flex-row md:items-end justify-between gap-8 z-10">
           <div className="space-y-4">
-            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.35em] text-[#C29E6B] block">
+            <span className="text-[10px] font-sans font-bold  tracking-[0.35em] text-[#C29E6B] block">
               WORK WITH US
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight uppercase text-white leading-none">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight  text-white leading-none">
               Careers at the <span className="text-[#C29E6B] font-light italic font-serif">House</span>
             </h1>
           </div>
@@ -118,20 +118,20 @@ const Career = () => {
         <div className="flex justify-center gap-6 text-[#C29E6B] mb-4">
           <div className="flex flex-col items-center">
             <Compass size={24} strokeWidth={1.5} className="mb-2" />
-            <span className="text-[9px] uppercase tracking-wider font-bold">Innovation</span>
+            <span className="text-[9px]  tracking-wider font-bold">Innovation</span>
           </div>
           <div className="w-px h-10 bg-stone-300" />
           <div className="flex flex-col items-center">
             <Award size={24} strokeWidth={1.5} className="mb-2" />
-            <span className="text-[9px] uppercase tracking-wider font-bold">Heritage</span>
+            <span className="text-[9px]  tracking-wider font-bold">Heritage</span>
           </div>
           <div className="w-px h-10 bg-stone-300" />
           <div className="flex flex-col items-center">
             <Briefcase size={24} strokeWidth={1.5} className="mb-2" />
-            <span className="text-[9px] uppercase tracking-wider font-bold">Growth</span>
+            <span className="text-[9px]  tracking-wider font-bold">Growth</span>
           </div>
         </div>
-        <h2 className="font-serif text-2xl text-[#10211F] uppercase tracking-wider">Our Work Culture</h2>
+        <h2 className="font-serif text-2xl text-[#10211F]  tracking-wider">Our Work Culture</h2>
         <p className="text-stone-600 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed font-sans font-light">
           At Aurora Textile House, we cherish creativity, diligence, and customer delight. We provide our staff with premium facilities, continuous growth opportunities, and an inclusive, encouraging team workspace.
         </p>
@@ -143,10 +143,10 @@ const Career = () => {
         {/* Openings Accordion */}
         <div className="space-y-6 text-left">
           <div className="border-b border-[#10211F]/10 pb-4 flex justify-between items-end">
-            <h3 className="font-serif text-xl text-[#10211F] uppercase tracking-widest">
+            <h3 className="font-serif text-xl text-[#10211F]  tracking-widest">
               Current Openings ({openings.length})
             </h3>
-            <span className="text-[10px] text-[#C29E6B] font-bold uppercase tracking-wider">Surat Showroom</span>
+            <span className="text-[10px] text-[#C29E6B] font-bold  tracking-wider">Surat Showroom</span>
           </div>
 
           <div className="space-y-4">
@@ -163,10 +163,10 @@ const Career = () => {
                     className="w-full text-left p-6 sm:p-8 flex items-center justify-between gap-4 focus:outline-none cursor-pointer hover:bg-stone-50/30 transition-colors"
                   >
                     <div className="space-y-2">
-                      <span className="text-[8px] sm:text-[9px] font-sans font-black uppercase tracking-widest text-[#C29E6B] bg-[#FAF6F2] py-1 px-3.5 rounded-full border border-[#C29E6B]/20">
+                      <span className="text-[8px] sm:text-[9px] font-sans font-black  tracking-widest text-[#C29E6B] bg-[#FAF6F2] py-1 px-3.5 rounded-full border border-[#C29E6B]/20">
                         {job.dept}
                       </span>
-                      <h4 className="font-serif text-base sm:text-lg text-[#10211F] font-bold uppercase tracking-wide pt-1">
+                      <h4 className="font-serif text-base sm:text-lg text-[#10211F] font-bold  tracking-wide pt-1">
                         {job.title}
                       </h4>
                       <div className="flex flex-wrap gap-x-4 gap-y-1 text-[10px] sm:text-xs text-stone-500 font-sans">
@@ -189,7 +189,7 @@ const Career = () => {
                     <div className="px-6 pb-8 sm:px-8 sm:pb-10 border-t border-[#10211F]/5 pt-6 bg-stone-50/50 space-y-6">
                       {/* Description */}
                       <div className="space-y-2">
-                        <h5 className="text-[10px] uppercase font-bold tracking-wider text-[#C29E6B] font-sans">Role Summary</h5>
+                        <h5 className="text-[10px]  font-bold tracking-wider text-[#C29E6B] font-sans">Role Summary</h5>
                         <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-sans font-light">
                           {job.desc}
                         </p>
@@ -198,7 +198,7 @@ const Career = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2">
                         {/* Responsibilities */}
                         <div className="space-y-3">
-                          <h5 className="text-[10px] uppercase font-bold tracking-wider text-[#C29E6B] font-sans flex items-center gap-1.5">
+                          <h5 className="text-[10px]  font-bold tracking-wider text-[#C29E6B] font-sans flex items-center gap-1.5">
                             <CheckCircle size={12} /> Key Responsibilities
                           </h5>
                           <ul className="space-y-2 text-xs text-stone-600 leading-relaxed font-sans font-light list-disc pl-4">
@@ -210,7 +210,7 @@ const Career = () => {
 
                         {/* Requirements */}
                         <div className="space-y-3">
-                          <h5 className="text-[10px] uppercase font-bold tracking-wider text-[#C29E6B] font-sans flex items-center gap-1.5">
+                          <h5 className="text-[10px]  font-bold tracking-wider text-[#C29E6B] font-sans flex items-center gap-1.5">
                             <Award size={12} /> Desired Qualifications
                           </h5>
                           <ul className="space-y-2 text-xs text-stone-600 leading-relaxed font-sans font-light list-disc pl-4">
@@ -223,7 +223,7 @@ const Career = () => {
 
                       {/* Benefits */}
                       <div className="pt-4 border-t border-[#10211F]/5 space-y-3">
-                        <h5 className="text-[10px] uppercase font-bold tracking-wider text-[#C29E6B] font-sans">What We Offer</h5>
+                        <h5 className="text-[10px]  font-bold tracking-wider text-[#C29E6B] font-sans">What We Offer</h5>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {job.benefits.map((benefit, i) => (
                             <div key={i} className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-xl border border-[#10211F]/5 shadow-sm text-xs text-stone-600 font-sans font-light">
@@ -245,7 +245,7 @@ const Career = () => {
         {/* General Opening Banner */}
         <div className="bg-white border border-[#10211F]/10 rounded-[2rem] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="space-y-2 text-left">
-            <h4 className="font-serif text-lg text-[#10211F] uppercase tracking-wide">
+            <h4 className="font-serif text-lg text-[#10211F]  tracking-wide">
               Don't see a matching role?
             </h4>
             <p className="text-xs text-stone-500 font-sans font-light max-w-xl leading-relaxed">
@@ -254,7 +254,7 @@ const Career = () => {
           </div>
           <a
             href="mailto:careers@auroratextile.com?subject=General%20Application%20-%20Aurora%20Textile%20House"
-            className="w-full md:w-auto px-6 py-3 bg-[#2C443E] hover:bg-[#1B2E2A] text-white text-[10px] font-bold uppercase tracking-widest transition-all duration-300 rounded-full flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
+            className="w-full md:w-auto px-6 py-3 bg-[#2C443E] hover:bg-[#1B2E2A] text-white text-[10px] font-bold  tracking-widest transition-all duration-300 rounded-full flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
           >
             <Mail size={13} /> General Application
           </a>
@@ -267,10 +267,10 @@ const Career = () => {
             style={{ backgroundImage: `url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1200&q=80')` }} 
           />
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.4em] text-[#C29E6B] block">
+            <span className="text-[10px] font-sans font-bold  tracking-[0.4em] text-[#C29E6B] block">
               APPLICATION METHOD
             </span>
-            <h3 className="font-serif text-2xl sm:text-3xl text-white uppercase tracking-wider">
+            <h3 className="font-serif text-2xl sm:text-3xl text-white  tracking-wider">
               How To <span className="text-[#C29E6B] font-light italic">Apply</span>
             </h3>
             <div className="w-12 h-px bg-[#C29E6B] mx-auto"></div>
@@ -278,21 +278,21 @@ const Career = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left pt-4 font-sans">
               <div className="space-y-2">
                 <span className="text-xl font-serif text-[#C29E6B] font-bold block">01</span>
-                <h6 className="font-bold text-xs uppercase tracking-wider text-white">Prepare CV</h6>
+                <h6 className="font-bold text-xs  tracking-wider text-white">Prepare CV</h6>
                 <p className="text-[11px] text-stone-300 leading-relaxed font-light">
                   Update your resume highlighting your textile or luxury retail sales experience.
                 </p>
               </div>
               <div className="space-y-2">
                 <span className="text-xl font-serif text-[#C29E6B] font-bold block">02</span>
-                <h6 className="font-bold text-xs uppercase tracking-wider text-white">Email Us</h6>
+                <h6 className="font-bold text-xs  tracking-wider text-white">Email Us</h6>
                 <p className="text-[11px] text-stone-300 leading-relaxed font-light">
                   Email your CV to careers@auroratextile.com with the job title as the subject line.
                 </p>
               </div>
               <div className="space-y-2">
                 <span className="text-xl font-serif text-[#C29E6B] font-bold block">03</span>
-                <h6 className="font-bold text-xs uppercase tracking-wider text-white">HR Review</h6>
+                <h6 className="font-bold text-xs  tracking-wider text-white">HR Review</h6>
                 <p className="text-[11px] text-stone-300 leading-relaxed font-light">
                   Our HR desk reviews profiles weekly and will invite shortlisted applicants for interviews.
                 </p>
@@ -305,7 +305,7 @@ const Career = () => {
               </p>
               <a
                 href="mailto:careers@auroratextile.com"
-                className="px-8 py-3.5 bg-[#C29E6B] hover:bg-white text-[#10211F] hover:text-[#10211F] text-[10px] font-bold uppercase tracking-[0.25em] transition-all duration-300 rounded-full shadow-md flex items-center justify-center gap-2"
+                className="px-8 py-3.5 bg-[#C29E6B] hover:bg-white text-[#10211F] hover:text-[#10211F] text-[10px] font-bold  tracking-[0.25em] transition-all duration-300 rounded-full shadow-md flex items-center justify-center gap-2"
               >
                 <Mail size={13} /> careers@auroratextile.com
               </a>

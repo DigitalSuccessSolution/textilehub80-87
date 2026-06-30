@@ -1,9 +1,10 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Grid, Columns, Sparkles, SlidersHorizontal, ArrowRight, MessageCircle, X, Check } from 'lucide-react';
 
-// Category mapping with high-quality fashion / textile images
+// Exact 12 categories as requested
 const categoryImages = {
     "Sarees": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
     "Leggings": "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=400&q=80",
@@ -19,45 +20,39 @@ const categoryImages = {
     "Home Upholstery & Furnishing": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&q=80"
 };
 
-// Category metadata for styling & materials
 const categoryMeta = {
-    "Sarees": { material: "Mulberry Silk, Georgette, Zari", price: "₹4,500 - ₹35,000", tag: "Handloom Heritage" },
-    "Leggings": { material: "Lycra Cotton Blend, Breathable", price: "₹699 - ₹1,499", tag: "Comfort Wear" },
-    "Kurtis": { material: "Chanderi Silk, Rayon, Linen", price: "₹1,200 - ₹5,999", tag: "Casual & Formal" },
-    "Dress Suits": { material: "Anarkali Sets, Kurta Pajama Sets", price: "₹2,500 - ₹12,000", tag: "Festive Exclusive" },
-    "Bedsheets & Linen": { material: "100% Giza Cotton, 400 TC", price: "₹1,800 - ₹8,500", tag: "Luxury Bedding" },
-    "Hosiery Items": { material: "Super Combed Cotton, Stretchable", price: "₹450 - ₹1,800", tag: "Daily Comfort" },
-    "Suiting": { material: "Fine Italian Wool, Cashmere Blend", price: "₹1,200 - ₹6,500 / Mtr", tag: "Bespoke Tailoring" },
-    "Shirting": { material: "Pure Linen, Egyptian Cotton", price: "₹650 - ₹2,500 / Mtr", tag: "Premium Weave" },
-    "Formal & Ethnic Wear for Women": { material: "Lehengas, Anarkalis, Gowns", price: "₹12,500 - ₹75,000", tag: "Bridal Signature" },
-    "Formal & Ethnic Wear for Men": { material: "Sherwanis, Bandhgalas, Kurtas", price: "₹8,500 - ₹55,000", tag: "Groom Signature" },
-    "Formal & Ethnic Wear for Children": { material: "Soft Silk blends, Organic cottons", price: "₹1,200 - ₹7,500", tag: "Kid's Festive" },
-    "Home Upholstery & Furnishing": { material: "Jacquard, Velvet, Damask Weaves", price: "₹850 - ₹5,200 / Mtr", tag: "Artisanal Decor" }
+    "Sarees": { material: "Mulberry Silk, Georgette, Zari", tag: "Handloom Heritage" },
+    "Leggings": { material: "Lycra Cotton Blend, Breathable", tag: "Comfort Wear" },
+    "Kurtis": { material: "Chanderi Silk, Rayon, Linen", tag: "Casual & Formal" },
+    "Dress Suits": { material: "Anarkali Sets, Kurta Pajama Sets", tag: "Festive Exclusive" },
+    "Bedsheets & Linen": { material: "100% Giza Cotton, 400 TC", tag: "Luxury Bedding" },
+    "Hosiery Items": { material: "Super Combed Cotton, Stretchable", tag: "Daily Comfort" },
+    "Suiting": { material: "Fine Italian Wool, Cashmere Blend", tag: "Bespoke Tailoring" },
+    "Shirting": { material: "Pure Linen, Egyptian Cotton", tag: "Premium Weave" },
+    "Formal & Ethnic Wear for Women": { material: "Lehengas, Anarkalis, Gowns", tag: "Bridal Signature" },
+    "Formal & Ethnic Wear for Men": { material: "Sherwanis, Bandhgalas, Kurtas", tag: "Groom Signature" },
+    "Formal & Ethnic Wear for Children": { material: "Soft Silk blends, Organic cottons", tag: "Kid's Festive" },
+    "Home Upholstery & Furnishing": { material: "Jacquard, Velvet, Damask Weaves", tag: "Artisanal Decor" }
 };
 
-// Generates 108 products (12 categories * 9 styles = 108 products) with enriched mock information
+// Generates exactly 1 product per collection (12 total)
 const generateProducts = () => {
     const list = [];
     const categories = Object.keys(categoryImages);
     let id = 1;
     
-    const styleTags = ["Bestseller", "New Arrival", "Limited Edition", "Traditional Weave", "Premium Selection", "Designer Choice"];
-    
     categories.forEach(cat => {
-        const meta = categoryMeta[cat] || { material: "Premium Fiber", price: "₹1,500", tag: "Selected Wear" };
-        for (let i = 1; i <= 9; i++) {
-            list.push({
-                id: id++,
-                sku: `ATH-${cat.slice(0, 3).toUpperCase()}-${100 + i}`,
-                name: `${cat} Weave Collection - Style ${100 + i}`,
-                cat: cat,
-                img: categoryImages[cat],
-                material: meta.material,
-                price: meta.price,
-                badge: styleTags[(id + i) % styleTags.length],
-                desc: `Exquisite ${cat} item woven with high precision, offering unmatched texture profile, color fastness, and premium drape comfort.`
-            });
-        }
+        const meta = categoryMeta[cat] || { material: "Premium Fiber", tag: "Selected Wear" };
+        list.push({
+            id: id++,
+            sku: `ATH-${cat.slice(0, 3).toUpperCase()}-101`,
+            name: `${cat} Signature Collection`,
+            cat: cat,
+            img: categoryImages[cat],
+            material: meta.material,
+            badge: meta.tag,
+            desc: `Exquisite ${cat} woven with high precision, offering unmatched texture profile, color fastness, and premium drape comfort.`
+        });
     });
     return list;
 };
@@ -65,19 +60,28 @@ const generateProducts = () => {
 const allProducts = generateProducts();
 
 const Products = () => {
+    const location = useLocation();
+    
     useSEO(
         'Premium Collections',
-        'Explore our catalog of 100+ premium sarees, kurtis, dress suits, bedsheets, and suiting shirting fabrics at Aurora Textile House.',
+        'Explore our catalog of premium sarees, kurtis, dress suits, bedsheets, and suiting shirting fabrics at Aurora Textile House.',
         'textile showroom collections, premium fabrics catalog, surat boutique'
     );
 
     const categories = ["All", ...Object.keys(categoryImages)];
     
     // States
-    const [activeCat, setActiveCat] = useState("All");
+    const [activeCat, setActiveCat] = useState(location.state?.category || "All");
     const [layoutMode, setLayoutMode] = useState("grid"); // "grid" (symmetric) or "lookbook" (asymmetric editorial)
     const [selectedProduct, setSelectedProduct] = useState(null); // for Quick View Modal
     const [filterBadge, setFilterBadge] = useState("All"); // extra badge filters
+
+    // If navigated from home page, update category
+    useEffect(() => {
+        if (location.state?.category) {
+            setActiveCat(location.state.category);
+        }
+    }, [location.state]);
 
     // Filter logic
     const filteredProducts = useMemo(() => {
@@ -89,10 +93,10 @@ const Products = () => {
     }, [activeCat, filterBadge]);
 
     // Unique badges found in filtered list
-    const availableBadges = ["All", "Bestseller", "New Arrival", "Limited Edition", "Traditional Weave"];
+    const availableBadges = ["All", ...new Set(allProducts.map(p => p.badge))];
 
     const handleWhatsAppEnquiry = (prod) => {
-        const text = encodeURIComponent(`Hello Aurora Textile House, I am interested in details and availability of:\nProduct: ${prod.name}\nSKU: ${prod.sku}\nCategory: ${prod.cat}\nMaterial: ${prod.material}\nPrice Range: ${prod.price}`);
+        const text = encodeURIComponent(`Hello Aurora Textile House, I am interested in details and availability of:\nProduct: ${prod.name}\nSKU: ${prod.sku}\nCategory: ${prod.cat}\nMaterial: ${prod.material}`);
         window.open(`https://wa.me/916353778329?text=${text}`, '_blank');
     };
 
@@ -105,13 +109,13 @@ const Products = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <span className="text-[#C29E6B] text-[8px]">✦</span>
-              <span className="text-[9px] font-sans font-bold uppercase tracking-[0.3em] text-[#2C443E]">
+              <span className="text-[9px] font-sans font-bold  tracking-[0.3em] text-[#2C443E]">
                 CHRONICLE OF WEAVES
               </span>
             </div>
             <div className="flex gap-4 items-start">
               <div className="w-1.5 h-14 bg-[#C29E6B] rounded-full shrink-0" />
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight uppercase text-[#10211F] leading-none">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight  text-[#10211F] leading-none">
                 Our Premium <span className="text-[#C29E6B] italic font-light">Collections</span>
               </h1>
             </div>
@@ -130,11 +134,11 @@ const Products = () => {
             <section className="py-12 bg-white border-b border-[#10211F]/5 overflow-hidden">
                 <div className="max-w-[1600px] mx-auto px-6">
                     <div className="flex justify-between items-center mb-6">
-                        <span className="text-[9px] uppercase tracking-widest font-black text-[#C29E6B]">Select Department</span>
+                        <span className="text-[9px]  tracking-widest font-black text-[#C29E6B]">Select Department</span>
                         {activeCat !== "All" && (
                             <button 
                                 onClick={() => setActiveCat("All")} 
-                                className="text-[9px] uppercase tracking-widest font-bold text-[#10211F] hover:text-[#C29E6B] flex items-center gap-1 cursor-pointer"
+                                className="text-[9px]  tracking-widest font-bold text-[#10211F] hover:text-[#C29E6B] flex items-center gap-1 cursor-pointer"
                             >
                                 Reset Category <X size={10} />
                             </button>
@@ -153,7 +157,7 @@ const Products = () => {
                             }`}>
                                 <Sparkles size={22} className={activeCat === "All" ? "animate-pulse" : ""} />
                             </div>
-                            <span className={`text-[9px] sm:text-[10px] font-sans font-bold uppercase tracking-wider transition-colors ${
+                            <span className={`text-[9px] sm:text-[10px] font-sans font-bold  tracking-wider transition-colors ${
                                 activeCat === "All" ? 'text-[#C29E6B]' : 'text-stone-500 group-hover:text-[#10211F]'
                             }`}>
                                 All Collections
@@ -179,7 +183,7 @@ const Products = () => {
                                         />
                                         <div className={`absolute inset-0 bg-[#10211F]/30 transition-opacity ${isSelected ? 'opacity-0' : 'opacity-30 group-hover:opacity-10'}`} />
                                     </div>
-                                    <span className={`text-[9px] sm:text-[10px] font-sans font-bold uppercase tracking-wider text-center max-w-[100px] truncate transition-colors ${
+                                    <span className={`text-[9px] sm:text-[10px] font-sans font-bold  tracking-wider text-center max-w-[100px] truncate transition-colors ${
                                         isSelected ? 'text-[#C29E6B]' : 'text-stone-500 group-hover:text-[#10211F]'
                                     }`}>
                                         {catName}
@@ -196,14 +200,14 @@ const Products = () => {
                 
                 {/* Secondary Tag Badges */}
                 <div className="flex flex-wrap gap-2 items-center">
-                    <span className="text-[9px] font-bold uppercase tracking-wider text-[#C29E6B] mr-2 flex items-center gap-1.5">
+                    <span className="text-[9px] font-bold  tracking-wider text-[#C29E6B] mr-2 flex items-center gap-1.5">
                         <SlidersHorizontal size={10} /> Filter By:
                     </span>
                     {availableBadges.map((bg) => (
                         <button
                             key={bg}
                             onClick={() => setFilterBadge(bg)}
-                            className={`px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider border transition-all cursor-pointer ${
+                            className={`px-3 py-1 rounded-full text-[9px] font-bold  tracking-wider border transition-all cursor-pointer ${
                                 filterBadge === bg 
                                     ? 'bg-[#10211F] text-white border-[#10211F]' 
                                     : 'bg-white text-stone-500 border-stone-200 hover:border-[#C29E6B]'
@@ -216,7 +220,7 @@ const Products = () => {
 
                 {/* Layout switch controls */}
                 <div className="flex items-center gap-4">
-                    <span className="text-[10px] text-stone-400 uppercase tracking-widest font-sans">
+                    <span className="text-[10px] text-stone-400  tracking-widest font-sans">
                         Showing {filteredProducts.length} Results
                     </span>
                     <div className="w-px h-4 bg-stone-300" />
@@ -246,13 +250,13 @@ const Products = () => {
                 {filteredProducts.length === 0 ? (
                     <div className="text-center py-24 space-y-4">
                         <span className="text-3xl">🪡</span>
-                        <h3 className="font-serif text-lg text-[#10211F] uppercase tracking-wider font-bold">No collections found</h3>
+                        <h3 className="font-serif text-lg text-[#10211F]  tracking-wider font-bold">No collections found</h3>
                         <p className="text-xs text-stone-500 max-w-sm mx-auto font-sans leading-relaxed">
                             We couldn't find items matching your filters. Try selecting 'All Collections'.
                         </p>
                         <button 
                             onClick={() => { setActiveCat("All"); setFilterBadge("All"); }}
-                            className="mt-4 px-6 py-2.5 bg-[#10211F] text-white text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-[#C29E6B] transition-colors cursor-pointer"
+                            className="mt-4 px-6 py-2.5 bg-[#10211F] text-white text-[10px] font-bold  tracking-widest rounded-full hover:bg-[#C29E6B] transition-colors cursor-pointer"
                         >
                             Reset All Filters
                         </button>
@@ -262,8 +266,8 @@ const Products = () => {
                         layout 
                         className={`grid ${
                             layoutMode === "grid" 
-                                ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" 
-                                : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16"
+                                ? "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6" 
+                                : "grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-12 gap-y-10 sm:gap-y-16"
                         }`}
                     >
                         <AnimatePresence mode="popLayout">
@@ -294,13 +298,13 @@ const Products = () => {
                                             <div className="absolute inset-0 bg-gradient-to-t from-[#10211F]/50 via-transparent to-transparent opacity-60 group-hover:opacity-85 transition-opacity" />
                                             
                                             {/* Tag badge inside image frame */}
-                                            <span className="absolute top-4 left-4 bg-[#10211F]/90 backdrop-blur-sm text-[#C29E6B] text-[7px] font-sans font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm border border-white/10">
+                                            <span className="absolute top-4 left-4 bg-[#10211F]/90 backdrop-blur-sm text-[#C29E6B] text-[7px] font-sans font-bold  tracking-widest px-3 py-1.5 rounded-full shadow-sm border border-white/10">
                                                 {p.badge}
                                             </span>
  
                                             {/* Hover CTA overlays */}
                                             <div className="absolute inset-0 bg-[#10211F]/30 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                                                <span className="bg-[#C29E6B] text-white text-[8px] uppercase tracking-widest font-bold py-2.5 px-5 rounded-full shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-1.5">
+                                                <span className="bg-[#C29E6B] text-white text-[8px]  tracking-widest font-bold py-2.5 px-5 rounded-full shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-1.5">
                                                     Quick View <ArrowRight size={10} />
                                                 </span>
                                             </div>
@@ -309,7 +313,7 @@ const Products = () => {
                                         {/* Label Details */}
                                         <div className="space-y-2 mt-auto text-left px-1.5 pb-1">
                                             <div className="flex justify-between items-center">
-                                                <span className="text-[8px] sm:text-[9px] text-[#C29E6B] font-sans font-black uppercase tracking-widest">
+                                                <span className="text-[8px] sm:text-[9px] text-[#C29E6B] font-sans font-black  tracking-widest">
                                                     {p.cat}
                                                 </span>
                                                 <span className="text-[9px] text-stone-400 font-sans tracking-tight">
@@ -317,21 +321,15 @@ const Products = () => {
                                                 </span>
                                             </div>
                                             
-                                            <h3 className="text-xs sm:text-sm font-serif font-bold text-[#10211F] uppercase tracking-wider group-hover:text-[#C29E6B] transition-colors leading-tight truncate">
+                                            <h3 className="text-xs sm:text-sm font-serif font-bold text-[#10211F]  tracking-wider group-hover:text-[#C29E6B] transition-colors leading-tight truncate">
                                                 {p.name}
                                             </h3>
  
                                             <div className="border-t border-[#10211F]/5 pt-2.5 flex justify-between items-center">
                                                 <div className="flex flex-col">
-                                                    <span className="text-[7px] uppercase tracking-wide text-stone-400">Fabric Type</span>
+                                                    <span className="text-[7px]  tracking-wide text-stone-400">Fabric Type</span>
                                                     <span className="text-[9px] text-stone-600 font-sans truncate max-w-[110px] font-light">
                                                         {p.material}
-                                                    </span>
-                                                </div>
-                                                <div className="text-right">
-                                                    <span className="text-[7px] uppercase tracking-wide text-stone-400 block">Pricing</span>
-                                                    <span className="text-[10px] text-[#10211F] font-bold tracking-wide">
-                                                        {p.price.split(' ')[0]}
                                                     </span>
                                                 </div>
                                             </div>
@@ -380,7 +378,7 @@ const Products = () => {
                                     className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#10211F]/40 to-transparent" />
-                                <span className="absolute bottom-6 left-6 bg-[#C29E6B] text-white text-[9px] font-sans font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/20">
+                                <span className="absolute bottom-6 left-6 bg-[#C29E6B] text-white text-[9px] font-sans font-bold  tracking-widest px-4 py-2 rounded-full border border-white/20">
                                     {selectedProduct.badge}
                                 </span>
                             </div>
@@ -388,10 +386,10 @@ const Products = () => {
                             {/* Right: Details & Call to Action */}
                             <div className="p-8 sm:p-10 flex flex-col justify-between space-y-6 text-left">
                                 <div className="space-y-4">
-                                    <span className="text-[9px] text-[#C29E6B] font-sans font-black uppercase tracking-widest block">
+                                    <span className="text-[9px] text-[#C29E6B] font-sans font-black  tracking-widest block">
                                         {selectedProduct.cat}
                                     </span>
-                                    <h4 className="font-serif text-xl uppercase tracking-wide text-[#10211F] font-bold leading-tight">
+                                    <h4 className="font-serif text-xl  tracking-wide text-[#10211F] font-bold leading-tight">
                                         {selectedProduct.name}
                                     </h4>
                                     
@@ -407,15 +405,11 @@ const Products = () => {
                                     {/* Specifications */}
                                     <div className="bg-[#FAF6F2] p-4 rounded-2xl space-y-2 border border-[#10211F]/5 text-xs text-[#182220]">
                                         <div className="flex justify-between">
-                                            <span className="text-stone-400 uppercase tracking-wider text-[8px] font-bold">Fabric Material</span>
+                                            <span className="text-stone-400  tracking-wider text-[8px] font-bold">Fabric Material</span>
                                             <span className="font-medium text-[#10211F]">{selectedProduct.material}</span>
                                         </div>
                                         <div className="flex justify-between">
-                                            <span className="text-stone-400 uppercase tracking-wider text-[8px] font-bold">Price Index Range</span>
-                                            <span className="font-bold text-[#10211F]">{selectedProduct.price}</span>
-                                        </div>
-                                        <div className="flex justify-between">
-                                            <span className="text-stone-400 uppercase tracking-wider text-[8px] font-bold">Quality Standard</span>
+                                            <span className="text-stone-400  tracking-wider text-[8px] font-bold">Quality Standard</span>
                                             <span className="font-medium text-emerald-600 flex items-center gap-1">
                                                 <Check size={12} strokeWidth={3} /> Certified ISO-105
                                             </span>
@@ -427,7 +421,7 @@ const Products = () => {
                                 <div className="space-y-3 pt-2">
                                     <button
                                         onClick={() => handleWhatsAppEnquiry(selectedProduct)}
-                                        className="w-full bg-[#2C443E] hover:bg-[#1B2E2A] text-white py-3.5 rounded-full font-bold text-[10px] uppercase tracking-widest transition-all duration-300 shadow flex items-center justify-center gap-2 cursor-pointer"
+                                        className="w-full bg-[#2C443E] hover:bg-[#1B2E2A] text-white py-3.5 rounded-full font-bold text-[10px]  tracking-widest transition-all duration-300 shadow flex items-center justify-center gap-2 cursor-pointer"
                                     >
                                         <MessageCircle size={14} /> Send WhatsApp Enquiry
                                     </button>

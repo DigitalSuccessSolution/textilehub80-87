@@ -22,13 +22,13 @@ const Management = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <span className="text-[#C29E6B] text-[8px]">✦</span>
-              <span className="text-[9px] font-sans font-bold uppercase tracking-[0.3em] text-[#2C443E]">
+              <span className="text-[9px] font-sans font-bold  tracking-[0.3em] text-[#2C443E]">
                 Operational Leadership
               </span>
             </div>
             <div className="flex gap-4 items-start">
               <div className="w-1.5 h-14 bg-[#C29E6B] rounded-full shrink-0" />
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight uppercase text-[#10211F] leading-none">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight  text-[#10211F] leading-none">
                 Our Retail <span className="text-[#C29E6B] italic font-light">Management</span>
               </h1>
             </div>
@@ -41,10 +41,10 @@ const Management = () => {
             <section className="py-20 px-6 sm:px-10 max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
                     <div className="space-y-6 text-left">
-                        <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-[#C29E6B] block">
+                        <span className="text-[10px] font-sans font-bold  tracking-[0.3em] text-[#C29E6B] block">
                             Enterprise Standards
                         </span>
-                        <h2 className="text-2xl md:text-4xl font-serif text-[#10211F] tracking-tight uppercase leading-tight">
+                        <h2 className="text-2xl md:text-4xl font-serif text-[#10211F] tracking-tight  leading-tight">
                             Efficient Supply Chains & Direct Weaver Sourcing
                         </h2>
                         <div className="w-12 h-[1px] bg-[#C29E6B]"></div>
@@ -53,7 +53,7 @@ const Management = () => {
                         </p>
                     </div>
                     <div className="p-8 bg-[#10211F] text-white text-left rounded-3xl border border-[#C29E6B]/20 shadow-md">
-                        <h3 className="font-serif text-lg text-[#C29E6B] uppercase mb-4 font-bold">Quality Mandate</h3>
+                        <h3 className="font-serif text-lg text-[#C29E6B]  mb-4 font-bold">Quality Mandate</h3>
                         <p className="text-xs text-stone-200 leading-relaxed font-sans font-light">
                             We follow standard operating parameters for cotton thread counts, fiber checks, and chemical-free dyes. Our multi-tier management reviews keep customer satisfaction at the heart of our commercial success.
                         </p>
@@ -62,7 +62,7 @@ const Management = () => {
 
                 {/* Team Members Grid - Redesigned Editorial Portrait Card Layout */}
                 <div className="border-t border-[#10211F]/10 pt-20">
-                    <h2 className="text-2xl md:text-3xl font-serif text-[#10211F] uppercase tracking-wide text-center mb-16">
+                    <h2 className="text-2xl md:text-3xl font-serif text-[#10211F]  tracking-wide text-center mb-16">
                         Leadership Board
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -84,12 +84,12 @@ const Management = () => {
                                             </div>
                                         </div>
                                         <div className="space-y-2 px-3 pb-3">
-                                            <p className="text-[9px] text-[#C29E6B] font-sans font-bold uppercase tracking-[0.25em]">{m.role}</p>
-                                            <h3 className="font-serif text-lg font-bold text-[#10211F] uppercase tracking-wider leading-tight">{m.name}</h3>
+                                            <p className="text-[9px] text-[#C29E6B] font-sans font-bold  tracking-[0.25em]">{m.role}</p>
+                                            <h3 className="font-serif text-lg font-bold text-[#10211F]  tracking-wider leading-tight">{m.name}</h3>
                                             <p className="text-xs text-stone-500 font-sans font-light leading-relaxed pt-1">{m.desc}</p>
                                         </div>
                                     </div>
-                                    <div className="mx-3 pt-4 pb-1 border-t border-stone-100 flex items-center justify-between text-[9px] font-sans font-bold uppercase tracking-wider text-[#C29E6B]">
+                                    <div className="mx-3 pt-4 pb-1 border-t border-stone-100 flex items-center justify-between text-[9px] font-sans font-bold  tracking-wider text-[#C29E6B]">
                                         <span>Corporate Board</span>
                                         <span>✦</span>
                                     </div>

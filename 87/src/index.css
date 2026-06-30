@@ -143,3 +143,23 @@
 .animate-float-slow {
   animation: float 6s ease-in-out infinite;
 }
+.visible-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #C29E6B #FAF6F2;
+}
+.visible-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  display: block;
+}
+.visible-scrollbar::-webkit-scrollbar-track {
+  background: #FAF6F2;
+  border-radius: 9999px;
+}
+.visible-scrollbar::-webkit-scrollbar-thumb {
+  background: #C29E6B;
+  border-radius: 9999px;
+}
+.visible-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #2C443E;
+}

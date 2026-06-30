@@ -88,8 +88,8 @@ const LiveChat = () => {
                                 <img src="/logo.png" alt="Logo" className="w-full h-full object-contain p-1" />
                             </div>
                             <div className="text-left">
-                                <h3 className="font-bold text-xs uppercase tracking-widest text-[#C29E6B]">House Assistant</h3>
-                                <span className="text-[8px] text-gray-400 uppercase tracking-wider block">Online & Ready</span>
+                                <h3 className="font-bold text-xs  tracking-widest text-[#C29E6B]">House Assistant</h3>
+                                <span className="text-[8px] text-gray-400  tracking-wider block">Online & Ready</span>
                             </div>
                         </div>
                         <button onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-white transition-colors cursor-pointer">

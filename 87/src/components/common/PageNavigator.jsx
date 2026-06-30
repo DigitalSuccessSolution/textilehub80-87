@@ -47,7 +47,7 @@ const PageNavigator = () => {
             >
                 <ArrowLeft size={14} />
             </button>
-            <span className="text-[10px] font-bold text-[#10211F] min-w-[70px] text-center uppercase tracking-wider">
+            <span className="text-[10px] font-bold text-[#10211F] min-w-[70px] text-center  tracking-wider">
                 {currentIndex + 1} / {pages.length}
             </span>
             <button

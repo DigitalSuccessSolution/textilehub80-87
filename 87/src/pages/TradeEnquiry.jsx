@@ -32,10 +32,10 @@ const TradeEnquiry = () => {
         <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#C29E6B_1px,transparent_1px)] [background-size:24px_24px]"></div>
         <div className="max-w-[1600px] mx-auto relative flex flex-col md:flex-row md:items-end justify-between gap-8 z-10">
           <div className="space-y-4">
-            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.35em] text-[#C29E6B] block">
+            <span className="text-[10px] font-sans font-bold  tracking-[0.35em] text-[#C29E6B] block">
               B2B BUSINESS HUB
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight uppercase text-white leading-none">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight  text-white leading-none">
               Trade Enquiry
             </h1>
           </div>
@@ -63,7 +63,7 @@ const TradeEnquiry = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {fields.map(({ name, label, placeholder, type, required }) => (
                 <div key={name} className="text-left space-y-2">
-                  <label className="block text-[10px] font-sans font-bold uppercase tracking-wider text-[#10211F]">{label}</label>
+                  <label className="block text-[10px] font-sans font-bold  tracking-wider text-[#10211F]">{label}</label>
                   <input
                     type={type}
                     placeholder={placeholder}
@@ -77,7 +77,7 @@ const TradeEnquiry = () => {
 
             {/* Business Type */}
             <div className="text-left space-y-2">
-              <label className="block text-[10px] font-sans font-bold uppercase tracking-wider text-[#10211F]">Business Type</label>
+              <label className="block text-[10px] font-sans font-bold  tracking-wider text-[#10211F]">Business Type</label>
               <select
                 {...register("businessType", { required: "Please select business type" })}
                 className="w-full border border-stone-200 rounded-2xl px-5 py-3.5 text-xs text-[#182220] bg-[#FAF6F2]/30 focus:outline-none focus:ring-1 focus:ring-[#C29E6B] focus:border-[#C29E6B] transition-all font-sans font-light"
@@ -95,7 +95,7 @@ const TradeEnquiry = () => {
 
             {/* Message */}
             <div className="text-left space-y-2">
-              <label className="block text-[10px] font-sans font-bold uppercase tracking-wider text-[#10211F]">Additional Requirements</label>
+              <label className="block text-[10px] font-sans font-bold  tracking-wider text-[#10211F]">Additional Requirements</label>
               <textarea
                 rows={4}
                 placeholder="Describe your requirements, preferred delivery timelines, or any specific details..."
@@ -107,7 +107,7 @@ const TradeEnquiry = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full flex items-center justify-center gap-3 bg-[#10211F] hover:bg-[#C29E6B] text-white py-4 rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 disabled:opacity-60 cursor-pointer shadow-md font-sans"
+              className="w-full flex items-center justify-center gap-3 bg-[#10211F] hover:bg-[#C29E6B] text-white py-4 rounded-full font-bold text-xs  tracking-widest transition-all duration-300 disabled:opacity-60 cursor-pointer shadow-md font-sans"
             >
               {isSubmitting ? "Submitting..." : (<><Send size={14} /> Submit Trade Enquiry</>)}
             </button>
@@ -122,8 +122,8 @@ const TradeEnquiry = () => {
             { label: "Trade Support", value: "Dedicated Manager" },
           ].map(({ label, value }) => (
             <div key={label} className="bg-[#FAF4EE] border border-[#10211F]/5 rounded-[2rem] p-6 shadow-sm">
-              <p className="text-[9px] uppercase tracking-widest text-[#C29E6B] font-bold mb-1">{label}</p>
-              <p className="text-sm font-bold text-[#10211F] font-serif uppercase tracking-wider">{value}</p>
+              <p className="text-[9px]  tracking-widest text-[#C29E6B] font-bold mb-1">{label}</p>
+              <p className="text-sm font-bold text-[#10211F] font-serif  tracking-wider">{value}</p>
             </div>
           ))}
         </div>

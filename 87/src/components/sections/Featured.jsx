@@ -29,18 +29,18 @@ const Featured = () => {
                     <div className="text-left space-y-2">
                         <div className="flex items-center gap-2 text-[#2C443E]">
                             <Sparkles size={14} className="animate-spin" style={{ animationDuration: '6s' }} />
-                            <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-[#C29E6B]">
+                            <span className="text-[10px] md:text-xs font-bold  tracking-[0.3em] text-[#C29E6B]">
                                 SIGNATURE DESIGNER SUITES
                             </span>
                         </div>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#10211F] tracking-tight uppercase leading-none">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#10211F] tracking-tight  leading-none">
                             12 Signature Collections
                         </h2>
                     </div>
 
                     <button 
                         onClick={() => navigate('/products')}
-                        className="group inline-flex items-center gap-2 text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-[#C29E6B] hover:text-[#10211F] transition-all duration-300 pb-1 cursor-pointer border-b border-[#C29E6B]/20 hover:border-[#10211F]"
+                        className="group inline-flex items-center gap-2 text-[10px] font-sans font-bold  tracking-[0.25em] text-[#C29E6B] hover:text-[#10211F] transition-all duration-300 pb-1 cursor-pointer border-b border-[#C29E6B]/20 hover:border-[#10211F]"
                     >
                         Browse Full Archive <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                     </button>
@@ -79,10 +79,10 @@ const Featured = () => {
 
                                 {/* Collection Labels (Bottom Left) */}
                                 <div className="absolute bottom-6 left-6 right-6 text-left space-y-1 z-10">
-                                    <span className="text-[9px] text-[#C29E6B] font-sans font-bold uppercase tracking-wider block">
+                                    <span className="text-[9px] text-[#C29E6B] font-sans font-bold  tracking-wider block">
                                         {col.sub}
                                     </span>
-                                    <h3 className="text-xs sm:text-sm font-serif font-bold text-white tracking-widest uppercase group-hover:text-[#C29E6B] transition-colors leading-tight">
+                                    <h3 className="text-xs sm:text-sm font-serif font-bold text-white tracking-widest  group-hover:text-[#C29E6B] transition-colors leading-tight">
                                         {col.name}
                                     </h3>
                                 </div>

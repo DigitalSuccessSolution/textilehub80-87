@@ -9,31 +9,31 @@ const Categories = () => {
     const curatedItems = [
         {
             num: "01",
-            name: "KURTIS",
+            name: "Kurtis",
             desc: "Everyday Grace",
             img: "https://images.unsplash.com/photo-1610030470238-6625b169542a?q=80&w=500"
         },
         {
             num: "02",
-            name: "SAREES",
+            name: "Sarees",
             desc: "Timeless Tradition",
             img: "https://images.unsplash.com/photo-1608748010899-18f300247112?q=80&w=500"
         },
         {
             num: "03",
-            name: "LINEN",
+            name: "Bedsheets & Linen",
             desc: "Pure. Natural.",
             img: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=500"
         },
         {
             num: "04",
-            name: "PRINTS",
-            desc: "Patterns that Speak",
+            name: "Dress Suits",
+            desc: "Festive Exclusive",
             img: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=500"
         },
         {
             num: "05",
-            name: "HOME TEXTILES",
+            name: "Home Upholstery & Furnishing",
             desc: "Comfort Woven Beautifully",
             img: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=500"
         }
@@ -59,11 +59,11 @@ const Categories = () => {
                 <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-16">
                     <div className="text-left space-y-2">
                         <div className="flex items-center gap-2 text-[#C29E6B]">
-                            <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.35em]">
+                            <span className="text-[10px] md:text-xs font-bold  tracking-[0.35em]">
                                 Explore Our
                             </span>
                         </div>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#10211F] tracking-tight uppercase leading-none">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#10211F] tracking-tight  leading-none">
                             Signature Collections
                         </h2>
                     </div>
@@ -95,7 +95,7 @@ const Categories = () => {
                     {curatedItems.map((item, idx) => (
                         <div
                             key={idx}
-                            onClick={() => navigate('/products')}
+                            onClick={() => navigate('/products', { state: { category: item.name } })}
                             className="shrink-0 w-[270px] sm:w-[300px] h-[400px] sm:h-[450px] rounded-t-[7rem] rounded-b-[2rem] overflow-hidden relative shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer group border border-[#10211F]/5"
                         >
                             {/* Card Image Background */}
@@ -114,7 +114,7 @@ const Categories = () => {
                                     <span className="text-[11px] font-sans font-bold tracking-wider text-[#C29E6B]">
                                         {item.num}
                                     </span>
-                                    <h3 className="text-lg font-serif font-bold text-white tracking-widest uppercase">
+                                    <h3 className="text-lg font-serif font-bold text-white tracking-widest ">
                                         {item.name}
                                     </h3>
                                     <p className="text-[11px] text-stone-300 font-sans font-light leading-relaxed">

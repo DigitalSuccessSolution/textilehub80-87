@@ -37,7 +37,7 @@ const ReviewsSection = () => {
                 {/* ── Title Flanked by Decorative Leaf Accents ── */}
                 <div className="mb-16 space-y-3">
                     <div className="flex items-center justify-center gap-3 text-[#C29E6B]">
-                        <span className="text-[10px] font-sans font-bold uppercase tracking-[0.35em]">
+                        <span className="text-[10px] font-sans font-bold  tracking-[0.35em]">
                             What Our Clients Say
                         </span>
                     </div>
@@ -78,7 +78,7 @@ const ReviewsSection = () => {
                                     className="w-10 h-10 rounded-t-xl rounded-b-[1.5rem] object-cover border border-stone-200/40 shadow-sm"
                                 />
                                 <div className="space-y-0.5">
-                                    <h4 className="text-[11px] font-sans font-bold text-[#10211F] uppercase tracking-wider">
+                                    <h4 className="text-[11px] font-sans font-bold text-[#10211F]  tracking-wider">
                                         {test.author}
                                     </h4>
                                     <p className="text-[9px] text-stone-500 font-sans font-light tracking-wide">

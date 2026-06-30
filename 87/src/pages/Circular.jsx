@@ -36,11 +36,11 @@ const Circular = () => {
         <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#C29E6B_1px,transparent_1px)] [background-size:24px_24px]"></div>
         <div className="max-w-[1600px] mx-auto relative flex flex-col md:flex-row md:items-end justify-between gap-8 z-10">
           <div className="space-y-4">
-            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.35em] text-[#C29E6B] block">
+            <span className="text-[10px] font-sans font-bold  tracking-[0.35em] text-[#C29E6B] block">
               MERCHANT CHANNELS
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight uppercase text-white leading-none">
-              <span className="lowercase" style={{ textTransform: 'lowercase' }}>e-Circular</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight  text-white leading-none">
+              <span className="" style={{ textTransform: '' }}>e-Circular</span>
             </h1>
           </div>
           <div className="max-w-md border-l border-[#C29E6B]/40 pl-6 py-2">
@@ -62,7 +62,7 @@ const Circular = () => {
             >
               <div>
                 <div className="flex justify-between items-center mb-6">
-                  <span className="text-[9px] font-sans font-bold uppercase tracking-widest text-[#C29E6B] bg-[#FAF4EE] px-3.5 py-1.5 rounded-full border border-[#C29E6B]/15">
+                  <span className="text-[9px] font-sans font-bold  tracking-widest text-[#C29E6B] bg-[#FAF4EE] px-3.5 py-1.5 rounded-full border border-[#C29E6B]/15">
                     {circ.ref}
                   </span>
                   <div className="p-2.5 bg-[#FAF6F2] text-[#10211F] rounded-xl group-hover:bg-[#10211F] group-hover:text-white transition-all duration-300 border border-stone-200/50">
@@ -71,11 +71,11 @@ const Circular = () => {
                 </div>
                 
                 <div className="space-y-3">
-                  <div className="flex items-center gap-1.5 text-[9px] text-stone-400 font-sans font-semibold uppercase tracking-wider">
+                  <div className="flex items-center gap-1.5 text-[9px] text-stone-400 font-sans font-semibold  tracking-wider">
                     <Calendar size={11} className="text-[#C29E6B]" />
                     <span>{circ.date}</span>
                   </div>
-                  <h3 className="font-serif text-base sm:text-lg font-bold text-[#10211F] uppercase tracking-wider leading-snug group-hover:text-[#2C443E] transition-colors">
+                  <h3 className="font-serif text-base sm:text-lg font-bold text-[#10211F]  tracking-wider leading-snug group-hover:text-[#2C443E] transition-colors">
                     {circ.title}
                   </h3>
                   <p className="text-xs text-stone-500 font-sans font-light leading-relaxed pt-1">
@@ -87,7 +87,7 @@ const Circular = () => {
               <div className="pt-6 border-t border-stone-100 mt-6">
                 <button
                   onClick={() => alert("Downloading PDF Notice...")}
-                  className="w-full flex items-center justify-center gap-2 text-[9px] font-sans font-bold uppercase tracking-widest text-white bg-[#10211F] hover:bg-[#C29E6B] py-3.5 rounded-full transition-all duration-300 cursor-pointer shadow-md"
+                  className="w-full flex items-center justify-center gap-2 text-[9px] font-sans font-bold  tracking-widest text-white bg-[#10211F] hover:bg-[#C29E6B] py-3.5 rounded-full transition-all duration-300 cursor-pointer shadow-md"
                 >
                   <Download size={12} /> Download PDF Notice
                 </button>

@@ -33,10 +33,10 @@ const NoticeBoard = () => {
         <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#C29E6B_1px,transparent_1px)] [background-size:24px_24px]"></div>
         <div className="max-w-[1600px] mx-auto relative flex flex-col md:flex-row md:items-end justify-between gap-8 z-10">
           <div className="space-y-4">
-            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.35em] text-[#C29E6B] block">
+            <span className="text-[10px] font-sans font-bold  tracking-[0.35em] text-[#C29E6B] block">
               PUBLIC BROADCASTS
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight uppercase text-white leading-none">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight  text-white leading-none">
               Notice Board
             </h1>
           </div>
@@ -63,14 +63,14 @@ const NoticeBoard = () => {
 
               <div className="space-y-4 pl-2">
                 <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-2 text-stone-400 text-[9px] font-sans font-semibold uppercase tracking-wider">
+                  <div className="flex items-center gap-2 text-stone-400 text-[9px] font-sans font-semibold  tracking-wider">
                     <Calendar size={11} className="text-[#C29E6B]" />
                     <span>{n.date}</span>
                   </div>
                   <span className="w-1.5 h-1.5 rounded-full bg-[#C29E6B] group-hover:scale-125 transition-transform" />
                 </div>
                 
-                <h3 className="font-serif text-base sm:text-lg font-bold text-[#10211F] uppercase tracking-wide leading-tight group-hover:text-[#2C443E] transition-colors">
+                <h3 className="font-serif text-base sm:text-lg font-bold text-[#10211F]  tracking-wide leading-tight group-hover:text-[#2C443E] transition-colors">
                   {n.title}
                 </h3>
                 <p className="text-xs text-stone-500 font-sans leading-relaxed font-light">
@@ -78,7 +78,7 @@ const NoticeBoard = () => {
                 </p>
               </div>
 
-              <div className="pl-2 pt-6 mt-6 border-t border-stone-100 flex items-center justify-between text-[8px] font-sans font-bold uppercase tracking-wider text-stone-400">
+              <div className="pl-2 pt-6 mt-6 border-t border-stone-100 flex items-center justify-between text-[8px] font-sans font-bold  tracking-wider text-stone-400">
                 <span>ATH Official Notice</span>
                 <span>ID: #00{n.id}</span>
               </div>

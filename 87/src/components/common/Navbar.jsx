@@ -35,8 +35,8 @@ const Navbar = () => {
     // Main nav links — exactly the first 6 pages in order
     const navLinks = [
         { name: 'Home',                  path: '/' },
-        { name: 'About us',              path: '/about' },
-        { name: 'Contact us',            path: '/contact' },
+        { name: 'About Us',              path: '/about' },
+        { name: 'Contact Us',            path: '/contact' },
         { name: 'Product',               path: '/products' },
         { name: 'Our Retail Management', path: '/management' },
         { name: 'Trade Enquiry',         path: '/trade-enquiry' },
@@ -55,36 +55,38 @@ const Navbar = () => {
         { name: 'FAQ',                   path: '/faq' },
     ];
 
-    // Helper: renders link name — keeps 'e-' lowercase, matches exact name capitalization for others
+    // Helper: renders link name — keeps 'e-' , matches exact name capitalization for others
     const renderLinkName = (name) => {
         if (name.toLowerCase().startsWith('e-')) {
             const parts = name.split('-');
             const first = parts[0].toLowerCase();
             const rest = parts[1] ? parts[1].charAt(0).toUpperCase() + parts[1].slice(1) : '';
-            return <span><span className="lowercase font-bold">{first}</span>-{rest}</span>;
+            return <span><span className=" font-bold">{first}</span>-{rest}</span>;
         }
         return <span>{name}</span>;
     };
 
     return (
-        <div className="fixed top-4 left-4 right-4 z-[100] transition-all duration-300">
+        <div className={`fixed z-[999] transition-all duration-300 ${isOpen ? 'inset-0 bg-[#FAF6F2] overflow-y-auto' : 'top-4 left-4 right-4'}`}>
             <nav
-                className={`max-w-7xl mx-auto bg-white/95 border border-stone-200/60 shadow-lg transition-all duration-300 ${
-                    isScrolled ? 'py-2 px-6 rounded-full' : 'py-3.5 px-8 rounded-[2.5rem]'
+                className={`max-w-7xl mx-auto transition-all duration-300 ${
+                    isOpen 
+                        ? 'p-4 sm:p-8 flex flex-col min-h-full'
+                        : `bg-white/95 border border-stone-200/60 shadow-lg ${isScrolled ? 'py-2 px-6 rounded-full' : 'py-3.5 px-8 rounded-[2.5rem]'}`
                 }`}
             >
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center shrink-0">
                     
                     {/* ── Logo Branding (Left) ── */}
-                    <Link to="/" className="group flex items-center gap-3">
+                    <Link to="/" onClick={() => setIsOpen(false)} className="group flex items-center gap-3">
                         <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#10211F] border border-[#C29E6B]/20 group-hover:border-[#C29E6B] transition-colors relative">
                             <span className="text-[10px] text-[#C29E6B] font-sans">✦</span>
                         </div>
                         <div className="flex flex-col text-left leading-none">
-                            <span className="text-sm font-serif font-bold uppercase tracking-wider text-[#10211F]">
+                            <span className="text-sm font-serif font-bold  tracking-wider text-[#10211F]">
                                 AURORA
                             </span>
-                            <span className="text-[8px] text-[#2C443E] tracking-[0.25em] font-bold uppercase mt-0.5">
+                            <span className="text-[8px] text-[#2C443E] tracking-[0.25em] font-bold  mt-0.5">
                                 TEXTILE HOUSE
                             </span>
                         </div>
@@ -153,7 +155,7 @@ const Navbar = () => {
                     <div className="hidden lg:flex items-center gap-3">
                         <button
                             onClick={() => navigate('/quotation')}
-                            className="flex items-center gap-2.5 px-6 py-3 bg-[#10211F] hover:bg-[#2C443E] text-white text-[10px] font-bold uppercase tracking-[0.2em] rounded-full transition-all cursor-pointer shadow-md"
+                            className="flex items-center gap-2.5 px-6 py-3 bg-[#10211F] hover:bg-[#2C443E] text-white text-[10px] font-bold  tracking-[0.2em] rounded-full transition-all cursor-pointer shadow-md"
                         >
                             Request Quote
                             <span className="text-white">→</span>
@@ -170,7 +172,7 @@ const Navbar = () => {
                     {/* ── Mobile Hamburger Menu ── */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-stone-200 text-[#10211F] hover:bg-stone-50 transition-colors"
+                        className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-stone-200 text-[#10211F] hover:bg-stone-50 transition-colors z-[110]"
                     >
                         {isOpen ? <X size={18} /> : <Menu size={18} />}
                     </button>
@@ -181,46 +183,46 @@ const Navbar = () => {
                 <AnimatePresence>
                     {isOpen && (
                         <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="lg:hidden overflow-hidden mt-4 pt-4 border-t border-stone-100"
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            className="lg:hidden flex-grow flex flex-col mt-8"
                         >
-                            <div className="flex flex-col space-y-2 pb-6 max-h-[70vh] overflow-y-auto text-left">
+                            <div className="flex flex-col space-y-4 pb-12 overflow-y-auto visible-scrollbar text-center items-center">
                                 {navLinks.map((link) => (
                                     <Link
                                         key={link.name}
                                         to={link.path}
                                         onClick={() => setIsOpen(false)}
-                                        className="text-xs font-sans font-bold tracking-wider text-stone-700 hover:text-[#2C443E] py-2 border-b border-stone-50 text-left"
+                                        className="text-lg font-serif font-bold tracking-widest text-[#10211F] hover:text-[#C29E6B] py-2"
                                     >
                                         {renderLinkName(link.name)}
                                     </Link>
                                 ))}
 
-                                <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-[#C29E6B] pt-4 pb-2 block">
+                                <div className="w-12 h-[1px] bg-[#C29E6B]/30 my-4"></div>
+                                
+                                <span className="text-[10px] font-sans font-bold tracking-widest text-[#C29E6B] pb-2 block">
                                     More Portals
                                 </span>
                                 
-                                <div className="pl-4 border-l border-stone-200/50 flex flex-col space-y-2">
-                                    {moreLinks.map((link) => (
-                                        <Link
-                                            key={link.name}
-                                            to={link.path}
-                                            onClick={() => setIsOpen(false)}
-                                            className="text-xs font-sans font-bold tracking-wider text-stone-600 hover:text-[#2C443E] py-1 flex items-center"
-                                        >
-                                            {renderLinkName(link.name)}
-                                        </Link>
-                                    ))}
-                                </div>
+                                {moreLinks.map((link) => (
+                                    <Link
+                                        key={link.name}
+                                        to={link.path}
+                                        onClick={() => setIsOpen(false)}
+                                        className="text-sm font-sans font-bold tracking-wider text-stone-500 hover:text-[#10211F] py-2"
+                                    >
+                                        {renderLinkName(link.name)}
+                                    </Link>
+                                ))}
                                 
-                                <div className="pt-6">
+                                <div className="pt-8 w-full px-8 sm:px-12">
                                     <button
                                         onClick={() => { navigate('/quotation'); setIsOpen(false); }}
-                                        className="w-full py-3 bg-[#2C443E] text-white text-xs font-bold rounded-xl shadow-md cursor-pointer"
+                                        className="w-full py-4 bg-[#2C443E] text-white text-[10px] font-bold tracking-widest rounded-full shadow-xl cursor-pointer hover:bg-[#10211F] transition-colors"
                                     >
-                                        <span className="lowercase">e-quotation</span>
+                                        Request e-Quotation
                                     </button>
                                 </div>
                             </div>

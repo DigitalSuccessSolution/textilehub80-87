@@ -39,28 +39,33 @@ const PopupAnnouncement = () => {
                             <X size={20} />
                         </button>
 
+                        {/* Image */}
+                        <div className="w-full h-40 bg-white/5 rounded-2xl overflow-hidden mb-6 relative">
+                            <img src="https://images.pexels.com/photos/15488394/pexels-photo-15488394.jpeg" alt="Popup Image" className="w-full h-full object-cover" />
+                        </div>
+
                         {/* Top Line decoration */}
                         <div className="w-12 h-[1px] bg-[#C29E6B] mx-auto mb-6"></div>
 
                         {/* Subtitle */}
-                        <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-[#C29E6B] mb-3 block">
+                        <span className="text-[10px] font-sans font-bold  tracking-[0.3em] text-[#C29E6B] mb-3 block">
                             Luxury Campaign
                         </span>
 
                         {/* Heading */}
-                        <h3 className="text-2xl font-serif text-white tracking-tight uppercase mb-4">
+                        <h3 className="text-2xl font-serif text-white tracking-tight  mb-4">
                             Grand Festive Weave
                         </h3>
 
                         {/* Main Message */}
                         <p className="text-stone-300 text-xs leading-relaxed mb-6 font-sans font-light">
-                            Discover flat <span className="text-[#C29E6B] font-bold">15% Off</span> on custom bulk orders for designer sarees, suiting fabrics, and upholstery at Aurora Textile House. Register your trade enquiry today to claim the premium pricing.
+                            Discover our <span className="text-[#C29E6B] font-bold">exclusive collection</span> of custom bulk orders for designer sarees, suiting fabrics, and upholstery at Aurora Textile House. Register your trade enquiry today.
                         </p>
 
                         {/* Button Action */}
                         <button
                             onClick={handleClose}
-                            className="px-8 py-3 bg-[#2C443E] hover:bg-[#1B2E2A] text-white font-bold uppercase text-[9px] tracking-[0.2em] transition-all duration-300 rounded-full shadow-lg cursor-pointer"
+                            className="px-8 py-3 bg-[#2C443E] hover:bg-[#1B2E2A] text-white font-bold  text-[9px] tracking-[0.2em] transition-all duration-300 rounded-full shadow-lg cursor-pointer"
                         >
                             View Collection
                         </button>

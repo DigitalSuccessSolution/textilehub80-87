@@ -55,13 +55,13 @@ const BlogDetail = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <span className="text-[#C29E6B] text-[8px]">✦</span>
-              <span className="text-[9px] font-sans font-bold uppercase tracking-[0.3em] text-[#2C443E]">
+              <span className="text-[9px] font-sans font-bold  tracking-[0.3em] text-[#2C443E]">
                 {post.cat}
               </span>
             </div>
             <div className="flex gap-4 items-start">
               <div className="w-1.5 h-14 bg-[#C29E6B] rounded-full shrink-0" />
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight uppercase text-[#10211F] leading-none">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight  text-[#10211F] leading-none">
                 {post.title}
               </h1>
             </div>

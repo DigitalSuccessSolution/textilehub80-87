@@ -49,10 +49,10 @@ const Intro = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent" />
 
                     <div className="space-y-4 z-10 text-left">
-                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C29E6B]">
+                        <span className="text-[10px] font-bold  tracking-[0.3em] text-[#C29E6B]">
                             Our Story
                         </span>
-                        <h2 className="text-3xl sm:text-4xl font-serif text-white tracking-tight leading-tight uppercase">
+                        <h2 className="text-3xl sm:text-4xl font-serif text-white tracking-tight leading-tight ">
                             Heritage in every weave. <br />
                             Passion in every thread.
                         </h2>
@@ -63,7 +63,7 @@ const Intro = () => {
                         <div className="pt-4">
                             <button
                                 onClick={() => navigate('/about')}
-                                className="group flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#C29E6B] hover:text-white transition-colors"
+                                className="group flex items-center gap-3 text-[10px] font-bold  tracking-[0.25em] text-[#C29E6B] hover:text-white transition-colors"
                             >
                                 KNOW OUR STORY
                                 <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform" />
@@ -75,10 +75,10 @@ const Intro = () => {
                 {/* ── Column 2: 2x2 Stats & Impact Grid ── */}
                 <div className="lg:col-span-6 flex flex-col justify-center space-y-8">
                     <div className="text-left">
-                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C29E6B]">
+                        <span className="text-[10px] font-bold  tracking-[0.3em] text-[#C29E6B]">
                             OUR VALUES & IMPACT
                         </span>
-                        <h3 className="text-2xl sm:text-3xl font-serif text-[#10211F] uppercase mt-2">
+                        <h3 className="text-2xl sm:text-3xl font-serif text-[#10211F]  mt-2">
                             Sustained Quality, Built on Trust
                         </h3>
                         <p className="text-xs text-stone-500 font-sans font-light mt-2 max-w-lg leading-relaxed">
@@ -102,7 +102,7 @@ const Intro = () => {
                                     <span className="text-xl sm:text-2xl font-serif font-light text-[#10211F] block leading-none">
                                         {stat.number}
                                     </span>
-                                    <h4 className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#C29E6B]">
+                                    <h4 className="text-[10px] font-sans font-bold  tracking-wider text-[#C29E6B]">
                                         {stat.title}
                                     </h4>
                                     <p className="text-[11px] text-stone-500 font-sans leading-relaxed font-light">

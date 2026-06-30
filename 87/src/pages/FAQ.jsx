@@ -37,13 +37,13 @@ const FAQ = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <span className="text-[#C29E6B] text-[8px]">✦</span>
-              <span className="text-[9px] font-sans font-bold uppercase tracking-[0.3em] text-[#2C443E]">
+              <span className="text-[9px] font-sans font-bold  tracking-[0.3em] text-[#2C443E]">
                 Customer Support
               </span>
             </div>
             <div className="flex gap-4 items-start">
               <div className="w-1.5 h-14 bg-[#C29E6B] rounded-full shrink-0" />
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight uppercase text-[#10211F] leading-none">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight  text-[#10211F] leading-none">
                 FAQ
               </h1>
             </div>
@@ -67,7 +67,7 @@ const FAQ = () => {
             <div key={idx} className="bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm hover:border-[#C29E6B]/50 transition-colors duration-300">
               <button
                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-                className="w-full px-6 py-4.5 flex justify-between items-center text-left text-[#10211F] hover:bg-[#FAF6F2]/40 transition-colors font-bold uppercase tracking-wider cursor-pointer"
+                className="w-full px-6 py-4.5 flex justify-between items-center text-left text-[#10211F] hover:bg-[#FAF6F2]/40 transition-colors font-bold  tracking-wider cursor-pointer"
               >
                 <span className="pr-4">{faq.q}</span>
                 {openIdx === idx ? <ChevronUp size={14} className="text-[#C29E6B]" /> : <ChevronDown size={14} className="text-[#C29E6B]" />}
