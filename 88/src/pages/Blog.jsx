@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import useSEO from "../hooks/useSEO";
+import { SlidersHorizontal } from "lucide-react";
 
 const Blog = () => {
   useSEO("Style Blog", "Discover fashion guides, handloom history, and home decor upholstery tips on our blog at Aurora Textile House.");
@@ -32,6 +33,13 @@ const Blog = () => {
     }
   ];
 
+  const categories = ["All", "Styling Guide", "Heritage", "Interior Design"];
+  const [activeCat, setActiveCat] = useState("All");
+
+  const filteredPosts = useMemo(() => {
+    return posts.filter(post => activeCat === "All" || post.cat === activeCat);
+  }, [activeCat]);
+
   return (
     <div className="min-h-screen bg-[#FAF5F0] text-[#24151D] pb-20">
       {/* Hero Banner */}
@@ -54,12 +62,33 @@ const Blog = () => {
         </div>
       </section>
 
+      {/* Category Filters */}
+      <section className="py-6 px-6 max-w-6xl mx-auto border-b border-[#2E081B]/5">
+        <div className="flex flex-wrap gap-2 items-center justify-center">
+            <span className="text-[9px] font-bold uppercase tracking-wider text-[#C29E6B] mr-2 flex items-center gap-1.5 font-sans">
+                <SlidersHorizontal size={10} /> Filter By:
+            </span>
+            {categories.map((cat) => (
+                <button
+                    key={cat}
+                    onClick={() => setActiveCat(cat)}
+                    className={`px-4 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-wider border transition-all cursor-pointer font-sans ${
+                        activeCat === cat 
+                            ? 'bg-[#2E081B] text-white border-[#2E081B]' 
+                            : 'bg-white text-stone-500 border-stone-200 hover:border-[#C29E6B]'
+                    }`}
+                >
+                    {cat}
+                </button>
+            ))}
+        </div>
+      </section>
+
       {/* Main Content */}
       <section className="py-16 px-4 sm:px-8 max-w-6xl mx-auto">
-
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {posts.map((post) => (
+          {filteredPosts.map((post) => (
             <div key={post.id} className="bg-white border border-[#2E081B]/10 rounded-[2rem] overflow-hidden flex flex-col justify-between shadow-md group p-4">
               <div className="aspect-[16/10] overflow-hidden bg-[#2E081B] rounded-2xl">
                 <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90" />

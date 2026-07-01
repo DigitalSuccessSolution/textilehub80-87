@@ -116,16 +116,6 @@ const Hero = () => {
                         </button>
                     </div>
 
-                    {/* Slide Dots Indicator */}
-                    <div className="flex items-center gap-2 pt-2">
-                        {slides.map((_, i) => (
-                            <button 
-                                key={i} 
-                                onClick={() => goTo(i)} 
-                                className={`transition-all duration-300 rounded-full cursor-pointer ${i === current ? 'w-6 h-2 bg-[#C29E6B]' : 'w-2 h-2 bg-[#2E081B]/20 hover:bg-[#C29E6B]/50'}`} 
-                            />
-                        ))}
-                    </div>
                 </div>
 
                 {/* ── Right: Image Panel ── */}

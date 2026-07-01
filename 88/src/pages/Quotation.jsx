@@ -55,6 +55,25 @@ const Quotation = () => {
           </div>
         )}
 
+        {/* Recent Quotations List */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-serif text-[#2E081B] mb-8 text-center uppercase tracking-wider">Recent Quotations</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { id: 1, title: "Bulk Silk Sarees Order", desc: "Quotation for 500 Banarasi Silk Sarees.", date: "July 01, 2026" },
+              { id: 2, title: "Summer Kurtis Supply", desc: "Quotation for summer linen and cotton kurtis.", date: "June 25, 2026" },
+              { id: 3, title: "Hotel Linen Replenishment", desc: "Quotation for 1000 premium bedsheets.", date: "June 18, 2026" },
+              { id: 4, title: "Wedding Suiting Fabrics", desc: "Quotation for premium suiting materials.", date: "June 10, 2026" }
+            ].map(quote => (
+              <div key={quote.id} className="bg-white p-6 rounded-[2rem] border border-stone-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all text-left">
+                <h3 className="font-serif text-base font-bold text-[#2E081B] mb-2 uppercase tracking-wide">{quote.title}</h3>
+                <p className="text-xs text-stone-500 font-sans leading-relaxed mb-4">{quote.desc}</p>
+                <div className="text-[10px] text-stone-400 font-sans">{quote.date}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Form Card */}
         <div className="bg-white border border-[#2E081B]/10 rounded-3xl p-8 md:p-12 shadow-md">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

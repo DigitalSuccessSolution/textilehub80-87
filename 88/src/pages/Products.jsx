@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import useSEO from '../hooks/useSEO';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Grid, Columns, Sparkles, SlidersHorizontal, ArrowRight, MessageCircle, X, Check } from 'lucide-react';
+import { Grid, Columns, Sparkles, SlidersHorizontal, ArrowRight, MessageCircle, X, Check, ChevronDown } from 'lucide-react';
 
 // Category mapping with high-quality fashion / textile images
 const categoryImages = {
@@ -35,29 +35,25 @@ const categoryMeta = {
     "Home Upholstery & Furnishing": { material: "Jacquard, Velvet, Damask Weaves", price: "₹850 - ₹5,200 / Mtr", tag: "Artisanal Decor" }
 };
 
-// Generates 108 products (12 categories * 9 styles = 108 products) with enriched mock information
+// Generates exactly 1 product per collection (12 total)
 const generateProducts = () => {
     const list = [];
     const categories = Object.keys(categoryImages);
     let id = 1;
     
-    const styleTags = ["Bestseller", "New Arrival", "Limited Edition", "Traditional Weave", "Premium Selection", "Designer Choice"];
-    
     categories.forEach(cat => {
-        const meta = categoryMeta[cat] || { material: "Premium Fiber", price: "₹1,500", tag: "Selected Wear" };
-        for (let i = 1; i <= 9; i++) {
-            list.push({
-                id: id++,
-                sku: `ATH-${cat.slice(0, 3).toUpperCase()}-${100 + i}`,
-                name: `${cat} Weave Collection - Style ${100 + i}`,
-                cat: cat,
-                img: categoryImages[cat],
-                material: meta.material,
-                price: meta.price,
-                badge: styleTags[(id + i) % styleTags.length],
-                desc: `Exquisite ${cat} item woven with high precision, offering unmatched texture profile, color fastness, and premium drape comfort.`
-            });
-        }
+        const meta = categoryMeta[cat] || { material: "Premium Fiber", price: "Premium", tag: "Signature Wear" };
+        list.push({
+            id: id++,
+            sku: `ATH-${cat.slice(0, 3).toUpperCase()}-101`,
+            name: `${cat} Signature Collection`,
+            cat: cat,
+            img: categoryImages[cat],
+            material: meta.material,
+            price: meta.price,
+            badge: meta.tag,
+            desc: `Exquisite ${cat} item woven with high precision, offering unmatched texture profile, color fastness, and premium drape comfort.`
+        });
     });
     return list;
 };
@@ -127,94 +123,44 @@ const Products = () => {
                 </div>
             </section>
 
-            {/* ── Visual Circular Category Selectors ── */}
-            <section className="py-12 bg-white border-b border-[#2E081B]/5 overflow-hidden">
-                <div className="max-w-[1600px] mx-auto px-6">
-                    <div className="flex justify-between items-center mb-6">
-                        <span className="text-[9px] uppercase tracking-widest font-black text-[#C29E6B]">Select Department</span>
-                        {activeCat !== "All" && (
-                            <button 
-                                onClick={() => setActiveCat("All")} 
-                                className="text-[9px] uppercase tracking-widest font-bold text-[#2E081B] hover:text-[#C29E6B] flex items-center gap-1 cursor-pointer"
-                            >
-                                Reset Category <X size={10} />
-                            </button>
-                        )}
-                    </div>
-                    
-                    {/* Visual image slider list */}
-                    <div className="flex gap-6 overflow-x-auto pb-4 custom-horizontal-scrollbar scroll-smooth">
-                        {/* 'All' option */}
-                        <div 
-                            onClick={() => setActiveCat("All")}
-                            className="flex flex-col items-center gap-3 cursor-pointer shrink-0 group"
+            {/* ── Category Dropdown Selector ── */}
+            <section className="py-12 bg-white border-b border-[#2E081B]/5">
+                <div className="max-w-md mx-auto px-4 sm:px-6 text-left space-y-2 w-full overflow-hidden">
+                    <label className="block text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-[#C29E6B]">
+                        Select Category Department
+                    </label>
+                    <div className="relative w-full">
+                        <select
+                            value={activeCat}
+                            onChange={(e) => setActiveCat(e.target.value)}
+                            className="w-full bg-white border border-[#2E081B]/15 hover:border-[#C29E6B] rounded-2xl px-5 py-4 text-xs font-serif font-bold uppercase tracking-wider text-[#2E081B] focus:outline-none focus:ring-2 focus:ring-[#C29E6B] transition-all cursor-pointer appearance-none max-w-full"
                         >
-                            <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${
-                                activeCat === "All" ? 'border-[#C29E6B] scale-105 shadow-md bg-[#2E081B] text-white' : 'border-stone-200 bg-[#FAF5F0] text-[#2E081B] group-hover:border-[#C29E6B]/50'
-                            }`}>
-                                <Sparkles size={22} className={activeCat === "All" ? "animate-pulse" : ""} />
-                            </div>
-                            <span className={`text-[9px] sm:text-[10px] font-sans font-bold uppercase tracking-wider transition-colors ${
-                                activeCat === "All" ? 'text-[#C29E6B]' : 'text-stone-500 group-hover:text-[#2E081B]'
-                            }`}>
-                                All Collections
-                            </span>
+                            <option value="All">All Collections</option>
+                            {Object.keys(categoryImages).map((catName) => {
+                                const shortNames = {
+                                    "Formal & Ethnic Wear for Women": "Women's Formal",
+                                    "Formal & Ethnic Wear for Men": "Men's Formal",
+                                    "Formal & Ethnic Wear for Children": "Kids' Formal",
+                                    "Home Upholstery & Furnishing": "Home Furnishing"
+                                };
+                                const displayName = shortNames[catName] || catName;
+                                return (
+                                    <option key={catName} value={catName}>
+                                        {displayName}
+                                    </option>
+                                );
+                            })}
+                        </select>
+                        {/* Custom Dropdown Chevron Icon */}
+                        <div className="absolute inset-y-0 right-5 flex items-center pointer-events-none text-[#C29E6B]">
+                            <ChevronDown size={16} />
                         </div>
-
-                        {/* Image mapped categories */}
-                        {Object.entries(categoryImages).map(([catName, imgUrl]) => {
-                            const isSelected = activeCat === catName;
-                            return (
-                                <div 
-                                    key={catName}
-                                    onClick={() => setActiveCat(catName)}
-                                    className="flex flex-col items-center gap-3 cursor-pointer shrink-0 group"
-                                >
-                                    <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 transition-all duration-300 relative ${
-                                        isSelected ? 'border-[#C29E6B] scale-105 shadow-md' : 'border-stone-200 group-hover:border-[#C29E6B]/50'
-                                    }`}>
-                                        <img 
-                                            src={imgUrl} 
-                                            alt={catName} 
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                                        />
-                                        <div className={`absolute inset-0 bg-[#2E081B]/30 transition-opacity ${isSelected ? 'opacity-0' : 'opacity-30 group-hover:opacity-10'}`} />
-                                    </div>
-                                    <span className={`text-[9px] sm:text-[10px] font-sans font-bold uppercase tracking-wider text-center max-w-[100px] truncate transition-colors ${
-                                        isSelected ? 'text-[#C29E6B]' : 'text-stone-500 group-hover:text-[#2E081B]'
-                                    }`}>
-                                        {catName}
-                                    </span>
-                                </div>
-                            );
-                        })}
                     </div>
                 </div>
             </section>
 
             {/* ── Sub-filters & Layout Toggle Strip ── */}
-            <section className="py-6 px-6 max-w-[1600px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 border-b border-[#2E081B]/5">
-                
-                {/* Secondary Tag Badges */}
-                <div className="flex flex-wrap gap-2 items-center">
-                    <span className="text-[9px] font-bold uppercase tracking-wider text-[#C29E6B] mr-2 flex items-center gap-1.5">
-                        <SlidersHorizontal size={10} /> Filter By:
-                    </span>
-                    {availableBadges.map((bg) => (
-                        <button
-                            key={bg}
-                            onClick={() => setFilterBadge(bg)}
-                            className={`px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider border transition-all cursor-pointer ${
-                                filterBadge === bg 
-                                    ? 'bg-[#2E081B] text-white border-[#2E081B]' 
-                                    : 'bg-white text-stone-500 border-stone-200 hover:border-[#C29E6B]'
-                            }`}
-                        >
-                            {bg}
-                        </button>
-                    ))}
-                </div>
-
+            <section className="py-6 px-6 max-w-[1600px] mx-auto flex items-center justify-end gap-6 border-b border-[#2E081B]/5">
                 {/* Layout switch controls */}
                 <div className="flex items-center gap-4">
                     <span className="text-[10px] text-stone-400 uppercase tracking-widest font-sans">
@@ -263,8 +209,8 @@ const Products = () => {
                         layout 
                         className={`grid ${
                             layoutMode === "grid" 
-                                ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" 
-                                : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16"
+                                ? "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6" 
+                                : "grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 sm:gap-x-12 sm:gap-y-16"
                         }`}
                     >
                         <AnimatePresence mode="popLayout">
@@ -282,10 +228,10 @@ const Products = () => {
                                         exit={{ opacity: 0, scale: 0.95 }}
                                         transition={{ duration: 0.4 }}
                                         onClick={() => setSelectedProduct(p)}
-                                        className={`group cursor-pointer bg-white p-5 rounded-[2rem] border border-[#2E081B]/10 shadow-sm hover:shadow-xl hover:translate-y-[-4px] transition-all duration-500 flex flex-col justify-between hover:border-[#C29E6B]/30 ${offsetClass}`}
+                                        className={`group cursor-pointer bg-white p-3 sm:p-5 rounded-[1.5rem] sm:rounded-[2rem] border border-[#2E081B]/10 shadow-sm hover:shadow-xl hover:translate-y-[-4px] transition-all duration-500 flex flex-col justify-between hover:border-[#C29E6B]/30 ${offsetClass}`}
                                     >
                                         {/* Image Display Frame */}
-                                        <div className="w-full aspect-[4/5] overflow-hidden bg-[#2E081B] mb-5 rounded-2xl relative flex-grow">
+                                        <div className="w-full aspect-[4/5] overflow-hidden bg-[#2E081B] mb-3 sm:mb-5 rounded-xl sm:rounded-2xl relative flex-grow">
                                             <img
                                                 src={p.img}
                                                 alt={p.name}
@@ -295,7 +241,7 @@ const Products = () => {
                                             <div className="absolute inset-0 bg-gradient-to-t from-[#2E081B]/40 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
                                             
                                             {/* Tag badge inside image frame */}
-                                            <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-[#2E081B] text-[8px] font-sans font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm border border-stone-200/50">
+                                            <span className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-white/90 backdrop-blur-md text-[#2E081B] text-[7px] sm:text-[8px] font-sans font-bold uppercase tracking-widest px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow-sm border border-stone-200/50">
                                                 {p.badge}
                                             </span>
 
@@ -308,12 +254,12 @@ const Products = () => {
                                         </div>
 
                                         {/* Label Details */}
-                                        <div className="space-y-2 mt-auto text-left">
+                                        <div className="space-y-1.5 sm:space-y-2 mt-auto text-left">
                                             <div className="flex justify-between items-center">
-                                                <span className="text-[8px] sm:text-[9px] text-[#C29E6B] font-sans font-black uppercase tracking-widest">
+                                                <span className="text-[7px] sm:text-[9px] text-[#C29E6B] font-sans font-black uppercase tracking-widest">
                                                     {p.cat}
                                                 </span>
-                                                <span className="text-[9px] text-stone-400 font-sans tracking-tight">
+                                                <span className="text-[8px] sm:text-[9px] text-stone-400 font-sans tracking-tight">
                                                     {p.sku}
                                                 </span>
                                             </div>
@@ -322,19 +268,11 @@ const Products = () => {
                                                 {p.name}
                                             </h3>
 
-                                            <div className="border-t border-[#2E081B]/5 pt-2 flex justify-between items-center">
-                                                <div className="flex flex-col">
-                                                    <span className="text-[8px] uppercase tracking-wide text-stone-400">Fabric Type</span>
-                                                    <span className="text-[10px] text-stone-600 font-sans truncate max-w-[120px] font-light">
-                                                        {p.material}
-                                                    </span>
-                                                </div>
-                                                <div className="text-right">
-                                                    <span className="text-[8px] uppercase tracking-wide text-stone-400 block">Pricing</span>
-                                                    <span className="text-[11px] text-[#2E081B] font-bold tracking-wide">
-                                                        {p.price.split(' ')[0]}
-                                                    </span>
-                                                </div>
+                                            <div className="border-t border-[#2E081B]/5 pt-2 text-left">
+                                                <span className="text-[7px] sm:text-[8px] uppercase tracking-wide text-stone-400 block font-sans">Fabric Type</span>
+                                                <span className="text-[9px] sm:text-[10px] text-stone-600 font-sans truncate block font-light">
+                                                    {p.material}
+                                                </span>
                                             </div>
                                         </div>
                                     </motion.div>
@@ -349,6 +287,27 @@ const Products = () => {
             <AnimatePresence>
                 {selectedProduct && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                        <style dangerouslySetInnerHTML={{__html: `
+                            .custom-modal-scrollbar {
+                                scrollbar-width: auto !important;
+                                scrollbar-color: #C29E6B rgba(46, 8, 27, 0.05) !important;
+                            }
+                            .custom-modal-scrollbar::-webkit-scrollbar {
+                                width: 8px !important;
+                                height: 8px !important;
+                                display: block !important;
+                            }
+                            .custom-modal-scrollbar::-webkit-scrollbar-track {
+                                background: rgba(46, 8, 27, 0.05) !important;
+                                display: block !important;
+                            }
+                            .custom-modal-scrollbar::-webkit-scrollbar-thumb {
+                                background-color: #C29E6B !important;
+                                border: 2px solid white !important;
+                                border-radius: 4px !important;
+                                display: block !important;
+                            }
+                        `}} />
                         {/* Backdrop */}
                         <motion.div 
                             initial={{ opacity: 0 }}
@@ -363,7 +322,7 @@ const Products = () => {
                             initial={{ opacity: 0, scale: 0.95, y: 15 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                            className="bg-white rounded-[2.5rem] border border-[#C29E6B]/30 shadow-2xl overflow-hidden max-w-3xl w-full relative z-10 grid grid-cols-1 md:grid-cols-2"
+                            className="bg-white rounded-[2rem] border border-[#C29E6B]/30 shadow-2xl max-h-[85vh] overflow-y-auto max-w-xl w-full relative z-10 grid grid-cols-1 md:grid-cols-2 custom-modal-scrollbar"
                         >
                             {/* Close Button */}
                             <button
@@ -411,10 +370,7 @@ const Products = () => {
                                             <span className="text-stone-400 uppercase tracking-wider text-[8px] font-bold">Fabric Material</span>
                                             <span className="font-medium text-[#2E081B]">{selectedProduct.material}</span>
                                         </div>
-                                        <div className="flex justify-between">
-                                            <span className="text-stone-400 uppercase tracking-wider text-[8px] font-bold">Price Index Range</span>
-                                            <span className="font-bold text-[#2E081B]">{selectedProduct.price}</span>
-                                        </div>
+
                                         <div className="flex justify-between">
                                             <span className="text-stone-400 uppercase tracking-wider text-[8px] font-bold">Quality Standard</span>
                                             <span className="font-medium text-emerald-600 flex items-center gap-1">

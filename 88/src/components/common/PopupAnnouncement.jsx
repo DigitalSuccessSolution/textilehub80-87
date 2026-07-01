@@ -6,18 +6,14 @@ const PopupAnnouncement = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        const hasSeen = sessionStorage.getItem('hasSeenRetailPopup3');
-        if (!hasSeen) {
-            const timer = setTimeout(() => {
-                setIsVisible(true);
-            }, 3000); // Popup appears after 3 seconds
-            return () => clearTimeout(timer);
-        }
+        const timer = setTimeout(() => {
+            setIsVisible(true);
+        }, 1500); // Popup appears after 1.5 seconds
+        return () => clearTimeout(timer);
     }, []);
 
     const handleClose = () => {
         setIsVisible(false);
-        sessionStorage.setItem('hasSeenRetailPopup3', 'true');
     };
 
     return (

@@ -69,12 +69,20 @@ const Circular = () => {
                 </div>
                 <h3 className="font-serif text-base md:text-lg font-bold text-[#2E081B] mb-2 leading-snug">{circ.title}</h3>
                 <p className="text-xs text-stone-500 font-sans leading-relaxed mb-4">{circ.desc}</p>
-                <button
-                  onClick={() => alert("Downloading PDF Document...")}
-                  className="flex items-center gap-1.5 text-[9px] uppercase font-bold tracking-wider text-[#9C4B6E] hover:text-white border border-[#C29E6B]/30 hover:bg-[#9C4B6E] px-3.5 py-1.5 rounded-full bg-[#FAF5F0]/40 cursor-pointer shadow-sm font-sans transition-colors"
-                >
-                  <Download size={11} /> Download PDF Notice
-                </button>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => alert("Opening PDF Document in browser view...")}
+                    className="flex items-center gap-1.5 text-[9px] uppercase font-bold tracking-wider text-[#9C4B6E] hover:text-white border border-[#C29E6B]/30 hover:bg-[#9C4B6E] px-3.5 py-1.5 rounded-full bg-[#FAF5F0]/40 cursor-pointer shadow-sm font-sans transition-colors"
+                  >
+                    View PDF
+                  </button>
+                  <button
+                    onClick={() => alert("Initiating PDF Print dialog...")}
+                    className="flex items-center gap-1.5 text-[9px] uppercase font-bold tracking-wider text-stone-500 hover:text-white border border-stone-200 hover:bg-stone-500 px-3.5 py-1.5 rounded-full bg-[#FAF5F0]/40 cursor-pointer shadow-sm font-sans transition-colors"
+                  >
+                    Print PDF
+                  </button>
+                </div>
               </div>
             </div>
           ))}

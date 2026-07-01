@@ -20,17 +20,13 @@ const Preloader = () => {
                         className="absolute inset-2 bg-[#C29E6B]/10 rounded-full"
                     />
 
-                    {/* Central Logo */}
+                    {/* Central Text Logo */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        className="w-14 h-14 flex items-center justify-center rounded-xl z-10"
+                        className="w-14 h-14 flex items-center justify-center rounded-xl z-10 font-serif text-3xl font-bold text-[#C29E6B] select-none"
                     >
-                        <img
-                            src="/logo.png"
-                            alt="Logo"
-                            className="w-full h-full object-contain"
-                        />
+                        A
                     </motion.div>
                 </div>
 
