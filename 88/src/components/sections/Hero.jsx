@@ -116,40 +116,25 @@ const Hero = () => {
                         </button>
                     </div>
 
-                    {/* Stats */}
-                    <div className="grid grid-cols-4 gap-4 pt-8 border-t border-[#2E081B]/8">
-                        {stats.map((s, i) => (
-                            <div key={i} className="space-y-1 text-left">
-                                <div className="flex items-center gap-1.5 text-[#C29E6B]">
-                                    {s.icon}
-                                    <span className="text-lg font-serif font-bold text-[#2E081B]">{s.number}</span>
-                                </div>
-                                <p className="text-[9px] text-stone-500 font-sans tracking-wider uppercase font-medium">{s.label}</p>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Slide Dots */}
-                    <div className="flex items-center gap-3">
-                        <button onClick={() => goTo((current - 1 + slides.length) % slides.length)} className="w-8 h-8 rounded-full border border-[#2E081B]/15 flex items-center justify-center hover:bg-[#2E081B]/5 transition-colors cursor-pointer">
-                            <ChevronLeft size={14} className="text-[#2E081B]" />
-                        </button>
+                    {/* Slide Dots Indicator */}
+                    <div className="flex items-center gap-2 pt-2">
                         {slides.map((_, i) => (
-                            <button key={i} onClick={() => goTo(i)} className={`transition-all duration-300 rounded-full cursor-pointer ${i === current ? 'w-6 h-2 bg-[#C29E6B]' : 'w-2 h-2 bg-[#2E081B]/20 hover:bg-[#C29E6B]/50'}`} />
+                            <button 
+                                key={i} 
+                                onClick={() => goTo(i)} 
+                                className={`transition-all duration-300 rounded-full cursor-pointer ${i === current ? 'w-6 h-2 bg-[#C29E6B]' : 'w-2 h-2 bg-[#2E081B]/20 hover:bg-[#C29E6B]/50'}`} 
+                            />
                         ))}
-                        <button onClick={() => goTo((current + 1) % slides.length)} className="w-8 h-8 rounded-full border border-[#2E081B]/15 flex items-center justify-center hover:bg-[#2E081B]/5 transition-colors cursor-pointer">
-                            <ChevronRight size={14} className="text-[#2E081B]" />
-                        </button>
                     </div>
                 </div>
 
                 {/* ── Right: Image Panel ── */}
-                <div className="relative order-1 lg:order-2 flex items-center justify-center min-h-[340px] lg:min-h-0">
+                <div className="relative order-1 lg:order-2 flex items-center justify-center min-h-[340px] lg:min-h-0 group">
 
                     {/* Main curved image */}
                     <div
                         key={`img-${current}`}
-                        className="relative w-full h-full max-h-[85vh] min-h-[320px] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white"
+                        className="relative w-full h-full max-h-[85vh] min-h-[320px] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white z-10"
                         style={{ animation: animating ? 'none' : 'fadeIn 0.6s ease both' }}
                     >
                         <img
@@ -171,6 +156,22 @@ const Hero = () => {
                             <span className="text-[#C29E6B] text-xs">✦</span>
                         </div>
                     </div>
+
+                    {/* Slider Navigation Buttons Next to Image */}
+                    <button 
+                        onClick={() => goTo((current - 1 + slides.length) % slides.length)} 
+                        className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-stone-200/80 flex items-center justify-center text-[#2E081B] hover:bg-[#2E081B] hover:text-white transition-all shadow-lg z-20 cursor-pointer animate-pulse"
+                        style={{ animationDuration: '3s' }}
+                    >
+                        <ChevronLeft size={18} />
+                    </button>
+                    <button 
+                        onClick={() => goTo((current + 1) % slides.length)} 
+                        className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-stone-200/80 flex items-center justify-center text-[#2E081B] hover:bg-[#2E081B] hover:text-white transition-all shadow-lg z-20 cursor-pointer animate-pulse"
+                        style={{ animationDuration: '3s' }}
+                    >
+                        <ChevronRight size={18} />
+                    </button>
                 </div>
             </div>
 

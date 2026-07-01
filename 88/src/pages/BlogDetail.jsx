@@ -8,7 +8,7 @@ const blogDatabase = {
     title: "Summer Fabric Guide: Cotton vs Linen",
     cat: "Styling Guide",
     date: "June 05, 2026",
-    img: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80",
+    img: "https://images.pexels.com/photos/4794900/pexels-photo-4794900.jpeg",
     content: `When temperatures rise and humidity peaks, choosing the right fabric becomes essential. Cotton and linen are the undisputed champions of summer wardrobes, but each serves a distinct purpose.
 
     Cotton is highly breathable, absorbent, and soft to the skin. It comes in various weaves like poplin, cambric, and mulmul. However, cotton retains moisture longer than linen and is prone to clinging.
@@ -21,7 +21,7 @@ const blogDatabase = {
     title: "The Renaissance of Handloom Sarees",
     cat: "Heritage",
     date: "May 30, 2026",
-    img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1200&q=80",
+    img: "https://images.pexels.com/photos/6634604/pexels-photo-6634604.jpeg",
     content: `Handloom sarees are experiencing a massive revival in contemporary fashion. Once reserved only for formal ethnic occasions or older generations, handloom silk weaves like Banarasis, Kanchipurams, and Jamdanis are now being reimagined.
 
     Young designers are pairing heritage weaves with crop tops, blazer jackets, and modern metallic belts. This fusion keeps the art form alive while making it comfortable and accessible for modern working professionals.
@@ -32,7 +32,7 @@ const blogDatabase = {
     title: "Upholstery Trends for Modern Showrooms",
     cat: "Interior Design",
     date: "May 15, 2026",
-    img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1200&q=80",
+    img: "https://images.pexels.com/photos/6969830/pexels-photo-6969830.jpeg",
     content: `Aesthetic spaces leave a lasting impression. In modern showroom and residential interiors, the choice of upholstery sets the mood.
 
     Currently, textured neutrals are trending. Bouclé fabrics, heavy jacquards, and premium linen blends in ivory, beige, and slate blue are highly sought after. They offer a luxurious feel without overwhelming the space.

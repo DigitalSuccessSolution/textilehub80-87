@@ -131,7 +131,7 @@ const Quotation = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full flex items-center justify-center gap-3 bg-[#9C4B6E] hover:bg-[#803856] text-white py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 disabled:opacity-60 cursor-pointer shadow-md"
+              className="w-full flex items-center justify-center gap-3 bg-[#9C4B6E] hover:bg-[#803856] text-white py-4 rounded-full font-bold text-sm tracking-widest transition-all duration-300 disabled:opacity-60 cursor-pointer shadow-md"
             >
               {isSubmitting ? "Generating..." : (<><FileText size={16} /> Request e-quotation</>)}
             </button>

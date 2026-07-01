@@ -4,8 +4,8 @@ import { Sparkles, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const members = [
-    { name: 'H. C. Parekh', role: 'Chairman & Director', desc: '40+ years of textile industry experience driving our corporate growth and strategic vision.', img: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80' },
-    { name: 'Suresh Parekh', role: 'Managing Director', desc: 'Overseeing operations, supply chain logistics, and showroom planning across all our locations.', img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80' },
+    { name: 'Dipesh Solanki', role: 'Chairman & Director', desc: '40+ years of textile industry experience driving our corporate growth and strategic vision.', img: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80' },
+    { name: 'Rishi Baraskar', role: 'Managing Director', desc: 'Overseeing operations, supply chain logistics, and showroom planning across all our locations.', img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80' },
     { name: 'Amit K. Sen', role: 'Chief Sourcing Officer', desc: 'Leading vendor tie-ups and direct handloom sourcing across Indian weaver hubs and clusters.', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80' },
 ];
 

@@ -27,7 +27,7 @@ const Auction = () => {
       currentBid: bids[1],
       timeLeft: "2 Hours, 15 Mins",
       date: "July 01, 2026",
-      img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80"
+      img: "https://images.pexels.com/photos/6167463/pexels-photo-6167463.jpeg"
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ const Auction = () => {
       currentBid: bids[2],
       timeLeft: "5 Hours, 40 Mins",
       date: "July 02, 2026",
-      img: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80"
+      img: "https://images.pexels.com/photos/6766360/pexels-photo-6766360.jpeg"
     }
   ];
 

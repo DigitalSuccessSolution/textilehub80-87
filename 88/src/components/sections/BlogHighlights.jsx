@@ -7,20 +7,20 @@ const blogs = [
         title: 'Summer Fabric Guide: Cotton vs Linen',
         cat: 'Styling Guide',
         date: 'June 05, 2026',
-        img: 'https://images.unsplash.com/photo-1626497746447-ad25e1d40ff0?w=700&q=80',
+        img: 'https://images.pexels.com/photos/4794900/pexels-photo-4794900.jpeg',
         big: true,
     },
     {
         title: 'The Renaissance of Handloom Sarees',
         cat: 'Heritage Weaves',
         date: 'May 30, 2026',
-        img: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80',
+        img: 'https://images.pexels.com/photos/6634604/pexels-photo-6634604.jpeg',
     },
     {
         title: 'Upholstery Trends for Modern Showrooms',
         cat: 'Interior Curations',
         date: 'May 15, 2026',
-        img: 'https://images.unsplash.com/photo-1618220179428-22790b461013?w=500&q=80',
+        img: 'https://images.pexels.com/photos/6969830/pexels-photo-6969830.jpeg',
     },
 ];
 

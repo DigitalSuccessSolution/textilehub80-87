@@ -12,7 +12,7 @@ const Blog = () => {
       desc: "An in-depth look at lightweight materials, thread configurations, and how to choose cool clothing for humid seasons.",
       cat: "Styling Guide",
       date: "June 05, 2026",
-      img: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=80"
+      img: "https://images.pexels.com/photos/4794900/pexels-photo-4794900.jpeg"
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const Blog = () => {
       desc: "How younger generations are reviving traditional Banarasi silk weaves, Jamdani, and linen sarees in mainstream fashion.",
       cat: "Heritage",
       date: "May 30, 2026",
-      img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80"
+      img: "https://images.pexels.com/photos/6634604/pexels-photo-6634604.jpeg"
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const Blog = () => {
       desc: "Make your customer lounges look highly aesthetic. Tips on fabric textures, curtain layering, and cushion cover palettes.",
       cat: "Interior Design",
       date: "May 15, 2026",
-      img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80"
+      img: "https://images.pexels.com/photos/6969830/pexels-photo-6969830.jpeg"
     }
   ];
 

@@ -6,18 +6,18 @@ import { Grid, Columns, Sparkles, SlidersHorizontal, ArrowRight, MessageCircle, 
 
 // Exact 12 categories as requested
 const categoryImages = {
-    "Sarees": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
-    "Leggings": "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=400&q=80",
-    "Kurtis": "https://images.unsplash.com/photo-1608748010899-18f300247112?w=400&q=80",
-    "Dress Suits": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=400&q=80",
-    "Bedsheets & Linen": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=400&q=80",
-    "Hosiery Items": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=400&q=80",
-    "Suiting": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80",
-    "Shirting": "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=400&q=80",
-    "Formal & Ethnic Wear for Women": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&q=80",
-    "Formal & Ethnic Wear for Men": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80",
-    "Formal & Ethnic Wear for Children": "https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=400&q=80",
-    "Home Upholstery & Furnishing": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&q=80"
+    "Sarees": "https://images.pexels.com/photos/17113983/pexels-photo-17113983.jpeg",
+    "Leggings": "https://images.pexels.com/photos/34178834/pexels-photo-34178834.jpeg",
+    "Kurtis": "https://images.pexels.com/photos/28512776/pexels-photo-28512776.jpeg",
+    "Dress Suits": "https://images.pexels.com/photos/27687923/pexels-photo-27687923.jpeg",
+    "Bedsheets & Linen": "https://images.pexels.com/photos/9616714/pexels-photo-9616714.jpeg",
+    "Hosiery Items": "https://images.pexels.com/photos/9594141/pexels-photo-9594141.jpeg",
+    "Suiting": "https://images.pexels.com/photos/6065984/pexels-photo-6065984.jpeg",
+    "Shirting": "https://images.pexels.com/photos/35415004/pexels-photo-35415004.jpeg",
+    "Formal & Ethnic Wear for Women": "https://images.pexels.com/photos/34688014/pexels-photo-34688014.jpeg",
+    "Formal & Ethnic Wear for Men": "https://images.pexels.com/photos/3998093/pexels-photo-3998093.jpeg",
+    "Formal & Ethnic Wear for Children": "https://images.pexels.com/photos/11254168/pexels-photo-11254168.jpeg",
+    "Home Upholstery & Furnishing": "https://images.pexels.com/photos/27535711/pexels-photo-27535711.jpeg"
 };
 
 const categoryMeta = {

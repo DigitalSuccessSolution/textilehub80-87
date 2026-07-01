@@ -6,37 +6,37 @@ const curatedItems = [
     {
         name: 'Kurtis Collection',
         desc: 'Everyday grace, fresh styles, modern ethnic prints.',
-        img: 'https://images.unsplash.com/photo-1610030470238-6625b169542a?q=80&w=600',
+        img: 'https://images.pexels.com/photos/34155079/pexels-photo-34155079.jpeg',
         tag: 'Bestseller',
     },
     {
         name: 'Heritage Sarees',
         desc: 'Grace in every drape — pure silk, handloom heritage.',
-        img: 'https://images.unsplash.com/photo-1608748010899-18f300247112?q=80&w=600',
+        img: 'https://images.pexels.com/photos/37054322/pexels-photo-37054322.jpeg',
         tag: 'Heritage',
     },
     {
         name: 'Linen & Cottons',
         desc: 'Breathe natural, feel comfortable, premium Giza weave.',
-        img: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=600',
+        img: 'https://images.pexels.com/photos/3847588/pexels-photo-3847588.jpeg',
         tag: 'Natural',
     },
     {
         name: 'Home Furnishing',
         desc: 'Comfort woven beautifully for elegant living spaces.',
-        img: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=600',
+        img: 'https://images.pexels.com/photos/8135277/pexels-photo-8135277.jpeg',
         tag: 'Interior',
     },
     {
         name: 'New Curations',
         desc: 'Seasonal drops and limited design editions.',
-        img: 'https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600',
+        img: 'https://images.pexels.com/photos/10952730/pexels-photo-10952730.jpeg',
         tag: 'New',
     },
     {
         name: 'Bridal Wear',
         desc: 'Luxurious fabrics for your most cherished occasions.',
-        img: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600',
+        img: 'https://images.pexels.com/photos/34688015/pexels-photo-34688015.jpeg',
         tag: 'Premium',
     },
 ];

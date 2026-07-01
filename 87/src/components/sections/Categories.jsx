@@ -11,73 +11,73 @@ const Categories = () => {
             num: "01",
             name: "Sarees",
             desc: "Timeless Tradition",
-            img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80"
+            img: "https://images.pexels.com/photos/17113983/pexels-photo-17113983.jpeg"
         },
         {
             num: "02",
             name: "Leggings",
             desc: "Comfort Wear",
-            img: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=500&q=80"
+            img: "https://images.pexels.com/photos/34178834/pexels-photo-34178834.jpeg"
         },
         {
             num: "03",
             name: "Kurtis",
             desc: "Everyday Grace",
-            img: "https://images.unsplash.com/photo-1608748010899-18f300247112?w=500&q=80"
+            img: "https://images.pexels.com/photos/28512776/pexels-photo-28512776.jpeg"
         },
         {
             num: "04",
             name: "Dress Suits",
             desc: "Festive Exclusive",
-            img: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=500&q=80"
+            img: "https://images.pexels.com/photos/27687923/pexels-photo-27687923.jpeg"
         },
         {
             num: "05",
             name: "Bedsheets & Linen",
             desc: "Luxury Bedding",
-            img: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=500&q=80"
+            img: "https://images.pexels.com/photos/9616714/pexels-photo-9616714.jpeg"
         },
         {
             num: "06",
             name: "Hosiery Items",
             desc: "Daily Comfort",
-            img: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500&q=80"
+            img: "https://images.pexels.com/photos/9594141/pexels-photo-9594141.jpeg"
         },
         {
             num: "07",
             name: "Suiting",
             desc: "Bespoke Tailoring",
-            img: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&q=80"
+            img: "https://images.pexels.com/photos/6065984/pexels-photo-6065984.jpeg"
         },
         {
             num: "08",
             name: "Shirting",
             desc: "Premium Weave",
-            img: "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=500&q=80"
+            img: "https://images.pexels.com/photos/35415004/pexels-photo-35415004.jpeg"
         },
         {
             num: "09",
             name: "Formal & Ethnic Wear for Women",
             desc: "Bridal Signature",
-            img: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=500&q=80"
+            img: "https://images.pexels.com/photos/34688014/pexels-photo-34688014.jpeg"
         },
         {
             num: "10",
             name: "Formal & Ethnic Wear for Men",
             desc: "Groom Signature",
-            img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&q=80"
+            img: "https://images.pexels.com/photos/3998093/pexels-photo-3998093.jpeg"
         },
         {
             num: "11",
             name: "Formal & Ethnic Wear for Children",
             desc: "Kid's Festive",
-            img: "https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=500&q=80"
+            img: "https://images.pexels.com/photos/11254168/pexels-photo-11254168.jpeg"
         },
         {
             num: "12",
             name: "Home Upholstery & Furnishing",
             desc: "Artisanal Decor",
-            img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=500&q=80"
+            img: "https://images.pexels.com/photos/27535711/pexels-photo-27535711.jpeg"
         }
     ];
 
