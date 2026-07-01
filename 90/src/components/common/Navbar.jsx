@@ -2,14 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Helper: renders link name — keeps 'e-' lowercase, uppercase the rest
+// Helper: renders link name as written
 const renderLinkName = (name) => {
-    if (name.startsWith('e-')) {
-        return (
-            <span style={{ textTransform: 'none' }}>{name}</span>
-        );
-    }
-    return <span style={{ textTransform: 'uppercase' }}>{name}</span>;
+    return <span>{name}</span>;
 };
 
 const Navbar = () => {
@@ -32,7 +27,7 @@ const Navbar = () => {
         { name: 'Home',                  path: '/' },
         { name: 'About Us',              path: '/about' },
         { name: 'Contact Us',            path: '/contact' },
-        { name: 'Product Page',          path: '/products' },
+        { name: 'Product',               path: '/products' },
         { name: 'Our Retail Management', path: '/management' },
         { name: 'Trade Enquiry',         path: '/trade-enquiry' },
     ];
@@ -42,9 +37,9 @@ const Navbar = () => {
         { name: 'e-Quotation',            path: '/quotation' },
         { name: 'e-Auction',              path: '/auction' },
         { name: 'Trade Circular',         path: '/circular' },
-        { name: 'Blog Page',              path: '/blog' },
+        { name: 'Blog',                   path: '/blog' },
         { name: 'Notice Board',           path: '/notice-board' },
-        { name: 'Career Page',            path: '/career' },
+        { name: 'Career',                 path: '/career' },
         { name: 'Customer Review',        path: '/reviews' },
         { name: 'Business Media Gallery', path: '/media-gallery' },
         { name: 'FAQ',                    path: '/faq' },
@@ -79,7 +74,7 @@ const Navbar = () => {
                             <Link
                                 key={link.name}
                                 to={link.path}
-                                className={`text-[10px] uppercase tracking-[0.2em] font-bold transition-all duration-300 relative py-1.5 ${isActive ? 'text-brand-gold' : 'text-brand-linen/70 hover:text-white'}`}
+                                className={`text-[10px] tracking-[0.2em] font-bold transition-all duration-300 relative py-1.5 ${isActive ? 'text-brand-gold' : 'text-brand-linen/70 hover:text-white'}`}
                             >
                                 {link.name}
                                 {isActive && (
@@ -99,7 +94,7 @@ const Navbar = () => {
                         onMouseEnter={() => setIsMoreOpen(true)}
                         onMouseLeave={() => setIsMoreOpen(false)}
                     >
-                        <button className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] font-bold text-brand-linen/70 hover:text-white transition-colors duration-300 py-1.5 focus:outline-none">
+                        <button className="flex items-center gap-1.5 text-[10px] tracking-[0.2em] font-bold text-brand-linen/70 hover:text-white transition-colors duration-300 py-1.5 focus:outline-none">
                             More
                             <svg className={`w-2.5 h-2.5 transition-transform duration-300 ${isMoreOpen ? 'rotate-180 text-brand-gold' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
@@ -148,11 +143,11 @@ const Navbar = () => {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.35, ease: "easeInOut" }}
-                        className="fixed inset-x-0 top-[68px] bg-brand-emerald-dark border-b border-brand-gold/10 py-8 px-6 lg:hidden flex flex-col gap-6 shadow-2xl z-[90] overflow-y-auto max-h-[calc(100vh-80px)]"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="fixed inset-x-0 top-[68px] bottom-0 bg-brand-emerald-dark py-8 px-6 lg:hidden flex flex-col gap-6 shadow-2xl z-[90] overflow-y-auto visible-scrollbar"
                     >
                         <div className="flex flex-col gap-4 text-center">
                             {navLinks.map((link) => (
@@ -160,7 +155,7 @@ const Navbar = () => {
                                     key={link.name}
                                     to={link.path}
                                     onClick={() => setIsOpen(false)}
-                                    className={`text-[11px] uppercase tracking-[0.2em] font-bold py-1 ${location.pathname === link.path ? 'text-brand-gold' : 'text-brand-linen/70 hover:text-white'}`}
+                                    className={`text-[11px] tracking-[0.2em] font-bold py-1 ${location.pathname === link.path ? 'text-brand-gold' : 'text-brand-linen/70 hover:text-white'}`}
                                 >
                                     {link.name}
                                 </Link>
@@ -186,7 +181,7 @@ const Navbar = () => {
                         <Link
                             to="/trade-enquiry"
                             onClick={() => setIsOpen(false)}
-                            className="w-full text-center py-3.5 bg-brand-gold hover:bg-brand-gold-hover text-brand-emerald-dark font-black uppercase text-[10px] tracking-[0.25em] transition-all rounded-xl shadow-lg shadow-brand-gold/10"
+                            className="w-full text-center py-3.5 bg-brand-gold hover:bg-brand-gold-hover text-brand-emerald-dark font-black text-[10px] tracking-[0.25em] transition-all rounded-xl shadow-lg shadow-brand-gold/10"
                         >
                             Trade Enquiry
                         </Link>

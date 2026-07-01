@@ -22,14 +22,14 @@ const Management = () => {
                     style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80')` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-dark/50 to-brand-emerald-dark" />
-                <div className="max-w-4xl mx-auto relative z-10 space-y-4">
-                    <span className="text-[11px] font-sans font-bold uppercase tracking-[0.35em] text-brand-gold block">
-                        Leadership Board
+                <div className="max-w-4xl mx-auto relative z-10 space-y-2">
+                    <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-brand-gold block">
+                        Management
                     </span>
-                    <h1 className="text-4xl md:text-6xl font-serif tracking-tight uppercase text-white">
-                        Retail Management
+                    <h1 className="text-3xl md:text-5xl font-serif tracking-tight leading-tight text-white">
+                        Our Retail Management
                     </h1>
-                    <div className="w-16 h-[1.5px] bg-brand-gold mx-auto mt-6"></div>
+                    <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4"></div>
                 </div>
             </section>
 

@@ -60,19 +60,27 @@ const NoticeBoard = () => {
   useSEO({ title: "Notice Board | Kaaya Fabrics", description: "Public notices, press releases, and official announcements from Kaaya Fabrics." });
 
   return (
-    <section className="min-h-screen bg-brand-linen pt-20 pb-20 px-4 text-brand-charcoal text-left">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="mb-14 text-center space-y-4">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-brand-gold font-bold">Public Notices</p>
-          <h1 className="text-4xl md:text-6xl font-serif text-brand-charcoal uppercase leading-none">
+    <div className="pt-20 min-h-screen bg-brand-linen pb-20 text-brand-charcoal text-left">
+      {/* Header Banner */}
+      <section className="py-12 bg-brand-emerald-dark text-white text-center px-6 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10 scale-105" 
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80')` }} 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-dark/50 to-brand-emerald-dark" />
+        
+        <div className="max-w-4xl mx-auto relative z-10 space-y-2">
+          <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-brand-gold block">
+            Public Notices
+          </span>
+          <h1 className="text-3xl md:text-5xl font-serif tracking-tight leading-tight text-white">
             Notice Board
           </h1>
-          <div className="w-16 h-[1.5px] bg-brand-gold mx-auto my-4"></div>
-          <p className="text-brand-charcoal/60 text-xs md:text-sm max-w-xl mx-auto leading-relaxed font-sans font-light">
-            Official press releases, seasonal announcements, and operational notices from Kaaya Fabrics.
-          </p>
+          <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4"></div>
         </div>
+      </section>
+
+      <div className="max-w-4xl mx-auto px-4 mt-12">
 
         {/* Notice List */}
         <div className="space-y-5">
@@ -90,14 +98,14 @@ const NoticeBoard = () => {
                         <span className={`text-[9px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-xl ${n.badgeClass}`}>{n.type}</span>
                         <span className="text-[10px] text-brand-charcoal/40 font-mono">{n.id}</span>
                       </div>
-                      <span className="text-[10px] text-brand-charcoal/40 font-bold uppercase tracking-wider flex items-center gap-1 flex-shrink-0">
+                      <span className="text-[10px] text-brand-charcoal/40 font-bold tracking-wider flex items-center gap-1 flex-shrink-0">
                         <Calendar size={11} className="text-brand-gold" /> {n.date}
                       </span>
                     </div>
-                    <h2 className="text-lg font-serif font-bold text-brand-charcoal uppercase tracking-wide mb-2">{n.title}</h2>
+                    <h2 className="text-lg font-serif font-bold text-brand-charcoal tracking-wide mb-2">{n.title}</h2>
                     <p className="text-xs md:text-sm leading-relaxed text-brand-charcoal/70 font-sans font-light">{n.body}</p>
                     {n.link && (
-                      <a href={n.link} className="inline-flex items-center gap-1.5 mt-4 text-[9px] font-black text-brand-gold hover:text-brand-charcoal uppercase tracking-widest transition-colors">
+                      <a href={n.link} className="inline-flex items-center gap-1.5 mt-4 text-[9px] font-black text-brand-gold hover:text-brand-charcoal tracking-widest transition-colors">
                         <ExternalLink size={12} /> Read Full Press Release
                       </a>
                     )}
@@ -109,11 +117,11 @@ const NoticeBoard = () => {
         </div>
 
         {/* Footer note */}
-        <p className="text-xs text-brand-charcoal/40 text-center mt-12 font-bold uppercase tracking-wider">
+        <p className="text-xs text-brand-charcoal/40 text-center mt-12 font-bold tracking-wider">
           For media enquiries, contact: <a href="mailto:media@retailtextile.com" className="text-brand-gold hover:underline">media@retailtextile.com</a>
         </p>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -55,26 +55,34 @@ const Circular = () => {
   const filtered = circulars;
 
   return (
-    <section className="min-h-screen bg-brand-linen pt-20 pb-20 px-4 text-brand-charcoal">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="mb-14 text-center space-y-4">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-brand-gold font-bold">Official Communications</p>
-          <h1 className="text-4xl md:text-6xl font-serif text-brand-charcoal uppercase leading-none">
-            Company Circulars
+    <div className="pt-20 min-h-screen bg-brand-linen pb-20 text-brand-charcoal">
+      {/* Header Banner */}
+      <section className="py-12 bg-brand-emerald-dark text-white text-center px-6 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10 scale-105" 
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80')` }} 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-dark/50 to-brand-emerald-dark" />
+        
+        <div className="max-w-4xl mx-auto relative z-10 space-y-2">
+          <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-brand-gold block">
+            Official Communications
+          </span>
+          <h1 className="text-3xl md:text-5xl font-serif tracking-tight leading-tight text-white">
+            Trade Circulars
           </h1>
-          <div className="w-16 h-[1.5px] bg-brand-gold mx-auto my-4"></div>
-          <p className="text-brand-charcoal/60 text-xs md:text-sm max-w-xl mx-auto leading-relaxed font-sans font-light">
-            Stay informed with the latest official announcements, policy updates, and operational notices.
-          </p>
+          <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4"></div>
         </div>
+      </section>
+
+      <div className="max-w-4xl mx-auto px-4 mt-12">
 
         {/* Circular List */}
         <div className="space-y-4">
           {filtered.length === 0 && (
             <div className="text-center py-16 text-brand-charcoal/40 bg-white border border-brand-emerald-accent/5 rounded-xl shadow-sm">
               <Bell size={32} className="mx-auto mb-3 opacity-40 text-brand-gold" />
-              <p className="text-xs uppercase font-bold tracking-widest">No circulars found.</p>
+              <p className="text-xs font-bold tracking-widest">No circulars found.</p>
             </div>
           )}
           {filtered.map(c => (
@@ -88,35 +96,42 @@ const Circular = () => {
                   <div className="space-y-1">
                     <div className="flex items-center gap-3 mb-1.5 flex-wrap">
                       <span className={`text-[9px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-xl ${categoryColors[c.category]}`}>{c.category}</span>
-                      <span className="text-[10px] text-brand-charcoal/40 flex items-center gap-1 font-bold uppercase tracking-wider"><Calendar size={11} className="text-brand-gold" /> {c.date}</span>
+                      <span className="text-[10px] text-brand-charcoal/40 flex items-center gap-1 font-bold tracking-wider"><Calendar size={11} className="text-brand-gold" /> {c.date}</span>
                       <span className="text-[10px] text-brand-charcoal/40 font-mono">{c.id}</span>
                     </div>
-                    <p className="text-base font-serif font-bold text-brand-charcoal uppercase tracking-wide">{c.title}</p>
+                    <p className="text-base font-serif font-bold text-brand-charcoal tracking-wide">{c.title}</p>
                     <p className="text-xs text-brand-charcoal/60 font-sans leading-relaxed font-light">{c.excerpt}</p>
                   </div>
                 </div>
                 <div className="ml-auto flex items-center gap-3 flex-shrink-0">
-                  {c.hasAttachment && (
-                    <span className="text-[9px] text-brand-gold flex items-center gap-1 font-black uppercase tracking-widest"><Download size={12} /> PDF</span>
-                  )}
+                  <span className="text-[9px] text-brand-gold flex items-center gap-1 font-black tracking-widest">PDF</span>
                   {expanded === c.id ? <ChevronUp size={18} className="text-brand-charcoal/40" /> : <ChevronDown size={18} className="text-brand-charcoal/40" />}
                 </div>
               </button>
               {expanded === c.id && (
-                <div className="border-t border-brand-linen-dark px-6 md:px-16 py-6 bg-brand-linen/30 text-left">
+                <div className="border-t border-brand-linen-dark px-6 md:px-16 py-6 bg-brand-linen/30 text-left space-y-4">
                   <p className="text-xs md:text-sm text-brand-charcoal/80 leading-relaxed font-sans font-light">{c.body}</p>
-                  {c.hasAttachment && (
-                    <button className="mt-4 flex items-center gap-2 text-[9px] font-black text-brand-gold hover:text-brand-charcoal uppercase tracking-widest transition-colors cursor-pointer">
-                      <Download size={14} /> Download Attachment (PDF)
+                  <div className="flex flex-wrap gap-3">
+                    <button 
+                      onClick={() => window.open('#', '_blank')}
+                      className="px-4 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white rounded-lg text-[9px] font-black tracking-widest transition-all cursor-pointer focus:outline-none"
+                    >
+                      View PDF
                     </button>
-                  )}
+                    <button 
+                      onClick={() => window.print()}
+                      className="px-4 py-2 bg-[#800834] text-white hover:bg-[#800834]/80 rounded-lg text-[9px] font-black tracking-widest transition-all cursor-pointer focus:outline-none"
+                    >
+                      Print PDF
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

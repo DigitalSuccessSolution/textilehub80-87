@@ -276,7 +276,7 @@ const Header = () => {
               </div>
 
               {/* Drawer Body (scrollable) */}
-              <div className="flex-1 overflow-y-auto px-6 py-4 mobile-scrollable-menu">
+              <div className="flex-1 overflow-y-auto visible-scrollbar px-6 py-4 mobile-scrollable-menu">
                 {/* Quick Actions */}
                 <div className="grid grid-cols-2 gap-3 mb-6">
                   <Link to="/e-quotation" onClick={() => setMobileMenuOpen(false)} className="border border-[#0C6C3E] text-[#0C6C3E] py-2.5 text-center text-xs font-bold rounded tracking-wider">

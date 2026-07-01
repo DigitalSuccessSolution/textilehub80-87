@@ -182,7 +182,7 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="fixed inset-0 bg-[#FAF6F2] z-[998] flex flex-col pt-32 px-6 sm:px-12 pb-12 overflow-y-auto"
+                        className="fixed inset-0 bg-[#FAF6F2] z-[998] flex flex-col pt-32 px-6 sm:px-12 pb-12 overflow-y-auto visible-scrollbar"
                     >
                         <div className="flex flex-col space-y-4 text-center items-center">
                             {navLinks.map((link) => (

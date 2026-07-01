@@ -11,7 +11,6 @@ import { blogPosts } from './Blog';
 import { mediaItems } from './MediaGallery';
 
 const Home = () => {
-  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const categories = [
     { name: 'Sarees', img: 'https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg' },
@@ -51,13 +50,6 @@ const Home = () => {
     }
   ];
 
-  useEffect(() => {
-    // Simulate preloader
-    const timer = setTimeout(() => {
-      setImagesLoaded(true);
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="bg-[#FDFBF7] min-h-screen">
@@ -65,25 +57,6 @@ const Home = () => {
       {/* Hero Section */}
       <section className="container-custom pt-8 pb-24 relative overflow-hidden">
 
-        {!imagesLoaded && (
-          <div className="absolute inset-0 bg-[#FDFBF7] z-50 flex flex-col items-center justify-center">
-            <div className="relative flex items-center justify-center w-20 h-20 mb-6">
-              {/* Outer rings */}
-              <div className="absolute inset-0 border-2 border-[#EAE0D5] rounded-full"></div>
-              <div className="absolute inset-0 border-2 border-[#B8860B] border-t-transparent rounded-full animate-spin duration-1000"></div>
-              <div className="absolute inset-2 border-2 border-[#3E2723]/10 border-b-transparent rounded-full animate-[spin_1.5s_linear_infinite_reverse]"></div>
-              
-              {/* Inner logo */}
-              <div className="w-8 h-8 text-[#B8860B] flex items-center justify-center animate-pulse">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full"><path d="M12 2L2 12l10 10 10-10L12 2z"/><path d="M12 8v8M8 12h8"/></svg>
-              </div>
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="font-heading font-bold text-2xl text-[#3E2723] tracking-widest mb-2">TEXMART</span>
-              <span className="text-[10px] text-[#B8860B] tracking-[0.3em] font-bold animate-pulse uppercase">Curating Excellence</span>
-            </div>
-          </div>
-        )}
 
         <div className="flex flex-col lg:flex-row items-center mt-6 lg:mt-12 gap-12 lg:gap-0">
 

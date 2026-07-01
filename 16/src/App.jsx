@@ -18,30 +18,38 @@ import Reviews from './pages/Reviews';
 import MediaGallery from './pages/MediaGallery';
 import FAQ from './pages/FAQ';
 
+import { useState } from 'react';
+import Preloader from './components/ui/Preloader';
+
 function App() {
+  const [loading, setLoading] = useState(true);
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="products" element={<Products />} />
-          <Route path="our-retail-management" element={<RetailManagement />} />
-          <Route path="trade-enquiry" element={<TradeEnquiry />} />
-          <Route path="e-quotation" element={<EQuotation />} />
-          <Route path="e-auction" element={<EAuction />} />
-          <Route path="trade-circular" element={<TradeCircular />} />
-          <Route path="blog" element={<Blog />} />
-          <Route path="blog/:id" element={<BlogPost />} />
-          <Route path="notice-board" element={<NoticeBoard />} />
-          <Route path="career" element={<Career />} />
-          <Route path="customer-review" element={<Reviews />} />
-          <Route path="business-media-gallery" element={<MediaGallery />} />
-          <Route path="faq" element={<FAQ />} />
-        </Route>
-      </Routes>
-    </Router>
+    <>
+      {loading && <Preloader onFinish={() => setLoading(false)} />}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="products" element={<Products />} />
+            <Route path="our-retail-management" element={<RetailManagement />} />
+            <Route path="trade-enquiry" element={<TradeEnquiry />} />
+            <Route path="e-quotation" element={<EQuotation />} />
+            <Route path="e-auction" element={<EAuction />} />
+            <Route path="trade-circular" element={<TradeCircular />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="blog/:id" element={<BlogPost />} />
+            <Route path="notice-board" element={<NoticeBoard />} />
+            <Route path="career" element={<Career />} />
+            <Route path="customer-review" element={<Reviews />} />
+            <Route path="business-media-gallery" element={<MediaGallery />} />
+            <Route path="faq" element={<FAQ />} />
+          </Route>
+        </Routes>
+      </Router>
+    </>
   );
 }
 

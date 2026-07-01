@@ -31,19 +31,27 @@ const MediaGallery = () => {
   const closeLightbox = () => setLightbox(null);
 
   return (
-    <section className="min-h-screen bg-brand-linen pt-20 pb-20 px-4 text-brand-charcoal text-left">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="mb-14 text-center space-y-4">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-brand-gold font-bold">Visual Journey</p>
-          <h1 className="text-4xl md:text-6xl font-serif text-brand-charcoal uppercase leading-none">
+    <div className="pt-20 min-h-screen bg-brand-linen pb-20 text-brand-charcoal text-left">
+      {/* Header Banner */}
+      <section className="py-12 bg-brand-emerald-dark text-white text-center px-6 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10 scale-105" 
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80')` }} 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-dark/50 to-brand-emerald-dark" />
+        
+        <div className="max-w-4xl mx-auto relative z-10 space-y-2">
+          <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-brand-gold block">
+            Visual Journey
+          </span>
+          <h1 className="text-3xl md:text-5xl font-serif tracking-tight leading-tight text-white">
             Media Gallery
           </h1>
-          <div className="w-16 h-[1.5px] bg-brand-gold mx-auto my-4"></div>
-          <p className="text-brand-charcoal/60 text-xs md:text-sm max-w-xl mx-auto leading-relaxed font-sans font-light">
-            A glimpse into our showrooms, collections, and milestones.
-          </p>
+          <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4"></div>
         </div>
+      </section>
+
+      <div className="max-w-6xl mx-auto px-4 mt-12">
 
         {/* Category Filter */}
         <div className="flex gap-2.5 mb-12 flex-wrap justify-center">
@@ -53,7 +61,7 @@ const MediaGallery = () => {
               <button 
                 key={c} 
                 onClick={() => setFilter(c)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-[9px] font-black uppercase tracking-widest border transition-all cursor-pointer ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-[9px] font-black tracking-widest border transition-all cursor-pointer ${
                   filter === c 
                     ? "bg-brand-emerald-dark text-brand-gold border-brand-emerald-dark" 
                     : "bg-white border-brand-linen-dark text-brand-charcoal/60 hover:border-brand-gold hover:text-brand-charcoal"
@@ -81,8 +89,8 @@ const MediaGallery = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-emerald-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5 rounded-xl">
                   <div>
-                    <p className="text-white text-sm font-serif uppercase tracking-wide font-bold">{item.title}</p>
-                    <p className="text-brand-gold text-[10px] uppercase tracking-widest font-black mt-1">{item.category}</p>
+                    <p className="text-white text-sm font-serif tracking-wide font-bold">{item.title}</p>
+                    <p className="text-brand-gold text-[10px] tracking-widest font-black mt-1">{item.category}</p>
                   </div>
                 </div>
                 <div className="absolute top-3 right-3 bg-brand-emerald-dark/60 backdrop-blur-sm rounded-xl p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -107,14 +115,14 @@ const MediaGallery = () => {
                 <img src={lightbox.src} alt={lightbox.title} className="w-full rounded-xl max-h-[70vh] object-contain bg-brand-linen" />
               </div>
               <div className="mt-5 text-center space-y-1">
-                <p className="text-white font-serif text-xl uppercase tracking-wider font-bold">{lightbox.title}</p>
-                <p className="text-brand-gold text-xs uppercase tracking-widest font-black">{lightbox.category}</p>
+                <p className="text-white font-serif text-xl tracking-wider font-bold">{lightbox.title}</p>
+                <p className="text-brand-gold text-xs tracking-widest font-black">{lightbox.category}</p>
               </div>
             </div>
           </div>
         )}
       </div>
-    </section>
+    </div>
   );
 };
 

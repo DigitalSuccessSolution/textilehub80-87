@@ -52,10 +52,10 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-dark/50 to-brand-emerald-dark" />
                 <div className="max-w-3xl mx-auto relative z-10 space-y-2">
                     <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-brand-gold block">
-                        Get In Touch
+                        Get in Touch
                     </span>
-                    <h1 className="text-3xl md:text-5xl font-serif tracking-tight uppercase text-white leading-tight">
-                        Contact Our <span className="text-brand-gold italic font-light">Showroom</span>
+                    <h1 className="text-3xl md:text-5xl font-serif tracking-tight text-white leading-tight">
+                        Contact Us
                     </h1>
                     <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4" />
                 </div>

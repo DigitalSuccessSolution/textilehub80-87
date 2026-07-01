@@ -1,74 +1,68 @@
 import React, { useState } from "react";
 import useSEO from "../hooks/useSEO";
-import { Gavel, Clock, TrendingUp, Tag, AlertCircle } from "lucide-react";
+import { Gavel, Clock, Calendar, AlertCircle } from "lucide-react";
 
 const mockAuctions = [
   {
     id: "AUC-2026-001",
     item: "Exclusive Banarasi Silk Lot – 50 Sarees",
-    basePrice: "₹1,50,000",
-    currentBid: "₹1,68,000",
-    bidder: "Sharma Textiles",
-    timeLeft: "1d 4h 22m",
-    bids: 7,
+    desc: "A premium assortment of hand-woven Banarasi silk sarees, featuring detailed zari borders, traditional motifs, and rich festive colors.",
+    date: "Closing: 17 Jun 2026",
+    img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&h=400&fit=crop",
     status: "Live",
   },
   {
     id: "AUC-2026-002",
     item: "Premium Woollen Suiting Fabric – 800 meters",
-    basePrice: "₹2,00,000",
-    currentBid: "₹2,15,500",
-    bidder: "Kapoor & Sons",
-    timeLeft: "2d 11h 05m",
-    bids: 4,
+    desc: "High-grade Italian blend wool fabric rolls in charcoal, navy, and black, perfect for custom blazers and business uniforms.",
+    date: "Closing: 20 Jun 2026",
+    img: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&h=400&fit=crop",
     status: "Live",
   },
   {
     id: "AUC-2026-003",
     item: "Pure Kanjivaram Silk – 30 Sarees",
-    basePrice: "₹3,00,000",
-    currentBid: "₹3,40,000",
-    bidder: "Gupta Weavers",
-    timeLeft: "Ended",
-    bids: 12,
+    desc: "Exquisite pure mulberry silk Kanjivaram sarees with heavy golden brocade, originating directly from weavers.",
+    date: "Ended: 04 Jun 2026",
+    img: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&h=400&fit=crop",
     status: "Closed",
   },
 ];
 
 const Auction = () => {
-  useSEO({ title: "Auction | Kaaya Fabrics", description: "Participate in live textile auctions for exclusive bulk lots." });
-  const [bidValues, setBidValues] = useState({});
-  const [bidSubmitted, setBidSubmitted] = useState({});
+  useSEO({ title: "e-Auction | Kaaya Fabrics", description: "Participate in live B2B textile auctions for exclusive fabric lots." });
   const [filter, setFilter] = useState("All");
-
-  const handleBid = (id) => {
-    if (!bidValues[id]) return;
-    setBidSubmitted(prev => ({ ...prev, [id]: true }));
-    setTimeout(() => setBidSubmitted(prev => ({ ...prev, [id]: false })), 4000);
-  };
 
   const filtered = filter === "All" ? mockAuctions : mockAuctions.filter(a => a.status === filter);
 
   return (
-    <section className="min-h-screen bg-brand-linen pt-20 pb-20 px-4 text-brand-charcoal">
-      <div className="max-w-5xl mx-auto">
-        {/* Header */}
-        <div className="mb-14 text-center space-y-4">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-brand-gold font-bold">Live Auctions</p>
-          <h1 className="text-4xl md:text-6xl font-serif text-brand-charcoal uppercase leading-none">
-            Textile Auctions
+    <div className="pt-20 min-h-screen bg-brand-linen pb-20 text-brand-charcoal">
+      {/* Header Banner */}
+      <section className="py-12 bg-brand-emerald-dark text-white text-center px-6 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10 scale-105" 
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80')` }} 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-dark/50 to-brand-emerald-dark" />
+        
+        <div className="max-w-4xl mx-auto relative z-10 space-y-2">
+          <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-brand-gold block">
+            Live Auctions
+          </span>
+          <h1 className="text-3xl md:text-5xl font-serif tracking-tight leading-tight text-white">
+            e-Auction
           </h1>
-          <div className="w-16 h-[1.5px] bg-brand-gold mx-auto my-4"></div>
-          <p className="text-brand-charcoal/60 text-xs md:text-sm max-w-xl mx-auto leading-relaxed font-sans font-light">
-            Bid on exclusive textile lots available in limited quantity. All lots verified for quality and authenticity.
-          </p>
+          <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4"></div>
         </div>
+      </section>
+
+      <div className="max-w-5xl mx-auto px-4 mt-12">
 
         {/* Notice */}
         <div className="mb-8 flex items-start gap-3 bg-brand-emerald-dark/[0.03] border border-brand-gold/25 rounded-xl px-5 py-4">
           <AlertCircle size={18} className="text-brand-gold mt-0.5 flex-shrink-0" />
-          <p className="text-xs text-brand-charcoal/80 font-sans leading-relaxed font-light">
-            <strong className="text-brand-charcoal font-bold uppercase tracking-wider block mb-1">Trade Registered Participants Only</strong> 
+          <p className="text-xs text-brand-charcoal/80 font-sans leading-relaxed font-light text-left">
+            <strong className="text-brand-charcoal font-bold tracking-wider block mb-1">Trade Registered Participants Only</strong> 
             Bids are legally binding. Winning bidder must complete payment within 48 hours. <a href="/trade-enquiry" className="underline font-bold text-brand-gold hover:text-brand-gold-dark transition-colors">Register your business</a> to participate.
           </p>
         </div>
@@ -95,75 +89,50 @@ const Auction = () => {
           {filtered.map(auction => (
             <div 
               key={auction.id} 
-              className={`bg-white border overflow-hidden transition-all rounded-xl ${
+              className={`bg-white border overflow-hidden transition-all rounded-xl text-left flex flex-col md:flex-row items-stretch ${
                 auction.status === "Live" ? "border-brand-gold shadow-md" : "border-brand-linen-dark"
               }`}
             >
-              {auction.status === "Live" && (
-                <div className="bg-brand-emerald-dark px-6 py-2.5 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 bg-brand-terracotta rounded-full animate-pulse" />
-                  <span className="text-brand-gold text-[9px] font-black uppercase tracking-[0.2em]">Live Auction Lot</span>
-                </div>
-              )}
-              <div className="p-6 md:p-8">
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
-                  <div className="flex-grow">
-                    <p className="text-[10px] text-brand-gold font-mono mb-2">{auction.id}</p>
-                    <h3 className="text-lg font-serif font-bold text-brand-charcoal uppercase tracking-wide mb-4">{auction.item}</h3>
-                    
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {[
-                        { label: "Base Price", value: auction.basePrice, icon: Tag },
-                        { label: "Current Bid", value: auction.currentBid, icon: TrendingUp },
-                        { label: "Time Left", value: auction.timeLeft, icon: Clock },
-                        { label: "Total Bids", value: auction.bids, icon: Gavel },
-                      ].map(({ label, value, icon: Icon }) => (
-                        <div key={label} className="bg-brand-linen/40 rounded-xl p-3 border border-brand-linen-dark/50">
-                          <div className="flex items-center gap-1.5 mb-1.5">
-                            <Icon size={12} className="text-brand-gold" />
-                            <p className="text-[9px] text-brand-charcoal/40 uppercase tracking-widest font-black">{label}</p>
-                          </div>
-                          <p className="text-sm font-bold text-brand-charcoal">{value}</p>
-                        </div>
-                      ))}
-                    </div>
-                    {auction.status === "Live" && (
-                      <p className="mt-4 text-[10px] text-brand-charcoal/50 font-sans font-light">
-                        Highest bidder: <span className="font-bold text-brand-charcoal uppercase tracking-wider">{auction.bidder}</span>
-                      </p>
-                    )}
-                  </div>
+              {/* Card Image */}
+              <div className="w-full md:w-64 h-48 md:h-auto relative overflow-hidden bg-brand-linen flex-shrink-0">
+                <img 
+                  src={auction.img} 
+                  alt={auction.item} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-                  {auction.status === "Live" && (
-                    <div className="md:w-56 flex-shrink-0 md:pl-6 md:border-l border-brand-linen-dark">
-                      {bidSubmitted[auction.id] ? (
-                        <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
-                          <p className="text-xs font-bold text-emerald-800 uppercase tracking-wider">✓ Bid Placed Successfully</p>
-                        </div>
-                      ) : (
-                        <div className="space-y-4">
-                          <label className="block text-[10px] font-bold uppercase tracking-wider text-brand-charcoal/60">Your Bid (₹)</label>
-                          <input
-                            type="number"
-                            placeholder="Enter bid amount"
-                            value={bidValues[auction.id] || ""}
-                            onChange={e => setBidValues(prev => ({ ...prev, [auction.id]: e.target.value }))}
-                            className="w-full border border-brand-linen-dark px-4 py-3 text-xs text-brand-charcoal bg-brand-linen/30 focus:outline-none focus:border-brand-gold transition-all rounded-xl font-sans"
-                          />
-                          <button
-                            onClick={() => handleBid(auction.id)}
-                            className="w-full flex items-center justify-center gap-2 bg-brand-emerald-dark hover:bg-brand-emerald-medium text-white py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all cursor-pointer"
-                          >
-                            <Gavel size={13} className="text-brand-gold" /> Place Bid
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                  {auction.status === "Closed" && (
-                    <div className="md:w-40 flex-shrink-0 text-center md:pl-6 md:border-l border-brand-linen-dark flex items-center justify-center">
-                      <span className="inline-block bg-brand-linen-dark/50 text-brand-charcoal/40 text-[9px] font-black uppercase tracking-widest px-4 py-2 rounded-full border border-brand-linen-dark">Auction Ended</span>
-                    </div>
+              {/* Card Details */}
+              <div className="p-6 md:p-8 flex flex-col justify-between flex-grow">
+                <div>
+                  <div className="flex items-center gap-3 mb-2 flex-wrap">
+                    <span className="text-[10px] text-brand-gold font-mono">{auction.id}</span>
+                    <span className={`px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest ${
+                      auction.status === "Live" 
+                        ? "bg-brand-emerald-dark text-brand-gold" 
+                        : "bg-brand-linen-dark/50 text-brand-charcoal/40"
+                    }`}>
+                      {auction.status}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-serif font-bold text-brand-charcoal leading-snug mb-2">{auction.item}</h3>
+                  <p className="text-xs text-brand-charcoal/60 leading-relaxed font-sans font-light mb-4">{auction.desc}</p>
+                </div>
+
+                <div className="border-t border-brand-linen-dark/60 pt-4 flex flex-wrap justify-between items-center gap-4">
+                  <span className="text-[10px] text-brand-charcoal/50 flex items-center gap-1 font-bold">
+                    <Clock size={11} className="text-brand-gold" /> {auction.date}
+                  </span>
+                  
+                  {auction.status === "Live" ? (
+                    <a 
+                      href="/trade-enquiry"
+                      className="inline-flex items-center gap-2 bg-[#800834] hover:bg-[#800834]/85 text-white px-5 py-2.5 rounded-xl text-[9px] font-black tracking-widest transition-all cursor-pointer focus:outline-none"
+                    >
+                      <Gavel size={13} className="text-brand-gold" /> Bid Registration
+                    </a>
+                  ) : (
+                    <span className="text-brand-charcoal/40 text-[9px] font-black tracking-widest">Ended</span>
                   )}
                 </div>
               </div>
@@ -171,7 +140,7 @@ const Auction = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

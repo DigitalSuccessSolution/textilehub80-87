@@ -78,19 +78,27 @@ const Blog = () => {
   );
 
   return (
-    <section className="min-h-screen bg-brand-linen pt-20 pb-20 px-4 text-brand-charcoal">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="mb-14 text-center space-y-4">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-brand-gold font-bold">Insights & Knowledge</p>
-          <h1 className="text-4xl md:text-6xl font-serif text-brand-charcoal uppercase leading-none">
-            Our Journal
+    <div className="pt-20 min-h-screen bg-brand-linen text-brand-charcoal pb-20">
+      {/* Header Banner */}
+      <section className="py-12 bg-brand-emerald-dark text-white text-center px-6 relative overflow-hidden mb-12">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10 scale-105" 
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80')` }} 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-dark/50 to-brand-emerald-dark" />
+        
+        <div className="max-w-4xl mx-auto relative z-10 space-y-2">
+          <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-brand-gold block">
+            Insights & Knowledge
+          </span>
+          <h1 className="text-3xl md:text-5xl font-serif tracking-tight leading-tight text-white">
+            Blog
           </h1>
-          <div className="w-16 h-[1.5px] bg-brand-gold mx-auto my-4"></div>
-          <p className="text-brand-charcoal/60 text-xs md:text-sm max-w-xl mx-auto leading-relaxed font-sans font-light">
-            Expert perspectives on fabric, fashion, trade, and the textile industry.
-          </p>
+          <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4"></div>
         </div>
+      </section>
+
+      <div className="max-w-6xl mx-auto px-4">
 
         {/* Filters */}
         <div className="mb-10 flex justify-center">
@@ -99,7 +107,7 @@ const Blog = () => {
               <button 
                 key={c} 
                 onClick={() => setCategory(c)}
-                className={`px-5 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest border transition-all cursor-pointer ${
+                className={`px-5 py-1.5 rounded-full text-[9px] font-black tracking-widest border transition-all cursor-pointer ${
                   category === c 
                     ? "bg-brand-emerald-dark text-brand-gold border-brand-emerald-dark" 
                     : "bg-white border-brand-linen-dark text-brand-charcoal/60 hover:border-brand-gold hover:text-brand-charcoal"
@@ -126,15 +134,15 @@ const Blog = () => {
                 <div className="p-6 text-left">
                   <div className="flex items-center gap-3 mb-3.5">
                     <span className={`text-[8px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-xl ${categoryColors[post.category]}`}>{post.category}</span>
-                    <span className="text-[10px] text-brand-charcoal/40 font-bold uppercase tracking-wider">{post.readTime}</span>
+                    <span className="text-[10px] text-brand-charcoal/40 font-bold tracking-wider">{post.readTime}</span>
                   </div>
-                  <h2 className="text-lg font-serif font-bold text-brand-charcoal mb-2 leading-snug group-hover:text-brand-gold transition-colors duration-300 uppercase tracking-wide">{post.title}</h2>
+                  <h2 className="text-lg font-serif font-bold text-brand-charcoal mb-2 leading-snug group-hover:text-brand-gold transition-colors duration-300 leading-tight">{post.title}</h2>
                   <p className="text-xs text-brand-charcoal/60 leading-relaxed font-sans font-light line-clamp-2">{post.excerpt}</p>
                 </div>
               </div>
               <div className="p-6 pt-0 mt-4 flex items-center justify-between border-t border-brand-linen-dark/50 pt-4 text-left">
-                <span className="text-[10px] text-brand-charcoal/40 flex items-center gap-1 font-bold uppercase tracking-wider"><Calendar size={11} className="text-brand-gold" /> {post.date}</span>
-                <span className="text-[9px] font-black text-brand-gold flex items-center gap-1 group-hover:gap-2 transition-all uppercase tracking-widest">Read More &rarr;</span>
+                <span className="text-[10px] text-brand-charcoal/40 flex items-center gap-1 font-bold tracking-wider"><Calendar size={11} className="text-brand-gold" /> {post.date}</span>
+                <span className="text-[9px] font-black text-brand-gold flex items-center gap-1 group-hover:gap-2 transition-all tracking-widest">Read More &rarr;</span>
               </div>
             </Link>
           ))}
@@ -147,7 +155,7 @@ const Blog = () => {
           </div>
         )}
       </div>
-    </section>
+    </div>
   );
 };
 

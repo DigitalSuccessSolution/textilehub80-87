@@ -13,29 +13,29 @@ const MediaGallery = () => {
   ];
 
   const media = [
-    { id: 1, type: 'image', category: 'campaigns', src: 'https://images.unsplash.com/photo-1583391733958-65007bc460bf?q=80&w=800&auto=format&fit=crop', title: 'Royal Silk Winter 2023', date: 'Oct 24, 2023' },
-    { id: 2, type: 'video', category: 'bts', src: 'https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=800&auto=format&fit=crop', title: 'Automated Jacquard Weaving', date: 'Oct 18, 2023' },
-    { id: 3, type: 'image', category: 'events', src: 'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=800&auto=format&fit=crop', title: 'Surat Textile Expo', date: 'Oct 12, 2023' },
-    { id: 4, type: 'image', category: 'campaigns', src: 'https://images.unsplash.com/photo-1610030469668-93535c17b6b3?q=80&w=800&auto=format&fit=crop', title: 'Banarasi Brocade Highlights', date: 'Sep 30, 2023' },
-    { id: 5, type: 'video', category: 'bts', src: 'https://images.unsplash.com/photo-1605289982774-9a6fef564df8?q=80&w=800&auto=format&fit=crop', title: 'Dyeing Process', date: 'Sep 15, 2023' },
-    { id: 6, type: 'image', category: 'events', src: 'https://images.unsplash.com/photo-1523580494112-071d1694065c?q=80&w=800&auto=format&fit=crop', title: 'Global B2B Summit Dubai', date: 'Sep 05, 2023' },
+    { id: 1, type: 'image', category: 'campaigns', src: 'https://images.pexels.com/photos/18976984/pexels-photo-18976984.jpeg', title: 'Royal Silk Winter 2023', date: 'Oct 24, 2023' },
+    { id: 2, type: 'image', category: 'bts', src: 'https://images.pexels.com/photos/34506225/pexels-photo-34506225.jpeg', title: 'Automated Jacquard Weaving', date: 'Oct 18, 2023' },
+    { id: 3, type: 'image', category: 'events', src: 'https://images.pexels.com/photos/34191411/pexels-photo-34191411.jpeg', title: 'Surat Textile Expo', date: 'Oct 12, 2023' },
+    { id: 4, type: 'image', category: 'campaigns', src: 'https://images.pexels.com/photos/6167463/pexels-photo-6167463.jpeg', title: 'Banarasi Brocade Highlights', date: 'Sep 30, 2023' },
+    { id: 5, type: 'image', category: 'bts', src: 'https://images.pexels.com/photos/6851133/pexels-photo-6851133.jpeg', title: 'Dyeing Process', date: 'Sep 15, 2023' },
+    { id: 6, type: 'image', category: 'events', src: 'https://images.pexels.com/photos/18506891/pexels-photo-18506891.jpeg', title: 'Global B2B Summit Dubai', date: 'Sep 05, 2023' },
   ];
 
   const filteredMedia = activeFilter === 'all' ? media : media.filter(m => m.category === activeFilter);
 
   return (
     <div className="bg-[#0f141e] min-h-screen pt-24 pb-20">
-      
+
       {/* Lightbox */}
       {lightbox && (
         <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm">
-          <button 
+          <button
             onClick={() => setLightbox(null)}
             className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors"
           >
             <X className="w-8 h-8" />
           </button>
-          
+
           <div className="max-w-5xl w-full relative">
             {lightbox.type === 'image' ? (
               <img src={lightbox.src.replace('w=800', 'w=1600')} alt={lightbox.title} className="w-full h-auto max-h-[85vh] object-contain" />
@@ -58,18 +58,17 @@ const MediaGallery = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-8">Media Gallery</h1>
-          
+
           {/* Filters */}
           <div className="flex flex-wrap justify-center gap-4">
             {filters.map(filter => (
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`px-6 py-2 rounded-full text-xs font-bold transition-all ${
-                  activeFilter === filter.id 
-                    ? 'bg-accent text-primary' 
-                    : 'border border-white/20 text-slate-300 hover:border-white/50'
-                }`}
+                className={`px-6 py-2 rounded-full text-xs font-bold transition-all ${activeFilter === filter.id
+                  ? 'bg-accent text-primary'
+                  : 'border border-white/20 text-slate-300 hover:border-white/50'
+                  }`}
               >
                 {filter.label}
               </button>
@@ -80,15 +79,15 @@ const MediaGallery = () => {
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredMedia.map((item) => (
-            <div 
-              key={item.id} 
+            <div
+              key={item.id}
               className="group relative aspect-square overflow-hidden bg-slate-900 cursor-pointer"
               onClick={() => setLightbox(item)}
             >
-              <img 
-                src={item.src} 
-                alt={item.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100" 
+              <img
+                src={item.src}
+                alt={item.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center mb-4 backdrop-blur-md text-accent">

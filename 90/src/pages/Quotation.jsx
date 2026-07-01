@@ -4,14 +4,14 @@ import useSEO from "../hooks/useSEO";
 import { FileText, Clock, CheckCircle } from "lucide-react";
 
 const mockQuotations = [
-  { id: "QT-2026-001", item: "Premium Cotton Sarees – 200 pcs", status: "Active", date: "02 Jun 2026", expires: "17 Jun 2026", price: "₹1,80,000" },
-  { id: "QT-2026-002", item: "Banarasi Silk Dupatta – 100 pcs", status: "Active", date: "05 Jun 2026", expires: "20 Jun 2026", price: "₹95,000" },
-  { id: "QT-2026-003", item: "Linen Shirting Fabric – 500 meters", status: "Closed", date: "20 May 2026", expires: "04 Jun 2026", price: "₹62,500" },
-  { id: "QT-2026-004", item: "Polyester Suiting Fabric – 1000 meters", status: "Active", date: "07 Jun 2026", expires: "22 Jun 2026", price: "₹1,20,000" },
+  { id: "QT-2026-001", item: "Premium Cotton Sarees – 200 pcs", status: "Active", date: "02 Jun 2026", expires: "17 Jun 2026", desc: "Bulk order of high-quality combed cotton sarees in assorted traditional patterns and vibrant summer colors." },
+  { id: "QT-2026-002", item: "Banarasi Silk Dupatta – 100 pcs", status: "Active", date: "05 Jun 2026", expires: "20 Jun 2026", desc: "Handcrafted Banarasi silk dupattas with rich zari work, perfect for bridal wear and festive boutiques." },
+  { id: "QT-2026-003", item: "Linen Shirting Fabric – 500 meters", status: "Closed", date: "20 May 2026", expires: "04 Jun 2026", desc: "Premium pure linen fabric rolls for men's formal shirting, lightweight and highly breathable." },
+  { id: "QT-2026-004", item: "Polyester Suiting Fabric – 1000 meters", status: "Active", date: "07 Jun 2026", expires: "22 Jun 2026", desc: "Durable polyester-blend suiting fabric suitable for corporate uniforms and formal trousers." },
 ];
 
 const Quotation = () => {
-  useSEO({ title: "Quotation | Kaaya Fabrics", description: "Request and view B2B quotations for bulk textile orders." });
+  useSEO({ title: "e-Quotation | Kaaya Fabrics", description: "Request and view B2B quotations for bulk textile orders." });
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm();
   const [submitted, setSubmitted] = useState(false);
   const [filter, setFilter] = useState("All");
@@ -27,24 +27,32 @@ const Quotation = () => {
   const filtered = filter === "All" ? mockQuotations : mockQuotations.filter(q => q.status === filter);
 
   return (
-    <section className="min-h-screen bg-brand-linen pt-20 pb-20 px-4 text-brand-charcoal">
-      <div className="max-w-5xl mx-auto">
-        {/* Header */}
-        <div className="mb-14 text-center space-y-4">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-brand-gold font-bold">B2B Pricing</p>
-          <h1 className="text-4xl md:text-6xl font-serif text-brand-charcoal uppercase leading-none">
-            Request a Quotation
+    <div className="pt-20 min-h-screen bg-brand-linen pb-20 text-brand-charcoal">
+      {/* Header Banner */}
+      <section className="py-12 bg-brand-emerald-dark text-white text-center px-6 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10 scale-105" 
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80')` }} 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-dark/50 to-brand-emerald-dark" />
+        
+        <div className="max-w-4xl mx-auto relative z-10 space-y-2">
+          <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-brand-gold block">
+            B2B Pricing
+          </span>
+          <h1 className="text-3xl md:text-5xl font-serif tracking-tight leading-tight text-white">
+            e-Quotation
           </h1>
-          <div className="w-16 h-[1.5px] bg-brand-gold mx-auto my-4"></div>
-          <p className="text-brand-charcoal/60 text-xs md:text-sm max-w-xl mx-auto leading-relaxed font-sans font-light">
-            Get competitive pricing on bulk textile orders. Browse active quotations or submit a new request.
-          </p>
+          <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4"></div>
         </div>
+      </section>
 
-        {/* Active Quotations */}
+      <div className="max-w-5xl mx-auto px-4 mt-12">
+
+        {/* Existing Requests */}
         <div className="mb-16">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-            <h2 className="text-xl font-serif font-black uppercase tracking-wider text-brand-emerald-dark">Active Quotations</h2>
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+            <h2 className="text-xl font-serif font-black text-brand-emerald-dark">Active Quotations</h2>
             <div className="flex gap-2">
               {["All", "Active", "Closed"].map(f => (
                 <button
@@ -66,21 +74,18 @@ const Quotation = () => {
               <div key={q.id} className="editorial-card p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-xl">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-brand-linen rounded-xl"><FileText size={20} className="text-brand-gold" /></div>
-                  <div>
+                  <div className="text-left">
                     <p className="text-[10px] text-brand-gold font-mono mb-1">{q.id}</p>
-                    <p className="text-sm font-serif font-bold text-brand-charcoal uppercase tracking-wide">{q.item}</p>
-                    <div className="flex items-center gap-3 mt-1.5">
+                    <p className="text-sm font-serif font-bold text-brand-charcoal leading-tight">{q.item}</p>
+                    <p className="text-xs text-brand-charcoal/60 font-sans font-light mt-1.5 leading-relaxed">{q.desc}</p>
+                    <div className="flex items-center gap-3 mt-2">
                       <span className="text-[10px] text-brand-charcoal/50 flex items-center gap-1 font-sans font-light">
                         <Clock size={11} className="text-brand-gold" /> Expires: {q.expires}
                       </span>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-6 ml-auto md:ml-0">
-                  <div className="text-right">
-                    <p className="text-[9px] text-brand-charcoal/40 uppercase font-black tracking-wider mb-0.5">Quoted Price</p>
-                    <p className="text-base font-bold text-brand-charcoal">{q.price}</p>
-                  </div>
+                <div className="flex items-center gap-6 ml-auto md:ml-0 flex-shrink-0">
                   <span className={`px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest ${
                     q.status === "Active" 
                       ? "bg-brand-emerald-dark text-brand-gold" 
@@ -96,7 +101,7 @@ const Quotation = () => {
 
         {/* Request Form */}
         <div className="bg-white border border-brand-emerald-accent/10 rounded-xl shadow-sm p-8 md:p-12">
-          <h2 className="text-2xl font-serif font-black text-brand-emerald-dark uppercase tracking-wider mb-8">Request New Quotation</h2>
+          <h2 className="text-2xl font-serif font-black text-brand-emerald-dark mb-8">Request New Quotation</h2>
 
           {submitted && (
             <div className="mb-8 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl px-6 py-4 text-center font-bold text-xs uppercase tracking-wide">
@@ -146,7 +151,7 @@ const Quotation = () => {
           </form>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

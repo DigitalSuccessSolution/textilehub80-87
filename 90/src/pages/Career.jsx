@@ -73,15 +73,27 @@ const Career = () => {
   };
 
   return (
-    <section className="min-h-screen bg-brand-linen pt-20 pb-20 px-4 text-brand-charcoal text-left">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="mb-14 text-center space-y-4">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-brand-gold font-bold">Join Our Team</p>
-          <h1 className="text-4xl md:text-6xl font-serif text-brand-charcoal uppercase leading-none">
-            Careers at Kaaya Fabrics
+    <div className="pt-20 min-h-screen bg-brand-linen pb-20 text-brand-charcoal text-left">
+      {/* Header Banner */}
+      <section className="py-12 bg-brand-emerald-dark text-white text-center px-6 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10 scale-105" 
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80')` }} 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-dark/50 to-brand-emerald-dark" />
+        
+        <div className="max-w-4xl mx-auto relative z-10 space-y-2">
+          <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-brand-gold block">
+            Join Our Team
+          </span>
+          <h1 className="text-3xl md:text-5xl font-serif tracking-tight leading-tight text-white">
+            Careers
           </h1>
-          <div className="w-16 h-[1.5px] bg-brand-gold mx-auto my-4"></div>
+          <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4"></div>
+        </div>
+      </section>
+
+      <div className="max-w-4xl mx-auto px-4 mt-12">
           <p className="text-brand-charcoal/60 text-xs md:text-sm max-w-xl mx-auto leading-relaxed font-sans font-light">
             We are a growing textile retail organisation seeking talented individuals who share our passion for quality and excellence.
           </p>
@@ -203,9 +215,8 @@ const Career = () => {
               )}
             </div>
           </div>
-        )}
       </div>
-    </section>
+    </div>
   );
 };
 

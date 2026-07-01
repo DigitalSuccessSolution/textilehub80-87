@@ -39,7 +39,7 @@ const Chatbot = () => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-xl hover:bg-accent hover:scale-105 transition-all duration-300 group border border-white/10"
+        className="fixed bottom-6 left-6 z-[9999] w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-xl hover:bg-accent hover:scale-105 transition-all duration-300 group border border-white/10"
         aria-label="Open Live Chat"
       >
         <MessageSquare className="w-5 h-5 text-accent" />
@@ -54,7 +54,7 @@ const Chatbot = () => {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-20 left-6 z-50 w-[330px] h-[460px] bg-white border border-border rounded-xl shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-20 left-6 z-[9999] w-[330px] h-[460px] bg-white border border-border rounded-xl shadow-2xl flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="bg-primary text-primary-foreground p-4 flex items-center justify-between border-b border-white/10">

@@ -143,3 +143,31 @@
 .animate-float-slow {
   animation: float 6s ease-in-out infinite;
 }
+
+/* Customized Visible Scrollbar */
+.visible-scrollbar {
+  scrollbar-width: thin !important;
+  scrollbar-color: #C29E6B rgba(46, 8, 27, 0.05) !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.visible-scrollbar::-webkit-scrollbar {
+  width: 6px !important;
+  height: 8px !important;
+  display: block !important;
+}
+
+.visible-scrollbar::-webkit-scrollbar-track {
+  background: rgba(46, 8, 27, 0.05) !important;
+  border-radius: 99px !important;
+}
+
+.visible-scrollbar::-webkit-scrollbar-thumb {
+  background: #C29E6B !important;
+  border-radius: 99px !important;
+  border: 1px solid #FAF5F0 !important;
+}
+
+.visible-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #9A7B51 !important;
+}

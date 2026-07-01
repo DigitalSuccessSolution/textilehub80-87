@@ -8,14 +8,14 @@ const LiveChat = () => {
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-24 right-6 z-50 bg-primary text-white p-3.5 rounded-full shadow-xl hover:bg-primary/90 hover:scale-110 transition-all duration-300 flex items-center justify-center"
+        className="fixed bottom-24 right-6 z-[9999] bg-primary text-white p-3.5 rounded-full shadow-xl hover:bg-primary/90 hover:scale-110 transition-all duration-300 flex items-center justify-center"
         aria-label="Live Chat"
       >
         <MessageSquare size={24} />
       </button>
 
       {isOpen && (
-        <div className="fixed bottom-36 right-6 z-50 w-80 bg-white rounded-xl shadow-2xl overflow-hidden border border-border animate-in slide-in-from-bottom-5">
+        <div className="fixed bottom-36 right-6 z-[9999] w-80 bg-white rounded-xl shadow-2xl overflow-hidden border border-border animate-in slide-in-from-bottom-5">
           <div className="bg-primary text-white p-4 flex justify-between items-center">
             <h3 className="font-bold text-sm">Live Chat</h3>
             <button onClick={() => setIsOpen(false)} className="hover:bg-white/20 p-1 rounded transition-colors">

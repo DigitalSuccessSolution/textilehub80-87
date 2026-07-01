@@ -26,19 +26,27 @@ const TradeEnquiry = () => {
   ];
 
   return (
-    <section className="min-h-screen bg-brand-linen pt-20 pb-20 px-4">
-      <div className="max-w-3xl mx-auto">
-        {/* Header */}
-        <div className="mb-14 text-center space-y-4">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-brand-gold font-bold">B2B Business</p>
-          <h1 className="text-4xl md:text-6xl font-serif text-brand-charcoal uppercase leading-none">
+    <div className="pt-20 min-h-screen bg-brand-linen pb-20">
+      {/* Header Banner */}
+      <section className="py-12 bg-brand-emerald-dark text-white text-center px-6 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10 scale-105" 
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80')` }} 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-dark/50 to-brand-emerald-dark" />
+        
+        <div className="max-w-4xl mx-auto relative z-10 space-y-2">
+          <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-brand-gold block">
+            Business Partnership
+          </span>
+          <h1 className="text-3xl md:text-5xl font-serif tracking-tight leading-tight text-white">
             Trade Enquiry
           </h1>
-          <div className="w-16 h-[1.5px] bg-brand-gold mx-auto my-4"></div>
-          <p className="text-brand-charcoal/60 text-xs md:text-sm max-w-xl mx-auto leading-relaxed font-sans font-light">
-            Partner with us for premium textile sourcing. Fill out the form below and our trade team will respond within 24 hours.
-          </p>
+          <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4"></div>
         </div>
+      </section>
+
+      <div className="max-w-3xl mx-auto px-4 mt-12">
 
         {/* Success Banner */}
         {submitted && (
@@ -116,9 +124,8 @@ const TradeEnquiry = () => {
               <p className="text-xs font-bold text-brand-charcoal uppercase">{value}</p>
             </div>
           ))}
-        </div>
       </div>
-    </section>
+    </div>
   );
 };
 

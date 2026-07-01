@@ -89,19 +89,27 @@ const FAQ = () => {
   );
 
   return (
-    <section className="min-h-screen bg-brand-linen pt-20 pb-20 px-4 text-brand-charcoal text-left">
-      <div className="max-w-3xl mx-auto">
-        {/* Header */}
-        <div className="mb-14 text-center space-y-4">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-brand-gold font-bold">Help Centre</p>
-          <h1 className="text-4xl md:text-6xl font-serif text-brand-charcoal uppercase leading-none">
+    <div className="pt-20 min-h-screen bg-brand-linen pb-20 text-brand-charcoal text-left">
+      {/* Header Banner */}
+      <section className="py-12 bg-brand-emerald-dark text-white text-center px-6 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10 scale-105" 
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80')` }} 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-dark/50 to-brand-emerald-dark" />
+        
+        <div className="max-w-4xl mx-auto relative z-10 space-y-2">
+          <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-brand-gold block">
+            Help Centre
+          </span>
+          <h1 className="text-3xl md:text-5xl font-serif tracking-tight leading-tight text-white">
             Frequently Asked Questions
           </h1>
-          <div className="w-16 h-[1.5px] bg-brand-gold mx-auto my-4"></div>
-          <p className="text-brand-charcoal/60 text-xs md:text-sm max-w-xl mx-auto leading-relaxed font-sans font-light">
-            Everything you need to know about our products, wholesale services, and policies.
-          </p>
+          <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4"></div>
         </div>
+      </section>
+
+      <div className="max-w-3xl mx-auto px-4 mt-12">
 
         {/* Category Filter */}
         <div className="flex gap-2.5 mb-8 flex-wrap">
@@ -109,7 +117,7 @@ const FAQ = () => {
             <button 
               key={c} 
               onClick={() => setCatFilter(c)}
-              className={`px-5 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest border transition-all cursor-pointer ${
+              className={`px-5 py-1.5 rounded-full text-[9px] font-black tracking-widest border transition-all cursor-pointer ${
                 catFilter === c 
                   ? "bg-brand-emerald-dark text-brand-gold border-brand-emerald-dark" 
                   : "bg-white border-brand-linen-dark text-brand-charcoal/60 hover:border-brand-gold hover:text-brand-charcoal"
@@ -125,7 +133,7 @@ const FAQ = () => {
           {filtered.length === 0 && (
             <div className="text-center py-16 text-brand-charcoal/40 bg-white border border-brand-emerald-accent/5 rounded-xl shadow-sm">
               <HelpCircle size={32} className="mx-auto mb-3 opacity-40 text-brand-gold" />
-              <p className="text-xs uppercase font-bold tracking-widest">No questions found in this category.</p>
+              <p className="text-xs font-bold tracking-widest">No questions found in this category.</p>
             </div>
           )}
           {filtered.map(faq => (
@@ -141,7 +149,7 @@ const FAQ = () => {
               >
                 <div className="flex items-start gap-3">
                   <span className="text-brand-gold mt-0.5 flex-shrink-0"><HelpCircle size={16} /></span>
-                  <p className="text-sm font-serif font-bold text-brand-charcoal uppercase tracking-wide leading-snug">{faq.q}</p>
+                  <p className="text-sm font-serif font-bold text-brand-charcoal leading-snug">{faq.q}</p>
                 </div>
                 <span className="flex-shrink-0 mt-0.5 text-brand-charcoal/40">
                   {expanded === faq.id ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
@@ -158,25 +166,24 @@ const FAQ = () => {
 
         {/* CTA */}
         <div className="mt-14 text-center bg-white border border-brand-emerald-accent/5 rounded-xl p-8 shadow-sm">
-          <p className="text-lg font-serif font-bold text-brand-emerald-dark uppercase tracking-wide mb-2">Still have questions?</p>
+          <p className="text-lg font-serif font-bold text-brand-emerald-dark mb-2">Still have questions?</p>
           <p className="text-brand-charcoal/60 text-xs font-sans font-light mb-6">Our team is ready to assist you with any specific queries.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a 
               href="/contact" 
-              className="px-6 py-3 bg-brand-emerald-dark hover:bg-brand-emerald-medium text-white text-[10px] font-black uppercase tracking-widest rounded-xl transition-all text-center"
+              className="px-6 py-3 bg-brand-emerald-dark hover:bg-brand-emerald-medium text-white text-[10px] font-black tracking-widest rounded-xl transition-all text-center"
             >
               Contact Us
             </a>
             <a 
               href="/trade-enquiry" 
-              className="px-6 py-3 border border-brand-linen-dark text-brand-charcoal hover:border-brand-gold text-[10px] font-black uppercase tracking-widest rounded-xl transition-all text-center"
+              className="px-6 py-3 border border-brand-linen-dark text-brand-charcoal hover:border-brand-gold text-[10px] font-black tracking-widest rounded-xl transition-all text-center"
             >
               Trade Enquiry
             </a>
           </div>
-        </div>
       </div>
-    </section>
+    </div>
   );
 };
 

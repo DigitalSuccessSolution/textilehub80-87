@@ -31,11 +31,11 @@ const Footer = () => {
         </div>
 
         {/* 4 Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-brand-gold/10">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 pb-16 border-b border-brand-gold/10">
           
           {/* About Column */}
           <div>
-            <h4 className="font-bold mb-6 text-xs uppercase tracking-[0.25em] text-brand-gold">Our Philosophy</h4>
+            <h4 className="font-bold mb-6 text-xs tracking-[0.25em] text-brand-gold">Our Philosophy</h4>
             <p className="text-brand-linen/60 text-xs leading-relaxed mb-6 font-sans">
               We stand for purity of fabric, honest mill-direct pricing, and curated retail spaces designed to provide an unparalleled shopping journey.
             </p>
@@ -57,7 +57,7 @@ const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-bold mb-6 text-xs uppercase tracking-[0.25em] text-brand-gold">Corporate</h4>
+            <h4 className="font-bold mb-6 text-xs tracking-[0.25em] text-brand-gold">Corporate</h4>
             <ul className="space-y-3.5 text-brand-linen/60 text-xs">
               <li><Link to="/about" className="hover:text-brand-gold transition-colors duration-200">About Us</Link></li>
               <li><Link to="/management" className="hover:text-brand-gold transition-colors duration-200">Our Retail Management</Link></li>
@@ -69,7 +69,7 @@ const Footer = () => {
 
           {/* Portals Links */}
           <div>
-            <h4 className="font-bold mb-6 text-xs uppercase tracking-[0.25em] text-brand-gold">Services & Portals</h4>
+            <h4 className="font-bold mb-6 text-xs tracking-[0.25em] text-brand-gold">Services & Portals</h4>
             <ul className="space-y-3.5 text-brand-linen/60 text-xs">
               <li><Link to="/products" className="hover:text-brand-gold transition-colors duration-200">Product Collections</Link></li>
               <li><Link to="/quotation" className="hover:text-brand-gold transition-colors duration-200">e-Quotation Portal</Link></li>
@@ -85,7 +85,7 @@ const Footer = () => {
 
           {/* Contact Information */}
           <div>
-            <h4 className="font-bold mb-6 text-xs uppercase tracking-[0.25em] text-brand-gold">Get In Touch</h4>
+            <h4 className="font-bold mb-6 text-xs tracking-[0.25em] text-brand-gold">Get in Touch</h4>
             <ul className="space-y-4 text-brand-linen/60 text-xs">
               <li className="flex gap-3 items-start">
                 <FaMapMarkerAlt className="text-brand-gold shrink-0 mt-0.5" />

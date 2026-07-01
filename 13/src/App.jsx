@@ -17,32 +17,14 @@ import Career from './pages/Career';
 import Reviews from './pages/Reviews';
 import MediaGallery from './pages/MediaGallery';
 import FAQ from './pages/FAQ';
+import Preloader from './components/ui/Preloader';
 
 function App() {
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1200);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="fixed inset-0 bg-[#FCFBFA] z-[9999] flex flex-col items-center justify-center">
-        <div className="flex flex-col items-center gap-4">
-          <div className="w-12 h-12 border-4 border-primary/25 border-t-primary rounded-full animate-spin"></div>
-          <div className="flex flex-col items-center">
-            <span className="font-heading font-bold text-2xl text-primary leading-none tracking-tight">Texmart</span>
-            <span className="text-[8px] text-accent uppercase tracking-[0.2em] font-bold mt-1">Textile Retail Mall</span>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
+    <>
+      {loading && <Preloader onFinish={() => setLoading(false)} />}
     <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -66,6 +48,7 @@ function App() {
         </Route>
       </Routes>
     </Router>
+    </>
   );
 }
 
