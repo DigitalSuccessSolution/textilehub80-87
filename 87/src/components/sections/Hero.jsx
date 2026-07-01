@@ -8,9 +8,10 @@ const Hero = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const bgImages = [
+        "/87-hero.png",
+        "/87-hero2.png",
         "/91-hero.png",
-        "https://images.pexels.com/photos/15488394/pexels-photo-15488394.jpeg",
-        "https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg"
+        "/93-b.png"
     ];
 
     useEffect(() => {
@@ -92,12 +93,12 @@ const Hero = () => {
 
             {/* Slider Navigation Buttons */}
             <div className="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 z-20">
-                <button onClick={handlePrev} className="w-10 h-10 md:w-12 md:h-12 bg-white/50 backdrop-blur border border-white/40 rounded-full flex items-center justify-center text-[#10211F] hover:bg-[#10211F] hover:text-white transition-all shadow-md">
+                <button onClick={handlePrev} className="w-10 h-10 md:w-12 md:h-12 bg-white/50 backdrop-blur border border-white/40 rounded-full flex items-center justify-center text-[#10211F] hover:bg-[#10211F] hover:text-white transition-all shadow-md cursor-pointer">
                     <ChevronLeft size={24} />
                 </button>
             </div>
             <div className="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 z-20">
-                <button onClick={handleNext} className="w-10 h-10 md:w-12 md:h-12 bg-white/50 backdrop-blur border border-white/40 rounded-full flex items-center justify-center text-[#10211F] hover:bg-[#10211F] hover:text-white transition-all shadow-md">
+                <button onClick={handleNext} className="w-10 h-10 md:w-12 md:h-12 bg-white/50 backdrop-blur border border-white/40 rounded-full flex items-center justify-center text-[#10211F] hover:bg-[#10211F] hover:text-white transition-all shadow-md cursor-pointer">
                     <ChevronRight size={24} />
                 </button>
             </div>
@@ -147,7 +148,7 @@ const Hero = () => {
                             {feat.icon}
                         </div>
                         <div className="space-y-0.5">
-                            <h4 className="text-[10px] font-sans font-bold  tracking-wider text-[#10211F]">
+                            <h4 className="text-[10px] font-sans font-bold tracking-wider text-[#10211F]">
                                 {feat.title}
                             </h4>
                             <p className="text-[9px] text-stone-500 font-sans leading-relaxed max-w-[200px]">

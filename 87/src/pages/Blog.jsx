@@ -15,7 +15,7 @@ const Blog = () => {
       cat: "Styling Guide",
       author: "Priya Sharma",
       date: "June 05, 2026",
-      img: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=80"
+      img: "https://images.pexels.com/photos/30982093/pexels-photo-30982093.jpeg"
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const Blog = () => {
       cat: "Heritage",
       author: "Arjun Verma",
       date: "May 30, 2026",
-      img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80"
+      img: "https://images.pexels.com/photos/14664844/pexels-photo-14664844.jpeg"
     },
     {
       id: 3,
@@ -54,7 +54,7 @@ const Blog = () => {
               Blog Page
             </h1>
           </div>
-          
+
           <div className="max-w-md border-l border-[#C29E6B]/40 pl-6 py-2">
             <p className="text-stone-300 text-xs sm:text-sm font-sans font-light leading-relaxed">
               Read styling suggestions, fabric guides, and handloom history write-ups from our showroom curators.
@@ -65,29 +65,28 @@ const Blog = () => {
 
       {/* Main Content */}
       <section className="py-20 px-6 sm:px-12 max-w-[1600px] mx-auto">
-        
+
         {/* Category Filter */}
         <div className="flex flex-wrap gap-2 mb-12 justify-center">
-            {categories.map(cat => (
-                <button
-                    key={cat}
-                    onClick={() => setActiveCat(cat)}
-                    className={`px-4 py-2 rounded-full text-[10px] font-bold tracking-wider border transition-all cursor-pointer ${
-                        activeCat === cat 
-                            ? 'bg-[#10211F] text-white border-[#10211F]' 
-                            : 'bg-white text-stone-500 border-stone-200 hover:border-[#C29E6B]'
-                    }`}
-                >
-                    {cat}
-                </button>
-            ))}
+          {categories.map(cat => (
+            <button
+              key={cat}
+              onClick={() => setActiveCat(cat)}
+              className={`px-4 py-2 rounded-full text-[10px] font-bold tracking-wider border transition-all cursor-pointer ${activeCat === cat
+                ? 'bg-[#10211F] text-white border-[#10211F]'
+                : 'bg-white text-stone-500 border-stone-200 hover:border-[#C29E6B]'
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredPosts.map((post) => (
-            <div 
-              key={post.id} 
+            <div
+              key={post.id}
               className="bg-white border border-stone-200 hover:border-[#C29E6B] rounded-[2rem] p-4 flex flex-col justify-between shadow-sm hover:shadow-2xl transition-all duration-500 group"
             >
               <div>

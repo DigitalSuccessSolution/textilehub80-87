@@ -6,18 +6,18 @@ const Featured = () => {
     const navigate = useNavigate();
 
     const signatureCollections = [
-        { id: "I", name: "KURTIS", sub: "Everyday Grace", img: "https://images.unsplash.com/photo-1608748010899-18f300247112?q=80&w=400" },
-        { id: "II", name: "SAREES", sub: "Timeless Tradition", img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=400" },
-        { id: "III", name: "SUITS", sub: "Style Redefined", img: "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?q=80&w=400" },
-        { id: "IV", name: "DRESS MATERIALS", sub: "Unmatched Elegance", img: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=400" },
-        { id: "V", name: "LINEN", sub: "Pure. Natural.", img: "https://images.unsplash.com/photo-1626497746447-ad25e1d40ff0?q=80&w=400" },
-        { id: "VI", name: "COTTONS", sub: "Soft. Breathable.", img: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?q=80&w=400" },
-        { id: "VII", name: "SILKS", sub: "Luxury in Every Thread", img: "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?q=80&w=400" },
-        { id: "VIII", name: "PRINTS", sub: "Patterns that Speak", img: "https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=400" },
-        { id: "IX", name: "JACQUARD", sub: "Woven Grandeur", img: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=400" },
-        { id: "X", name: "VELVETS", sub: "Plush & Premium", img: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=400" },
-        { id: "XI", name: "FUSION WEAR", sub: "Trendy & Versatile", img: "https://images.unsplash.com/photo-1519457431-44ccd64a579b?q=80&w=400" },
-        { id: "XII", name: "ACCESSORIES", sub: "Completing Styles", img: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?q=80&w=400" }
+        { id: "I", name: "Sarees", sub: "Timeless Tradition", img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=400" },
+        { id: "II", name: "Leggings", sub: "Comfort Wear", img: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?q=80&w=400" },
+        { id: "III", name: "Kurtis", sub: "Everyday Grace", img: "https://images.unsplash.com/photo-1608748010899-18f300247112?q=80&w=400" },
+        { id: "IV", name: "Dress Suits", sub: "Festive Exclusive", img: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=400" },
+        { id: "V", name: "Bedsheets & Linen", sub: "Luxury Bedding", img: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=400" },
+        { id: "VI", name: "Hosiery Items", sub: "Daily Comfort", img: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=400" },
+        { id: "VII", name: "Suiting", sub: "Bespoke Tailoring", img: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=400" },
+        { id: "VIII", name: "Shirting", sub: "Premium Weave", img: "https://images.unsplash.com/photo-1603252109303-2751441dd157?q=80&w=400" },
+        { id: "IX", name: "Formal & Ethnic Wear for Women", sub: "Bridal Signature", img: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=400" },
+        { id: "X", name: "Formal & Ethnic Wear for Men", sub: "Groom Signature", img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=400" },
+        { id: "XI", name: "Formal & Ethnic Wear for Children", sub: "Kid's Festive", img: "https://images.unsplash.com/photo-1519457431-44ccd64a579b?q=80&w=400" },
+        { id: "XII", name: "Home Upholstery & Furnishing", sub: "Artisanal Decor", img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=400" }
     ];
 
     return (
@@ -34,7 +34,7 @@ const Featured = () => {
                             </span>
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#10211F] tracking-tight  leading-none">
-                            12 Signature Collections
+                            Featured Collections
                         </h2>
                     </div>
 
@@ -47,8 +47,8 @@ const Featured = () => {
                 </div>
 
                 {/* ── Staggered Layout Grid ── */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8">
-                    {signatureCollections.map((col, idx) => {
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    {signatureCollections.slice(0, 4).map((col, idx) => {
                         // Alternate height styling for staggered masonry card effect
                         const isEven = idx % 2 === 0;
                         const staggerClass = isEven ? "lg:translate-y-4" : "";

@@ -67,14 +67,8 @@ const Navbar = () => {
     };
 
     return (
-        <div className={`fixed z-[999] transition-all duration-300 ${isOpen ? 'inset-0 bg-[#FAF6F2] overflow-y-auto' : 'top-4 left-4 right-4'}`}>
-            <nav
-                className={`max-w-7xl mx-auto transition-all duration-300 ${
-                    isOpen 
-                        ? 'p-4 sm:p-8 flex flex-col min-h-full'
-                        : `bg-white/95 border border-stone-200/60 shadow-lg ${isScrolled ? 'py-2 px-6 rounded-full' : 'py-3.5 px-8 rounded-[2.5rem]'}`
-                }`}
-            >
+        <div className="fixed top-4 left-4 right-4 z-[999]">
+            <nav className={`max-w-7xl mx-auto bg-white/95 border border-stone-200/60 shadow-lg transition-all duration-300 ${isScrolled ? 'py-2 px-6 rounded-full' : 'py-3.5 px-8 rounded-[2.5rem]'}`}>
                 <div className="flex justify-between items-center shrink-0">
                     
                     {/* ── Logo Branding (Left) ── */}
@@ -83,10 +77,10 @@ const Navbar = () => {
                             <span className="text-[10px] text-[#C29E6B] font-sans">✦</span>
                         </div>
                         <div className="flex flex-col text-left leading-none">
-                            <span className="text-sm font-serif font-bold  tracking-wider text-[#10211F]">
+                            <span className="text-sm font-serif font-bold tracking-wider text-[#10211F]">
                                 AURORA
                             </span>
-                            <span className="text-[8px] text-[#2C443E] tracking-[0.25em] font-bold  mt-0.5">
+                            <span className="text-[8px] text-[#2C443E] tracking-[0.25em] font-bold mt-0.5">
                                 TEXTILE HOUSE
                             </span>
                         </div>
@@ -117,7 +111,7 @@ const Navbar = () => {
                             onMouseLeave={() => setIsMoreOpen(false)}
                         >
                             <button
-                                    className="flex items-center gap-1 text-[11px] font-sans font-bold tracking-wider text-stone-600 hover:text-[#2C443E] transition-colors cursor-pointer"
+                                className="flex items-center gap-1 text-[11px] font-sans font-bold tracking-wider text-stone-600 hover:text-[#2C443E] transition-colors cursor-pointer"
                             >
                                 More
                                 <ChevronDown size={10} className={`transition-transform duration-300 ${isMoreOpen ? 'rotate-180' : ''}`} />
@@ -155,7 +149,7 @@ const Navbar = () => {
                     <div className="hidden lg:flex items-center gap-3">
                         <button
                             onClick={() => navigate('/quotation')}
-                            className="flex items-center gap-2.5 px-6 py-3 bg-[#10211F] hover:bg-[#2C443E] text-white text-[10px] font-bold  tracking-[0.2em] rounded-full transition-all cursor-pointer shadow-md"
+                            className="flex items-center gap-2.5 px-6 py-3 bg-[#10211F] hover:bg-[#2C443E] text-white text-[10px] font-bold tracking-[0.2em] rounded-full transition-all cursor-pointer shadow-md"
                         >
                             Request Quote
                             <span className="text-white">→</span>
@@ -172,64 +166,65 @@ const Navbar = () => {
                     {/* ── Mobile Hamburger Menu ── */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-stone-200 text-[#10211F] hover:bg-stone-50 transition-colors z-[110]"
+                        className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-stone-200 text-[#10211F] hover:bg-stone-50 transition-colors z-[110] relative"
                     >
                         {isOpen ? <X size={18} /> : <Menu size={18} />}
                     </button>
 
                 </div>
-
-                {/* ── Mobile Dropdown Menu ── */}
-                <AnimatePresence>
-                    {isOpen && (
-                        <motion.div
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            className="lg:hidden flex-grow flex flex-col mt-8"
-                        >
-                            <div className="flex flex-col space-y-4 pb-12 overflow-y-auto visible-scrollbar text-center items-center">
-                                {navLinks.map((link) => (
-                                    <Link
-                                        key={link.name}
-                                        to={link.path}
-                                        onClick={() => setIsOpen(false)}
-                                        className="text-lg font-serif font-bold tracking-widest text-[#10211F] hover:text-[#C29E6B] py-2"
-                                    >
-                                        {renderLinkName(link.name)}
-                                    </Link>
-                                ))}
-
-                                <div className="w-12 h-[1px] bg-[#C29E6B]/30 my-4"></div>
-                                
-                                <span className="text-[10px] font-sans font-bold tracking-widest text-[#C29E6B] pb-2 block">
-                                    More Portals
-                                </span>
-                                
-                                {moreLinks.map((link) => (
-                                    <Link
-                                        key={link.name}
-                                        to={link.path}
-                                        onClick={() => setIsOpen(false)}
-                                        className="text-sm font-sans font-bold tracking-wider text-stone-500 hover:text-[#10211F] py-2"
-                                    >
-                                        {renderLinkName(link.name)}
-                                    </Link>
-                                ))}
-                                
-                                <div className="pt-8 w-full px-8 sm:px-12">
-                                    <button
-                                        onClick={() => { navigate('/quotation'); setIsOpen(false); }}
-                                        className="w-full py-4 bg-[#2C443E] text-white text-[10px] font-bold tracking-widest rounded-full shadow-xl cursor-pointer hover:bg-[#10211F] transition-colors"
-                                    >
-                                        Request e-Quotation
-                                    </button>
-                                </div>
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
             </nav>
+
+            {/* ── Mobile Dropdown Menu Overlay ── */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="fixed inset-0 bg-[#FAF6F2] z-[998] flex flex-col pt-32 px-6 sm:px-12 pb-12 overflow-y-auto"
+                    >
+                        <div className="flex flex-col space-y-4 text-center items-center">
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    to={link.path}
+                                    onClick={() => setIsOpen(false)}
+                                    className="text-lg font-serif font-bold tracking-widest text-[#10211F] hover:text-[#C29E6B] py-2"
+                                >
+                                    {renderLinkName(link.name)}
+                                </Link>
+                            ))}
+
+                            <div className="w-12 h-[1px] bg-[#C29E6B]/30 my-4"></div>
+                            
+                            <span className="text-[10px] font-sans font-bold tracking-widest text-[#C29E6B] pb-2 block">
+                                More Portals
+                            </span>
+                            
+                            {moreLinks.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    to={link.path}
+                                    onClick={() => setIsOpen(false)}
+                                    className="text-sm font-sans font-bold tracking-wider text-stone-500 hover:text-[#10211F] py-2"
+                                >
+                                    {renderLinkName(link.name)}
+                                </Link>
+                            ))}
+                            
+                            <div className="pt-8 w-full px-8 sm:px-12">
+                                <button
+                                    onClick={() => { navigate('/quotation'); setIsOpen(false); }}
+                                    className="w-full py-4 bg-[#2C443E] text-white text-[10px] font-bold tracking-widest rounded-full shadow-xl cursor-pointer hover:bg-[#10211F] transition-colors"
+                                >
+                                    Request e-Quotation
+                                </button>
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };

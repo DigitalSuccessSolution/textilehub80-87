@@ -48,6 +48,25 @@ const Quotation = () => {
           </div>
         )}
 
+        {/* Recent Quotations List */}
+        <div className="mb-20">
+          <h2 className="text-2xl font-serif text-[#10211F] mb-8 text-center">Recent Quotations</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { id: 1, title: "Bulk Silk Sarees Order", desc: "Quotation for 500 Banarasi Silk Sarees.", date: "July 01, 2026" },
+              { id: 2, title: "Summer Kurtis Supply", desc: "Quotation for summer linen and cotton kurtis.", date: "June 25, 2026" },
+              { id: 3, title: "Hotel Linen Replenishment", desc: "Quotation for 1000 premium bedsheets.", date: "June 18, 2026" },
+              { id: 4, title: "Wedding Suiting Fabrics", desc: "Quotation for premium suiting materials.", date: "June 10, 2026" }
+            ].map(quote => (
+              <div key={quote.id} className="bg-white p-6 rounded-[2rem] border border-stone-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+                <h3 className="font-serif text-lg font-bold text-[#10211F] mb-2">{quote.title}</h3>
+                <p className="text-xs text-stone-500 font-sans leading-relaxed mb-4">{quote.desc}</p>
+                <div className="text-[10px] text-stone-400 font-sans">{quote.date}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Form Card */}
         <div className="bg-white border border-[#10211F]/5 rounded-[2.5rem] p-8 md:p-12 shadow-xl">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
@@ -129,25 +148,6 @@ const Quotation = () => {
               {isSubmitting ? "Generating..." : (<><FileText size={14} /> Request e-Quotation</>)}
             </button>
           </form>
-        </div>
-
-        {/* Recent Quotations List */}
-        <div className="mt-20">
-          <h2 className="text-2xl font-serif text-[#10211F] mb-8 text-center">Recent Quotations</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              { id: 1, title: "Bulk Silk Sarees Order", desc: "Quotation for 500 Banarasi Silk Sarees.", date: "July 01, 2026" },
-              { id: 2, title: "Summer Kurtis Supply", desc: "Quotation for summer linen and cotton kurtis.", date: "June 25, 2026" },
-              { id: 3, title: "Hotel Linen Replenishment", desc: "Quotation for 1000 premium bedsheets.", date: "June 18, 2026" },
-              { id: 4, title: "Wedding Suiting Fabrics", desc: "Quotation for premium suiting materials.", date: "June 10, 2026" }
-            ].map(quote => (
-              <div key={quote.id} className="bg-white p-6 rounded-[2rem] border border-stone-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
-                <h3 className="font-serif text-lg font-bold text-[#10211F] mb-2">{quote.title}</h3>
-                <p className="text-xs text-stone-500 font-sans leading-relaxed mb-4">{quote.desc}</p>
-                <div className="text-[10px] text-stone-400 font-sans">{quote.date}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     </div>

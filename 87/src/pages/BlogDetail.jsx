@@ -8,7 +8,7 @@ const blogDatabase = {
     title: "Summer Fabric Guide: Cotton vs Linen",
     cat: "Styling Guide",
     date: "June 05, 2026",
-    img: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80",
+    img: "https://images.pexels.com/photos/30982093/pexels-photo-30982093.jpeg",
     content: `When temperatures rise and humidity peaks, choosing the right fabric becomes essential. Cotton and linen are the undisputed champions of summer wardrobes, but each serves a distinct purpose.
 
     Cotton is highly breathable, absorbent, and soft to the skin. It comes in various weaves like poplin, cambric, and mulmul. However, cotton retains moisture longer than linen and is prone to clinging.
@@ -21,7 +21,7 @@ const blogDatabase = {
     title: "The Renaissance of Handloom Sarees",
     cat: "Heritage",
     date: "May 30, 2026",
-    img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1200&q=80",
+    img: "https://images.pexels.com/photos/14664844/pexels-photo-14664844.jpeg",
     content: `Handloom sarees are experiencing a massive revival in contemporary fashion. Once reserved only for formal ethnic occasions or older generations, handloom silk weaves like Banarasis, Kanchipurams, and Jamdanis are now being reimagined.
 
     Young designers are pairing heritage weaves with crop tops, blazer jackets, and modern metallic belts. This fusion keeps the art form alive while making it comfortable and accessible for modern working professionals.
@@ -66,7 +66,7 @@ const BlogDetail = () => {
               </h1>
             </div>
           </div>
-          
+
         </div>
       </section>
 

@@ -26,6 +26,7 @@ const Auction = () => {
       startBid: 35000,
       currentBid: bids[1],
       timeLeft: "2 Hours, 15 Mins",
+      date: "July 01, 2026",
       img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80"
     },
     {
@@ -35,6 +36,7 @@ const Auction = () => {
       startBid: 90000,
       currentBid: bids[2],
       timeLeft: "5 Hours, 40 Mins",
+      date: "July 02, 2026",
       img: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80"
     }
   ];
@@ -71,8 +73,8 @@ const Auction = () => {
         {/* Live List */}
         <div className="grid grid-cols-1 gap-8">
           {auctions.map((item) => (
-            <div 
-              key={item.id} 
+            <div
+              key={item.id}
               className="bg-white rounded-[2rem] border border-stone-200 p-6 md:p-8 flex flex-col md:flex-row gap-8 shadow-sm hover:shadow-2xl hover:border-[#C29E6B] transition-all duration-500 relative overflow-hidden group"
             >
               <div className="w-full md:w-1/3 aspect-[4/3] rounded-[1.25rem] overflow-hidden bg-neutral-900 border border-stone-200/40 flex-shrink-0 relative">
@@ -84,36 +86,15 @@ const Auction = () => {
               <div className="flex-1 flex flex-col justify-between text-left">
                 <div>
                   <div className="flex justify-between items-start gap-4 mb-2">
-                    <h3 className="font-serif text-lg md:text-xl font-bold  text-[#10211F] leading-tight tracking-wide group-hover:text-[#2C443E] transition-colors">{item.title}</h3>
+                    <div className="space-y-1">
+                      <h3 className="font-serif text-lg md:text-xl font-bold  text-[#10211F] leading-tight tracking-wide group-hover:text-[#2C443E] transition-colors">{item.title}</h3>
+                      <p className="text-[10px] text-stone-400 font-sans">Auction Date: {item.date}</p>
+                    </div>
                     <span className="shrink-0 px-3.5 py-1.5 rounded-full bg-[#C29E6B]/15 text-[#C29E6B] text-[9px]  font-bold flex items-center gap-1.5 border border-[#C29E6B]/25">
                       <Clock size={11} /> {item.timeLeft}
                     </span>
                   </div>
                   <p className="text-xs text-stone-500 font-sans leading-relaxed font-light mb-6">{item.desc}</p>
-                </div>
-
-                <div className="border-t border-stone-100 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
-                  <div className="space-y-0.5">
-                    <p className="text-[9px] text-stone-400  tracking-widest font-sans font-bold">Current Active Bid</p>
-                    <p className="text-2xl font-bold text-[#C29E6B] font-sans">₹{item.currentBid.toLocaleString()}</p>
-                    <p className="text-[9px] text-stone-400 font-sans">Starting Bid: ₹{item.startBid.toLocaleString()}</p>
-                  </div>
-
-                  <div className="flex gap-2 w-full sm:w-auto">
-                    <input
-                      type="number"
-                      placeholder="Enter higher bid"
-                      value={userBids[item.id]}
-                      onChange={(e) => setUserBids(prev => ({ ...prev, [item.id]: e.target.value }))}
-                      className="border border-stone-200 rounded-2xl px-4 py-3 text-xs w-full sm:w-32 bg-[#FAF6F2]/30 focus:outline-none focus:ring-1 focus:ring-[#C29E6B] transition-all font-sans font-light"
-                    />
-                    <button
-                      onClick={() => handlePlaceBid(item.id)}
-                      className="px-6 py-3 bg-[#10211F] hover:bg-[#C29E6B] text-white rounded-full text-[10px]  font-bold tracking-widest transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer shadow-md font-sans"
-                    >
-                      <Gavel size={12} /> Bid Now
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>

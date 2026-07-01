@@ -32,18 +32,14 @@ const Preloader = () => {
                         className="absolute inset-6 bg-[#C29E6B] rounded-full blur-xl"
                     />
 
-                    {/* Central Logo */}
+                    {/* Central Text Logo */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, ease: "easeOut" }}
-                        className="w-16 h-16 flex items-center justify-center z-10"
+                        className="w-16 h-16 flex items-center justify-center z-10 font-serif text-3xl font-bold text-[#C29E6B] select-none"
                     >
-                        <img
-                            src="/logo.png"
-                            alt="Aurora Logo"
-                            className="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(194,158,107,0.3)]"
-                        />
+                        A
                     </motion.div>
                 </div>
 

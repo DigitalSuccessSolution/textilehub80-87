@@ -9,33 +9,75 @@ const Categories = () => {
     const curatedItems = [
         {
             num: "01",
-            name: "Kurtis",
-            desc: "Everyday Grace",
-            img: "https://images.unsplash.com/photo-1610030470238-6625b169542a?q=80&w=500"
+            name: "Sarees",
+            desc: "Timeless Tradition",
+            img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80"
         },
         {
             num: "02",
-            name: "Sarees",
-            desc: "Timeless Tradition",
-            img: "https://images.unsplash.com/photo-1608748010899-18f300247112?q=80&w=500"
+            name: "Leggings",
+            desc: "Comfort Wear",
+            img: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=500&q=80"
         },
         {
             num: "03",
-            name: "Bedsheets & Linen",
-            desc: "Pure. Natural.",
-            img: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=500"
+            name: "Kurtis",
+            desc: "Everyday Grace",
+            img: "https://images.unsplash.com/photo-1608748010899-18f300247112?w=500&q=80"
         },
         {
             num: "04",
             name: "Dress Suits",
             desc: "Festive Exclusive",
-            img: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=500"
+            img: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=500&q=80"
         },
         {
             num: "05",
+            name: "Bedsheets & Linen",
+            desc: "Luxury Bedding",
+            img: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=500&q=80"
+        },
+        {
+            num: "06",
+            name: "Hosiery Items",
+            desc: "Daily Comfort",
+            img: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500&q=80"
+        },
+        {
+            num: "07",
+            name: "Suiting",
+            desc: "Bespoke Tailoring",
+            img: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&q=80"
+        },
+        {
+            num: "08",
+            name: "Shirting",
+            desc: "Premium Weave",
+            img: "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=500&q=80"
+        },
+        {
+            num: "09",
+            name: "Formal & Ethnic Wear for Women",
+            desc: "Bridal Signature",
+            img: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=500&q=80"
+        },
+        {
+            num: "10",
+            name: "Formal & Ethnic Wear for Men",
+            desc: "Groom Signature",
+            img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&q=80"
+        },
+        {
+            num: "11",
+            name: "Formal & Ethnic Wear for Children",
+            desc: "Kid's Festive",
+            img: "https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=500&q=80"
+        },
+        {
+            num: "12",
             name: "Home Upholstery & Furnishing",
-            desc: "Comfort Woven Beautifully",
-            img: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=500"
+            desc: "Artisanal Decor",
+            img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=500&q=80"
         }
     ];
 
@@ -64,7 +106,7 @@ const Categories = () => {
                             </span>
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#10211F] tracking-tight  leading-none">
-                            Signature Collections
+                            Collections
                         </h2>
                     </div>
 
@@ -90,13 +132,13 @@ const Categories = () => {
                 {/* ── Sliding Horizontal Row of Department Cards ── */}
                 <div 
                     ref={scrollRef}
-                    className="flex gap-8 overflow-x-auto pb-8 scroll-smooth no-scrollbar"
+                    className="flex gap-8 overflow-x-auto pb-8 scroll-smooth no-scrollbar snap-x snap-mandatory px-[calc(50%-135px)] sm:px-[calc(50%-150px)] lg:px-0 lg:snap-none"
                 >
                     {curatedItems.map((item, idx) => (
                         <div
                             key={idx}
                             onClick={() => navigate('/products', { state: { category: item.name } })}
-                            className="shrink-0 w-[270px] sm:w-[300px] h-[400px] sm:h-[450px] rounded-t-[7rem] rounded-b-[2rem] overflow-hidden relative shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer group border border-[#10211F]/5"
+                            className="shrink-0 w-[270px] sm:w-[300px] h-[400px] sm:h-[450px] rounded-t-[7rem] rounded-b-[2rem] overflow-hidden relative shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer group border border-[#10211F]/5 snap-center"
                         >
                             {/* Card Image Background */}
                             <img

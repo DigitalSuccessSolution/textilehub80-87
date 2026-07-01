@@ -84,12 +84,18 @@ const Circular = () => {
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-stone-100 mt-6">
+              <div className="pt-6 border-t border-stone-100 mt-6 flex gap-2">
                 <button
-                  onClick={() => alert("Downloading PDF Notice...")}
-                  className="w-full flex items-center justify-center gap-2 text-[9px] font-sans font-bold  tracking-widest text-white bg-[#10211F] hover:bg-[#C29E6B] py-3.5 rounded-full transition-all duration-300 cursor-pointer shadow-md"
+                  onClick={() => alert("Opening PDF in viewer...")}
+                  className="flex-1 flex items-center justify-center gap-1 text-[9px] font-sans font-bold  tracking-widest text-white bg-[#10211F] hover:bg-[#C29E6B] py-3.5 rounded-full transition-all duration-300 cursor-pointer shadow-md"
                 >
-                  <Download size={12} /> Download PDF Notice
+                  View PDF
+                </button>
+                <button
+                  onClick={() => window.print()}
+                  className="flex-1 flex items-center justify-center gap-1 text-[9px] font-sans font-bold  tracking-widest text-[#10211F] hover:text-white bg-white hover:bg-[#C29E6B] border border-stone-300 hover:border-[#C29E6B] py-3.5 rounded-full transition-all duration-300 cursor-pointer shadow-sm"
+                >
+                  Print PDF
                 </button>
               </div>
             </div>

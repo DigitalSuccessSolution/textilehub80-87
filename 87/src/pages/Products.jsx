@@ -74,7 +74,6 @@ const Products = () => {
     const [activeCat, setActiveCat] = useState(location.state?.category || "All");
     const [layoutMode, setLayoutMode] = useState("grid"); // "grid" (symmetric) or "lookbook" (asymmetric editorial)
     const [selectedProduct, setSelectedProduct] = useState(null); // for Quick View Modal
-    const [filterBadge, setFilterBadge] = useState("All"); // extra badge filters
 
     // If navigated from home page, update category
     useEffect(() => {
@@ -86,14 +85,9 @@ const Products = () => {
     // Filter logic
     const filteredProducts = useMemo(() => {
         return allProducts.filter(p => {
-            const matchesCategory = activeCat === "All" || p.cat === activeCat;
-            const matchesBadge = filterBadge === "All" || p.badge === filterBadge;
-            return matchesCategory && matchesBadge;
+            return activeCat === "All" || p.cat === activeCat;
         });
-    }, [activeCat, filterBadge]);
-
-    // Unique badges found in filtered list
-    const availableBadges = ["All", ...new Set(allProducts.map(p => p.badge))];
+    }, [activeCat]);
 
     const handleWhatsAppEnquiry = (prod) => {
         const text = encodeURIComponent(`Hello Aurora Textile House, I am interested in details and availability of:\nProduct: ${prod.name}\nSKU: ${prod.sku}\nCategory: ${prod.cat}\nMaterial: ${prod.material}`);
@@ -130,117 +124,27 @@ const Products = () => {
         </div>
       </section>
 
-            {/* ── Visual Circular Category Selectors ── */}
-            <section className="py-12 bg-white border-b border-[#10211F]/5 overflow-hidden">
-                <div className="max-w-[1600px] mx-auto px-6">
-                    <div className="flex justify-between items-center mb-6">
-                        <span className="text-[9px]  tracking-widest font-black text-[#C29E6B]">Select Department</span>
-                        {activeCat !== "All" && (
-                            <button 
-                                onClick={() => setActiveCat("All")} 
-                                className="text-[9px]  tracking-widest font-bold text-[#10211F] hover:text-[#C29E6B] flex items-center gap-1 cursor-pointer"
-                            >
-                                Reset Category <X size={10} />
-                            </button>
-                        )}
-                    </div>
-                    
-                    {/* Visual image slider list */}
-                    <div className="flex gap-6 overflow-x-auto pb-4 custom-horizontal-scrollbar scroll-smooth">
-                        {/* 'All' option */}
-                        <div 
-                            onClick={() => setActiveCat("All")}
-                            className="flex flex-col items-center gap-3 cursor-pointer shrink-0 group"
-                        >
-                            <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${
-                                activeCat === "All" ? 'border-[#C29E6B] scale-105 shadow-md bg-[#10211F] text-white' : 'border-stone-200 bg-[#FAF6F2] text-[#10211F] group-hover:border-[#C29E6B]/50'
-                            }`}>
-                                <Sparkles size={22} className={activeCat === "All" ? "animate-pulse" : ""} />
-                            </div>
-                            <span className={`text-[9px] sm:text-[10px] font-sans font-bold  tracking-wider transition-colors ${
-                                activeCat === "All" ? 'text-[#C29E6B]' : 'text-stone-500 group-hover:text-[#10211F]'
-                            }`}>
-                                All Collections
-                            </span>
-                        </div>
-
-                        {/* Image mapped categories */}
-                        {Object.entries(categoryImages).map(([catName, imgUrl]) => {
-                            const isSelected = activeCat === catName;
-                            return (
-                                <div 
-                                    key={catName}
-                                    onClick={() => setActiveCat(catName)}
-                                    className="flex flex-col items-center gap-3 cursor-pointer shrink-0 group"
-                                >
-                                    <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 transition-all duration-300 relative ${
-                                        isSelected ? 'border-[#C29E6B] scale-105 shadow-md' : 'border-stone-200 group-hover:border-[#C29E6B]/50'
-                                    }`}>
-                                        <img 
-                                            src={imgUrl} 
-                                            alt={catName} 
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                                        />
-                                        <div className={`absolute inset-0 bg-[#10211F]/30 transition-opacity ${isSelected ? 'opacity-0' : 'opacity-30 group-hover:opacity-10'}`} />
-                                    </div>
-                                    <span className={`text-[9px] sm:text-[10px] font-sans font-bold  tracking-wider text-center max-w-[100px] truncate transition-colors ${
-                                        isSelected ? 'text-[#C29E6B]' : 'text-stone-500 group-hover:text-[#10211F]'
-                                    }`}>
-                                        {catName}
-                                    </span>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Sub-filters & Layout Toggle Strip ── */}
-            <section className="py-6 px-6 max-w-[1600px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 border-b border-[#10211F]/5">
+            {/* ── Sub-filters Strip ── */}
+            <section className="py-6 px-6 max-w-[1600px] mx-auto border-b border-[#10211F]/5">
                 
-                {/* Secondary Tag Badges */}
-                <div className="flex flex-wrap gap-2 items-center">
+                {/* Category Badges */}
+                <div className="flex flex-wrap gap-2 items-center justify-center">
                     <span className="text-[9px] font-bold  tracking-wider text-[#C29E6B] mr-2 flex items-center gap-1.5">
                         <SlidersHorizontal size={10} /> Filter By:
                     </span>
-                    {availableBadges.map((bg) => (
+                    {categories.map((cat) => (
                         <button
-                            key={bg}
-                            onClick={() => setFilterBadge(bg)}
+                            key={cat}
+                            onClick={() => setActiveCat(cat)}
                             className={`px-3 py-1 rounded-full text-[9px] font-bold  tracking-wider border transition-all cursor-pointer ${
-                                filterBadge === bg 
+                                activeCat === cat 
                                     ? 'bg-[#10211F] text-white border-[#10211F]' 
                                     : 'bg-white text-stone-500 border-stone-200 hover:border-[#C29E6B]'
                             }`}
                         >
-                            {bg}
+                            {cat}
                         </button>
                     ))}
-                </div>
-
-                {/* Layout switch controls */}
-                <div className="flex items-center gap-4">
-                    <span className="text-[10px] text-stone-400  tracking-widest font-sans">
-                        Showing {filteredProducts.length} Results
-                    </span>
-                    <div className="w-px h-4 bg-stone-300" />
-                    
-                    <div className="flex bg-white rounded-lg p-0.5 border border-stone-200">
-                        <button
-                            onClick={() => setLayoutMode("grid")}
-                            className={`p-1.5 rounded transition-all cursor-pointer ${layoutMode === "grid" ? "bg-[#FAF6F2] text-[#C29E6B]" : "text-stone-400 hover:text-[#10211F]"}`}
-                            title="Symmetric Grid"
-                        >
-                            <Grid size={14} />
-                        </button>
-                        <button
-                            onClick={() => setLayoutMode("lookbook")}
-                            className={`p-1.5 rounded transition-all cursor-pointer ${layoutMode === "lookbook" ? "bg-[#FAF6F2] text-[#C29E6B]" : "text-stone-400 hover:text-[#10211F]"}`}
-                            title="Editorial Lookbook"
-                        >
-                            <Columns size={14} />
-                        </button>
-                    </div>
                 </div>
             </section>
 
@@ -255,10 +159,10 @@ const Products = () => {
                             We couldn't find items matching your filters. Try selecting 'All Collections'.
                         </p>
                         <button 
-                            onClick={() => { setActiveCat("All"); setFilterBadge("All"); }}
+                            onClick={() => { setActiveCat("All"); }}
                             className="mt-4 px-6 py-2.5 bg-[#10211F] text-white text-[10px] font-bold  tracking-widest rounded-full hover:bg-[#C29E6B] transition-colors cursor-pointer"
                         >
-                            Reset All Filters
+                            Reset Category
                         </button>
                     </div>
                 ) : (
@@ -360,7 +264,7 @@ const Products = () => {
                             initial={{ opacity: 0, scale: 0.95, y: 15 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                            className="bg-white rounded-[2.5rem] border border-[#C29E6B]/30 shadow-2xl overflow-hidden max-w-3xl w-full relative z-10 grid grid-cols-1 md:grid-cols-2"
+                            className="bg-white rounded-[2.5rem] border border-[#C29E6B]/30 shadow-2xl overflow-hidden max-w-2xl w-full relative z-10 grid grid-cols-1 md:grid-cols-2 max-h-[90vh] md:max-h-[480px]"
                         >
                             {/* Close Button */}
                             <button
@@ -371,39 +275,39 @@ const Products = () => {
                             </button>
 
                             {/* Left: Product Image */}
-                            <div className="relative aspect-square md:aspect-auto md:h-full overflow-hidden bg-[#10211F]">
+                            <div className="relative aspect-square md:aspect-auto md:h-[480px] overflow-hidden bg-[#10211F]">
                                 <img
                                     src={selectedProduct.img}
                                     alt={selectedProduct.name}
                                     className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#10211F]/40 to-transparent" />
-                                <span className="absolute bottom-6 left-6 bg-[#C29E6B] text-white text-[9px] font-sans font-bold  tracking-widest px-4 py-2 rounded-full border border-white/20">
+                                <span className="absolute bottom-4 left-4 bg-[#C29E6B] text-white text-[8px] font-sans font-bold  tracking-widest px-3 py-1.5 rounded-full border border-white/20">
                                     {selectedProduct.badge}
                                 </span>
                             </div>
 
                             {/* Right: Details & Call to Action */}
-                            <div className="p-8 sm:p-10 flex flex-col justify-between space-y-6 text-left">
-                                <div className="space-y-4">
+                            <div className="p-6 flex flex-col justify-between space-y-4 text-left overflow-y-auto max-h-[480px]">
+                                <div className="space-y-3">
                                     <span className="text-[9px] text-[#C29E6B] font-sans font-black  tracking-widest block">
                                         {selectedProduct.cat}
                                     </span>
-                                    <h4 className="font-serif text-xl  tracking-wide text-[#10211F] font-bold leading-tight">
+                                    <h4 className="font-serif text-lg  tracking-wide text-[#10211F] font-bold leading-tight">
                                         {selectedProduct.name}
                                     </h4>
                                     
-                                    <div className="flex gap-4 text-xs font-sans text-stone-500 pb-2 border-b border-[#10211F]/5">
+                                    <div className="flex gap-4 text-[10px] font-sans text-stone-500 pb-2 border-b border-[#10211F]/5">
                                         <p><strong>SKU:</strong> {selectedProduct.sku}</p>
-                                        <p><strong>Showroom Location:</strong> Surat</p>
+                                        <p><strong>Location:</strong> Surat</p>
                                     </div>
 
-                                    <p className="text-xs text-stone-600 leading-relaxed font-sans font-light">
+                                    <p className="text-[11px] text-stone-600 leading-relaxed font-sans font-light">
                                         {selectedProduct.desc}
                                     </p>
 
                                     {/* Specifications */}
-                                    <div className="bg-[#FAF6F2] p-4 rounded-2xl space-y-2 border border-[#10211F]/5 text-xs text-[#182220]">
+                                    <div className="bg-[#FAF6F2] p-3 rounded-2xl space-y-1.5 border border-[#10211F]/5 text-[11px] text-[#182220]">
                                         <div className="flex justify-between">
                                             <span className="text-stone-400  tracking-wider text-[8px] font-bold">Fabric Material</span>
                                             <span className="font-medium text-[#10211F]">{selectedProduct.material}</span>
@@ -411,21 +315,21 @@ const Products = () => {
                                         <div className="flex justify-between">
                                             <span className="text-stone-400  tracking-wider text-[8px] font-bold">Quality Standard</span>
                                             <span className="font-medium text-emerald-600 flex items-center gap-1">
-                                                <Check size={12} strokeWidth={3} /> Certified ISO-105
+                                                <Check size={11} strokeWidth={3} /> Certified ISO-105
                                             </span>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* B2B / Trade Enquiry WhatsApp Button */}
-                                <div className="space-y-3 pt-2">
+                                <div className="space-y-2 pt-1">
                                     <button
                                         onClick={() => handleWhatsAppEnquiry(selectedProduct)}
-                                        className="w-full bg-[#2C443E] hover:bg-[#1B2E2A] text-white py-3.5 rounded-full font-bold text-[10px]  tracking-widest transition-all duration-300 shadow flex items-center justify-center gap-2 cursor-pointer"
+                                        className="w-full bg-[#2C443E] hover:bg-[#1B2E2A] text-white py-3 rounded-full font-bold text-[10px]  tracking-widest transition-all duration-300 shadow flex items-center justify-center gap-2 cursor-pointer"
                                     >
-                                        <MessageCircle size={14} /> Send WhatsApp Enquiry
+                                        <MessageCircle size={13} /> Send WhatsApp Enquiry
                                     </button>
-                                    <p className="text-[9px] text-stone-400 text-center font-sans">
+                                    <p className="text-[8px] text-stone-400 text-center font-sans">
                                         Trade inquiries are routed directly to our wholesale desk coordinator.
                                     </p>
                                 </div>

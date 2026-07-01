@@ -10,13 +10,13 @@ const BlogHighlights = () => {
             title: "Summer Fabric Guide: Cotton vs Linen",
             cat: "Styling Guide",
             date: "June 05, 2026",
-            img: "https://images.unsplash.com/photo-1626497746447-ad25e1d40ff0?w=400&q=80"
+            img: "https://images.pexels.com/photos/30982093/pexels-photo-30982093.jpeg"
         },
         {
             title: "The Renaissance of Handloom Sarees",
             cat: "Heritage Weaves",
             date: "May 30, 2026",
-            img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80"
+            img: "https://images.pexels.com/photos/14664844/pexels-photo-14664844.jpeg"
         },
         {
             title: "Upholstery Trends for Modern Showrooms",
@@ -28,12 +28,12 @@ const BlogHighlights = () => {
 
     return (
         <section className="py-24 px-6 sm:px-10 bg-[#10211F] border-y border-[#C29E6B]/20 overflow-hidden relative">
-            
+
             {/* Subtle light glow elements */}
             <div className="absolute top-[-20%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-[#2C443E]/10 blur-3xl pointer-events-none" />
 
             <div className="max-w-[1600px] mx-auto text-center relative z-10">
-                
+
                 {/* Header */}
                 <div className="mb-16 space-y-3">
                     <div className="flex items-center justify-center gap-2 text-[#C29E6B]">
@@ -52,7 +52,7 @@ const BlogHighlights = () => {
                 {/* 3 Columns Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                     {blogs.map((b, idx) => (
-                        <div 
+                        <div
                             key={idx}
                             onClick={() => navigate('/blog')}
                             className="group cursor-pointer text-left bg-[#122422] border border-white/5 hover:border-[#C29E6B] rounded-[3.5rem_0.75rem_3.5rem_0.75rem] overflow-hidden shadow-xl transition-all duration-500 hover:translate-y-[-6px] flex flex-col justify-between"
@@ -87,7 +87,7 @@ const BlogHighlights = () => {
                     ))}
                 </div>
 
-                <button 
+                <button
                     onClick={() => navigate('/blog')}
                     className="px-8 py-4 bg-[#2C443E] hover:bg-[#1B2E2A] text-white text-[9px]  tracking-widest font-black transition-all duration-300 rounded-full shadow-lg hover:shadow-xl cursor-pointer"
                 >
