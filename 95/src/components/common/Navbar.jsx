@@ -128,10 +128,10 @@ const Navbar = ({ onOpenTheme }) => {
 
                     {/* ── Action Buttons & Switcher & Hamburger ── */}
                     <div className="flex items-center gap-3">
-                        {/* Theme Customizer Trigger */}
+                        {/* Theme Customizer Trigger (Set className to "w-10 h-10 flex..." to reactivate) */}
                         <button
                             onClick={onOpenTheme}
-                            className="w-10 h-10 flex items-center justify-center rounded-full bg-brand-lavender/10 border border-brand-lavender/25 text-brand-lavender hover:bg-brand-lavender hover:text-brand-cream transition-all duration-300 cursor-pointer shadow-sm"
+                            className="hidden w-10 h-10 items-center justify-center rounded-full bg-brand-lavender/10 border border-brand-lavender/25 text-brand-lavender hover:bg-brand-lavender hover:text-brand-cream transition-all duration-300 cursor-pointer shadow-sm"
                             title="Switch Theme"
                         >
                             <Palette size={16} />

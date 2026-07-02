@@ -7,7 +7,6 @@ import { ArrowRight, FileText, Gavel, Calendar } from 'lucide-react';
 import Hero from '../components/sections/Hero';
 import Intro from '../components/sections/Intro';
 import Categories from '../components/sections/Categories';
-import Featured from '../components/sections/Featured';
 import BlogHighlights from '../components/sections/BlogHighlights';
 import ReviewsSection from '../components/sections/ReviewsSection';
 
@@ -52,9 +51,6 @@ const Home = () => {
 
             {/* 3. Journey of Excellence */}
             <Intro />
-
-            {/* 4. Explore Our Collections */}
-            <Featured />
 
             {/* 5. Trade Services B2B Section */}
             <section className="py-24 px-6 sm:px-10 bg-brand-cream border-t border-brand-gold/15 transition-colors duration-500">

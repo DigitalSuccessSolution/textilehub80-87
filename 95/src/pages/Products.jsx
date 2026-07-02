@@ -1,22 +1,22 @@
 import React, { useState, useMemo } from 'react';
 import useSEO from '../hooks/useSEO';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Grid, Columns, Sparkles, SlidersHorizontal, ArrowRight, MessageCircle, X, Check } from 'lucide-react';
+import { Grid, Columns, Sparkles, SlidersHorizontal, ArrowRight, MessageCircle, X, Check, ChevronDown } from 'lucide-react';
 
 // Category mapping with high-quality fashion / textile images
 const categoryImages = {
-    "Sarees": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
-    "Leggings": "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=400&q=80",
-    "Kurtis": "https://images.unsplash.com/photo-1608748010899-18f300247112?w=400&q=80",
-    "Dress Suits": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=400&q=80",
-    "Bedsheets & Linen": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=400&q=80",
-    "Hosiery Items": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=400&q=80",
-    "Suiting": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80",
-    "Shirting": "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=400&q=80",
-    "Formal & Ethnic Wear for Women": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&q=80",
-    "Formal & Ethnic Wear for Men": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80",
-    "Formal & Ethnic Wear for Children": "https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=400&q=80",
-    "Home Upholstery & Furnishing": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&q=80"
+    "Sarees": "https://images.pexels.com/photos/13155748/pexels-photo-13155748.jpeg",
+    "Leggings": "https://images.pexels.com/photos/4127497/pexels-photo-4127497.jpeg",
+    "Kurtis": "https://images.pexels.com/photos/20420565/pexels-photo-20420565.jpeg",
+    "Dress Suits": "https://images.pexels.com/photos/13153337/pexels-photo-13153337.jpeg",
+    "Bedsheets & Linen": "https://images.pexels.com/photos/26756401/pexels-photo-26756401.jpeg",
+    "Hosiery Items": "https://images.pexels.com/photos/5746051/pexels-photo-5746051.jpeg",
+    "Suiting": "https://images.pexels.com/photos/4965011/pexels-photo-4965011.jpeg",
+    "Shirting": "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=600&q=80",
+    "Formal & Ethnic Wear for Women": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80",
+    "Formal & Ethnic Wear for Men": "https://images.pexels.com/photos/9436776/pexels-photo-9436776.jpeg",
+    "Formal & Ethnic Wear for Children": "https://images.pexels.com/photos/4452939/pexels-photo-4452939.jpeg",
+    "Home Upholstery & Furnishing": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80"
 };
 
 // Category metadata for styling & materials
@@ -35,21 +35,21 @@ const categoryMeta = {
     "Home Upholstery & Furnishing": { material: "Jacquard, Velvet, Damask Weaves", price: "₹850 - ₹5,200 / Mtr", tag: "Artisanal Decor" }
 };
 
-// Generates 108 products (12 categories * 9 styles = 108 products) with enriched mock information
+// Generates 108 products (12 categories * 1 styles = 12 products) with enriched mock information
 const generateProducts = () => {
     const list = [];
     const categories = Object.keys(categoryImages);
     let id = 1;
-    
+
     const styleTags = ["Bestseller", "New Arrival", "Limited Edition", "Traditional Weave", "Premium Selection", "Designer Choice"];
-    
+
     categories.forEach(cat => {
         const meta = categoryMeta[cat] || { material: "Premium Fiber", price: "₹1,500", tag: "Selected Wear" };
-        for (let i = 1; i <= 9; i++) {
+        for (let i = 1; i <= 1; i++) {
             list.push({
                 id: id++,
                 sku: `RTM-${cat.slice(0, 3).toUpperCase()}-${100 + i}`,
-                name: `${cat} Weave Collection - Style ${100 + i}`,
+                name: `Premium Handcrafted ${cat}`,
                 cat: cat,
                 img: categoryImages[cat],
                 material: meta.material,
@@ -72,9 +72,10 @@ const Products = () => {
     );
 
     const categories = ["All", ...Object.keys(categoryImages)];
-    
+
     // States
     const [activeCat, setActiveCat] = useState("All");
+    const [dropdownOpen, setDropdownOpen] = useState(false);
     const [layoutMode, setLayoutMode] = useState("grid"); // "grid" or "lookbook"
     const [selectedProduct, setSelectedProduct] = useState(null); // for Quick View Modal
     const [filterBadge, setFilterBadge] = useState("All"); // extra badge filters
@@ -98,141 +99,68 @@ const Products = () => {
 
     return (
         <div className="min-h-screen bg-brand-cream text-brand-plum pb-24 font-sans">      {/* ── Page Hero Header ── */}
-      <section className="relative pt-36 pb-16 bg-brand-cream border-b border-brand-gold/15 transition-colors duration-500 overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-brand-lavender/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 text-left">
-          <div className="space-y-3">
-            <span className="text-[9px] font-sans font-bold uppercase tracking-[0.35em] text-brand-lavender block">
-              CHRONICLE OF WEAVES
-            </span>
-            <h1 className="text-3xl md:text-5xl font-serif font-black uppercase text-brand-plum tracking-tight leading-tight">
-              Our Signature <span className="text-brand-lavender italic font-light lowercase font-serif">gallery</span>
-            </h1>
-            <div className="w-12 h-0.5 bg-brand-lavender" />
-          </div>
-          <div className="text-[10px] font-sans text-stone-400 uppercase tracking-widest bg-white/60 border border-brand-gold/10 px-4 py-2.5 rounded-2xl shadow-sm shrink-0">
-            SINCE 1998 • PREMIUM WEAVES
-          </div>
-        </div>
-      </section>
+            <section className="relative pt-36 pb-16 bg-brand-cream border-b border-brand-gold/15 transition-colors duration-500 overflow-hidden">
+                <div className="absolute top-0 right-0 w-80 h-80 bg-brand-lavender/5 rounded-full blur-3xl pointer-events-none" />
+                <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 text-left">
+                    <div className="space-y-3">
+                        <span className="text-[9px] font-sans font-bold uppercase tracking-[0.35em] text-brand-lavender block">
+                            CHRONICLE OF WEAVES
+                        </span>
+                        <h1 className="text-3xl md:text-5xl font-serif font-black uppercase text-brand-plum tracking-tight leading-tight">
+                            Our Signature <span className="text-brand-lavender italic font-light lowercase font-serif">gallery</span>
+                        </h1>
+                        <div className="w-12 h-0.5 bg-brand-lavender" />
+                    </div>
+                    <div className="text-[10px] font-sans text-stone-400 uppercase tracking-widest bg-white/60 border border-brand-gold/10 px-4 py-2.5 rounded-2xl shadow-sm shrink-0">
+                        SINCE 1998 • PREMIUM WEAVES
+                    </div>
+                </div>
+            </section>
 
-            {/* ── Visual Circular Category Selectors ── */}
-            <section className="py-12 bg-brand-light border-b border-brand-gold/15 overflow-hidden">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex justify-between items-center mb-6">
-                        <span className="text-[10px] uppercase tracking-widest font-black text-brand-lavender">Select Department</span>
-                        {activeCat !== "All" && (
-                            <button 
-                                onClick={() => setActiveCat("All")} 
-                                className="text-[10px] uppercase tracking-widest font-bold text-brand-lavender hover:text-[#463354] flex items-center gap-1 cursor-pointer"
+            {/* Custom Categories Dropdown Selector */}
+            <section className="py-8 bg-brand-light border-b border-brand-gold/15 relative z-30">
+                <div className="max-w-7xl mx-auto px-6 flex justify-center">
+                    <div className="relative w-full max-w-xs text-left">
+                        <span className="block text-[10px] uppercase tracking-widest font-black text-brand-lavender mb-2">
+                            Select Category
+                        </span>
+                        <div className="relative">
+                            <button
+                                onClick={() => setDropdownOpen(!dropdownOpen)}
+                                className="w-full bg-brand-cream border border-brand-gold/30 hover:border-brand-lavender transition-all px-4 py-3 rounded-xl text-xs text-brand-plum font-serif tracking-wide focus:outline-none flex items-center justify-between shadow-sm cursor-pointer"
                             >
-                                Reset Category <X size={10} />
+                                <span>{activeCat}</span>
+                                <ChevronDown size={14} className={`text-brand-lavender transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`} />
                             </button>
-                        )}
-                    </div>
-                    
-                    {/* Visual image slider list */}
-                    <div className="flex gap-6 overflow-x-auto pb-4 custom-horizontal-scrollbar scroll-smooth">
-                        {/* 'All' option */}
-                        <div 
-                            onClick={() => setActiveCat("All")}
-                            className="flex flex-col items-center gap-3 cursor-pointer shrink-0 group"
-                        >
-                            <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${
-                                activeCat === "All" ? 'border-brand-lavender scale-105 shadow-md bg-brand-lavender text-white' : 'border-stone-200 bg-brand-cream text-brand-plum group-hover:border-brand-lavender/50'
-                            }`}>
-                                <Sparkles size={22} className={activeCat === "All" ? "animate-pulse" : ""} />
-                            </div>
-                            <span className={`text-[9px] sm:text-[10px] font-sans font-bold uppercase tracking-wider transition-colors ${
-                                activeCat === "All" ? 'text-brand-lavender' : 'text-stone-500 group-hover:text-brand-plum'
-                            }`}>
-                                All Collections
-                            </span>
-                        </div>
-
-                        {/* Image mapped categories */}
-                        {Object.entries(categoryImages).map(([catName, imgUrl]) => {
-                            const isSelected = activeCat === catName;
-                            return (
-                                <div 
-                                    key={catName}
-                                    onClick={() => setActiveCat(catName)}
-                                    className="flex flex-col items-center gap-3 cursor-pointer shrink-0 group"
-                                >
-                                    <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 transition-all duration-300 relative ${
-                                        isSelected ? 'border-brand-lavender scale-105 shadow-md' : 'border-stone-200 group-hover:border-brand-lavender/50'
-                                    }`}>
-                                        <img 
-                                            src={imgUrl} 
-                                            alt={catName} 
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                                        />
-                                        <div className={`absolute inset-0 bg-black/25 transition-opacity ${isSelected ? 'opacity-0' : 'opacity-20 group-hover:opacity-5'}`} />
-                                    </div>
-                                    <span className={`text-[9px] sm:text-[10px] font-sans font-bold uppercase tracking-wider text-center max-w-[100px] truncate transition-colors ${
-                                        isSelected ? 'text-brand-lavender' : 'text-stone-500 group-hover:text-brand-plum'
-                                    }`}>
-                                        {catName}
-                                    </span>
+                            {dropdownOpen && (
+                                <div className="absolute left-0 right-0 mt-2 bg-brand-cream border border-brand-gold/15 rounded-xl shadow-xl z-45 max-h-60 overflow-y-auto visible-scrollbar">
+                                    {categories.map((cat, idx) => (
+                                        <button
+                                            key={idx}
+                                            onClick={() => {
+                                                setActiveCat(cat);
+                                                setDropdownOpen(false);
+                                            }}
+                                            className={`w-full text-left px-4 py-3 text-xs font-sans transition-colors cursor-pointer flex items-center justify-between ${activeCat === cat
+                                                ? 'bg-brand-lavender/10 text-brand-lavender font-bold'
+                                                : 'text-brand-plum hover:bg-brand-light'
+                                                }`}
+                                        >
+                                            <span>{cat}</span>
+                                            {activeCat === cat && <Check size={12} className="text-brand-lavender" />}
+                                        </button>
+                                    ))}
                                 </div>
-                            );
-                        })}
+                            )}
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* ── Sub-filters & Layout Toggle Strip ── */}
-            <section className="py-6 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 border-b border-brand-gold/10">
-                
-                {/* Secondary Tag Badges */}
-                <div className="flex flex-wrap gap-2 items-center">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-brand-lavender mr-2 flex items-center gap-1.5">
-                        <SlidersHorizontal size={10} /> Filter By:
-                    </span>
-                    {availableBadges.map((bg) => (
-                        <button
-                            key={bg}
-                            onClick={() => setFilterBadge(bg)}
-                            className={`px-4.5 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-wider border transition-all cursor-pointer ${
-                                filterBadge === bg 
-                                    ? 'bg-brand-lavender text-brand-cream border-brand-lavender' 
-                                    : 'bg-brand-light text-brand-plum border-brand-gold/15 hover:border-brand-lavender'
-                            }`}
-                        >
-                            {bg}
-                        </button>
-                    ))}
-                </div>
-
-                {/* Layout switch controls */}
-                <div className="flex items-center gap-4">
-                    <span className="text-[10px] text-stone-400 uppercase tracking-widest font-sans font-semibold">
-                        Showing {filteredProducts.length} Results
-                    </span>
-                    <div className="w-px h-4 bg-stone-300" />
-                    
-                    <div className="flex bg-brand-light rounded-lg p-0.5 border border-brand-gold/15">
-                        <button
-                            onClick={() => setLayoutMode("grid")}
-                            className={`p-1.5 rounded transition-all cursor-pointer ${layoutMode === "grid" ? "bg-brand-cream text-brand-lavender" : "text-stone-400 hover:text-brand-plum"}`}
-                            title="Symmetric Grid"
-                        >
-                            <Grid size={14} />
-                        </button>
-                        <button
-                            onClick={() => setLayoutMode("lookbook")}
-                            className={`p-1.5 rounded transition-all cursor-pointer ${layoutMode === "lookbook" ? "bg-brand-cream text-brand-lavender" : "text-stone-400 hover:text-brand-plum"}`}
-                            title="Editorial Lookbook"
-                        >
-                            <Columns size={14} />
-                        </button>
-                    </div>
-                </div>
-            </section>
 
             {/* ── Main Catalog Grid ── */}
             <section className="py-12 px-6 sm:px-10 max-w-7xl mx-auto min-h-[400px]">
-                
+
                 {filteredProducts.length === 0 ? (
                     <div className="text-center py-24 space-y-4">
                         <span className="text-3xl">🪡</span>
@@ -240,7 +168,7 @@ const Products = () => {
                         <p className="text-xs text-stone-500 max-w-sm mx-auto font-sans leading-relaxed">
                             We couldn't find items matching your filters. Try resetting category selection or filter badges.
                         </p>
-                        <button 
+                        <button
                             onClick={() => { setActiveCat("All"); setFilterBadge("All"); }}
                             className="mt-4 px-6 py-2.5 bg-brand-lavender text-white text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-[#463354] transition-colors cursor-pointer"
                         >
@@ -248,13 +176,12 @@ const Products = () => {
                         </button>
                     </div>
                 ) : (
-                    <motion.div 
-                        layout 
-                        className={`grid ${
-                            layoutMode === "grid" 
-                                ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" 
-                                : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16"
-                        }`}
+                    <motion.div
+                        layout
+                        className={`grid ${layoutMode === "grid"
+                            ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                            : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16"
+                            }`}
                     >
                         <AnimatePresence mode="popLayout">
                             {filteredProducts.map((p, idx) => {
@@ -281,7 +208,7 @@ const Products = () => {
                                             />
                                             {/* Gradient shade */}
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-                                            
+
                                             {/* Tag badge inside image frame */}
                                             <span className="absolute top-4 left-4 bg-brand-light/90 backdrop-blur-md text-brand-plum text-[8px] font-sans font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-md border border-brand-gold/12">
                                                 {p.badge}
@@ -305,7 +232,7 @@ const Products = () => {
                                                     {p.sku}
                                                 </span>
                                             </div>
-                                            
+
                                             <h3 className="text-xs sm:text-sm font-serif font-bold text-brand-plum uppercase tracking-wider group-hover:text-brand-lavender transition-colors leading-tight truncate">
                                                 {p.name}
                                             </h3>
@@ -332,7 +259,7 @@ const Products = () => {
                 {selectedProduct && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
                         {/* Backdrop */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -377,7 +304,7 @@ const Products = () => {
                                     <h4 className="font-serif text-xl uppercase tracking-wide text-brand-plum font-bold leading-tight">
                                         {selectedProduct.name}
                                     </h4>
-                                    
+
                                     <div className="flex gap-4 text-xs font-sans text-stone-500 pb-2 border-b border-stone-100">
                                         <p><strong>SKU:</strong> {selectedProduct.sku}</p>
                                         <p><strong>Showroom Location:</strong> Surat HQ</p>

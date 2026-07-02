@@ -9,8 +9,8 @@ const Hero = () => {
 
     const heroImages = [
         "/aurora_hero_saree.png",
-        "/hero1.png",
-        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80",
+        "https://images.pexels.com/photos/38246580/pexels-photo-38246580.jpeg",
+        "https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg",
         "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80"
     ];
 
@@ -23,13 +23,13 @@ const Hero = () => {
 
     return (
         <section className="relative min-h-screen overflow-hidden flex items-center pt-28 pb-16 px-6 sm:px-10 lg:px-20 bg-brand-cream text-brand-plum text-left">
-            
+
             {/* ── Glowing Mesh Background Accents ── */}
             <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-lavender/5 rounded-full blur-[120px] pointer-events-none z-0" />
             <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none z-0" />
 
             <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center relative z-10">
-                
+
                 {/* ── Column 1: Typography & CTAs ── */}
                 <div className="lg:col-span-7 space-y-8 text-left">
                     <motion.div
@@ -42,7 +42,7 @@ const Hero = () => {
                             <Sparkles className="w-3.5 h-3.5 text-brand-gold animate-pulse" />
                             Premium Sourcing & Weaves
                         </div>
-                        
+
                         <h1 className="text-4xl sm:text-5xl md:text-[58px] font-serif font-black text-brand-plum leading-[1.08] tracking-tight uppercase">
                             WEAVING <br />
                             <span className="text-brand-lavender font-display font-light italic lowercase">pure elegance</span> <br />
@@ -80,7 +80,7 @@ const Hero = () => {
                 <div className="lg:col-span-5 flex justify-center relative min-h-[400px] lg:min-h-[500px]">
                     {/* Glowing backlighting Behind Frame */}
                     <div className="absolute inset-0 bg-radial from-brand-gold/15 via-transparent to-transparent blur-[60px] rounded-full scale-100 pointer-events-none z-0" />
-                    
+
                     <motion.div
                         initial={{ opacity: 0, scale: 0.98, y: 15 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -89,10 +89,10 @@ const Hero = () => {
                     >
                         <div className="w-full h-full overflow-hidden rounded-[2rem] relative bg-brand-cream">
                             <AnimatePresence mode="wait">
-                                <motion.img 
+                                <motion.img
                                     key={currentImgIdx}
-                                    src={heroImages[currentImgIdx]} 
-                                    alt="Premium Saree Drape Model" 
+                                    src={heroImages[currentImgIdx]}
+                                    alt="Premium Saree Drape Model"
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
@@ -111,9 +111,8 @@ const Hero = () => {
                                             e.stopPropagation();
                                             setCurrentImgIdx(i);
                                         }}
-                                        className={`w-1.5 h-1.5 rounded-full transition-all cursor-pointer ${
-                                            currentImgIdx === i ? 'bg-brand-gold scale-125' : 'bg-brand-light/60 hover:bg-brand-light'
-                                        }`}
+                                        className={`w-1.5 h-1.5 rounded-full transition-all cursor-pointer ${currentImgIdx === i ? 'bg-brand-gold scale-125' : 'bg-brand-light/60 hover:bg-brand-light'
+                                            }`}
                                     />
                                 ))}
                             </div>
@@ -121,7 +120,7 @@ const Hero = () => {
 
                         {/* Floating circular spinning gold badge */}
                         <div className="absolute -bottom-4 -left-6 z-20">
-                            <motion.div 
+                            <motion.div
                                 animate={{ rotate: 360 }}
                                 transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
                                 className="w-24 h-24 rounded-full bg-brand-cream/95 backdrop-blur-md text-brand-lavender shadow-2xl flex items-center justify-center p-3 text-center border border-brand-gold/15"

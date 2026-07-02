@@ -70,13 +70,19 @@ input:focus, textarea:focus, select:focus {
 }
 
 /* Secondary texts opacity adjustments */
-.text-stone-400, .text-stone-500 {
-  color: rgba(31, 27, 22, 0.55) !important;
-}
-.text-stone-600, .text-stone-700 {
+.text-stone-300 {
   color: rgba(31, 27, 22, 0.75) !important;
 }
+.text-stone-400, .text-stone-500 {
+  color: rgba(31, 27, 22, 0.85) !important;
+}
+.text-stone-600, .text-stone-700 {
+  color: rgba(31, 27, 22, 0.95) !important;
+}
 .text-brand-plum\/75, .text-brand-plum\/60 {
+  color: rgba(31, 27, 22, 0.90) !important;
+}
+.text-brand-plum\/40 {
   color: rgba(31, 27, 22, 0.75) !important;
 }
 
