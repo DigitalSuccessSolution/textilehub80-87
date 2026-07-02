@@ -10,7 +10,7 @@ const BlogHighlights = () => {
             title: "The Art of Handloom – Keeping Tradition Alive",
             excerpt: "Discover the deep history behind Indian handlooms and why Kaaya Fabrics supports artisans.",
             date: "20 May 2026",
-            img: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=80"
+            img: "https://images.pexels.com/photos/10317113/pexels-photo-10317113.jpeg"
         },
         {
             title: "How to Choose the Perfect Fabric",
@@ -29,7 +29,7 @@ const BlogHighlights = () => {
     return (
         <section className="py-20 px-6 sm:px-12 bg-white">
             <div className="max-w-[1600px] mx-auto">
-                
+
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mb-12 border-b border-brand-linen-dark pb-6">
                     <div className="text-left">
@@ -37,7 +37,7 @@ const BlogHighlights = () => {
                             From Our <span className="text-[#800834]">Blog</span>
                         </h2>
                     </div>
-                    <button 
+                    <button
                         onClick={() => navigate('/blog')}
                         className="text-[10px] font-sans font-black uppercase tracking-widest text-[#800834] hover:text-[#800834]/80 transition-colors flex items-center gap-1.5 focus:outline-none cursor-pointer"
                     >
@@ -48,7 +48,7 @@ const BlogHighlights = () => {
                 {/* 3 Columns */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {blogs.map((b, idx) => (
-                        <div 
+                        <div
                             key={idx}
                             onClick={() => navigate('/blog')}
                             className="group cursor-pointer text-left bg-[#FAF8F5] border border-brand-gold/10 hover:border-brand-gold/30 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm hover:shadow-xl flex flex-col justify-between"

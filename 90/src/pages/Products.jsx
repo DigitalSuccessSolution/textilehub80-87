@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import useSEO from '../hooks/useSEO';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, Check } from 'lucide-react';
 
 const categories = [
     "All",
@@ -23,49 +24,49 @@ const allProducts = [
         id: 1,
         name: "Classic Banarasi Silk Saree",
         cat: "Sarees",
-        img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80",
+        img: "https://images.pexels.com/photos/13155748/pexels-photo-13155748.jpeg",
         desc: "Exquisite hand-woven Banarasi silk saree with ornate golden zari borders and classic motifs."
     },
     {
         id: 2,
         name: "Premium Cotton Stretch Leggings",
         cat: "Leggings",
-        img: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=600&q=80",
+        img: "https://images.pexels.com/photos/4127497/pexels-photo-4127497.jpeg",
         desc: "Ultra-soft, breathable cotton leggings with 4-way stretch for maximum comfort and style."
     },
     {
         id: 3,
         name: "Elegant Embroidered Georgette Kurti",
         cat: "Kurtis",
-        img: "https://images.unsplash.com/photo-1608748010899-18f300247112?w=600&q=80",
+        img: "https://images.pexels.com/photos/20420565/pexels-photo-20420565.jpeg",
         desc: "Intricately designed floral embroidery on lightweight georgette fabric with a modern silhouette."
     },
     {
         id: 4,
         name: "Royal Designer Anarkali Dress Suit",
         cat: "Dress Suits",
-        img: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&q=80",
+        img: "https://images.pexels.com/photos/13153337/pexels-photo-13153337.jpeg",
         desc: "Stunning flared Anarkali suit set with heavy embellishments, matching dupatta, and pants."
     },
     {
         id: 5,
         name: "Luxury Satin Bedsheet & Linen Set",
         cat: "Bedsheets & Linen",
-        img: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80",
+        img: "https://images.pexels.com/photos/26756401/pexels-photo-26756401.jpeg",
         desc: "Premium high-thread-count satin bedsheet with matching pillow covers for absolute luxury."
     },
     {
         id: 6,
         name: "Super-Soft Premium Hosiery Innerwear",
         cat: "Hosiery Items",
-        img: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&q=80",
+        img: "https://images.pexels.com/photos/5746051/pexels-photo-5746051.jpeg",
         desc: "Premium combed cotton innerwear designed for unmatched daily breathability and comfort."
     },
     {
         id: 7,
         name: "Premium Italian Wool Blend Suiting",
         cat: "Suiting",
-        img: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80",
+        img: "https://images.pexels.com/photos/4965011/pexels-photo-4965011.jpeg",
         desc: "Fine wool-blend suiting fabric offering structured drape, comfort, and sophisticated style."
     },
     {
@@ -86,14 +87,14 @@ const allProducts = [
         id: 10,
         name: "Classic Silk Kurta Pyjama & Nehru Vest for Men",
         cat: "Formal & Ethnic Wear for Men",
-        img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80",
+        img: "https://images.pexels.com/photos/9436776/pexels-photo-9436776.jpeg",
         desc: "Traditional men's ethnic set with premium silk fabric and detailed embroidery on the collar."
     },
     {
         id: 11,
         name: "Cute Festive Ethnic Dress for Children",
         cat: "Formal & Ethnic Wear for Children",
-        img: "https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=600&q=80",
+        img: "https://images.pexels.com/photos/4452939/pexels-photo-4452939.jpeg",
         desc: "Comfortable, premium cotton-blend ethnic wear set for kids, designed for celebrations."
     },
     {
@@ -113,13 +114,14 @@ const Products = () => {
     );
 
     const [activeCat, setActiveCat] = useState("All");
+    const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const filteredProducts = activeCat === "All" 
         ? allProducts 
         : allProducts.filter(p => p.cat === activeCat);
 
     return (
-        <div className="pt-24 min-h-screen bg-brand-linen text-brand-charcoal pb-20">
+        <div className="pt-20 min-h-screen bg-brand-linen text-brand-charcoal pb-20">
             {/* Header */}
             <section className="py-12 bg-brand-emerald-dark text-white text-center px-6 relative overflow-hidden">
                 <div 
@@ -139,28 +141,40 @@ const Products = () => {
             </section>
 
             {/* Filter Dropdown */}
-            <div className="max-w-[1600px] mx-auto px-6 py-8 flex justify-center border-b border-brand-charcoal/5">
+            <div className="max-w-[1600px] mx-auto px-6 py-8 flex justify-center border-b border-brand-charcoal/5 relative z-30">
                 <div className="relative w-full max-w-xs text-left">
-                    <label className="block text-[9px] tracking-widest uppercase font-black text-brand-charcoal/40 mb-2">
+                    <span className="block text-[9px] tracking-widest uppercase font-black text-brand-charcoal/40 mb-2">
                         Filter by Category
-                    </label>
+                    </span>
                     <div className="relative">
-                        <select
-                            value={activeCat}
-                            onChange={(e) => setActiveCat(e.target.value)}
-                            className="w-full bg-white border border-brand-gold/30 hover:border-brand-gold transition-colors px-4 py-3.5 rounded-xl text-xs text-brand-charcoal font-serif tracking-wide focus:outline-none focus:border-brand-gold shadow-sm cursor-pointer appearance-none"
+                        <button
+                            onClick={() => setDropdownOpen(!dropdownOpen)}
+                            className="w-full bg-white border border-brand-gold/30 hover:border-brand-gold transition-all px-4 py-3.5 rounded-xl text-xs text-brand-charcoal font-serif tracking-wide focus:outline-none flex items-center justify-between shadow-sm cursor-pointer"
                         >
-                            {categories.map((cat, idx) => (
-                                <option key={idx} value={cat}>
-                                    {cat}
-                                </option>
-                            ))}
-                        </select>
-                        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-brand-gold">
-                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
+                            <span>{activeCat}</span>
+                            <ChevronDown size={14} className={`text-brand-gold transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`} />
+                        </button>
+                        {dropdownOpen && (
+                            <div className="absolute left-0 right-0 mt-2 bg-white border border-brand-gold/15 rounded-xl shadow-xl z-45 max-h-60 overflow-y-auto visible-scrollbar">
+                                {categories.map((cat, idx) => (
+                                    <button
+                                        key={idx}
+                                        onClick={() => {
+                                            setActiveCat(cat);
+                                            setDropdownOpen(false);
+                                        }}
+                                        className={`w-full text-left px-4 py-3 text-xs font-sans transition-colors cursor-pointer flex items-center justify-between ${
+                                            activeCat === cat 
+                                                ? 'bg-brand-emerald-dark/10 text-brand-emerald-dark font-bold' 
+                                                : 'text-brand-charcoal hover:bg-brand-linen'
+                                        }`}
+                                    >
+                                        <span>{cat}</span>
+                                        {activeCat === cat && <Check size={12} className="text-brand-emerald-dark" />}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

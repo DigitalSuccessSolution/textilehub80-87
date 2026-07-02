@@ -14,7 +14,7 @@ const Management = () => {
     ];
 
     return (
-        <div className="pt-24 min-h-screen bg-brand-linen text-brand-charcoal pb-20">
+        <div className="pt-20 min-h-screen bg-brand-linen text-brand-charcoal pb-20">
             {/* Header */}
             <section className="py-12 bg-brand-emerald-dark text-white text-center px-6 relative overflow-hidden">
                 <div

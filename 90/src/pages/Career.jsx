@@ -97,7 +97,6 @@ const Career = () => {
           <p className="text-brand-charcoal/60 text-xs md:text-sm max-w-xl mx-auto leading-relaxed font-sans font-light">
             We are a growing textile retail organisation seeking talented individuals who share our passion for quality and excellence.
           </p>
-        </div>
 
         {/* Values */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
@@ -215,6 +214,7 @@ const Career = () => {
               )}
             </div>
           </div>
+        )}
       </div>
     </div>
   );

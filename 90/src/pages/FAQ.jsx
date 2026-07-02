@@ -182,6 +182,7 @@ const FAQ = () => {
               Trade Enquiry
             </a>
           </div>
+        </div>
       </div>
     </div>
   );
