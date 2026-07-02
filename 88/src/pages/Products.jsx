@@ -40,7 +40,7 @@ const generateProducts = () => {
     const list = [];
     const categories = Object.keys(categoryImages);
     let id = 1;
-    
+
     categories.forEach(cat => {
         const meta = categoryMeta[cat] || { material: "Premium Fiber", price: "Premium", tag: "Signature Wear" };
         list.push({
@@ -68,7 +68,7 @@ const Products = () => {
     );
 
     const categories = ["All", ...Object.keys(categoryImages)];
-    
+
     // States
     const [activeCat, setActiveCat] = useState("All");
     const [layoutMode, setLayoutMode] = useState("grid"); // "grid" (symmetric) or "lookbook" (asymmetric editorial)
@@ -94,7 +94,7 @@ const Products = () => {
 
     return (
         <div className="min-h-screen bg-[#FAF5F0] text-[#24151D] pb-24 font-sans">
-            
+
             {/* ── Premium Editorial Header ── */}
             <section className="pt-36 pb-20 px-6 sm:px-12 lg:px-16 bg-[#2E081B] relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-[40vw] h-full bg-[#9C4B6E]/10 blur-3xl pointer-events-none" />
@@ -167,7 +167,7 @@ const Products = () => {
                         Showing {filteredProducts.length} Results
                     </span>
                     <div className="w-px h-4 bg-stone-300" />
-                    
+
                     <div className="flex bg-white rounded-lg p-0.5 border border-stone-200">
                         <button
                             onClick={() => setLayoutMode("grid")}
@@ -189,7 +189,7 @@ const Products = () => {
 
             {/* ── Main Catalog Grid ── */}
             <section className="py-12 px-6 sm:px-10 max-w-[1600px] mx-auto min-h-[400px]">
-                
+
                 {filteredProducts.length === 0 ? (
                     <div className="text-center py-24 space-y-4">
                         <span className="text-3xl">🪡</span>
@@ -197,7 +197,7 @@ const Products = () => {
                         <p className="text-xs text-stone-500 max-w-sm mx-auto font-sans leading-relaxed">
                             We couldn't find items matching your filters. Try selecting 'All Collections'.
                         </p>
-                        <button 
+                        <button
                             onClick={() => { setActiveCat("All"); setFilterBadge("All"); }}
                             className="mt-4 px-6 py-2.5 bg-[#2E081B] text-white text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-[#C29E6B] transition-colors cursor-pointer"
                         >
@@ -205,13 +205,12 @@ const Products = () => {
                         </button>
                     </div>
                 ) : (
-                    <motion.div 
-                        layout 
-                        className={`grid ${
-                            layoutMode === "grid" 
-                                ? "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6" 
-                                : "grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 sm:gap-x-12 sm:gap-y-16"
-                        }`}
+                    <motion.div
+                        layout
+                        className={`grid ${layoutMode === "grid"
+                            ? "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"
+                            : "grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 sm:gap-x-12 sm:gap-y-16"
+                            }`}
                     >
                         <AnimatePresence mode="popLayout">
                             {filteredProducts.map((p, idx) => {
@@ -239,7 +238,7 @@ const Products = () => {
                                             />
                                             {/* Gradient dark shade */}
                                             <div className="absolute inset-0 bg-gradient-to-t from-[#2E081B]/40 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-                                            
+
                                             {/* Tag badge inside image frame */}
                                             <span className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-white/90 backdrop-blur-md text-[#2E081B] text-[7px] sm:text-[8px] font-sans font-bold uppercase tracking-widest px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow-sm border border-stone-200/50">
                                                 {p.badge}
@@ -263,7 +262,7 @@ const Products = () => {
                                                     {p.sku}
                                                 </span>
                                             </div>
-                                            
+
                                             <h3 className="text-xs sm:text-sm font-serif font-bold text-[#2E081B] uppercase tracking-wider group-hover:text-[#C29E6B] transition-colors leading-tight truncate">
                                                 {p.name}
                                             </h3>
@@ -287,7 +286,8 @@ const Products = () => {
             <AnimatePresence>
                 {selectedProduct && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-                        <style dangerouslySetInnerHTML={{__html: `
+                        <style dangerouslySetInnerHTML={{
+                            __html: `
                             .custom-modal-scrollbar {
                                 scrollbar-width: auto !important;
                                 scrollbar-color: #C29E6B rgba(46, 8, 27, 0.05) !important;
@@ -309,7 +309,7 @@ const Products = () => {
                             }
                         `}} />
                         {/* Backdrop */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -354,7 +354,7 @@ const Products = () => {
                                     <h4 className="font-serif text-xl uppercase tracking-wide text-[#2E081B] font-bold leading-tight">
                                         {selectedProduct.name}
                                     </h4>
-                                    
+
                                     <div className="flex gap-4 text-xs font-sans text-stone-500 pb-2 border-b border-[#2E081B]/5">
                                         <p><strong>SKU:</strong> {selectedProduct.sku}</p>
                                         <p><strong>Showroom Location:</strong> Surat</p>
@@ -389,7 +389,7 @@ const Products = () => {
                                         <MessageCircle size={14} /> Send WhatsApp Enquiry
                                     </button>
                                     <p className="text-[9px] text-stone-400 text-center font-sans">
-                                        Trade inquiries are routed directly to our wholesale desk coordinator.
+                                        Trade enquiries are routed directly to our wholesale desk coordinator.
                                     </p>
                                 </div>
                             </div>

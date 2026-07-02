@@ -15,14 +15,14 @@ const TradeEnquiry = () => {
           </p>
         </div>
       </div>
-      
+
       <div className="container-custom pb-24">
         <div className="flex flex-col lg:flex-row flex-1 border border-border rounded-[30px] overflow-hidden shadow-sm">
-          
+
           {/* Left Side - Info */}
           <div className="lg:w-5/12 bg-primary text-primary-foreground p-8 md:p-16 flex flex-col justify-between relative overflow-hidden">
             <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay"></div>
-            
+
             <div className="relative z-10">
               <span className="text-accent font-bold capitalize tracking-[0.2em] text-xs mb-4 block">B2B Partnership</span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">Partner with India's Most Trusted Retail Mall</h2>
@@ -41,13 +41,13 @@ const TradeEnquiry = () => {
                   <p className="text-xs text-white/60">Dedicated account managers for large retail chains.</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
                   <Globe className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm text-white mb-1">Export Inquiries</h4>
+                  <h4 className="font-bold text-sm text-white mb-1">Export enquiries</h4>
                   <p className="text-xs text-white/60">Seamless logistics and documentation for global shipping.</p>
                 </div>
               </div>
@@ -69,7 +69,7 @@ const TradeEnquiry = () => {
             <div className="w-full max-w-2xl relative z-10">
               <h3 className="font-heading text-3xl font-bold text-primary mb-2">Submit Trade Enquiry</h3>
               <p className="text-muted-foreground text-sm font-light mb-8">Please provide your business details to help us serve you better.</p>
-              
+
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">

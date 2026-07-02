@@ -11,7 +11,7 @@ const Contact = () => {
         <div className="container-custom relative z-10 text-center">
           <h1 className="font-heading text-4xl lg:text-6xl font-bold text-white mb-4">Contact Texmart</h1>
           <p className="text-white/80 max-w-2xl mx-auto text-sm lg:text-base font-light">
-            We are here to help you with your wholesale orders and inquiries.
+            We are here to help you with your wholesale orders and enquiries.
           </p>
         </div>
       </div>
@@ -25,8 +25,8 @@ const Contact = () => {
             <div>
               <h4 className="font-bold text-primary text-sm capitalize tracking-widest mb-2">Headquarters</h4>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
-                Texmart Textile Retail Mall<br/>
-                8th M.L. Textile Park,<br/>
+                Texmart Textile Retail Mall<br />
+                8th M.L. Textile Park,<br />
                 Surat, Gujarat, India - 395002
               </p>
             </div>
@@ -39,7 +39,7 @@ const Contact = () => {
             <div>
               <h4 className="font-bold text-primary text-sm capitalize tracking-widest mb-2">Helpline</h4>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
-                1800 123 4567 (Toll Free)<br/>
+                1800 123 4567 (Toll Free)<br />
                 +91 98765 43210 (WhatsApp)
               </p>
             </div>
@@ -52,12 +52,12 @@ const Contact = () => {
             <div>
               <h4 className="font-bold text-primary text-sm capitalize tracking-widest mb-2">Email Desk</h4>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
-                info@texmart.com (General)<br/>
+                info@texmart.com (General)<br />
                 b2b@texmart.com (Trade)
               </p>
             </div>
           </div>
-          
+
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-border flex items-start gap-6 hover:shadow-md transition-shadow">
             <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center shrink-0">
               <Clock className="w-5 h-5 text-primary" />
@@ -65,7 +65,7 @@ const Contact = () => {
             <div>
               <h4 className="font-bold text-primary text-sm capitalize tracking-widest mb-2">Business Hours</h4>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
-                Monday - Saturday<br/>
+                Monday - Saturday<br />
                 10:00 AM - 7:00 PM (IST)
               </p>
             </div>
@@ -74,13 +74,13 @@ const Contact = () => {
 
         {/* Google Map */}
         <div className="w-full h-96 rounded-2xl border border-border overflow-hidden relative shadow-sm">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119066.4170946115!2d72.73989524021703!3d21.159340298379204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e59411d1563%3A0xfe4558290938b042!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1699000000000!5m2!1sen!2sin" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen="" 
-            loading="lazy" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119066.4170946115!2d72.73989524021703!3d21.159340298379204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e59411d1563%3A0xfe4558290938b042!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1699000000000!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Surat Headquarters Map"
           ></iframe>

@@ -40,7 +40,7 @@ const generateProducts = () => {
     const list = [];
     const categories = Object.keys(categoryImages);
     let id = 1;
-    
+
     categories.forEach(cat => {
         const meta = categoryMeta[cat] || { material: "Premium Fiber", tag: "Selected Wear" };
         list.push({
@@ -61,7 +61,7 @@ const allProducts = generateProducts();
 
 const Products = () => {
     const location = useLocation();
-    
+
     useSEO(
         'Premium Collections',
         'Explore our catalog of premium sarees, kurtis, dress suits, bedsheets, and suiting shirting fabrics at Aurora Textile House.',
@@ -69,7 +69,7 @@ const Products = () => {
     );
 
     const categories = ["All", ...Object.keys(categoryImages)];
-    
+
     // States
     const [activeCat, setActiveCat] = useState(location.state?.category || "All");
     const [layoutMode, setLayoutMode] = useState("grid"); // "grid" (symmetric) or "lookbook" (asymmetric editorial)
@@ -96,37 +96,37 @@ const Products = () => {
 
     return (
         <div className="min-h-screen bg-[#FAF6F2] text-[#182220] pb-24 font-sans">
-            
+
             {/* ── Premium Editorial Header ── */}
             <section className="pt-40 pb-16 bg-[#FAF6F2] border-b border-[#10211F]/10 px-6 sm:px-12 lg:px-16 relative overflow-hidden">
-        <div className="max-w-[1600px] mx-auto text-left relative flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="text-[#C29E6B] text-[8px]">✦</span>
-              <span className="text-[9px] font-sans font-bold  tracking-[0.3em] text-[#2C443E]">
-                CHRONICLE OF WEAVES
-              </span>
-            </div>
-            <div className="flex gap-4 items-start">
-              <div className="w-1.5 h-14 bg-[#C29E6B] rounded-full shrink-0" />
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight  text-[#10211F] leading-none">
-                Our Premium <span className="text-[#C29E6B] italic font-light">Collections</span>
-              </h1>
-            </div>
-          </div>
-          
-          <div className="max-w-md border-l border-[#C29E6B]/30 pl-6 py-2">
-            <p className="text-stone-500 text-xs sm:text-sm font-sans font-light leading-relaxed">
-              Discover 100+ fine garments, hand-spun heritage sarees, luxurious home upholstery, and high-performance suiting fabrics.
-            </p>
-          </div>
-          
-        </div>
-      </section>
+                <div className="max-w-[1600px] mx-auto text-left relative flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div className="space-y-4">
+                        <div className="flex items-center gap-2">
+                            <span className="text-[#C29E6B] text-[8px]">✦</span>
+                            <span className="text-[9px] font-sans font-bold  tracking-[0.3em] text-[#2C443E]">
+                                CHRONICLE OF WEAVES
+                            </span>
+                        </div>
+                        <div className="flex gap-4 items-start">
+                            <div className="w-1.5 h-14 bg-[#C29E6B] rounded-full shrink-0" />
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight  text-[#10211F] leading-none">
+                                Our Premium <span className="text-[#C29E6B] italic font-light">Collections</span>
+                            </h1>
+                        </div>
+                    </div>
+
+                    <div className="max-w-md border-l border-[#C29E6B]/30 pl-6 py-2">
+                        <p className="text-stone-500 text-xs sm:text-sm font-sans font-light leading-relaxed">
+                            Discover 100+ fine garments, hand-spun heritage sarees, luxurious home upholstery, and high-performance suiting fabrics.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
 
             {/* ── Sub-filters Strip ── */}
             <section className="py-6 px-6 max-w-[1600px] mx-auto border-b border-[#10211F]/5">
-                
+
                 {/* Category Badges */}
                 <div className="flex flex-wrap gap-2 items-center justify-center">
                     <span className="text-[9px] font-bold  tracking-wider text-[#C29E6B] mr-2 flex items-center gap-1.5">
@@ -136,11 +136,10 @@ const Products = () => {
                         <button
                             key={cat}
                             onClick={() => setActiveCat(cat)}
-                            className={`px-3 py-1 rounded-full text-[9px] font-bold  tracking-wider border transition-all cursor-pointer ${
-                                activeCat === cat 
-                                    ? 'bg-[#10211F] text-white border-[#10211F]' 
+                            className={`px-3 py-1 rounded-full text-[9px] font-bold  tracking-wider border transition-all cursor-pointer ${activeCat === cat
+                                    ? 'bg-[#10211F] text-white border-[#10211F]'
                                     : 'bg-white text-stone-500 border-stone-200 hover:border-[#C29E6B]'
-                            }`}
+                                }`}
                         >
                             {cat}
                         </button>
@@ -150,7 +149,7 @@ const Products = () => {
 
             {/* ── Main Catalog Grid ── */}
             <section className="py-12 px-6 sm:px-10 max-w-[1600px] mx-auto min-h-[400px]">
-                
+
                 {filteredProducts.length === 0 ? (
                     <div className="text-center py-24 space-y-4">
                         <span className="text-3xl">🪡</span>
@@ -158,7 +157,7 @@ const Products = () => {
                         <p className="text-xs text-stone-500 max-w-sm mx-auto font-sans leading-relaxed">
                             We couldn't find items matching your filters. Try selecting 'All Collections'.
                         </p>
-                        <button 
+                        <button
                             onClick={() => { setActiveCat("All"); }}
                             className="mt-4 px-6 py-2.5 bg-[#10211F] text-white text-[10px] font-bold  tracking-widest rounded-full hover:bg-[#C29E6B] transition-colors cursor-pointer"
                         >
@@ -166,13 +165,12 @@ const Products = () => {
                         </button>
                     </div>
                 ) : (
-                    <motion.div 
-                        layout 
-                        className={`grid ${
-                            layoutMode === "grid" 
-                                ? "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6" 
+                    <motion.div
+                        layout
+                        className={`grid ${layoutMode === "grid"
+                                ? "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"
                                 : "grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-12 gap-y-10 sm:gap-y-16"
-                        }`}
+                            }`}
                     >
                         <AnimatePresence mode="popLayout">
                             {filteredProducts.map((p, idx) => {
@@ -200,12 +198,12 @@ const Products = () => {
                                             />
                                             {/* Gradient dark shade */}
                                             <div className="absolute inset-0 bg-gradient-to-t from-[#10211F]/50 via-transparent to-transparent opacity-60 group-hover:opacity-85 transition-opacity" />
-                                            
+
                                             {/* Tag badge inside image frame */}
                                             <span className="absolute top-4 left-4 bg-[#10211F]/90 backdrop-blur-sm text-[#C29E6B] text-[7px] font-sans font-bold  tracking-widest px-3 py-1.5 rounded-full shadow-sm border border-white/10">
                                                 {p.badge}
                                             </span>
- 
+
                                             {/* Hover CTA overlays */}
                                             <div className="absolute inset-0 bg-[#10211F]/30 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                                                 <span className="bg-[#C29E6B] text-white text-[8px]  tracking-widest font-bold py-2.5 px-5 rounded-full shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-1.5">
@@ -213,7 +211,7 @@ const Products = () => {
                                                 </span>
                                             </div>
                                         </div>
- 
+
                                         {/* Label Details */}
                                         <div className="space-y-2 mt-auto text-left px-1.5 pb-1">
                                             <div className="flex justify-between items-center">
@@ -224,11 +222,11 @@ const Products = () => {
                                                     {p.sku}
                                                 </span>
                                             </div>
-                                            
+
                                             <h3 className="text-xs sm:text-sm font-serif font-bold text-[#10211F]  tracking-wider group-hover:text-[#C29E6B] transition-colors leading-tight truncate">
                                                 {p.name}
                                             </h3>
- 
+
                                             <div className="border-t border-[#10211F]/5 pt-2.5 flex justify-between items-center">
                                                 <div className="flex flex-col">
                                                     <span className="text-[7px]  tracking-wide text-stone-400">Fabric Type</span>
@@ -251,7 +249,7 @@ const Products = () => {
                 {selectedProduct && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
                         {/* Backdrop */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -296,7 +294,7 @@ const Products = () => {
                                     <h4 className="font-serif text-lg  tracking-wide text-[#10211F] font-bold leading-tight">
                                         {selectedProduct.name}
                                     </h4>
-                                    
+
                                     <div className="flex gap-4 text-[10px] font-sans text-stone-500 pb-2 border-b border-[#10211F]/5">
                                         <p><strong>SKU:</strong> {selectedProduct.sku}</p>
                                         <p><strong>Location:</strong> Surat</p>
@@ -330,7 +328,7 @@ const Products = () => {
                                         <MessageCircle size={13} /> Send WhatsApp Enquiry
                                     </button>
                                     <p className="text-[8px] text-stone-400 text-center font-sans">
-                                        Trade inquiries are routed directly to our wholesale desk coordinator.
+                                        Trade enquiries are routed directly to our wholesale desk coordinator.
                                     </p>
                                 </div>
                             </div>
