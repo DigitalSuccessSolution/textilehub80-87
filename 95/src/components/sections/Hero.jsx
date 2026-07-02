@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Hero = () => {
     const navigate = useNavigate();
@@ -20,6 +20,16 @@ const Hero = () => {
         }, 4000);
         return () => clearInterval(interval);
     }, []);
+
+    const handlePrev = (e) => {
+        e.stopPropagation();
+        setCurrentImgIdx(prev => (prev - 1 + heroImages.length) % heroImages.length);
+    };
+
+    const handleNext = (e) => {
+        e.stopPropagation();
+        setCurrentImgIdx(prev => (prev + 1) % heroImages.length);
+    };
 
     return (
         <section className="relative min-h-screen overflow-hidden flex items-center pt-28 pb-16 px-6 sm:px-10 lg:px-20 bg-brand-cream text-brand-plum text-left">
@@ -101,6 +111,22 @@ const Hero = () => {
                                 />
                             </AnimatePresence>
                             <div className="absolute inset-0 bg-gradient-to-t from-brand-plum/10 via-transparent to-transparent pointer-events-none" />
+
+                            {/* Previous and Next Navigation Buttons */}
+                            <button
+                                onClick={handlePrev}
+                                className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-brand-cream/80 backdrop-blur-sm border border-brand-gold/15 flex items-center justify-center text-brand-plum hover:bg-brand-lavender hover:text-white transition-all cursor-pointer shadow-md"
+                                aria-label="Previous Image"
+                            >
+                                <ChevronLeft size={16} />
+                            </button>
+                            <button
+                                onClick={handleNext}
+                                className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-brand-cream/80 backdrop-blur-sm border border-brand-gold/15 flex items-center justify-center text-brand-plum hover:bg-brand-lavender hover:text-white transition-all cursor-pointer shadow-md"
+                                aria-label="Next Image"
+                            >
+                                <ChevronRight size={16} />
+                            </button>
 
                             {/* Slider Navigation Dots */}
                             <div className="absolute bottom-4 right-4 z-20 flex gap-1.5 bg-brand-plum/45 backdrop-blur-sm px-2.5 py-1.5 rounded-full border border-brand-gold/15">

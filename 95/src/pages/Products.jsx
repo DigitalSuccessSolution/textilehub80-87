@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import useSEO from '../hooks/useSEO';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Grid, Columns, Sparkles, SlidersHorizontal, ArrowRight, MessageCircle, X, Check, ChevronDown } from 'lucide-react';
+import { Grid, Columns, Sparkles, SlidersHorizontal, ArrowRight, MessageCircle, X, Check, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Category mapping with high-quality fashion / textile images
 const categoryImages = {
@@ -17,6 +17,69 @@ const categoryImages = {
     "Formal & Ethnic Wear for Men": "https://images.pexels.com/photos/9436776/pexels-photo-9436776.jpeg",
     "Formal & Ethnic Wear for Children": "https://images.pexels.com/photos/4452939/pexels-photo-4452939.jpeg",
     "Home Upholstery & Furnishing": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80"
+};
+
+const categoryGalleries = {
+    "Sarees": [
+        "https://images.pexels.com/photos/13155748/pexels-photo-13155748.jpeg",
+        "https://images.pexels.com/photos/13155747/pexels-photo-13155747.jpeg",
+        "https://images.pexels.com/photos/38246580/pexels-photo-38246580.jpeg"
+    ],
+    "Leggings": [
+        "https://images.pexels.com/photos/4127497/pexels-photo-4127497.jpeg",
+        "https://images.pexels.com/photos/5746051/pexels-photo-5746051.jpeg",
+        "https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg"
+    ],
+    "Kurtis": [
+        "https://images.pexels.com/photos/20420565/pexels-photo-20420565.jpeg",
+        "https://images.pexels.com/photos/20420561/pexels-photo-20420561.jpeg",
+        "https://images.pexels.com/photos/13153337/pexels-photo-13153337.jpeg"
+    ],
+    "Dress Suits": [
+        "https://images.pexels.com/photos/13153337/pexels-photo-13153337.jpeg",
+        "https://images.pexels.com/photos/20420565/pexels-photo-20420565.jpeg",
+        "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80"
+    ],
+    "Bedsheets & Linen": [
+        "https://images.pexels.com/photos/26756401/pexels-photo-26756401.jpeg",
+        "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg",
+        "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80"
+    ],
+    "Hosiery Items": [
+        "https://images.pexels.com/photos/5746051/pexels-photo-5746051.jpeg",
+        "https://images.pexels.com/photos/4127497/pexels-photo-4127497.jpeg",
+        "https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg"
+    ],
+    "Suiting": [
+        "https://images.pexels.com/photos/4965011/pexels-photo-4965011.jpeg",
+        "https://images.pexels.com/photos/3775163/pexels-photo-3775163.jpeg",
+        "https://images.pexels.com/photos/36029/pexels-photo-36029.jpg"
+    ],
+    "Shirting": [
+        "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=600&q=80",
+        "https://images.pexels.com/photos/3756030/pexels-photo-3756030.jpeg",
+        "https://images.pexels.com/photos/4622224/pexels-photo-4622224.jpeg"
+    ],
+    "Formal & Ethnic Wear for Women": [
+        "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80",
+        "https://images.pexels.com/photos/13155748/pexels-photo-13155748.jpeg",
+        "https://images.pexels.com/photos/13155747/pexels-photo-13155747.jpeg"
+    ],
+    "Formal & Ethnic Wear for Men": [
+        "https://images.pexels.com/photos/9436776/pexels-photo-9436776.jpeg",
+        "https://images.pexels.com/photos/1036856/pexels-photo-1036856.jpeg",
+        "https://images.pexels.com/photos/4965011/pexels-photo-4965011.jpeg"
+    ],
+    "Formal & Ethnic Wear for Children": [
+        "https://images.pexels.com/photos/4452939/pexels-photo-4452939.jpeg",
+        "https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg",
+        "https://images.pexels.com/photos/5746051/pexels-photo-5746051.jpeg"
+    ],
+    "Home Upholstery & Furnishing": [
+        "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80",
+        "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg",
+        "https://images.pexels.com/photos/26756401/pexels-photo-26756401.jpeg"
+    ]
 };
 
 // Category metadata for styling & materials
@@ -52,6 +115,7 @@ const generateProducts = () => {
                 name: `Premium Handcrafted ${cat}`,
                 cat: cat,
                 img: categoryImages[cat],
+                gallery: categoryGalleries[cat] || [categoryImages[cat]],
                 material: meta.material,
                 price: meta.price,
                 badge: styleTags[(id + i) % styleTags.length],
@@ -272,27 +336,34 @@ const Products = () => {
                             initial={{ opacity: 0, scale: 0.95, y: 15 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                            className="bg-brand-light rounded-[2.5rem] border border-brand-gold/15 shadow-2xl overflow-hidden max-w-3xl w-full relative z-10 grid grid-cols-1 md:grid-cols-2"
+                            className="bg-brand-light rounded-[2.5rem] border border-brand-gold/15 shadow-2xl overflow-y-auto max-h-[90vh] max-w-3xl w-full relative z-10 grid grid-cols-1 md:grid-cols-2 visible-scrollbar"
                         >
                             {/* Close Button */}
                             <button
                                 onClick={() => setSelectedProduct(null)}
-                                className="absolute right-6 top-6 w-9 h-9 rounded-full bg-brand-light/95 border border-brand-gold/15 flex items-center justify-center text-brand-plum hover:bg-brand-lavender hover:text-brand-cream transition-colors z-20 cursor-pointer shadow-lg"
+                                className="absolute right-6 top-6 w-9 h-9 rounded-full bg-brand-light/95 border border-brand-gold/15 flex items-center justify-center text-brand-plum hover:bg-brand-lavender hover:text-white transition-colors z-25 cursor-pointer shadow-lg"
                             >
                                 <X size={15} />
                             </button>
 
                             {/* Left: Product Image */}
-                            <div className="relative aspect-square md:aspect-auto md:h-full overflow-hidden bg-brand-cream">
+                            <div className="relative aspect-[4/3] md:aspect-auto md:h-full overflow-hidden bg-brand-cream min-h-[250px] md:min-h-[380px]">
                                 <img
                                     src={selectedProduct.img}
                                     alt={selectedProduct.name}
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-                                <span className="absolute bottom-6 left-6 bg-brand-lavender text-white text-[9px] font-sans font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/20">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
+
+                                {/* Badge */}
+                                <span className="absolute bottom-4 left-4 bg-brand-lavender text-white text-[9px] font-sans font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/20 z-20 shadow-md">
                                     {selectedProduct.badge}
                                 </span>
+
+                                {/* Scroll down bouncing indicator on mobile */}
+                                <div className="absolute bottom-4 right-4 bg-black/40 text-white text-[8px] font-sans font-bold uppercase tracking-widest px-3 py-1.5 rounded-full backdrop-blur-sm pointer-events-none md:hidden flex items-center gap-1 animate-bounce z-20">
+                                    <span>Scroll down ↓</span>
+                                </div>
                             </div>
 
                             {/* Right: Details & Call to Action */}
@@ -338,8 +409,11 @@ const Products = () => {
                                         <MessageCircle size={14} /> Send WhatsApp Enquiry
                                     </button>
                                     <p className="text-[9px] text-stone-400 text-center font-sans">
-                                        Trade inquiries are routed directly to our wholesale desk coordinator.
+                                        Trade enquiries are routed directly to our wholesale desk coordinator.
                                     </p>
+                                    <div className="text-center text-[8px] text-stone-400 font-sans tracking-wide animate-pulse block md:hidden mt-1">
+                                        Scroll modal for more details
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

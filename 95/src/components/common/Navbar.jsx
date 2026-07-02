@@ -202,9 +202,6 @@ const Navbar = ({ onOpenTheme }) => {
 
                                 {/* Exact Sequence List of 14 pages */}
                                 <div className="space-y-6 text-left">
-                                    <span className="text-[9px] uppercase tracking-[0.3em] font-bold text-brand-lavender/70 block mb-2">
-                                        Directory Index (14 Features)
-                                    </span>
                                     <div className="grid grid-cols-1 gap-3.5">
                                         {all14Pages.map((link, index) => {
                                             const isActive = location.pathname === link.path;
