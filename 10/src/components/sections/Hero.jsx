@@ -39,18 +39,7 @@ const Hero = () => {
             <span className="bg-[#053B1F] text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest rounded-md inline-block">
               Premium Quality
             </span>
-            <div className="flex items-center gap-4 text-xs font-semibold text-slate-400">
-              {banners.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`transition-colors hover:text-primary ${idx === currentSlide ? 'text-primary border-b-2 border-accent pb-0.5' : ''
-                    }`}
-                >
-                  {String(idx + 1).padStart(2, '0')}
-                </button>
-              ))}
-            </div>
+
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary leading-tight">

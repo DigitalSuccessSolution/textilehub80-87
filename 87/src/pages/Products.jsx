@@ -137,8 +137,8 @@ const Products = () => {
                             key={cat}
                             onClick={() => setActiveCat(cat)}
                             className={`px-3 py-1 rounded-full text-[9px] font-bold  tracking-wider border transition-all cursor-pointer ${activeCat === cat
-                                    ? 'bg-[#10211F] text-white border-[#10211F]'
-                                    : 'bg-white text-stone-500 border-stone-200 hover:border-[#C29E6B]'
+                                ? 'bg-[#10211F] text-white border-[#10211F]'
+                                : 'bg-white text-stone-500 border-stone-200 hover:border-[#C29E6B]'
                                 }`}
                         >
                             {cat}
@@ -168,8 +168,8 @@ const Products = () => {
                     <motion.div
                         layout
                         className={`grid ${layoutMode === "grid"
-                                ? "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"
-                                : "grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-12 gap-y-10 sm:gap-y-16"
+                            ? "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"
+                            : "grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-12 gap-y-10 sm:gap-y-16"
                             }`}
                     >
                         <AnimatePresence mode="popLayout">
@@ -305,7 +305,7 @@ const Products = () => {
                                     </p>
 
                                     {/* Specifications */}
-                                    <div className="bg-[#FAF6F2] p-3 rounded-2xl space-y-1.5 border border-[#10211F]/5 text-[11px] text-[#182220]">
+                                    {/* <div className="bg-[#FAF6F2] p-3 rounded-2xl space-y-1.5 border border-[#10211F]/5 text-[11px] text-[#182220]">
                                         <div className="flex justify-between">
                                             <span className="text-stone-400  tracking-wider text-[8px] font-bold">Fabric Material</span>
                                             <span className="font-medium text-[#10211F]">{selectedProduct.material}</span>
@@ -316,7 +316,7 @@ const Products = () => {
                                                 <Check size={11} strokeWidth={3} /> Certified ISO-105
                                             </span>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
 
                                 {/* B2B / Trade Enquiry WhatsApp Button */}

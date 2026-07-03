@@ -376,28 +376,14 @@ const Products = () => {
                                         {selectedProduct.name}
                                     </h4>
 
-                                    <div className="flex gap-4 text-xs font-sans text-stone-500 pb-2 border-b border-stone-100">
-                                        <p><strong>SKU:</strong> {selectedProduct.sku}</p>
-                                        <p><strong>Showroom Location:</strong> Surat HQ</p>
-                                    </div>
+
 
                                     <p className="text-xs text-stone-600 leading-relaxed font-sans font-light">
                                         {selectedProduct.desc}
                                     </p>
 
                                     {/* Specifications */}
-                                    <div className="bg-brand-cream/50 p-4 rounded-2xl space-y-2 border border-brand-gold/10 text-xs text-brand-plum">
-                                        <div className="flex justify-between">
-                                            <span className="text-stone-400 uppercase tracking-wider text-[8px] font-bold">Fabric Material</span>
-                                            <span className="font-medium text-brand-plum">{selectedProduct.material}</span>
-                                        </div>
-                                        <div className="flex justify-between">
-                                            <span className="text-stone-400 uppercase tracking-wider text-[8px] font-bold">Quality Standard</span>
-                                            <span className="font-medium text-emerald-600 flex items-center gap-1">
-                                                <Check size={12} strokeWidth={3} /> Certified ISO-105
-                                            </span>
-                                        </div>
-                                    </div>
+
                                 </div>
 
                                 {/* B2B / Trade Enquiry WhatsApp Button */}

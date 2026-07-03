@@ -9,9 +9,9 @@ const TopBar = () => {
           <MapPin className="w-3.5 h-3.5 text-accent" />
           <span className="text-white/90">India's Most Trusted Textile Retail Mall</span>
         </div>
-        
+
         <div className="flex items-center gap-6">
-          <span>GST No: 24AAACT0012K125</span>
+          {/* <span>GST No: 24AAACT0012K125</span> */}
           <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
           <span className="flex items-center gap-1.5">
             <Phone className="w-3 h-3 text-accent" /> Helpline: 1800 123 4567

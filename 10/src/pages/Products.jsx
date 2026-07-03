@@ -217,7 +217,7 @@ const Products = () => {
                   {selectedProduct.desc}
                 </p>
 
-                <div className="grid grid-cols-2 gap-y-6 gap-x-8 mb-8">
+                {/* <div className="grid grid-cols-2 gap-y-6 gap-x-8 mb-8">
                   <div>
                     <p className="text-[10px] tracking-widest text-slate-400 font-bold mb-1">Composition</p>
                     <p className="text-sm font-semibold text-primary">{selectedProduct.composition}</p>
@@ -234,18 +234,7 @@ const Products = () => {
                     <p className="text-[10px] tracking-widest text-slate-400 font-bold mb-1">Weave</p>
                     <p className="text-sm font-semibold text-primary">{selectedProduct.weave}</p>
                   </div>
-                </div>
-
-                <div className="bg-slate-50 p-6 border border-slate-100 mb-8">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-xs tracking-widest font-bold text-slate-500">Tiered Pricing</span>
-                    <span className="text-sm font-bold text-accent">On Request</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-xs tracking-widest font-bold text-slate-500">Min. Order</span>
-                    <span className="text-sm font-bold text-primary">{selectedProduct.minOrder}</span>
-                  </div>
-                </div>
+                </div> */}
 
                 <div className="flex gap-4">
                   <a

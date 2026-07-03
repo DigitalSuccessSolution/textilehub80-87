@@ -5,14 +5,14 @@ const EAuction = () => {
   const [activeTab, setActiveTab] = useState('live');
 
   const liveAuctions = [
-    { id: 'LOT-A492', desc: 'Egyptian Cotton Shirting 10,000 Mtrs', highestBidder: 'ID-88X', timeLeft: '00:45:12', bids: 24, status: 'hot', image: 'https://images.unsplash.com/photo-1594938298596-39fd3c907106?q=80&w=400&auto=format&fit=crop', date: 'Oct 28, 2023' },
-    { id: 'LOT-B811', desc: 'Silk Blend Festival Kurtas 500 Sets', highestBidder: 'ID-42A', timeLeft: '02:15:00', bids: 8, status: 'normal', image: 'https://images.unsplash.com/photo-1584346808092-23315c138a06?q=80&w=400&auto=format&fit=crop', date: 'Oct 26, 2023' },
-    { id: 'LOT-C102', desc: 'Velvet Upholstery Surplus 2,500 Mtrs', highestBidder: 'ID-99K', timeLeft: '00:05:40', bids: 42, status: 'ending', image: 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?q=80&w=400&auto=format&fit=crop', date: 'Oct 25, 2023' }
+    { id: 'LOT-A492', desc: 'Egyptian Cotton Shirting 10,000 Mtrs', highestBidder: 'ID-88X', timeLeft: '00:45:12', bids: 24, status: 'hot', image: 'https://images.pexels.com/photos/36656827/pexels-photo-36656827.jpeg', date: 'Oct 28, 2023' },
+    { id: 'LOT-B811', desc: 'Silk Blend Festival Kurtas 500 Sets', highestBidder: 'ID-42A', timeLeft: '02:15:00', bids: 8, status: 'normal', image: 'https://images.pexels.com/photos/29475576/pexels-photo-29475576.jpeg', date: 'Oct 26, 2023' },
+    { id: 'LOT-C102', desc: 'Velvet Upholstery Surplus 2,500 Mtrs', highestBidder: 'ID-99K', timeLeft: '00:05:40', bids: 42, status: 'ending', image: 'https://images.pexels.com/photos/34634858/pexels-photo-34634858.jpeg', date: 'Oct 25, 2023' }
   ];
 
   return (
     <div className="bg-background min-h-screen text-foreground font-light pb-24">
-      
+
       {/* Ticker / Status Bar */}
       <div className="bg-primary text-primary-foreground font-bold text-[10px] uppercase tracking-[0.2em] py-3 px-4 flex flex-col md:flex-row items-center justify-between border-b border-primary/20 gap-2">
         <div className="flex items-center gap-2">
@@ -67,7 +67,7 @@ const EAuction = () => {
                       {lot.id}
                     </div>
                   </div>
-                  
+
                   <div className="p-6">
                     <span className="text-[10px] text-accent font-bold uppercase tracking-wider block mb-2">{lot.date}</span>
                     <h4 className="font-heading font-bold text-base text-primary mb-3">{lot.id} - Bidding Lot</h4>
@@ -81,7 +81,7 @@ const EAuction = () => {
 
         {/* Dashboard Panels (Displayed below cards) */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          
+
           <div className="bg-white shadow-sm border border-border p-6 rounded-2xl flex items-center gap-4 hover:shadow-md transition-shadow">
             <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center">
               <Activity className="w-5 h-5 text-primary" />
@@ -91,7 +91,7 @@ const EAuction = () => {
               <p className="text-3xl font-heading font-bold text-primary">12</p>
             </div>
           </div>
-          
+
           <div className="bg-white shadow-sm border border-border p-6 rounded-2xl flex items-center gap-4 hover:shadow-md transition-shadow">
             <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center">
               <TrendingUp className="w-5 h-5 text-primary" />

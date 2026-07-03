@@ -365,19 +365,7 @@ const Products = () => {
                                     </p>
 
                                     {/* Specifications */}
-                                    <div className="bg-[#FAF5F0] p-4 rounded-2xl space-y-2 border border-[#2E081B]/5 text-xs text-[#24151D]">
-                                        <div className="flex justify-between">
-                                            <span className="text-stone-400 uppercase tracking-wider text-[8px] font-bold">Fabric Material</span>
-                                            <span className="font-medium text-[#2E081B]">{selectedProduct.material}</span>
-                                        </div>
 
-                                        <div className="flex justify-between">
-                                            <span className="text-stone-400 uppercase tracking-wider text-[8px] font-bold">Quality Standard</span>
-                                            <span className="font-medium text-emerald-600 flex items-center gap-1">
-                                                <Check size={12} strokeWidth={3} /> Certified ISO-105
-                                            </span>
-                                        </div>
-                                    </div>
                                 </div>
 
                                 {/* B2B / Trade Enquiry WhatsApp Button */}

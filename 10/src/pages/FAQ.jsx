@@ -30,7 +30,7 @@ const FAQ = () => {
   return (
     <div className="bg-background min-h-screen py-24">
       <div className="container-custom max-w-4xl">
-        
+
         {/* Header */}
         <div className="text-center mb-16">
           <div className="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -43,7 +43,7 @@ const FAQ = () => {
         <div className="space-y-4 mb-16">
           {faqs.map((faq, idx) => (
             <div key={idx} className={`border rounded-lg transition-all duration-300 overflow-hidden ${openIndex === idx ? 'border-primary shadow-md' : 'border-slate-200 bg-white hover:border-accent/50'}`}>
-              <button 
+              <button
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                 className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none bg-white"
               >
@@ -54,7 +54,7 @@ const FAQ = () => {
                   {openIndex === idx ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 </div>
               </button>
-              
+
               <div className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === idx ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="pt-4 border-t border-slate-100">
                   <p className="text-sm font-light text-slate-600 leading-relaxed">
@@ -64,17 +64,6 @@ const FAQ = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Still need help */}
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 md:p-12 text-center">
-          <h3 className="font-heading text-2xl font-bold text-primary mb-3">Still have questions?</h3>
-          <p className="text-slate-500 font-light text-sm mb-8 max-w-md mx-auto">
-            If you couldn't find the answer to your question regarding wholesale orders, logistics, or our 12 Collections, please contact our support desk.
-          </p>
-          <a href="/contact" className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 text-xs font-bold hover:bg-accent transition-colors rounded-sm">
-            <MessageCircle className="w-4 h-4" /> Contact Support
-          </a>
         </div>
 
       </div>

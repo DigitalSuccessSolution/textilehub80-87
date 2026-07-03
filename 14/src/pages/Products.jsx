@@ -120,7 +120,7 @@ const Products = () => {
     }
   ];
 
-  const filteredProducts = products.filter(p => 
+  const filteredProducts = products.filter(p =>
     (activeCategory === 'All' || p.category === activeCategory)
   );
 
@@ -139,14 +139,14 @@ const Products = () => {
       </div>
 
       <div className="container-custom pb-24">
-        
+
         {/* Controls */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
-          
+
           {/* Categories Tab */}
           <div className="flex overflow-x-auto w-full pb-4 gap-3 snap-x visible-scrollbar">
             {categories.map(cat => (
-              <button 
+              <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`whitespace-nowrap px-8 py-3 rounded-full text-xs font-bold capitalize tracking-widest transition-all snap-start shrink-0 ${activeCategory === cat ? 'bg-primary text-white shadow-md' : 'bg-white text-muted-foreground hover:bg-muted border border-border'}`}
@@ -182,8 +182,8 @@ const Products = () => {
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-primary/40 backdrop-blur-sm" onClick={() => setSelectedProduct(null)}></div>
           <div className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative z-10 flex flex-col md:flex-row border border-border">
-            
-            <button 
+
+            <button
               className="absolute top-4 right-4 z-20 w-8 h-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors border border-border"
               onClick={() => setSelectedProduct(null)}
             >
@@ -193,12 +193,12 @@ const Products = () => {
             <div className="w-full md:w-1/2 h-48 md:h-auto shrink-0">
               <img src={selectedProduct.img} alt={selectedProduct.name} className="w-full h-full object-cover" />
             </div>
-            
+
             <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col">
               <span className="text-xs font-bold capitalize tracking-widest text-accent mb-2">{selectedProduct.category}</span>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-primary mb-4 capitalize">{selectedProduct.name}</h2>
               <p className="text-sm font-light text-muted-foreground mb-8 leading-relaxed">{selectedProduct.desc}</p>
-              
+              {/*               
               <div className="grid grid-cols-2 gap-4 md:gap-6 mb-8">
                 <div>
                   <span className="block text-sm font-bold capitalize tracking-widest text-primary/50 mb-1">Composition</span>
@@ -216,7 +216,7 @@ const Products = () => {
                   <span className="block text-sm font-bold capitalize tracking-widest text-primary/50 mb-1">Thread Count</span>
                   <span className="text-sm font-medium text-foreground">{selectedProduct.threadCount}</span>
                 </div>
-              </div>
+              </div> */}
 
               <div className="mt-auto flex gap-4">
                 <a href="/e-quotation" className="flex-1 bg-primary text-white text-center py-3.5 rounded-full text-xs font-bold capitalize tracking-widest hover:bg-primary/90 transition-colors shadow-md">

@@ -224,7 +224,7 @@ const Products = () => {
               <span className="text-[10px] font-bold tracking-widest text-accent mb-2">{selectedProduct.category}</span>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-primary mb-4">{selectedProduct.name}</h2>
               <p className="text-sm font-light text-muted-foreground mb-8 leading-relaxed">{selectedProduct.desc}</p>
-
+              {/* 
               <div className="grid grid-cols-2 gap-4 md:gap-6 mb-8">
                 <div>
                   <span className="block text-[9px] font-bold tracking-widest text-primary/50 mb-1">Composition</span>
@@ -242,7 +242,7 @@ const Products = () => {
                   <span className="block text-[9px] font-bold tracking-widest text-primary/50 mb-1">Thread Count</span>
                   <span className="text-sm font-medium text-foreground">{selectedProduct.threadCount}</span>
                 </div>
-              </div>
+              </div> */}
 
               <div className="bg-muted p-4 md:p-6 rounded-xl border border-border mb-8 flex justify-between items-center">
                 <span className="text-[10px] tracking-widest font-bold text-primary/60">Min. Order Qty</span>
