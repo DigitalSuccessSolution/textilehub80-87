@@ -124,6 +124,7 @@ const TradeEnquiry = () => {
               <p className="text-xs font-bold text-brand-charcoal uppercase">{value}</p>
             </div>
           ))}
+        </div>
       </div>
     </div>
   );

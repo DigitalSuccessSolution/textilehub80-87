@@ -97,7 +97,6 @@ const Career = () => {
           <p className="text-brand-charcoal/60 text-xs md:text-sm max-w-xl mx-auto leading-relaxed font-sans font-light">
             We are a growing textile retail organisation seeking talented individuals who share our passion for quality and excellence.
           </p>
-        </div>
 
         {/* Values */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
@@ -119,7 +118,7 @@ const Career = () => {
           <h2 className="text-xl font-serif font-black uppercase tracking-wider text-brand-emerald-dark">Open Positions</h2>
           {jobs.map(job => (
             <div key={job.id} className="bg-white border border-brand-emerald-accent/5 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-              <button
+              <div
                 className="w-full text-left p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer focus:outline-none"
                 onClick={() => setExpanded(expanded === job.id ? null : job.id)}
               >
@@ -141,7 +140,7 @@ const Career = () => {
                   </button>
                   {expanded === job.id ? <ChevronUp size={18} className="text-brand-charcoal/40" /> : <ChevronDown size={18} className="text-brand-charcoal/40" />}
                 </div>
-              </button>
+              </div>
               {expanded === job.id && (
                 <div className="border-t border-brand-linen-dark px-6 py-6 bg-brand-linen/30 grid md:grid-cols-2 gap-6 text-xs md:text-sm">
                   <div>
