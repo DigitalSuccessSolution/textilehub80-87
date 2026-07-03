@@ -256,59 +256,6 @@ const Career = () => {
           </a>
         </div>
 
-        {/* How to Apply Section */}
-        <div className="bg-brand-lavender rounded-[2.5rem] p-8 sm:p-12 text-center text-brand-plum border border-brand-gold/20 relative overflow-hidden shadow-lg mt-4">
-          <div 
-            className="absolute inset-0 opacity-5 bg-cover bg-center" 
-            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1200&q=80')` }} 
-          />
-          <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.4em] text-brand-plum/70 block">
-              APPLICATION METHOD
-            </span>
-            <h3 className="font-serif text-2xl sm:text-3xl text-brand-plum uppercase tracking-wider">
-              How To <span className="text-brand-plum/90 font-light italic">Apply</span>
-            </h3>
-            <div className="w-12 h-px bg-brand-plum/20 mx-auto"></div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left pt-4 font-sans">
-              <div className="space-y-2">
-                <span className="text-xl font-serif text-brand-plum font-bold block">01</span>
-                <h6 className="font-bold text-xs uppercase tracking-wider text-brand-plum">Prepare CV</h6>
-                <p className="text-[11px] text-brand-plum/80 leading-relaxed font-light">
-                  Update your resume highlighting your textile or luxury retail sales experience.
-                </p>
-              </div>
-              <div className="space-y-2">
-                <span className="text-xl font-serif text-brand-plum font-bold block">02</span>
-                <h6 className="font-bold text-xs uppercase tracking-wider text-brand-plum">Email Us</h6>
-                <p className="text-[11px] text-brand-plum/80 leading-relaxed font-light">
-                  Email your CV to careers@retailtextilemall.com with the job title as the subject line.
-                </p>
-              </div>
-              <div className="space-y-2">
-                <span className="text-xl font-serif text-brand-plum font-bold block">03</span>
-                <h6 className="font-bold text-xs uppercase tracking-wider text-brand-plum">HR Review</h6>
-                <p className="text-[11px] text-brand-plum/80 leading-relaxed font-light">
-                  Our HR desk reviews profiles weekly and will invite shortlisted applicants for interviews.
-                </p>
-              </div>
-            </div>
-
-            <div className="pt-6 border-t border-brand-plum/15 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <p className="text-xs text-brand-plum/85 font-sans font-light">
-                Ready to submit? Reach our recruitment desk directly:
-              </p>
-              <a
-                href="mailto:careers@retailtextilemall.com"
-                className="px-8 py-3.5 bg-brand-plum hover:bg-brand-plum/85 text-white rounded-full text-[10px] font-bold uppercase tracking-[0.25em] transition-all duration-300 shadow-md flex items-center justify-center gap-2"
-              >
-                <Mail size={13} /> careers@retailtextilemall.com
-              </a>
-            </div>
-          </div>
-        </div>
-
       </section>
 
     </div>

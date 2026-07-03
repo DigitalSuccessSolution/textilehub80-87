@@ -4,14 +4,8 @@ import { X, Camera, Building2, Users, Layers } from "lucide-react";
 
 const mediaItems = [
   { id: 1, type: "image", category: "Showroom", title: "Main Showroom Floor", src: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600&h=400&fit=crop" },
-  { id: 2, type: "image", category: "Collection", title: "Premium Silk Collection Display", src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop" },
   { id: 3, type: "image", category: "Showroom", title: "Fabric Display Racks", src: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&h=400&fit=crop" },
-  { id: 4, type: "image", category: "Events", title: "Annual Trade Expo 2026", src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop" },
   { id: 5, type: "image", category: "Collection", title: "Cotton & Linen Summer Range", src: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&h=400&fit=crop" },
-  { id: 6, type: "image", category: "Showroom", title: "Luxury Saree Section", src: "https://images.unsplash.com/photo-1594938298603-c8148c4b6c3e?w=600&h=400&fit=crop" },
-  { id: 7, type: "image", category: "Events", title: "Award Ceremony – Best Retailer 2026", src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=400&fit=crop" },
-  { id: 8, type: "image", category: "Collection", title: "Banarasi Wedding Collection", src: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=400&fit=crop" },
-  { id: 9, type: "image", category: "Showroom", title: "Customer Service Desk", src: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=600&h=400&fit=crop" },
   { id: 10, type: "image", category: "Events", title: "Product Launch – Spring 2026", src: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&h=400&fit=crop" },
   { id: 11, type: "image", category: "Collection", title: "Designer Fabric Swatches", src: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&h=400&fit=crop" },
   { id: 12, type: "image", category: "Showroom", title: "Wholesale Counter", src: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&h=400&fit=crop" },
@@ -34,12 +28,12 @@ const MediaGallery = () => {
     <div className="pt-20 min-h-screen bg-brand-linen pb-20 text-brand-charcoal text-left">
       {/* Header Banner */}
       <section className="py-12 bg-brand-emerald-dark text-white text-center px-6 relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-10 scale-105" 
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80')` }} 
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-10 scale-105"
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-dark/50 to-brand-emerald-dark" />
-        
+
         <div className="max-w-4xl mx-auto relative z-10 space-y-2">
           <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-brand-gold block">
             Visual Journey
@@ -58,14 +52,13 @@ const MediaGallery = () => {
           {categories.map(c => {
             const Icon = catIcons[c];
             return (
-              <button 
-                key={c} 
+              <button
+                key={c}
                 onClick={() => setFilter(c)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-[9px] font-black tracking-widest border transition-all cursor-pointer ${
-                  filter === c 
-                    ? "bg-brand-emerald-dark text-brand-gold border-brand-emerald-dark" 
-                    : "bg-white border-brand-linen-dark text-brand-charcoal/60 hover:border-brand-gold hover:text-brand-charcoal"
-                }`}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-[9px] font-black tracking-widest border transition-all cursor-pointer ${filter === c
+                  ? "bg-brand-emerald-dark text-brand-gold border-brand-emerald-dark"
+                  : "bg-white border-brand-linen-dark text-brand-charcoal/60 hover:border-brand-gold hover:text-brand-charcoal"
+                  }`}
               >
                 <Icon size={12} className="text-brand-gold" /> {c}
               </button>

@@ -19,18 +19,18 @@ const Categories = () => {
 
     // Exact list of 12 categories in sequence:
     const categories = [
-        { name: "Sarees", desc: "Timeless Elegance", img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=300&q=80" },
-        { name: "Leggings", desc: "Premium Stretch", img: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=300&q=80" },
-        { name: "Kurtis", desc: "Everyday Grace", img: "https://images.unsplash.com/photo-1608748010899-18f300247112?w=300&q=80" },
-        { name: "Dress Suits", desc: "Style Redefined", img: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=300&q=80" },
-        { name: "Bedsheets & Linen", desc: "Luxury Comfort", img: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=300&q=80" },
-        { name: "Hosiery Items", desc: "Softness that Fits", img: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=300&q=80" },
-        { name: "Suiting", desc: "Bespoke Tailoring", img: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=300&q=80" },
-        { name: "Shirting", desc: "Premium Weave", img: "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=300&q=80" },
-        { name: "Formal & Ethnic Wear for Women", desc: "Elegant Couture", img: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=300&q=80" },
-        { name: "Formal & Ethnic Wear for Men", desc: "Classic Sherwanis", img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=300&q=80" },
-        { name: "Formal & Ethnic Wear for Children", desc: "Cute & Festive", img: "https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=300&q=80" },
-        { name: "Home Upholstery & Furnishing", desc: "Comfort Decor", img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=300&q=80" }
+        { name: "Sarees", desc: "Timeless Elegance", img: "https://images.pexels.com/photos/13155748/pexels-photo-13155748.jpeg" },
+        { name: "Leggings", desc: "Premium Stretch", img: "https://images.pexels.com/photos/4127497/pexels-photo-4127497.jpeg" },
+        { name: "Kurtis", desc: "Everyday Grace", img: "https://images.pexels.com/photos/20420565/pexels-photo-20420565.jpeg" },
+        { name: "Dress Suits", desc: "Style Redefined", img: "https://images.pexels.com/photos/13153337/pexels-photo-13153337.jpeg" },
+        { name: "Bedsheets & Linen", desc: "Luxury Comfort", img: "https://images.pexels.com/photos/26756401/pexels-photo-26756401.jpeg" },
+        { name: "Hosiery Items", desc: "Softness that Fits", img: "https://images.pexels.com/photos/5746051/pexels-photo-5746051.jpeg" },
+        { name: "Suiting", desc: "Bespoke Tailoring", img: "https://images.pexels.com/photos/4965011/pexels-photo-4965011.jpeg" },
+        { name: "Shirting", desc: "Premium Weave", img: "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=600&q=80" },
+        { name: "Formal & Ethnic Wear for Women", desc: "Elegant Couture", img: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80" },
+        { name: "Formal & Ethnic Wear for Men", desc: "Classic Sherwanis", img: "https://images.pexels.com/photos/9436776/pexels-photo-9436776.jpeg" },
+        { name: "Formal & Ethnic Wear for Children", desc: "Cute & Festive", img: "https://images.pexels.com/photos/4452939/pexels-photo-4452939.jpeg" },
+        { name: "Home Upholstery & Furnishing", desc: "Comfort Decor", img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80" }
     ];
 
     return (

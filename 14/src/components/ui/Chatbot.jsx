@@ -18,7 +18,7 @@ const Chatbot = () => {
   const handleSend = (e) => {
     e.preventDefault();
     if (!input.trim()) return;
-    
+
     const userMsg = { id: Date.now(), type: 'user', text: input };
     setMessages(prev => [...prev, userMsg]);
     setInput('');
@@ -28,7 +28,7 @@ const Chatbot = () => {
       let reply = "Thank you. Our B2B communications coordinator will review your message and reply via email within 2 hours.";
       const lowerInput = input.toLowerCase();
       const matchedFaq = faqs.find(f => lowerInput.includes(f.q.toLowerCase().replace('?', '')));
-      
+
       if (matchedFaq) reply = matchedFaq.a;
 
       setMessages(prev => [...prev, { id: Date.now() + 1, type: 'bot', text: reply }]);
@@ -71,11 +71,10 @@ const Chatbot = () => {
             <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50">
               {messages.map(msg => (
                 <div key={msg.id} className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[85%] p-3 rounded-lg text-xs leading-relaxed ${
-                    msg.type === 'user' 
-                      ? 'bg-primary text-white' 
-                      : 'bg-white border border-border text-slate-700'
-                  }`}>
+                  <div className={`max-w-[85%] p-3 rounded-lg text-xs leading-relaxed ${msg.type === 'user'
+                    ? 'bg-primary text-white'
+                    : 'bg-white border border-border text-slate-700'
+                    }`}>
                     {msg.text}
                   </div>
                 </div>
@@ -84,10 +83,10 @@ const Chatbot = () => {
 
             {/* Suggested Questions */}
             <div className="p-3 bg-white border-t border-border space-y-1.5 max-h-28 overflow-y-auto">
-              <p className="text-xs font-bold text-slate-400 capitalize tracking-wide">Common Inquiries:</p>
+              <p className="text-xs font-bold text-slate-400 capitalize tracking-wide">Common Enquiries:</p>
               {faqs.map((faq, idx) => (
-                <button 
-                  key={idx} 
+                <button
+                  key={idx}
                   onClick={() => setInput(faq.q)}
                   className="block w-full text-left text-sm bg-slate-50 hover:bg-accent/10 hover:text-accent transition-colors px-2.5 py-1.5 rounded-md border border-slate-100 text-slate-600 font-medium"
                 >

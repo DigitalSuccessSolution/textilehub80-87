@@ -28,7 +28,7 @@ const Contact = () => {
             icon: Mail,
             title: "Email Address",
             value: "hello@kaayafabrics.com",
-            desc: "For general and B2B trade inquiries.",
+            desc: "For general and B2B trade enquiries.",
             link: "mailto:hello@kaayafabrics.com"
         },
         {
@@ -42,7 +42,7 @@ const Contact = () => {
 
     return (
         <div className="pt-20 min-h-screen bg-[#FAF8F5] text-brand-charcoal text-left pb-20">
-            
+
             {/* Header section (Reduced top gap) */}
             <section className="py-12 bg-brand-emerald-dark text-white text-center px-6 relative overflow-hidden">
                 <div
@@ -64,7 +64,7 @@ const Contact = () => {
             {/* Split Grid: Details on Left, Map on Right */}
             <section className="py-12 px-6 sm:px-12 max-w-[1400px] mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
-                    
+
                     {/* Left: Contact Details (Columns 1-5) */}
                     <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
                         <div className="space-y-4">
@@ -84,7 +84,7 @@ const Contact = () => {
                             {contactChannels.map((c, idx) => {
                                 const Icon = c.icon;
                                 return (
-                                    <div 
+                                    <div
                                         key={idx}
                                         className="bg-white border border-brand-gold/10 p-5 rounded-2xl shadow-sm hover:border-[#800834]/40 transition-colors flex gap-4 items-start"
                                     >
@@ -96,8 +96,8 @@ const Contact = () => {
                                                 {c.title}
                                             </h4>
                                             {c.link ? (
-                                                <a 
-                                                    href={c.link} 
+                                                <a
+                                                    href={c.link}
                                                     className="text-xs font-sans font-black text-[#800834] hover:underline block"
                                                 >
                                                     {c.value}

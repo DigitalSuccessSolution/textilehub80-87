@@ -29,7 +29,7 @@ import FAQPage from './pages/FAQ';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [theme, setTheme] = useState('default');
+  const [theme, setTheme] = useState('terracotta');
   const [themeOpen, setThemeOpen] = useState(false);
 
   useEffect(() => {
@@ -40,7 +40,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('aurora-theme') || 'default';
+    let savedTheme = localStorage.getItem('aurora-theme');
+    if (!savedTheme || savedTheme === 'default') {
+      savedTheme = 'terracotta';
+    }
     applyTheme(savedTheme);
   }, []);
 

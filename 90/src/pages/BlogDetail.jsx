@@ -10,7 +10,7 @@ const allPosts = [
     date: "05 Jun 2026",
     category: "Fabric Guide",
     readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=600&fit=crop",
+    image: "https://images.pexels.com/photos/10317113/pexels-photo-10317113.jpeg",
     author: "Editorial Team",
     content: `Banarasi silk is among the finest fabrics produced in India, with a legacy spanning over 500 years. Woven in the ancient city of Varanasi, these textiles are celebrated for their opulent gold and silver brocade work, fine silk base, and intricate patterns inspired by Mughal art.
     
@@ -43,12 +43,12 @@ const allPosts = [
     Sourcing tip: Premium cotton-linen blends from our Summer Collection 2026 are now available for advance booking. Minimum order: 100 meters per colour.`,
   },
   {
-    id: 3, 
-    title: "How to Care for Your Silk & Woollen Garments", 
-    date: "20 May 2026", 
-    category: "Care Guide", 
+    id: 3,
+    title: "How to Care for Your Silk & Woollen Garments",
+    date: "20 May 2026",
+    category: "Care Guide",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=1200&h=600&fit=crop", 
+    image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=1200&h=600&fit=crop",
     author: "Editorial Team",
     content: `Silk and wool are two of nature's most extraordinary fibres, each requiring thoughtful care to maintain their beauty and longevity.
     
@@ -61,12 +61,12 @@ const allPosts = [
     Professional Care: Once a season, have your finest textiles professionally cleaned and repaired. Minor repairs done promptly prevent larger damage later.`,
   },
   {
-    id: 4, 
-    title: "B2B Textile Sourcing: A Guide for Retailers", 
-    date: "12 May 2026", 
-    category: "Business", 
+    id: 4,
+    title: "B2B Textile Sourcing: A Guide for Retailers",
+    date: "12 May 2026",
+    category: "Business",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1200&h=600&fit=crop", 
+    image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1200&h=600&fit=crop",
     author: "Trade Desk",
     content: `Sourcing textiles at wholesale rates requires a combination of market knowledge, supplier relationships, and quality vigilance. Here is a structured approach for retail buyers looking to strengthen their procurement process.
     
@@ -83,12 +83,12 @@ const allPosts = [
     6. Payment Terms: Negotiate credit periods — 30, 45, or 60 days are standard for established trade relationships. Avoid full advance payment to new suppliers.`,
   },
   {
-    id: 5, 
-    title: "Traditional Indian Handlooms: A Living Heritage", 
-    date: "01 May 2026", 
-    category: "Heritage", 
+    id: 5,
+    title: "Traditional Indian Handlooms: A Living Heritage",
+    date: "01 May 2026",
+    category: "Heritage",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1594938298603-c8148c4b6c3e?w=1200&h=600&fit=crop", 
+    image: "https://images.pexels.com/photos/26729577/pexels-photo-26729577.jpeg",
     author: "Heritage Desk",
     content: `India's handloom tradition is one of the most diverse and enduring textile legacies in the world. From the Chanderi weaves of Madhya Pradesh to the Kanjivaram silks of Tamil Nadu, each regional tradition carries centuries of cultural expression within its fibres.
     
@@ -101,12 +101,12 @@ const allPosts = [
     Sustainability: Handloom textiles are inherently sustainable — they use minimal electricity, produce low waste, and support rural artisan livelihoods. Choosing handloom is an act of conscious consumption.`,
   },
   {
-    id: 6, 
-    title: "Understanding GST on Textile Products in India", 
-    date: "22 Apr 2026", 
-    category: "Business", 
+    id: 6,
+    title: "Understanding GST on Textile Products in India",
+    date: "22 Apr 2026",
+    category: "Business",
     readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&h=600&fit=crop", 
+    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&h=600&fit=crop",
     author: "Accounts Desk",
     content: `GST on textiles can be complex, as rates vary significantly based on fibre type, product category, and price point. Here is a simplified overview.
     

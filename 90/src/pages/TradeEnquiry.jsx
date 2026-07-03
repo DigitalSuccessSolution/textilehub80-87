@@ -101,7 +101,6 @@ const TradeEnquiry = () => {
                 className="w-full border border-brand-linen-dark px-4 py-3.5 text-xs text-brand-charcoal bg-brand-linen/30 focus:outline-none focus:border-brand-gold resize-none transition-all rounded-xl font-sans placeholder-brand-charcoal/30"
               />
             </div>
-
             <button
               type="submit"
               disabled={isSubmitting}

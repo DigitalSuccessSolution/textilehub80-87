@@ -11,7 +11,7 @@ const blogPosts = [
     date: "05 Jun 2026",
     category: "Fabric Guide",
     readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+    image: "https://images.pexels.com/photos/10317113/pexels-photo-10317113.jpeg",
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ const blogPosts = [
     date: "01 May 2026",
     category: "Heritage",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1594938298603-c8148c4b6c3e?w=600&h=400&fit=crop",
+    image: "https://images.pexels.com/photos/26729577/pexels-photo-26729577.jpeg",
   },
   {
     id: 6,
@@ -81,12 +81,12 @@ const Blog = () => {
     <div className="pt-20 min-h-screen bg-brand-linen text-brand-charcoal pb-20">
       {/* Header Banner */}
       <section className="py-12 bg-brand-emerald-dark text-white text-center px-6 relative overflow-hidden mb-12">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-10 scale-105" 
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80')` }} 
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-10 scale-105"
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-dark/50 to-brand-emerald-dark" />
-        
+
         <div className="max-w-4xl mx-auto relative z-10 space-y-2">
           <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-brand-gold block">
             Insights & Knowledge
@@ -104,14 +104,13 @@ const Blog = () => {
         <div className="mb-10 flex justify-center">
           <div className="flex gap-2 flex-wrap justify-center">
             {categories.map(c => (
-              <button 
-                key={c} 
+              <button
+                key={c}
                 onClick={() => setCategory(c)}
-                className={`px-5 py-1.5 rounded-full text-[9px] font-black tracking-widest border transition-all cursor-pointer ${
-                  category === c 
-                    ? "bg-brand-emerald-dark text-brand-gold border-brand-emerald-dark" 
-                    : "bg-white border-brand-linen-dark text-brand-charcoal/60 hover:border-brand-gold hover:text-brand-charcoal"
-                }`}
+                className={`px-5 py-1.5 rounded-full text-[9px] font-black tracking-widest border transition-all cursor-pointer ${category === c
+                  ? "bg-brand-emerald-dark text-brand-gold border-brand-emerald-dark"
+                  : "bg-white border-brand-linen-dark text-brand-charcoal/60 hover:border-brand-gold hover:text-brand-charcoal"
+                  }`}
               >
                 {c}
               </button>
@@ -122,9 +121,9 @@ const Blog = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filtered.map(post => (
-            <Link 
-              key={post.id} 
-              to={`/blog/${post.id}`} 
+            <Link
+              key={post.id}
+              to={`/blog/${post.id}`}
               className="group bg-white border border-brand-emerald-accent/5 rounded-xl overflow-hidden hover:shadow-xl hover:border-brand-gold/30 transition-all duration-500 flex flex-col justify-between"
             >
               <div>
